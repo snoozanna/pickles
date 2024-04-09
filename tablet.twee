@@ -1,0 +1,260 @@
+:: StoryTitle
+Pickles - National Archives - Tablet
+
+
+:: StoryData
+{
+	"ifid": "C6CD0243-7442-40D7-956A-7CC2FE623604",
+	"format": "SugarCube",
+	"format-version": "2.36.1",
+	"start": "Start",
+	"zoom": 0.6
+}
+
+
+:: Story Stylesheet [stylesheet]
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Fondamento:ital@1&family=Italianno&family=Cairo:wght@500&family=Noto+Sans+Mono:wght@700&family=Tangerine:wght@400;700&family=IM+Fell+Double+Pica+SC&family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=Niconne&family=Montserrat:wght@400;800&display=swap');
+
+@import url("generics.css");
+@import url("styles.css");s
+/* @import url("ogstyles.css"); */
+
+
+:: Story JavaScript [script]
+UIBar.destroy();
+
+
+
+
+:: Start [nobr] {"position":"134,244.33333333333337","size":"100,100"}
+
+
+  <div class="wrapper audio" id="mount">
+	<div class="phone-warning"><p>Tablet</p></div>
+<div class="multiple-btn-wrapper">
+	<span aria-label="Click Button to begin" class="button-wrapper">
+		<<button "Begin">>
+			<<goto "audioChoice">>
+		<</button>>
+	</span>
+
+	
+</div>
+  </div >
+
+:: header [nobr]
+<header>
+	<div class="logo-wrapper"><img src="assets/img/na-logo.png" alt="The National Archives Logo" class="logo na" aria-hidden="true"></div> </header>
+
+:: audioChoice [nobr] {"position":"134,244.33333333333337","size":"100,100"}
+<<set $prevpass to "Start">>
+<<set $passage to "audioChoice">>
+<<set $nextpass to "entrance">>
+
+  <div class="wrapper audio" id="mount">
+	<div class="phone-warning"><p>MOTT is best experienced on a computer or tablet</p></div>
+<audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Audioon_off.mp3" autoplay>Audio is not supported on your device</audio>
+
+	<p><span class="inline-icon-wrap"><img src="assets/img/audio.png" alt="volume icon"></span>This experience has the option of an audio soundtrack.  </p>
+	<p>Would you like audio on or off? </p>
+<div class="multiple-btn-wrapper">
+	<span aria-label="Click Button to turn audio on" class="button-wrapper ">
+		<<button "On">>
+			<<set $audioOn to true>>
+			<<set $audioClick to true>>
+			<<replace "#mount">>
+				<strong> <span class="inline-icon-wrap"><img src="assets/img/audio.png"></span> Audio On</strong>
+				<br>
+				<p>Press the power on button to continue</p>
+				<poweron><a data-passage="entrance" class="link-internal link-image" role="link" tabindex="0" ><img src="https://remote.co.com/MoTT/AgentTraining/Images/onicon.png" alt="Power On button"></a></poweron>
+				<br>
+			<br>
+				<<link "Back">><<goto "Start">><</link>>
+				
+	<</replace>>
+		<</button>>
+	</span>
+	<span class="button-wrapper " aria-label="Click Button to turn audio off">
+	<<button "Off">>
+		<<set $audioOn to false>>
+		<<set $audioClick to true>>
+<<replace "#mount">>
+			<strong> Audio Off</strong>
+			<p>Press the power on button to continue</p>
+			<a data-passage="entrance" class="link-internal link-image" role="link" tabindex="0" aria-label="Click this power on icon to continue" alt="Power on button icon" ><img src="https://remote.co.com/MoTT/AgentTraining/Images/onicon.png" alt="Power On button"></a>
+	
+			<br>
+			<br>
+			<span aria-label="Click Button to go back"><<link "Back">><<goto "Start">><</link>>
+			</span>
+		<</replace>>
+	<</button>></span>
+</div>
+
+  </div >
+
+
+:: entrance [nobr]
+<<set $prevpass to "audioChoice">>
+<<set $passage to "entrance">>
+<<set $nextpass to "video1">>
+<div class="wrapper cogs">
+	<<include "header">>
+	<main id="main" class="flex-container-col"><<set $title to 1>>
+	<<if $audioClick isnot true>><<set $audioOn to true>><</if>>
+	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+<<include "pwEntrance">>
+
+	</main>
+</div>
+
+
+:: pwEntrance [nobr]
+/* TODO CHECK ACCESS  */
+<div id="coderesult"></div>
+<div id="resultbutton">
+  /% CODEWORD INPUT %/
+  <div class="code-input entrance">
+    <<textbox "$code1" "">>
+    <<textbox "$code2" "">>
+    <<textbox "$code3" "">>
+		<<textbox "$code4" "">>
+	  <<textbox "$code5" "">>
+ 
+    <<button "Enter">>
+  </div>
+  /% PASSWORD CODE %/
+  <<set $code1 to $code1.toUpperCase()>>
+  <<set $code2 to $code2.toUpperCase()>>
+  <<set $code3 to $code3.toUpperCase()>>
+	<<set $code4 to $code4.toUpperCase()>>
+	<<set $code5 to $code5.toUpperCase()>>
+  /% CODEWORD CORRECT %/
+  <<if $code1 isnot "" and $code2 isnot "" and $code3 isnot "" and $code4 isnot "" and $code5 isnot "">>
+    <<if ($code1 + $code2 + $code3 + $code4 + $code5) is "BEGIN">>
+      <<replace "#coderesult">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
+      <<timed 3s>><<goto $nextpass>><</timed>>
+    <</if>>
+  <</if>>
+  /% CODEWORD INCORRECT %/
+  <<if $code1 isnot "" and $code2 isnot "" and $code3 isnot "" and $code4 isnot "" and $code5 isnot "">>
+    <<if ($code1 + $code2 + $code3 + $code4 + $code5) isnot "BEGIN">>
+      <<replace "#coderesult">><div class="confirmation" id="confirmation">That's not right...</div><</replace>>
+      <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+    <</if>>
+  <</if>>
+<</button>>
+</div>
+</div>
+
+:: video1[nobr]
+<<set $prevpass to "entrance">>
+<<set $passage to "video1">>
+<<set $nextpass to "pillars1">>
+/* VIDEO  */
+VIDEO 1
+<div class="wrapper">
+	<main id="main" class="video"><<set $title to "V6">>
+	<div id="video" role="video" class="video-wrapper"  aria-label="MOTT Training 6 video"><iframe src="https://player.vimeo.com/video/640381678?h=9ce4d85b97&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="MOTT Training 6"></iframe></div>
+	</main>
+		<footer><nav><div id="back" class="button-wrapper"><<link "Back" $prevpass>><</link>></div><div id="text"></div></nav></footer>
+</div>
+<<silently>>
+<<timed 0.1s t8n>><<append "#text">><br><span class="button-wrapper" aria-label="Click a button or link to move on"><<button "Next" $nextpass>><</button>></span><</append>> <</timed>>
+<</silently>>
+
+
+:: pillars1 [nobr]
+<<set $prevpass to "video1">>
+<<set $passage to "pillars1">>
+<<set $nextpass to "video2">>
+<div class="wrapper cogs">
+	<<include "header">>
+	<main id="main" class="flex-container-col"><<set $title to 1>>
+	<<if $audioClick isnot true>><<set $audioOn to true>><</if>>
+	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+<<include "pwPillar">>
+
+	</main>
+</div>
+
+
+:: pwPillar [nobr]
+/* TODO CHECK ACCESS  */
+<div id="coderesult"></div>
+<div id="resultbutton">
+  /% CODEWORD INPUT %/
+  <div class="code-input entrance">
+    <<textbox "$code1" "">>
+    <<textbox "$code2" "">>
+    <<textbox "$code3" "">>
+		<<textbox "$code4" "">>
+ 
+    <<button "Enter">>
+  </div>
+  /% PASSWORD CODE %/
+  <<set $code1 to $code1.toUpperCase()>>
+  <<set $code2 to $code2.toUpperCase()>>
+  <<set $code3 to $code3.toUpperCase()>>
+	<<set $code4 to $code3.toUpperCase()>>
+	<<set $code5 to $code3.toUpperCase()>>
+  /% CODEWORD CORRECT %/
+  <<if $code1 isnot "" and $code2 isnot "" and $code3 isnot "" and $code4 isnot "">>
+    <<if ($code1 + $code2 + $code3 + $code4) is "MOTT">>
+      <<replace "#coderesult">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
+      <<timed 3s>><<goto $nextpass>><</timed>>
+    <</if>>
+  <</if>>
+  /% CODEWORD INCORRECT %/
+  <<if $code1 isnot "" and $code2 isnot "" and $code3 isnot "" and $code4 isnot "">>
+    <<if ($code1 + $code2 + $code3 + $code4 ) is not "MOTT">>
+      <<replace "#coderesult">><div class="confirmation" id="confirmation">That's not right...</div><</replace>>
+      <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+    <</if>>
+  <</if>>
+<</button>>
+</div>
+</div>
+
+:: video2[nobr]
+<<set $prevpass to "pillars1">>
+<<set $passage to "video2">>
+<<set $nextpass to "pillars2">>
+/* VIDEO  */
+VIDEO 2
+<div class="wrapper">
+	<main id="main" class="video"><<set $title to "V6">>
+	<div id="video" role="video" class="video-wrapper"  aria-label="MOTT Training 6 video"><iframe src="https://player.vimeo.com/video/640381678?h=9ce4d85b97&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="MOTT Training 6"></iframe></div>
+	</main>
+		<footer><nav><div id="back" class="button-wrapper"><<link "Back" $prevpass>><</link>></div><div id="text"></div></nav></footer>
+</div>
+<<silently>>
+<<timed 0.1s t8n>><<append "#text">><br><span class="button-wrapper" aria-label="Click a button or link to move on"><<button "Next" $nextpass>><</button>></span><</append>> <</timed>>
+<</silently>>
+
+:: pillars2 [nobr]
+<<set $prevpass to "video2">>
+<<set $passage to "pillars2">>
+<<set $nextpass to "onboarding3">>
+<div class="wrapper cogs">
+	<<include "header">>
+	<main id="main" class="flex-container-col"><<set $title to 1>>
+	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+	<div class="intro-text">
+	 <p>I need you to find the override code for the Signal Fire System. </p>
+<p>I can patch you into a live feed of the Signal Fire System and you need to find the override code. </p>
+<p>You’ll need to do this using your phone as I need you to go to a specific location to access the live feed image.  </p>
+<p>On your phone enter the letters SFS. </p>
+    </div>
+	</main>
+	<<include "footer">>
+</div>
+
+<<timed 180s>>
+	<<goto "Start">>
+	<</timed>>
+
+:: footer [nobr]
+
+<footer><nav class="right"><div id="back" class="button-wrapper"><<back>></div></nav></footer>

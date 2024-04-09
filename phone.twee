@@ -1,0 +1,1019 @@
+:: StoryTitle
+Pickles - National Archives
+
+
+:: StoryData
+{
+	"ifid": "B3CC7B75-82B1-4C5E-A453-149BC0AA8D60",
+	"format": "SugarCube",
+	"format-version": "2.36.1",
+	"start": "onboarding1",
+	"zoom": 0.6
+}
+
+
+:: Story Stylesheet [stylesheet]
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Fondamento:ital@1&family=Italianno&family=Cairo:wght@500&family=Noto+Sans+Mono:wght@700&family=Tangerine:wght@400;700&family=IM+Fell+Double+Pica+SC&family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=Niconne&family=Montserrat:wght@400;800&display=swap');
+
+@import url("/styles/generics.css");
+@import url("/styles/twine.css");
+/* @import url("ogstyles.css"); */
+
+
+:: Story JavaScript [script]
+UIBar.destroy();
+
+
+
+// TOUCHEVENTS 
+// taken from https://developer.mozilla.org/en-US/docs/Web/API/Touch_events  
+setup.startup = () =>  {
+  const ongoingTouches = [];
+  console.log(ongoingTouches)
+
+const handleStart = (evt) =>{
+  evt.preventDefault();
+  // log("touchstart.");
+  const initial = document.getElementById("initial");
+  const stat = document.getElementById("stat");
+    const reveal = document.getElementById("reveal");
+    //  reveal.classList.add("transparent");  
+     initial.classList.add("transparent");  
+     console.log(reveal)
+
+}
+
+const handleMove = (evt) => {
+  evt.preventDefault();
+  
+}
+
+const handleEnd = (evt) => {
+  evt.preventDefault();
+  // log("touchend");
+   const initial = document.getElementById("initial");
+    const reveal = document.getElementById("reveal");
+    //  initial.classList.remove("hide"); 
+     initial.classList.remove("transparent");  
+  // initial.classList.remove("hide")  
+  //   reveal.classList.add("hide");  
+  
+}
+
+const handleCancel = (evt) => {
+  evt.preventDefault();
+  // log("touchcancel.");
+  const touches = evt.changedTouches;
+
+  for (let i = 0; i < touches.length; i++) {
+    let idx = ongoingTouchIndexById(touches[i].identifier);
+    ongoingTouches.splice(idx, 1); // remove it; we're done
+  }
+}
+
+function colorForTouch(touch) {
+  // let r = touch.identifier % 16;
+  // let g = Math.floor(touch.identifier / 3) % 16;
+  // let b = Math.floor(touch.identifier / 7) % 16;
+  // r = r.toString(16); // make it a hex digit
+  // g = g.toString(16); // make it a hex digit
+  // b = b.toString(16); // make it a hex digit
+  // const color = `#${r}${g}${b}`;
+    const color = `#666`;
+  return color;
+}
+
+
+function copyTouch({ identifier, pageX, pageY }) {
+  return { identifier, pageX, pageY };
+}
+function ongoingTouchIndexById(idToFind) {
+  for (let i = 0; i < ongoingTouches.length; i++) {
+    const id = ongoingTouches[i].identifier;
+
+    if (id === idToFind) {
+      return i;
+    }
+  }
+  return -1; // not found
+}
+
+function log(msg) {
+  const container = document.getElementById("log");
+  container.textContent = `${msg} \n${container.textContent}`;
+}
+
+
+    const el = document.getElementById("initial");
+  el.addEventListener("touchstart", handleStart);
+  // el.addEventListener("touchend", handleEnd);
+  // el.addEventListener("touchcancel", handleCancel);
+  // el.addEventListener("touchmove", handleMove);
+  // log("Initialized.", el);
+}
+// document.addEventListener("DOMContentLoaded", startup);
+
+setup.requestCameraPermission = () => {
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+      navigator.mediaDevices.getUserMedia({ video: true })
+        .then(function(stream) {
+          // Camera permission granted, do something with the camera stream
+          alert('Camera permission granted!');
+        })
+        .catch(function(error) {
+          // Camera permission denied
+          alert('Camera permission denied: ' + error.message);
+        });
+    } else {
+      alert('getUserMedia is not supported on this browser');
+    }
+  }
+
+
+:: Start [nobr] {"position":"134,244.33333333333337","size":"100,100"}
+
+
+  <div class="wrapper audio" id="mount">
+	<div class="phone-warning"><p>Phone</p></div>
+<div class="multiple-btn-wrapper">
+	<span aria-label="Click Button to begin" class="button-wrapper">
+		<<button "Begin">>
+			<<goto "audioChoice">>
+		<</button>>
+	</span>
+
+	
+</div>
+  </div >
+
+:: header [nobr]
+<header>
+	<div class="logo-wrapper"><img src="assets/img/na-logo.png" alt="The National Archives Logo" class="logo na" aria-hidden="true"></div> </header>
+
+:: audioChoice [nobr] {"position":"134,244.33333333333337","size":"100,100"}
+
+  <div class="wrapper audio" id="mount">
+	<div class="phone-warning"><p>MOTT is best experienced on a computer or tablet</p></div>
+<audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Audioon_off.mp3" autoplay>Audio is not supported on your device</audio>
+
+	<p><span class="inline-icon-wrap"><img src="assets/img/audio.png" alt="volume icon"></span>This experience has the option of an audio soundtrack.  </p>
+	<p>Would you like audio on or off? </p>
+<div class="multiple-btn-wrapper">
+	<span aria-label="Click Button to turn audio on" class="button-wrapper ">
+		<<button "On">>
+			<<set $audioOn to true>>
+			<<set $audioClick to true>>
+			<<replace "#mount">>
+				<strong> <span class="inline-icon-wrap"><img src="assets/img/audio.png"></span> Audio On</strong>
+				<br>
+				<p>Press the power on button to continue</p>
+				<poweron><a data-passage="TutorialOne" class="link-internal link-image" role="link" tabindex="0" ><img src="https://remote.co.com/MoTT/AgentTraining/Images/onicon.png" alt="Power On button"></a></poweron>
+				<br>
+			<br>
+				<<link "Back">><<goto "Start">><</link>>
+				
+	<</replace>>
+		<</button>>
+	</span>
+	<span class="button-wrapper " aria-label="Click Button to turn audio off">
+	<<button "Off">>
+		<<set $audioOn to false>>
+		<<set $audioClick to true>>
+<<replace "#mount">>
+			<strong> Audio Off</strong>
+			<p>Press the power on button to continue</p>
+			<a data-passage="TutorialOne" class="link-internal link-image" role="link" tabindex="0" aria-label="Click this power on icon to continue" alt="Power on button icon" ><img src="https://remote.co.com/MoTT/AgentTraining/Images/onicon.png" alt="Power On button"></a>
+	
+			<br>
+			<br>
+			<span aria-label="Click Button to go back"><<link "Back">><<goto "Start">><</link>>
+			</span>
+		<</replace>>
+	<</button>></span>
+</div>
+
+  </div >
+
+
+:: onboarding1 [nobr]
+<<set $prevpass to "onboarding1">>
+<<set $passage to "onboarding1">>
+<<set $nextpass to "onboarding2">>
+<div class="wrapper cogs">
+	<<include "header">>
+	<main id="main" class="flex-container-col"><<set $title to 1>>
+	<<if $audioClick isnot true>><<set $audioOn to true>><</if>>
+	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+	<div class="intro-text">
+	  <p>Welcome to The National Archives.</p>
+	  <p>This experience requires you to tap through on a screen. You just need to look for the circle to click on. Try it now.  </p>
+	  
+	  <div class="flex-container-row"><p class="fit">Try it now.</p>
+		<br/><span class="button-wrapper circle" aria-label="Click a button or link to move on"><<button [["Next"|$nextpass]]>><</button>></span></div>
+	</div>
+	<div class="holding"></div>
+	</main>
+</div>
+
+
+:: onboarding2 [nobr]
+<<set $prevpass to "onboarding1">>
+<<set $passage to "onboarding2">>
+<<set $nextpass to "onboarding3">>
+<div class="wrapper cogs">
+	<<include "header">>
+	<main id="main" class="flex-container-col"><<set $title to 1>>
+	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+	<div class="intro-text">
+	  <p>There will be a back button if you miss something. Don’t refresh your page – as you may lose your position in the experience and will have to jump through. </p>
+	 <span class="button-wrapper" aria-label="Click a button or link to move on"><<button [[Next|$nextpass]]>><</button>></span>
+    </div>
+
+
+	</main>
+	<<include "footer">>
+</div>
+
+:: onboarding3 [nobr]
+<<set $prevpass to "onboarding2">>
+<<set $passage to "onboarding3">>
+<<set $nextpass to "onboarding4">>
+<div class="wrapper cogs">
+	<<include "header">>
+	<main id="main" class="flex-container-col">
+	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+	<div class="intro-text">
+	  <p>You’ll need to rotate your screen at points – sometimes on your phone you need to allow your phone to do this on settings.</p>
+	 <span class="button-wrapper" aria-label="Click a button or link to move on">
+      <<button [[Next|$nextpass]]>><</button>>
+    </span>
+	</div>
+	
+	</main>
+	<<include "footer">>
+</div>
+
+:: onboarding4 [nobr]
+<<set $prevpass to "onboarding3">>
+<<set $passage to "onboarding4">>
+<<set $nextpass to "onboarding5">>
+<div class="wrapper cogs">
+	<<include "header">>
+	<main id="main" class="flex-container-col">
+	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+	<div class="intro-text">
+	  <p>You can get captions on all the videos. You may want to go full screen on some of the videos but do remember you need to exit full screen to continue. (It may just be best to stay off full screen mode)</p>
+	
+		 <span class="button-wrapper" aria-label="Click a button or link to move on">
+      <<button [[Next|$nextpass]]>><</button>>
+    </span>
+  </div>
+	</main>
+	<<include "footer">>
+</div>
+
+
+:: onboarding5 [nobr]
+<<set $prevpass to "onboarding4">>
+<<set $passage to "onboarding5">>
+<<set $nextpass to "onboarding6">>
+<div class="wrapper cogs">
+	<<include "header">>
+	<main id="main" class="flex-container-col">
+
+	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+  <div class="intro-text">
+	  <p>If you have any problems throughout do speak to The National Archives staff and they will be able to help you out. </p>
+   <span class="button-wrapper" aria-label="Click a button or link to move on">
+      <<button [[Next|$nextpass]]>><</button>>
+    </span>
+	</div>
+	</main>
+	<<include "footer">>
+</div>
+
+
+:: onboarding6 [nobr]
+<<set $prevpass to "onboarding5">>
+<<set $passage to "onboarding6">>
+<<set $nextpass to "360intro">>
+<div class="wrapper cogs">
+	<<include "header">>
+	<main id="main" class="">
+	<<if $audioClick isnot true>><<set $audioOn to true>><</if>>
+	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<div class="intro-text">
+	   <p>To begin, enter the word BEGIN into the tablet.</p>
+	</div>
+<<timed 5s>>
+<<include "pwSFS">>
+  <</timed>>
+	</main>
+	<<include "footer">>
+</div>
+
+
+
+:: pwSFS [nobr]
+/* TODO CHECK ACCESS  */
+<div id="coderesult"></div>
+<div id="resultbutton">
+  /% CODEWORD INPUT %/
+  <div class="code-input entrance">
+    <<textbox "$code1" "">>
+    <<textbox "$code2" "">>
+    <<textbox "$code3" "">>
+ 
+    <<button "Enter">>
+  </div>
+  /% PASSWORD CODE %/
+  <<set $code1 to $code1.toUpperCase()>>
+  <<set $code2 to $code2.toUpperCase()>>
+  <<set $code3 to $code3.toUpperCase()>>
+  /% CODEWORD CORRECT %/
+  <<if $code1 isnot "" and $code2 isnot "" and $code3 isnot "">>
+    <<if ($code1 + $code2 + $code3) is "SFS">>
+      <<replace "#coderesult">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
+      <<timed 3s>><<goto $nextpass>><</timed>>
+    <</if>>
+  <</if>>
+  /% CODEWORD INCORRECT %/
+  <<if $code1 isnot "" and $code2 isnot "" and $code3 isnot "">>
+    <<if ($code1 + $code2 + $code3) isnot "SFS">>
+      <<replace "#coderesult">><div class="confirmation" id="confirmation">That's not right...</div><</replace>>
+      <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+    <</if>>
+  <</if>>
+<</button>>
+</div>
+</div>
+
+:: pw360Overide [nobr]
+<div id="codewordWrapper" class="codeword-wrapper">
+  <label for="textbox--password" tabindex="0" ><span aria-label="Enter the word below" role="label">Enter the word below</span></label>
+  /% CODEWORD INPUT %/
+   <div class="code-input">
+     <<textbox "_password" "" >>
+    </div>
+   <span class="button-wrapper" aria-label="Click Button to go Check your answer">
+     <<button "Enter">>  
+   /% STANDARDISE INPUT %/
+       <<set _password to _password.toUpperCase()>>
+   /% CODEWORD CORRECT %/
+       <<if _password isnot "" and _password is "CRUMPETS">>
+       <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+       <<timed 3s>><<goto $nextpass>><</timed>>
+      <</if>>
+        /% CODEWORD INCORRECT %/
+     <<if _password isnot "" and _password is not "CRUMPETS">>
+        <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
+      <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+        <</if>><</button>> 
+     </span>
+
+   
+    /% CODEWORD FEEDBACK %/
+    <div id="coderesult"></div>
+
+    </div>
+
+
+
+
+:: 360intro [nobr]
+<<set $prevpass to "onboarding6">>
+<<set $passage to "360intro">>
+<<set $nextpass to "360image">>
+<div class="wrapper cogs">
+	<<include "header">>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<div class="intro-text">
+<p>Excellent work. </p>
+<p>The feed is of a room that is five floors below so, to get the connection, I need you to go to the centre of the room you are in.  </p>
+
+<p>There’s a gold logo on the floor. </p>
+
+<p>When there, click below and I’ll try to load it up. </p>
+
+<p>The live feed is a 360 camera so you may need to move your phone around to find the code. </p>
+
+      <span class="button-wrapper" aria-label="Click a button or link to move on">
+      <<button [[Next|$nextpass]]>><</button>>
+    </span>
+	</div>
+
+	</main>
+	<<include "footer">>
+</div>
+
+:: 360image [nobr]
+<<set $prevpass to "360intro">>
+<<set $passage to "360image">>
+<<set $nextpass to "video3">>
+<div class="wrapper cogs">
+	<<include "header">>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<div class="intro-text">
+<p>We see a 360 image of the repository – in it is a sign that says Signal Fire System Override Code: Crumpets.</p>
+
+  <<include "pw360Overide">>
+	</div>
+
+	</main>
+	<<include "footer">>
+</div>
+
+:: video3[nobr]
+<<set $prevpass to "360image">>
+<<set $passage to "video3">>
+<<set $nextpass to "mapintro1">>
+/* VIDEO  */
+VIDEO 3
+<div class="wrapper">
+	<main id="main" class="video"><<set $title to "V6">>
+	<div id="video" role="video" class="video-wrapper"  aria-label="MOTT Training 6 video"><iframe src="https://player.vimeo.com/video/640381678?h=9ce4d85b97&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="MOTT Training 6"></iframe></div>
+	</main>
+		<footer><nav><div id="back" class="button-wrapper"><<link "Back" $prevpass>><</link>></div><div id="text"></div></nav></footer>
+</div>
+<<silently>>
+<<timed 0.1s t8n>><<append "#text">><br><span class="button-wrapper" aria-label="Click a button or link to move on"><<button "Next" $nextpass>><</button>></span><</append>> <</timed>>
+<</silently>>
+
+
+:: mapintro1 [nobr]
+<<set $prevpass to "video3">>
+<<set $passage to "mapintro1">>
+<<set $nextpass to "mapintro2">>
+<div class="wrapper cogs">
+	<<include "header">>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<div>
+<p>The Signal Fire System seems to have sent us a map.</p> 
+<p>It’s not just a map though – there’s instructions. </p>
+<p>From a man from 1966 – that’s strange. </p>
+<p>Maybe they will lead us to what we need to find.  </p>
+<p>I’ll patch it into your phone. </p>
+<p>Don’t load it until you’ve gone past security as they may need to check your bags. </p>
+<p>READY?</p>
+
+ <span class="button-wrapper" aria-label="Click a button or link to move on">
+      <<button [[Yes|$nextpass]]>><</button>>
+    </span>
+	</div>
+
+	</main>
+	<<include "footer">>
+</div>
+
+:: mapintro2 [nobr]
+<<set $prevpass to "mapintro1">>
+<<set $passage to "mapintro2">>
+<<set $nextpass to "ARIntro1">>
+<div class="wrapper cogs">
+	<<include "header">>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<div>
+//A map loads and we see our position on it – the map will replicate where we are in TNA but also the 1966 Stamp Collection.// 
+
+<p>1. ‘It is 11.01 – time to go’ </p>
+<p>2. Walk 19 paces forward. If I’m right, there should be a mark on the floor. </p>
+<p>3. ‘Well done you’ve made it through the ‘emergency exit’ </p>
+<p>4. Use the cover of the pillar to your left. </p>
+<p>5. We need to watch out for security. Be careful!</p>
+<p>6. Hold it there’s someone ahead. Hold. Use the sounds of the church nearby, keep very quiet. There should be a postbox here, When I say go, move towards it, and stay close. </p>
+<p>7. GO. </p>
+<p>8. Well done but we’re not there yet. There’s toilets near you - they should be on your left. The lift is where we need to go - that’s to your right.  </p>
+<p>9.	Take 5 steps towards the lift… </p>
+<p>10.	Hold it. Stay very still for 10 seconds. There is a security guard who is about to go to the toilet. Don’t move. </p>
+<p>11.	He’s gone. Clearly in a rush. Move towards the wall near the lift, that is where the treasure is. Hold when you are there </p>
+<p>12.	Right, we must be careful now or we’ll set off the alarms. This is what we need. Now, is the time, touch the cup</p>
+
+
+ <span class="button-wrapper" aria-label="Click a button or link to move on">
+      <<button [[Yes|$nextpass]]>><</button>>
+    </span>
+	</div>
+
+	</main>
+	<<include "footer">>
+</div>
+
+:: ARIntro1 [nobr]
+<<set $prevpass to "mapintro2">>
+<<set $passage to "ARIntro1">>
+<<set $nextpass to "AR">>
+<div class="wrapper">
+	<<include "header">>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<div>
+<p>Beatrix</p>
+<p>We need to scan the SFS code here it seems</p>
+<p>Then what did he say, touch the cup. </p>
+
+
+<h1>Camera Permission</h1>
+<p>This story requires access to your camera to scan a QR code.</p>
+<<button "Grant Camera Permission">>
+	<<set $s to setup.requestCameraPermission()>>
+	<</button>>
+
+
+ <span class="button-wrapper" aria-label="Click a button or link to move on">
+      <<button [[Image scanned|$nextpass]]>><</button>>
+    </span>
+	</div>
+
+	</main>
+	<<include "footer">>
+</div>
+
+:: AR [nobr]
+<<set $prevpass to "ARIntro1">>
+<<set $passage to "AR">>
+<<set $nextpass to "ARpost">>
+<div class="wrapper">
+	<<include "header">>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<div>
+
+  <div class="ar-imgs-container">
+    <div class="ar-img-wrapper touch bottom" id="initial" >
+      <img src="https://empire-s3-production.bobvila.com/articles/wp-content/uploads/2020/06/Types-of-Palm-Trees.jpg" class="">
+      </div>
+  </div >
+
+
+ <span class="button-wrapper" aria-label="Click a button or link to move on">
+      <<button [[Next|$nextpass]]>><</button>>
+    </span>
+	</div>
+
+	</main>
+	<<include "footer">>
+</div>
+<<done>><<set $s to setup.startup()>><</done>>
+
+
+:: ARpost [nobr]
+<<set $prevpass to "AR">>
+<<set $passage to "ARpost">>
+<<set $nextpass to "video4">>
+<div class="wrapper">
+	<<include "header">>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+<p>Woh - what happened. </p>
+<p>Can you enter the reference number on the image you found?</p>
+[MEPO 2/10966]
+
+
+  <<include "pwAR">>
+	</main>
+	<<include "footer">>
+</div>
+
+:: pwAR [nobr]
+<div id="codewordWrapper" class="codeword-wrapper">
+  <label for="textbox--password" tabindex="0" ><span aria-label="Enter the word below" role="label">Enter the word below</span></label>
+  /% CODEWORD INPUT %/
+   <div class="code-input">
+     <<textbox "_password" "" >>
+    </div>
+   <span class="button-wrapper" aria-label="Click Button to go Check your answer">
+     <<button "Enter">>  
+   /% STANDARDISE INPUT %/
+       <<set _password to _password.toUpperCase()>>
+   /% CODEWORD CORRECT %/
+       <<if _password isnot "" and _password is "MEPO 2/10966">>
+       <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+       <<timed 3s>><<goto $nextpass>><</timed>>
+      <</if>>
+        /% CODEWORD INCORRECT %/
+     <<if _password isnot "" and _password is not "MEPO 2/10966">>
+        <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
+      <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+        <</if>><</button>> 
+     </span>
+
+   
+    /% CODEWORD FEEDBACK %/
+    <div id="coderesult"></div>
+
+    </div>
+
+:: video4[nobr]
+<<set $prevpass to "ARpost">>
+<<set $passage to "video4">>
+<<set $nextpass to "shop1">>
+/* VIDEO  */
+VIDEO 4
+<div class="wrapper">
+	<main id="main" class="video"><<set $title to "V6">>
+	<div id="video" role="video" class="video-wrapper"  aria-label="MOTT Training 6 video"><iframe src="https://player.vimeo.com/video/640381678?h=9ce4d85b97&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="MOTT Training 6"></iframe></div>
+	</main>
+		<footer><nav><div id="back" class="button-wrapper"><<link "Back" $prevpass>><</link>></div><div id="text"></div></nav></footer>
+</div>
+<<silently>>
+<<timed 0.1s t8n>><<append "#text">><br><span class="button-wrapper" aria-label="Click a button or link to move on"><<button "Next" $nextpass>><</button>></span><</append>> <</timed>>
+<</silently>>
+
+
+:: footer [nobr]
+
+<footer><nav class="right"><div id="back" class="button-wrapper"><<back>></div></nav></footer>
+
+
+:: shop1 [nobr]
+<<set $prevpass to "ARpost">>
+<<set $passage to "shop1">>
+<<set $nextpass to "shop2">>
+<div class="wrapper">
+	<<include "header">>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+<p>The SFS seems to have sent the parcel. You can find it at the bookshop. </p>
+
+<p>Head there and ask the bookkeeper if they have a parcel from the past?</p>
+
+<p>When you have the parcel, have a seat and click below</p>
+
+ <span class="button-wrapper" aria-label="Click a button or link to move on">
+      <<button [[Next|$nextpass]]>><</button>>
+    </span>
+	</main>
+	<<include "footer">>
+</div>
+
+
+:: shop2 [nobr]
+<<set $prevpass to "shop1">>
+<<set $passage to "shop2">>
+<<set $nextpass to "video5">>
+<div class="wrapper">
+	<<include "header">>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+<p>This is what we know…On the day after the theft of the cup had taken place, Joe Mears, the Chairman of the Football Association & of Chelsea FC, received a phone call from a man who would not give his name. He told him to expect a parcel, which would be of interest to him. </p>
+
+<p>Read the letter and when you are done hand it back to the bookkeeper and tell them the phrase Joe Mears had to put into the personal column. They’ll give you the codeword to move on. </p>
+
+
+  <<include "pwShop">>
+	</main>
+	<<include "footer">>
+</div>
+
+
+:: pwShop [nobr]
+<div id="codewordWrapper" class="codeword-wrapper">
+  <label for="textbox--password" tabindex="0" ><span aria-label="Enter the word below" role="label">Enter the word below</span></label>
+  /% CODEWORD INPUT %/
+   <div class="code-input">
+     <<textbox "_password" "" >>
+    </div>
+   <span class="button-wrapper" aria-label="Click Button to go Check your answer">
+     <<button "Enter">>  
+   /% STANDARDISE INPUT %/
+       <<set _password to _password.toUpperCase()>>
+   /% CODEWORD CORRECT %/
+       <<if _password isnot "" and _password is "JOE">>
+       <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+       <<timed 3s>><<goto $nextpass>><</timed>>
+      <</if>>
+        /% CODEWORD INCORRECT %/
+     <<if _password isnot "" and _password is not "JOE">>
+        <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
+      <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+        <</if>><</button>> 
+     </span>
+
+   
+    /% CODEWORD FEEDBACK %/
+    <div id="coderesult"></div>
+
+    </div>
+
+
+:: video5[nobr]
+<<set $prevpass to "shop2">>
+<<set $passage to "video5">>
+<<set $nextpass to "shop3">>
+/* VIDEO  */
+VIDEO 5
+<div class="wrapper">
+	<main id="main" class="video"><<set $title to "V6">>
+	<div id="video" role="video" class="video-wrapper"  aria-label="MOTT Training 6 video"><iframe src="https://player.vimeo.com/video/640381678?h=9ce4d85b97&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="MOTT Training 6"></iframe></div>
+	</main>
+		<footer><nav><div id="back" class="button-wrapper"><<link "Back" $prevpass>><</link>></div><div id="text"></div></nav></footer>
+</div>
+<<silently>>
+<<timed 0.1s t8n>><<append "#text">><br><span class="button-wrapper" aria-label="Click a button or link to move on"><<button "Next" $nextpass>><</button>></span><</append>> <</timed>>
+<</silently>>
+
+:: shop3 [nobr]
+<<set $prevpass to "video5">>
+<<set $passage to "shop3">>
+<<set $nextpass to "shop4">>
+<div class="wrapper">
+	<<include "header">>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+<p>Joe Mears, the FA Chairman, placed the note in the paper as requested and then a phone call happened, between a police officer and the thief, Betchley.  </p>
+<p>We have the transcript, a document that explains the real conversation, of what really happened between Betchley and the police. It is in the archives… but on my screen it’s fading. </p> 
+<p>Which shouldn’t happen. </p>
+<p>I need you to get a physical copy.</p> 
+<span class="button-wrapper" aria-label="Click a button or link to move on">
+      <<button [[Next|$nextpass]]>><</button>>
+    </span>
+	</main>
+	<<include "footer">>
+</div>
+
+
+:: shop4 [nobr]
+<<set $prevpass to "shop3">>
+<<set $passage to "shop4">>
+<<set $nextpass to "cabinet1">>
+<div class="wrapper">
+	<<include "header">>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+<p>Head up the stairs to level one.</p>
+<p>On the first floor, go through the barriers, turn right and head towards the library. Look for the information desk in front of the library – it is the R.E.D. desk. </p>
+<p>Give the individual the file number we found in the ‘picture’ downstairs </p>
+<p>
+	MEPO 2/10966 – and they will give you a copy of the transcript!
+	We need it before we can nudge. 
+</p>
+<p>When you have it click below</p>
+ <span class="button-wrapper" aria-label="Click a button or link to move on">
+      <<button [[We have it|$nextpass]]>><</button>>
+    </span>
+
+	</main>
+	<<include "footer">>
+</div>
+
+
+:: cabinet1 [nobr]
+<<set $prevpass to "shop4">>
+<<set $passage to "cabinet1">>
+<<set $nextpass to "cabinet2">>
+<div class="wrapper">
+	<<include "header">>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+<p>Right, now you have the transcript, I need you to go to the spot where we can work together. </p>
+<p>We need to find a place we can make a phone call.</p>
+<p>Head to large green table – it’s a replica of the real cabinet table in number 10! Find prime minister Harold Wilson (PM in 1966) and take a seat. </p>
+<p>There is a MoTT Aerial above the seat that will amplify your call and help the nudge. </p>
+<p>When there click below. </p>
+
+ <span class="button-wrapper" aria-label="Click a button or link to move on">
+      <<button [[We're here|$nextpass]]>><</button>>
+    </span>
+
+	</main>
+	<<include "footer">>
+</div>
+
+:: cabinet2 [nobr]
+<<set $prevpass to "cabinet1">>
+<<set $passage to "cabinet2">>
+<<set $nextpass to "cabinet3">>
+<div class="wrapper">
+	<<include "header">>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+<p>What you need to know before the call is this. </p>
+<p>Joe Mears was taken unwell – so a police officer went undercover –pretended to be Joe Mears. </p>
+<p>But something is changing it. Changing what was said. </p>
+<p>Something or someone must have changed the police officer’s response in the past so it doesn’t match the transcript anymore! </p>
+<p>We need to correct that.</p>
+<p>You’ll have to do it for them. You are going to have to be the police officer!</p>
+
+
+ <span class="button-wrapper" aria-label="Click a button or link to move on">
+      <<button [[Okay|$nextpass]]>><</button>>
+    </span>
+
+	</main>
+	<<include "footer">>
+</div>
+
+:: cabinet3 [nobr]
+<<set $prevpass to "cabinet2">>
+<<set $passage to "cabinet3">>
+<<set $nextpass to "charisma">>
+<div class="wrapper">
+	<<include "header">>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+<p>You can’t let Betchley know you aren’t Joe Mears. Answer the questions to give him all the information from the transcript. </p>
+<p>I’ve matched our phone communications with those from 1966 through the Signal Fire System so what you say here should appear in 1966.</p> 
+<p>Don't worry about the science, you just worry about getting the information correct.</p>
+<p>It’s time to NUDGE and fix this problem.</p>
+<p>Click below when you are ready</p>
+
+
+
+ <span class="button-wrapper" aria-label="Click a button or link to move on">
+      <<button [[We're ready|$nextpass]]>><</button>>
+    </span>
+
+	</main>
+	<<include "footer">>
+</div>
+
+
+:: charisma [nobr]
+<<set $prevpass to "cabinet3">>
+<<set $passage to "charisma">>
+<<set $nextpass to "video6">>
+<div class="wrapper">
+	<<include "header">>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+<h2>CHARISMA</h2>
+
+TBC
+
+ <span class="button-wrapper" aria-label="Click a button or link to move on">
+      <<button [[Next|$nextpass]]>><</button>>
+    </span>
+
+	</main>
+	<<include "footer">>
+</div>
+
+
+:: video6[nobr]
+<<set $prevpass to "charisma">>
+<<set $passage to "video6">>
+<<set $nextpass to "cabinet4">>
+/* VIDEO  */
+VIDEO 6
+<div class="wrapper">
+	<main id="main" class="video"><<set $title to "V6">>
+	<div id="video" role="video" class="video-wrapper"  aria-label="MOTT Training 6 video"><iframe src="https://player.vimeo.com/video/640381678?h=9ce4d85b97&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="MOTT Training 6"></iframe></div>
+	</main>
+		<footer><nav><div id="back" class="button-wrapper"><<link "Back" $prevpass>><</link>></div><div id="text"></div></nav></footer>
+</div>
+<<silently>>
+<<timed 0.1s t8n>><<append "#text">><br><span class="button-wrapper" aria-label="Click a button or link to move on"><<button "Next" $nextpass>><</button>></span><</append>> <</timed>>
+<</silently>>
+
+
+
+:: cabinet4 [nobr]
+<<set $prevpass to "cabinet3">>
+<<set $passage to "cabinet4">>
+<<set $nextpass to "cabinet5">>
+<div class="wrapper">
+	<<include "header">>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+<p>Right, time to finish this mission.</p> 
+<p>Hand back the transcript to the librarian and then look for the wooden cabinet in between the R.E.D. desk and the cabinet table. It seems the SFS has sent the briefcase there. </p>
+
+<p>To get in you’ll need to [TBC] </p>
+<p>Click below when the cabinet is open. </p>
+ <span class="button-wrapper" aria-label="Click a button or link to move on">
+      <<button [[It's open|$nextpass]]>><</button>>
+    </span>
+
+	</main>
+	<<include "footer">>
+</div>
+
+:: cabinet5 [nobr]
+<<set $prevpass to "cabinet4">>
+<<set $passage to "cabinet5">>
+<<set $nextpass to "video7">>
+<div class="wrapper">
+	<<include "header">>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+<p>The Signal Fire System says I need to enter the note that is in the briefcase. </p>
+<p>Open it up and send me what is inside. </p>
+<p>It should be filled with bank notes according to the records here at the archives. </p>
+
+  <<include "pwCabinet">>
+	</main>
+	<<include "footer">>
+</div>
+
+
+:: pwCabinet [nobr]
+<div id="codewordWrapper" class="codeword-wrapper">
+  <label for="textbox--password" tabindex="0" ><span aria-label="Enter the word below" role="label">Enter the word below</span></label>
+  /% CODEWORD INPUT %/
+   <div class="code-input">
+     <<textbox "_password" "" >>
+    </div>
+   <span class="button-wrapper" aria-label="Click Button to go Check your answer">
+     <<button "Enter">>  
+   /% STANDARDISE INPUT %/
+       <<set _password to _password.toUpperCase()>>
+   /% CODEWORD CORRECT %/
+       <<if _password isnot "" and _password is "TADAH">>
+       <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+       <<timed 3s>><<goto $nextpass>><</timed>>
+      <</if>>
+        /% CODEWORD INCORRECT %/
+     <<if _password isnot "" and _password is not "TADAH">>
+        <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
+      <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+        <</if>><</button>> 
+     </span>
+
+   
+    /% CODEWORD FEEDBACK %/
+    <div id="coderesult"></div>
+
+    </div>
+
+
+
+:: video7[nobr]
+<<set $prevpass to "cabinet5">>
+<<set $passage to "video7">>
+<<set $nextpass to "lockers1">>
+/* VIDEO  */
+VIDEO 7
+<div class="wrapper">
+	<main id="main" class="video"><<set $title to "V6">>
+	<div id="video" role="video" class="video-wrapper"  aria-label="MOTT Training 6 video"><iframe src="https://player.vimeo.com/video/640381678?h=9ce4d85b97&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="MOTT Training 6"></iframe></div>
+	</main>
+		<footer><nav><div id="back" class="button-wrapper"><<link "Back" $prevpass>><</link>></div><div id="text"></div></nav></footer>
+</div>
+<<silently>>
+<<timed 0.1s t8n>><<append "#text">><br><span class="button-wrapper" aria-label="Click a button or link to move on"><<button "Next" $nextpass>><</button>></span><</append>> <</timed>>
+<</silently>>
+
+
+:: lockers1 [nobr]
+<<set $prevpass to "video7">>
+<<set $passage to "lockers1">>
+<<set $nextpass to "lockers2">>
+<div class="wrapper">
+	<<include "header">>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+<p>I hope this can reach you in time…</p>
+<p>Watch out for TADAH agents and to try to blend in – I know, pretend you are just visiting The National Archives today! </p>
+<p>I’ll send you details to log in remotely to the Chief Timer’s computer. You’ll need a password to access it. </p>
+
+<span class="button-wrapper" aria-label="Click a button or link to move on">
+      <<button [[Next|$nextpass]]>><</button>>
+    </span>
+
+	</main>
+	<<include "footer">>
+</div>
+
+
+:: lockers2 [nobr]
+<<set $prevpass to "lockers1">>
+<<set $passage to "lockers2">>
+<<set $nextpass to "video7">>
+<div class="wrapper">
+	<<include "header">>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+
+<p>Find my friend, they should be by the cabinet table. They will have a MoTT badge on and have a MoTT tote bag. They can help you.</p>
+<p>They need to know they can trust you. Say to them </p>
+<p>Do you have the time?</p>
+<p>If they are the ones you are looking for they should respond with the phrase</p>
+<p>Tick Tock Tick Tock</p>
+<p>I’m losing the feed.</p>
+[the mobile slowly fades]
+
+
+	</main>
+	<<include "footer">>
+</div>

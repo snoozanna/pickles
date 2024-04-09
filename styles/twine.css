@@ -1,0 +1,110 @@
+/* LOFI AR */
+
+.ar-option-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.ar-option {
+  display: flex;
+  flex-direction: column;
+  margin-inline-end: 2rem;
+}
+
+.ar-imgs-container {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  background-image: url("./../assets/img/big_stage_by_B.Yemets.jpg");
+  background-size: cover;
+}
+
+.ar-img-wrapper,
+.hidden-img-wrapper {
+  height: 80vh;
+  object-fit: cover;
+  /* position: absolute; */
+  left: 0;
+  -webkit-transition: opacity 2s ease-in-out;
+  -moz-transition: opacity 2s ease-in-out;
+  -o-transition: opacity 2s ease-in-out;
+  transition: opacity 2s ease-in-out;
+}
+
+.ar-img-wrapper > img,
+.hidden-img-wrapper > img,
+.static-img-wrapper > img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.ar-img-wrapper.transparent,
+.hidden-img-wrapper.transparent,
+.static-img-wrapper.transparent {
+  opacity: 0;
+  /* height: 0; */
+}
+
+.ar-img-wrapper.hover:hover {
+  filter: grayscale(100%);
+}
+
+.ar-img-wrapper.active:active {
+  filter: grayscale(100%);
+}
+
+.ar-img-wrapper.focus:focus {
+  filter: grayscale(100%);
+}
+
+.ar-img-wrapper.touch {
+  filter: grayscale(0%);
+}
+
+.ar-img-wrapper.touch.filter {
+  filter: grayscale(100%);
+}
+
+#log {
+  height: 200px;
+  width: 600px;
+  overflow: scroll;
+}
+
+footer.ar > .nav-wrapper > .nav-item > #mount > span {
+  display: block;
+  font-size: 1.4rem;
+}
+
+@media screen and (min-width: 450px) {
+  .ai-option-wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+@keyframes dissolve {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+.dissolve {
+  animation: 2s dissolve 0.5s ease-out forwards;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+.appear {
+  animation: 2s appear 0.5s ease-out forwards;
+}
