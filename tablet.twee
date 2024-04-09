@@ -106,7 +106,9 @@ UIBar.destroy();
 <<include "pwEntrance">>
 
 	</main>
+	<<include "footer">>
 </div>
+
 
 
 :: pwEntrance [nobr]

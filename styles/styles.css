@@ -581,3 +581,9 @@ h3.subtitle > span.orange {
 .content-item.content > img.completed {
   max-width: 60%;
 }
+
+.code-input.multibox > input.macro-textbox {
+  width: 4rem;
+  min-width: inherit;
+  color: black;
+}

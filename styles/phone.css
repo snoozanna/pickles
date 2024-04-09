@@ -1,3 +1,12 @@
+/* GENERAL */
+.intro-text {
+  max-width: 100%;
+}
+
+img.logo.na {
+  max-width: 30%;
+}
+
 /* LOFI AR */
 
 .ar-option-wrapper {
