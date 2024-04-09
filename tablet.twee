@@ -15,8 +15,8 @@ Pickles - National Archives - Tablet
 :: Story Stylesheet [stylesheet]
 @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Fondamento:ital@1&family=Italianno&family=Cairo:wght@500&family=Noto+Sans+Mono:wght@700&family=Tangerine:wght@400;700&family=IM+Fell+Double+Pica+SC&family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=Niconne&family=Montserrat:wght@400;800&display=swap');
 
-@import url("generics.css");
-@import url("styles.css");s
+@import url("/styles/generics.css");
+@import url("/styles/styles.css");s
 /* @import url("ogstyles.css"); */
 
 
