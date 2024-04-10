@@ -215,6 +215,7 @@ setup.requestCameraPermission = () => {
 	</div>
 	<div class="holding"></div>
 	</main>
+  <<include "footer">>
 </div>
 
 
@@ -323,11 +324,11 @@ setup.requestCameraPermission = () => {
 <<set $nextpass to "360intro">>
 <div class="wrapper cogs">
 	<<include "header">>
-	<main id="main" class="">
+	<main id="main" class="center-col">
 	<<if $audioClick isnot true>><<set $audioOn to true>><</if>>
 	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
 
-<<timed 5s>>
+<<timed 2s>>
   	<div class="intro-text">
 	   <p>Enter the codeword:</p>
 	</div>
@@ -344,10 +345,12 @@ setup.requestCameraPermission = () => {
 <div id="coderesult"></div>
 <div id="resultbutton">
   /% CODEWORD INPUT %/
-  <div class="code-input multibox">
-    <<textbox "$code1" "">>
-    <<textbox "$code2" "">>
-    <<textbox "$code3" "">>
+  <div class="code-input multibox center-col">
+    <div class="multi-input-wrapper">
+      <<textbox "$code1" "">>
+      <<textbox "$code2" "">>
+      <<textbox "$code3" "">>
+    </div>
     <br/><br/>
  <span class="button-wrapper" aria-label="Click button to see if answer is correct ">
     
@@ -383,6 +386,7 @@ setup.requestCameraPermission = () => {
    <div class="code-input">
      <<textbox "_password" "" >>
     </div>
+    <br/>
    <span class="button-wrapper" aria-label="Click Button to go Check your answer">
      <<button "Enter">>  
    /% STANDARDISE INPUT %/
@@ -440,7 +444,7 @@ setup.requestCameraPermission = () => {
 <<set $passage to "360image">>
 <<set $nextpass to "video3">>
 <div class="wrapper cogs">
-	<<include "header">>
+	/* <<include "header">> */
 	<main id="main" class="pano">
 	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
 
@@ -655,7 +659,13 @@ VIDEO 4
 
 :: footer [nobr]
 
-<footer><nav class="right"><div id="back" class="button-wrapper"><<back>></div></nav></footer>
+<footer><nav class=""><div id="back" class="button-wrapper">
+<<if passage() is not "onboarding1">>
+  <<button "Back">> 
+    <<goto $prevpass>>
+    <</button>>
+  <</if>>
+</div></nav></footer>
 
 
 :: shop1 [nobr]

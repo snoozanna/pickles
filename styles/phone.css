@@ -7,6 +7,25 @@ img.logo.na {
   max-width: 30%;
 }
 
+p {
+  font-size: 1.8rem;
+}
+
+.button-wrapper > button {
+  font-size: 2rem;
+}
+
+footer {
+  padding: 0;
+}
+
+.center-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 /* LOFI AR */
 
 .ar-option-wrapper {
@@ -116,4 +135,9 @@ footer.ar > .nav-wrapper > .nav-item > #mount > span {
 }
 .appear {
   animation: 2s appear 0.5s ease-out forwards;
+}
+
+/* 360 */
+main.pano > iframe {
+  min-height: 60vh;
 }

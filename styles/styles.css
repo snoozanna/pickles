@@ -582,8 +582,23 @@ h3.subtitle > span.orange {
   max-width: 60%;
 }
 
-.code-input.multibox > input.macro-textbox {
+.code-input.multibox > .multi-input-wrapper > input.macro-textbox {
   width: 4rem;
   min-width: inherit;
   color: black;
+  margin-inline-end: 1rem;
+  text-align: center;
+  font-weight: 900;
+  font-size: 2.5rem;
+}
+
+.code-input.multibox > .multi-input-wrapper > input.macro-textbox:focus {
+  color: white;
+  text-align: center;
+  font-weight: 900;
+  font-size: 2.5rem;
+}
+
+.multi-input-wrapper {
+  display: flex;
 }
