@@ -7,7 +7,7 @@ Pickles - National Archives - Tablet
 	"ifid": "C6CD0243-7442-40D7-956A-7CC2FE623604",
 	"format": "SugarCube",
 	"format-version": "2.36.1",
-	"start": "Start",
+	"start": "entrance",
 	"zoom": 0.6
 }
 
@@ -95,7 +95,7 @@ UIBar.destroy();
 
 
 :: entrance [nobr]
-<<set $prevpass to "audioChoice">>
+<<set $prevpass to "entrance">>
 <<set $passage to "entrance">>
 <<set $nextpass to "video1">>
 <div class="wrapper cogs">
@@ -116,13 +116,16 @@ UIBar.destroy();
 <div id="coderesult"></div>
 <div id="resultbutton">
   /% CODEWORD INPUT %/
-  <div class="code-input entrance">
-    <<textbox "$code1" "">>
-    <<textbox "$code2" "">>
-    <<textbox "$code3" "">>
-		<<textbox "$code4" "">>
-	  <<textbox "$code5" "">>
- 
+  <div class="code-input entrance multibox center-col">
+    <div class="multi-input-wrapper">
+    	<<textbox "$code1" "">>
+	    <<textbox "$code2" "">>
+	    <<textbox "$code3" "">>
+			<<textbox "$code4" "">>
+		  <<textbox "$code5" "">>
+    </div>
+		<br/>
+  <span class="button-wrapper" aria-label="Click a button or link to move on">
     <<button "Enter">>
   </div>
   /% PASSWORD CODE %/
@@ -146,6 +149,7 @@ UIBar.destroy();
     <</if>>
   <</if>>
 <</button>>
+</span>
 </div>
 </div>
 
@@ -178,6 +182,7 @@ VIDEO 1
 <<include "pwPillar">>
 
 	</main>
+	<<include "footer">>
 </div>
 
 
@@ -186,12 +191,15 @@ VIDEO 1
 <div id="coderesult"></div>
 <div id="resultbutton">
   /% CODEWORD INPUT %/
-  <div class="code-input entrance">
-    <<textbox "$code1" "">>
-    <<textbox "$code2" "">>
-    <<textbox "$code3" "">>
-		<<textbox "$code4" "">>
- 
+  <div class="code-input entrance multibox center-col">
+    <div class="multi-input-wrapper">
+    	<div class="red"><<textbox "$code1" "">></div>
+	    <div class="blue"><<textbox "$code2" "">></div>
+	   <div class="green"> <<textbox "$code3" "">></div>
+			<div class="yellow"><<textbox "$code4" "">></div>
+    </div>
+		<br/>
+ <span class="button-wrapper" aria-label="Click a button or link to move on">
     <<button "Enter">>
   </div>
   /% PASSWORD CODE %/
@@ -215,6 +223,7 @@ VIDEO 1
     <</if>>
   <</if>>
 <</button>>
+</span>
 </div>
 </div>
 
@@ -259,4 +268,10 @@ VIDEO 2
 
 :: footer [nobr]
 
-<footer><nav class="right"><div id="back" class="button-wrapper"><<back>></div></nav></footer>
+<footer><nav class=""><div id="back" class="button-wrapper">
+<<if passage() is not "entrance">>
+  <<button "Back">> 
+    <<goto $prevpass>>
+    <</button>>
+  <</if>>
+</div></nav></footer>

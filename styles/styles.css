@@ -187,6 +187,13 @@ img.logomott {
   justify-content: space-between;
 }
 
+.center-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 /* normal buttons */
 .button-wrapper,
 .button-wrapper.orange {
@@ -582,7 +589,8 @@ h3.subtitle > span.orange {
   max-width: 60%;
 }
 
-.code-input.multibox > .multi-input-wrapper > input.macro-textbox {
+.code-input.multibox > .multi-input-wrapper > input.macro-textbox,
+.code-input.multibox > .multi-input-wrapper > div > input.macro-textbox {
   width: 4rem;
   min-width: inherit;
   color: black;
@@ -601,4 +609,22 @@ h3.subtitle > span.orange {
 
 .multi-input-wrapper {
   display: flex;
+}
+
+/* TABLET COLOUR INPUT  */
+
+.multi-input-wrapper > .red > input {
+  background-color: red;
+}
+
+.multi-input-wrapper > .blue > input {
+  background-color: blue;
+}
+
+.multi-input-wrapper > .green > input {
+  background-color: green;
+}
+
+.multi-input-wrapper > .yellow > input {
+  background-color: yellow;
 }

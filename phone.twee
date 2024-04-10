@@ -555,7 +555,7 @@ VIDEO 3
 	<</button>>
 
 
-<span class="button-wrapper" aria-label="Click Button to Quit"><a href="https://deft-gaufre-490f8b.netlify.app/phone2" target="_blank" rel="noreferrer">No</a></span>
+<span class="button-wrapper" aria-label="Click Button to confirm you have scanned image"><a href="https://deft-gaufre-490f8b.netlify.app/phone2" target="_blank" rel="noreferrer">IMAGE SCANNED</a></span>
 	</div>
 
 	</main>

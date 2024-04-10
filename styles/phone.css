@@ -19,13 +19,6 @@ footer {
   padding: 2rem 0;
 }
 
-.center-col {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 /* LOFI AR */
 
 .ar-option-wrapper {
