@@ -331,7 +331,7 @@ setup.requestCameraPermission = () => {
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="8" name="onboarding5" tags="nobr" position="975,100" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding4&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;onboarding5&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;onboarding6&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;onboarding5a&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs&quot;&gt;
 	&lt;&lt;include &quot;header&quot;&gt;&gt;
 	&lt;main id=&quot;main&quot; class=&quot;flex-container-col&quot;&gt;
@@ -345,7 +345,23 @@ setup.requestCameraPermission = () => {
 	&lt;/div&gt;
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="9" name="onboarding6" tags="nobr" position="1100,100" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding5&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="9" name="onboarding5a" tags="nobr" position="1100,100" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding5&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;onboarding5a&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;onboarding6&quot;&gt;&gt;
+&lt;div class=&quot;wrapper cogs&quot;&gt;
+	&lt;&lt;include &quot;header&quot;&gt;&gt;
+	&lt;main id=&quot;main&quot; class=&quot;flex-container-col&quot;&gt;
+
+	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+  &lt;div class=&quot;intro-text&quot;&gt;
+	  &lt;p&gt;To begin, enter the word BEGIN into the tablet.&lt;/p&gt;
+   &lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
+      &lt;&lt;button [[Next|$nextpass]]&gt;&gt;&lt;&lt;/button&gt;&gt;
+    &lt;/span&gt;
+	&lt;/div&gt;
+	&lt;/main&gt;
+	&lt;&lt;include &quot;footer&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="onboarding6" tags="nobr" position="1225,100" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding5a&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;onboarding6&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;360intro&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs&quot;&gt;
@@ -362,7 +378,7 @@ setup.requestCameraPermission = () => {
   &lt;&lt;/timed&gt;&gt;
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="pwSFS" tags="nobr" position="1225,100" size="100,100">/* TODO CHECK ACCESS  */
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="11" name="pwSFS" tags="nobr" position="100,225" size="100,100">/* TODO CHECK ACCESS  */
 &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
 &lt;div id=&quot;resultbutton&quot;&gt;
   /% CODEWORD INPUT %/
@@ -396,7 +412,7 @@ setup.requestCameraPermission = () => {
 &lt;&lt;/button&gt;&gt;
 &lt;/span&gt;
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="11" name="pw360Overide" tags="nobr" position="100,225" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="pw360Overide" tags="nobr" position="225,225" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
   &lt;label for=&quot;textbox--password&quot; tabindex=&quot;0&quot; &gt;&lt;span aria-label=&quot;Enter the word below&quot; role=&quot;label&quot;&gt;SFS OVERRIDE CODE:&lt;/span&gt;&lt;/label&gt;
   /% CODEWORD INPUT %/
    &lt;div class=&quot;code-input&quot;&gt;
@@ -422,7 +438,7 @@ setup.requestCameraPermission = () => {
     /% CODEWORD FEEDBACK %/
     &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
 
-    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="360intro" tags="nobr" position="225,225" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding6&quot;&gt;&gt;
+    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="360intro" tags="nobr" position="350,225" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding6&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;360intro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;360image&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs&quot;&gt;
@@ -446,7 +462,7 @@ setup.requestCameraPermission = () => {
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="360image" tags="nobr" position="350,225" size="100,100">&lt;&lt;set $prevpass to &quot;360intro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="360image" tags="nobr" position="475,225" size="100,100">&lt;&lt;set $prevpass to &quot;360intro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;360image&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;video3&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs&quot;&gt;
@@ -460,8 +476,8 @@ setup.requestCameraPermission = () => {
 
 
 	&lt;/main&gt;
-	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="video3" tags="nobr" position="475,225" size="100,100">&lt;&lt;set $prevpass to &quot;360image&quot;&gt;&gt;
+	/* &lt;&lt;include &quot;footer&quot;&gt;&gt; */
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="video3" tags="nobr" position="600,225" size="100,100">&lt;&lt;set $prevpass to &quot;360image&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;video3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;mapintro1&quot;&gt;&gt;
 /* VIDEO  */
@@ -474,7 +490,7 @@ VIDEO 3
 &lt;/div&gt;
 &lt;&lt;silently&gt;&gt;
 &lt;&lt;timed 0.1s t8n&gt;&gt;&lt;&lt;append &quot;#text&quot;&gt;&gt;&lt;br&gt;&lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;&lt;&lt;button &quot;Next&quot; $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;&lt;/append&gt;&gt; &lt;&lt;/timed&gt;&gt;
-&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="mapintro1" tags="nobr" position="600,225" size="100,100">&lt;&lt;set $prevpass to &quot;video3&quot;&gt;&gt;
+&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="mapintro1" tags="nobr" position="725,225" size="100,100">&lt;&lt;set $prevpass to &quot;video3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;mapintro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;mapintro2&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs&quot;&gt;
@@ -497,7 +513,7 @@ VIDEO 3
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="mapintro2" tags="nobr" position="725,225" size="100,100">&lt;&lt;set $prevpass to &quot;mapintro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="mapintro2" tags="nobr" position="850,225" size="100,100">&lt;&lt;set $prevpass to &quot;mapintro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;mapintro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;ARIntro1&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs&quot;&gt;
@@ -528,7 +544,7 @@ VIDEO 3
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="ARIntro1" tags="nobr" position="850,225" size="100,100">&lt;&lt;set $prevpass to &quot;mapintro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="18" name="ARIntro1" tags="nobr" position="975,225" size="100,100">&lt;&lt;set $prevpass to &quot;mapintro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;ARIntro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;AR&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
@@ -555,7 +571,7 @@ VIDEO 3
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="18" name="AR" tags="nobr" position="975,225" size="100,100">&lt;&lt;set $prevpass to &quot;ARIntro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name="AR" tags="nobr" position="1100,225" size="100,100">&lt;&lt;set $prevpass to &quot;ARIntro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;AR&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;ARpost&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
@@ -579,7 +595,7 @@ VIDEO 3
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
 &lt;/div&gt;
-&lt;&lt;done&gt;&gt;&lt;&lt;set $s to setup.startup()&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="19" name="ARpost" tags="nobr" position="1100,225" size="100,100">&lt;&lt;set $prevpass to &quot;AR&quot;&gt;&gt;
+&lt;&lt;done&gt;&gt;&lt;&lt;set $s to setup.startup()&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="ARpost" tags="nobr" position="1225,225" size="100,100">&lt;&lt;set $prevpass to &quot;AR&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;ARpost&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;video4&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
@@ -595,7 +611,7 @@ VIDEO 3
   &lt;&lt;include &quot;pwAR&quot;&gt;&gt;
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="pwAR" tags="nobr" position="1225,225" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="21" name="pwAR" tags="nobr" position="100,350" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
   &lt;label for=&quot;textbox--password&quot; tabindex=&quot;0&quot; &gt;&lt;span aria-label=&quot;Enter the word below&quot; role=&quot;label&quot;&gt;Enter the word below&lt;/span&gt;&lt;/label&gt;
   /% CODEWORD INPUT %/
    &lt;div class=&quot;code-input&quot;&gt;
@@ -621,7 +637,7 @@ VIDEO 3
     /% CODEWORD FEEDBACK %/
     &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
 
-    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="21" name="video4" tags="nobr" position="100,350" size="100,100">&lt;&lt;set $prevpass to &quot;ARpost&quot;&gt;&gt;
+    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="video4" tags="nobr" position="225,350" size="100,100">&lt;&lt;set $prevpass to &quot;ARpost&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;video4&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;shop1&quot;&gt;&gt;
 /* VIDEO  */
@@ -634,7 +650,7 @@ VIDEO 4
 &lt;/div&gt;
 &lt;&lt;silently&gt;&gt;
 &lt;&lt;timed 0.1s t8n&gt;&gt;&lt;&lt;append &quot;#text&quot;&gt;&gt;&lt;br&gt;&lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;&lt;&lt;button &quot;Next&quot; $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;&lt;/append&gt;&gt; &lt;&lt;/timed&gt;&gt;
-&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="footer" tags="nobr" position="225,350" size="100,100">&lt;footer&gt;&lt;nav class=&quot;right&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;&lt;&lt;back&gt;&gt;&lt;/div&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="23" name="shop1" tags="nobr" position="350,350" size="100,100">&lt;&lt;set $prevpass to &quot;ARpost&quot;&gt;&gt;
+&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="footer" tags="nobr" position="350,350" size="100,100">&lt;footer&gt;&lt;nav class=&quot;right&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;&lt;&lt;back&gt;&gt;&lt;/div&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="24" name="shop1" tags="nobr" position="475,350" size="100,100">&lt;&lt;set $prevpass to &quot;ARpost&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;shop1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;shop2&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
@@ -653,7 +669,7 @@ VIDEO 4
     &lt;/span&gt;
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="shop2" tags="nobr" position="475,350" size="100,100">&lt;&lt;set $prevpass to &quot;shop1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="25" name="shop2" tags="nobr" position="600,350" size="100,100">&lt;&lt;set $prevpass to &quot;shop1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;shop2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;video5&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
@@ -669,7 +685,7 @@ VIDEO 4
   &lt;&lt;include &quot;pwShop&quot;&gt;&gt;
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="25" name="pwShop" tags="nobr" position="600,350" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="pwShop" tags="nobr" position="725,350" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
   &lt;label for=&quot;textbox--password&quot; tabindex=&quot;0&quot; &gt;&lt;span aria-label=&quot;Enter the word below&quot; role=&quot;label&quot;&gt;Enter the word below&lt;/span&gt;&lt;/label&gt;
   /% CODEWORD INPUT %/
    &lt;div class=&quot;code-input&quot;&gt;
@@ -695,7 +711,7 @@ VIDEO 4
     /% CODEWORD FEEDBACK %/
     &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
 
-    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="video5" tags="nobr" position="725,350" size="100,100">&lt;&lt;set $prevpass to &quot;shop2&quot;&gt;&gt;
+    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="27" name="video5" tags="nobr" position="850,350" size="100,100">&lt;&lt;set $prevpass to &quot;shop2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;video5&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;shop3&quot;&gt;&gt;
 /* VIDEO  */
@@ -708,7 +724,7 @@ VIDEO 5
 &lt;/div&gt;
 &lt;&lt;silently&gt;&gt;
 &lt;&lt;timed 0.1s t8n&gt;&gt;&lt;&lt;append &quot;#text&quot;&gt;&gt;&lt;br&gt;&lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;&lt;&lt;button &quot;Next&quot; $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;&lt;/append&gt;&gt; &lt;&lt;/timed&gt;&gt;
-&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="shop3" tags="nobr" position="850,350" size="100,100">&lt;&lt;set $prevpass to &quot;video5&quot;&gt;&gt;
+&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="shop3" tags="nobr" position="975,350" size="100,100">&lt;&lt;set $prevpass to &quot;video5&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;shop3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;shop4&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
@@ -725,7 +741,7 @@ VIDEO 5
     &lt;/span&gt;
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="28" name="shop4" tags="nobr" position="975,350" size="100,100">&lt;&lt;set $prevpass to &quot;shop3&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="29" name="shop4" tags="nobr" position="1100,350" size="100,100">&lt;&lt;set $prevpass to &quot;shop3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;shop4&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;cabinet1&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
@@ -747,7 +763,7 @@ VIDEO 5
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="29" name="cabinet1" tags="nobr" position="1100,350" size="100,100">&lt;&lt;set $prevpass to &quot;shop4&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="30" name="cabinet1" tags="nobr" position="1225,350" size="100,100">&lt;&lt;set $prevpass to &quot;shop4&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;cabinet1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;cabinet2&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
@@ -767,7 +783,7 @@ VIDEO 5
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="30" name="cabinet2" tags="nobr" position="1225,350" size="100,100">&lt;&lt;set $prevpass to &quot;cabinet1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="cabinet2" tags="nobr" position="100,475" size="100,100">&lt;&lt;set $prevpass to &quot;cabinet1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;cabinet2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;cabinet3&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
@@ -789,7 +805,7 @@ VIDEO 5
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="cabinet3" tags="nobr" position="100,475" size="100,100">&lt;&lt;set $prevpass to &quot;cabinet2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="cabinet3" tags="nobr" position="225,475" size="100,100">&lt;&lt;set $prevpass to &quot;cabinet2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;cabinet3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;cabinet3&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;

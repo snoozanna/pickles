@@ -450,7 +450,7 @@ setup.requestCameraPermission = () => {
 
 
 	</main>
-	<<include "footer">>
+	/* <<include "footer">> */
 </div>
 
 :: video3[nobr]
