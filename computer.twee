@@ -16,7 +16,7 @@ Pickles - National Archives - Computer
 @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Fondamento:ital@1&family=Italianno&family=Cairo:wght@500&family=Noto+Sans+Mono:wght@700&family=Tangerine:wght@400;700&family=IM+Fell+Double+Pica+SC&family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=Niconne&family=Montserrat:wght@400;800&display=swap');
 
 @import url("/styles/generics.css");
-@import url("/styles/styles.css");s
+@import url("/styles/styles.css");
 @import url("/styles/computer.css");
 
 
@@ -120,7 +120,7 @@ UIBar.destroy();
 </div>
 
 
-:: office1 [nobr]
+:: office1 [nobr t8n]
 <<set $prevpass to "entrance">>
 <<set $passage to "office1">>
 <<set $nextpass to "desktop">>
@@ -130,14 +130,17 @@ UIBar.destroy();
 	<main id="main" class="flex-container-col"><<set $title to 1>>
 
 	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
-<<include "pwBox">>
-
+	<<timed 1s>>
+<div class="pwBox-wrapper"><<include "pwBox">></div>
+<</timed>>
 	</main>
+	<<include "footer">>
 </div>
 
+
 :: pwBox [nobr]
-<div id="codewordWrapper" class="codeword-wrapper">
-<p>LOCKED MINIBOX</p>
+<div id="codewordWrapper" class="codeword-wrapper pwBox">
+<H3>ENTER PASSWORD:</H3>
 
   <label for="textbox--password" tabindex="0" ><span aria-label="Enter the name on the Dog Tag" role="label">Enter the name on the Dog Tag</span></label>
   /% CODEWORD INPUT %/
@@ -173,25 +176,31 @@ UIBar.destroy();
 /* TODO Desktop has messages, locked folder and Signal Fire System logo. It could have some other folders to make it seem busier. 
 In the bottom right a chat box should open - perhaps a notification and then they click on it.  */
 
-<div class="wrapper cogs">
-	<<include "header">>
-<p>	DESKTOP</p>
-	<main id="main" class="flex-container-row">
-	<div id="chatMount"></div>
+<div class="wrapper cogs ">
+	/* <<include "header">> */
+	<main id="main" class="grid-container" >
+	
+	<div id="chatMount" class="chatMount">	
+	<<timed 2s>>
+			<<include "chatNotification">>
+		<</timed>></div>
 	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
-<div class="flex-container-col">
-	<div id="sfsMount"></div>
-	<div id="fileMount"><<include "pwFile">></div>
+
+	<div id="sfsMount" class="sfsMount"></div>
+	<div id="fileMount" class="fileMount"><<include "pwFile">>
 </div>
+
 	</main>
-	<<include "footerdesktop">>
 </div>
 
 <<if $finaldesktop is true>>
+	<<timed 0.1s>>
+		<<replace "#fileMount">>
+			<</replace>>
+	<</timed>>
 	<<timed 2s>>
 			<<replace "#chatMount">>
-		<h2>New message!</h2>
-		<p>Give the Pickles Dog Collar back to my friend in the Cabinet Table and they may give you something in return...</p>
+<<include "chatText4">>
 		<</replace>>
 		<</timed>>
 	<<timed 180s>>
@@ -199,31 +208,109 @@ In the bottom right a chat box should open - perhaps a notification and then the
 		<</timed>>
 	<</if>>
 
-:: chatText1 [nobr]
+:: chatNotification
+<span class="button-wrapper" aria-label="Click to open Chatbox" id="remove"><<button "New message!">>
+	<<replace "#chatMount">>
+	<<include "chatText1a">>
+	<<remove "#remove">>
+	<</replace>>
+	<</button>>
+</span>
 
-	<p>Hello, I’m sending this through to you</p>
-	<p>I hope it reaches you in time. Before time is…well…gone. </p>
-	<p>Well done on finding the final item from the Signal Fire System. </p>
-	<p>This must be what TADAH were targeting </p>
-	<p>---</p>
-	<p>This moment</p>
-	<p>It must be to do with this dog</p>
-	<p>This dog found the World Cup</p>
+:: chatText1a [nobr]
+<div class="chat"><div class="messages-container" id="messagesContainer"></div></div>
+
+<<timed 2s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">User</span>
+        	<p>Hello, I’m sending this through to you</p>
+					
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 4s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="message-container" >
+        <p>I hope it reaches you in time. Before time is... well.. gone. </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 6s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="message-container" >
+      	<p>This moment</p>
+	
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 8s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="message-container" >
+<p>It must be to do with this dog</p>
+
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+	
+
+<<timed 10s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="message-container" >
+		<p>This dog found the World Cup</p>
+
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 12s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="message-container" >
 	<p>And in finding it, they saved the future. </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 14s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="message-container" >
 	<p>A dog named Pickles</p>
-	<p>---</p>
-	<p>But it seems that Pickles needs our help. </p>
-	<p>Pickles must need time. </p>
-	<p>A distraction. </p>
-	<p>A phone call. </p>
-	<p>A phone call that was not made. </p>
-	<p>---</p>
-	<p>TADAH must have blocked the call. </p>
-	<p>We must make it. </p>
-	<p>We must nudge the nudge. </p>
-	<p>Quickly we need to find the number to access the Signal Fire System. </p>
-	<p>It should be in the Chief Timer’s Logbook in the office. </p>
-	<p>Open the Signal Fire System and type it in.</p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 16s>>
+  <<append "#messagesContainer">>
+		<span class="button-wrapper" aria-label="Click a button or link to move on">
+    <<button "Next">>
+			<<replace "#chatMount">>
+	<<include "chatText1b">>
+	<</replace>>
+			<</button>>
+			</span>
+  <</append>>
+<</timed>>
+
 
 
 <<timed 3s>>
@@ -231,6 +318,150 @@ In the bottom right a chat box should open - perhaps a notification and then the
 	<<include "pwSFSIcon">>
 	<</replace>>
 	<</timed>>
+
+:: chatText1b [nobr]
+<div class="chat"><div class="messages-container" id="messagesContainer"></div></div>
+
+<<timed 2s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">User</span>
+    	<p>But it seems that Pickles needs our help. </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 4s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="message-container" >
+   	<p>Pickles must need time. </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 6s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="message-container" >
+	<p>A distraction. </p>
+   
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 8s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="message-container" >
+	<p>A phone call. </p>
+
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+	
+
+<<timed 10s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="message-container" >
+	<p>A phone call that was not made. </p>
+
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 12s>>
+  <<append "#messagesContainer">>
+			<span class="button-wrapper" aria-label="Click a button or link to move on">
+    <<button "Next">>
+			<<replace "#chatMount">>
+	<<include "chatText1c">>
+
+	<</replace>>
+			<</button>>
+			</span>
+  <</append>>
+<</timed>>
+
+
+:: chatText1c [nobr]
+<div class="chat"><div class="messages-container" id="messagesContainer"></div></div>
+
+<<timed 2s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">User</span>
+    		<p>TADAH must have blocked the call. </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 4s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="message-container" >
+ 	<p>We must make it. </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 6s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="message-container" >
+	<p>We must nudge the nudge. </p>
+   
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 8s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="message-container" >
+	<p>Quickly we need to find the number to access the Signal Fire System. </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+	
+
+<<timed 10s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="message-container" >
+	<p>It should be in the Chief Timer’s Logbook in the office. </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 12s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="message-container" >
+	<p>Open the Signal Fire System and type it in.</p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
 
 
 :: pwSFSIcon [nobr]
@@ -250,7 +481,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
        <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
 			 <<timed 1s>>
 					<<replace "#chatMount">>
-					<<include "chattext2">>
+					<<include "chatText2">>
 					<</replace>>
 				<</timed>>
        <<timed 3s>>
@@ -291,6 +522,9 @@ In the bottom right a chat box should open - perhaps a notification and then the
 				<<replace "#sfsMount">>
 <h2>Target accepted</h2>
 	<</replace>>
+			<<replace "#chatMount">>
+				<<include "chatText3">>
+			<</replace>>
 			 <</timed>>
       <</if>>
         /% CODEWORD INCORRECT %/
@@ -334,13 +568,215 @@ In the bottom right a chat box should open - perhaps a notification and then the
 
     </div>
 
-:: chattext2 [nobr]
+:: chatText2 [nobr]
+<div class="chat"><div class="messages-container" id="messagesContainer"></div></div>
+<<timed 2s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">User</span>
+    <p>Yes – that is the pin. It looks like the number we need. </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
 
-<p>Yes – that is the pin. It looks like the number we need. </p>
+<<timed 4s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="message-container" >
 <p>Now we need to find the name of the person we need to call. </p>
-<p>--- </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 6s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="message-container" >
 <p>The information should be nearby. Check the walls. </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 8s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="message-container" >
 <p>Once you have found the name of who looked after Pickles enter it into the Signal Fire System. </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+:: chatText3 [nobr]
+<div class="chat"><div class="messages-container" id="messagesContainer"></div></div>
+
+<<timed 2s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">User</span>
+    		<p>Yes, that’s it, David Corbett.  </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 4s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="message-container" >
+ 	<p>Ok, now is the time to Nudge the past. </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 6s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="message-container" >
+	<p>You have the specific name. You have the number. </p>
+   
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 8s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="message-container" >
+	<p>I’m going to give you the password to enter the SFS conduit nearby - 8910 </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+	
+
+<<timed 10s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="message-container" >
+	<p>Open the SFS conduit  and type in the number to make the call – 07480 786415 </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 12s>>
+  <<append "#messagesContainer">>
+			<span class="button-wrapper" aria-label="Click a button or link to move on">
+    <<button "Next">>
+			<<replace "#chatMount">>
+	<<include "chatText3b">>
+
+	<</replace>>
+			<</button>>
+			</span>
+  <</append>>
+<</timed>>
+
+
+:: chatText3b [nobr]
+<div class="chat"><div class="messages-container" id="messagesContainer"></div></div>
+
+<<timed 2s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">User</span>
+    		<p>Answer the call.</p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 4s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="message-container" >
+ 	<p>You need to keep Corbett on the line. </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 6s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="message-container" >
+	<p>You can’t let him come off the phone. </p>
+   
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 8s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="message-container" >
+	<p>30 seconds.  </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+	
+
+<<timed 10s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="message-container" >
+	<p>Keep him on the phone for 30 seconds. </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 12s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="message-container" >
+	<p>30 seconds to give Pickles time to find the World Cup. </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 14s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="message-container" >
+	<p>30 seconds to save the MoTT.  </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 16s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="message-container" >
+	<p>Time to save Time. </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+
 
 
 :: video8[nobr]
@@ -377,6 +813,25 @@ VIDEO 8
 
 	</main>
 </div>
+
+:: chatText4 [nobr]
+<div class="chat"><div class="messages-container" id="messagesContainer"></div></div>
+
+<<timed 0.1s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
+      <div class="message-container" >
+        <span class="sender">User</span>
+    				<p>Give the Pickles Dog Collar back to my friend in the Cabinet Table and they may give you something in return...</p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+
 
 :: pwPillar [nobr]
 /* TODO CHECK ACCESS  */
@@ -456,7 +911,7 @@ VIDEO 2
 
 :: footer [nobr]
 
-<footer><nav class="right">
+<footer><nav class="left">
 
 <div id="back" class="button-wrapper"><<back>></div></nav></footer>
 
@@ -469,12 +924,6 @@ VIDEO 2
 
 :: footerdesktop [nobr]
 
-<footer><nav class="right" id="remove">
-<span class="button-wrapper" aria-label="Click to open Chatbox"><<button "Chatbox">>
-	<<replace "#chatMount">>
-	<<include "chatText1">>
-	<<remove "#remove">>
-	<</replace>>
-	<</button>>
-</span>
+<footer><nav class="right" >
+
 	</nav></footer>

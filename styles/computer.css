@@ -1,5 +1,35 @@
+.pwBox-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.codeword-wrapper.pwBox {
+  background: beige;
+  padding: 2rem;
+  border-radius: 2rem;
+  color: black;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  h3 {
+    margin-block-end: 0;
+  }
+  button {
+    background-color: var(--blue);
+    color: white;
+    border-radius: 1rem;
+  }
+  button:hover {
+    background-color: var(--orange);
+  }
+}
+
 /* SHOW NOTHING ON A PHONE  */
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .audio-container {
     display: none !important;
   }
@@ -16,4 +46,86 @@
   .multiple-btn-wrapper {
     display: none !important;
   }
+}
+
+/* DESKTOP */
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "file . chat"
+    "sfs . chat"
+    ". . chat";
+  grid-template-columns: 1fr 3fr 3fr;
+  grid-template-rows: 1fr 0.5fr 1fr;
+  height: 100vh;
+  gap: 2rem;
+}
+
+.sfsMount {
+  grid-area: sfs;
+  width: fit-content;
+}
+
+.fileMount {
+  grid-area: file;
+  width: fit-content;
+}
+
+.chatMount {
+  grid-area: chat;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+}
+
+/* CHAT  */
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: #f5deb34f;
+  border-radius: 1rem;
+  justify-content: space-between;
+  align-items: end;
+  overflow: scroll;
+}
+
+.chat > .messages-container {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+.chat > .messages-container > .message {
+  display: flex;
+  gap: 1rem;
+  background-color: rgb(203, 198, 198);
+  margin-block-end: 1rem;
+  border-radius: 1rem;
+  color: black;
+  padding: 1rem;
+  width: fit-content;
+}
+
+.chat > .messages-container > .message > .avatar {
+  max-width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.chat > .messages-container > .message > .message-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.chat > .messages-container > .message > .message-container > .sender {
+  font-size: 1.2rem;
+}
+
+.chat > .messages-container > .message > .message-container > p {
+  margin-block-end: 0;
+  font-size: 1.8rem;
+  line-height: 2.5rem;
 }
