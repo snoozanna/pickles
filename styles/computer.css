@@ -1,0 +1,19 @@
+/* SHOW NOTHING ON A PHONE  */
+@media screen and (max-width: 400px) {
+  .audio-container {
+    display: none !important;
+  }
+  main {
+    display: none !important;
+  }
+  .phone-warning {
+    display: initial;
+    text-align: center;
+  }
+  .phone-warning > p {
+    text-align: center;
+  }
+  .multiple-btn-wrapper {
+    display: none !important;
+  }
+}
