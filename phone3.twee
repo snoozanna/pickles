@@ -1,0 +1,312 @@
+:: StoryTitle
+Pickles - National Archives - Phone 2
+
+
+:: StoryData
+{
+	"ifid": "AC7935DC-C73A-435D-A36C-3A7B20C56850",
+	"format": "SugarCube",
+	"format-version": "2.36.1",
+	"start": "video6",
+	"zoom": 0.6
+}
+
+
+:: Story Stylesheet [stylesheet]
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Fondamento:ital@1&family=Italianno&family=Cairo:wght@500&family=Noto+Sans+Mono:wght@700&family=Tangerine:wght@400;700&family=IM+Fell+Double+Pica+SC&family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=Niconne&family=Montserrat:wght@400;800&display=swap');
+
+@import url("/styles/generics.css");
+@import url("/styles/styles.css");
+@import url("/styles/twine.css");
+@import url("/styles/phone.css");
+
+
+:: Story JavaScript [script]
+UIBar.destroy();
+
+
+
+// TOUCHEVENTS 
+// taken from https://developer.mozilla.org/en-US/docs/Web/API/Touch_events  
+setup.startup = () =>  {
+  const ongoingTouches = [];
+  console.log(ongoingTouches)
+
+const handleStart = (evt) =>{
+  evt.preventDefault();
+  // log("touchstart.");
+  const initial = document.getElementById("initial");
+  const stat = document.getElementById("stat");
+    const reveal = document.getElementById("reveal");
+    //  reveal.classList.add("transparent");  
+     initial.classList.add("transparent");  
+     console.log(reveal)
+
+}
+
+const handleMove = (evt) => {
+  evt.preventDefault();
+  
+}
+
+const handleEnd = (evt) => {
+  evt.preventDefault();
+  // log("touchend");
+   const initial = document.getElementById("initial");
+    const reveal = document.getElementById("reveal");
+    //  initial.classList.remove("hide"); 
+     initial.classList.remove("transparent");  
+  // initial.classList.remove("hide")  
+  //   reveal.classList.add("hide");  
+  
+}
+
+const handleCancel = (evt) => {
+  evt.preventDefault();
+  // log("touchcancel.");
+  const touches = evt.changedTouches;
+
+  for (let i = 0; i < touches.length; i++) {
+    let idx = ongoingTouchIndexById(touches[i].identifier);
+    ongoingTouches.splice(idx, 1); // remove it; we're done
+  }
+}
+
+function colorForTouch(touch) {
+  // let r = touch.identifier % 16;
+  // let g = Math.floor(touch.identifier / 3) % 16;
+  // let b = Math.floor(touch.identifier / 7) % 16;
+  // r = r.toString(16); // make it a hex digit
+  // g = g.toString(16); // make it a hex digit
+  // b = b.toString(16); // make it a hex digit
+  // const color = `#${r}${g}${b}`;
+    const color = `#666`;
+  return color;
+}
+
+
+function copyTouch({ identifier, pageX, pageY }) {
+  return { identifier, pageX, pageY };
+}
+function ongoingTouchIndexById(idToFind) {
+  for (let i = 0; i < ongoingTouches.length; i++) {
+    const id = ongoingTouches[i].identifier;
+
+    if (id === idToFind) {
+      return i;
+    }
+  }
+  return -1; // not found
+}
+
+function log(msg) {
+  const container = document.getElementById("log");
+  container.textContent = `${msg} \n${container.textContent}`;
+}
+
+
+    const el = document.getElementById("initial");
+  el.addEventListener("touchstart", handleStart);
+  // el.addEventListener("touchend", handleEnd);
+  // el.addEventListener("touchcancel", handleCancel);
+  // el.addEventListener("touchmove", handleMove);
+  // log("Initialized.", el);
+}
+// document.addEventListener("DOMContentLoaded", startup);
+
+setup.requestCameraPermission = () => {
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+      navigator.mediaDevices.getUserMedia({ video: true })
+        .then(function(stream) {
+          // Camera permission granted, do something with the camera stream
+          alert('Camera permission granted!');
+        })
+        .catch(function(error) {
+          // Camera permission denied
+          alert('Camera permission denied: ' + error.message);
+        });
+    } else {
+      alert('getUserMedia is not supported on this browser');
+    }
+  }
+
+
+:: Start [nobr] {"position":"134,244.33333333333337","size":"100,100"}
+
+
+  <div class="wrapper audio" id="mount">
+	<div class="phone-warning"><p>Phone</p></div>
+<div class="multiple-btn-wrapper">
+	<span aria-label="Click Button to begin" class="button-wrapper">
+		<<button "Begin">>
+			<<goto "audioChoice">>
+		<</button>>
+	</span>
+
+	
+</div>
+  </div >
+
+:: header [nobr]
+<header>
+	<div class="logo-wrapper"><img src="assets/img/na-logo.png" alt="The National Archives Logo" class="logo na" aria-hidden="true"></div> </header>
+
+
+
+
+:: video6[nobr]
+<<set $prevpass to "video6">>
+<<set $passage to "video6">>
+<<set $nextpass to "cabinet4">>
+/* VIDEO  */
+VIDEO 6
+<div class="wrapper">
+	<main id="main" class="video"><<set $title to "V6">>
+	<div id="video" role="video" class="video-wrapper"  aria-label="MOTT Training 6 video"><iframe src="https://player.vimeo.com/video/640381678?h=9ce4d85b97&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="MOTT Training 6"></iframe></div>
+	</main>
+		<footer><nav><div id="back" class="button-wrapper"><<link "Back" $prevpass>><</link>></div><div id="text"></div></nav></footer>
+</div>
+<<silently>>
+<<timed 0.1s t8n>><<append "#text">><br><span class="button-wrapper" aria-label="Click a button or link to move on"><<button "Next" $nextpass>><</button>></span><</append>> <</timed>>
+<</silently>>
+
+
+
+:: cabinet4 [nobr]
+<<set $prevpass to "cabinet3">>
+<<set $passage to "cabinet4">>
+<<set $nextpass to "cabinet5">>
+<div class="wrapper">
+	<<include "header">>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+<p>Right, time to finish this mission.</p> 
+<p>Hand back the transcript to the librarian and then look for the wooden cabinet in between the R.E.D. desk and the cabinet table. It seems the SFS has sent the briefcase there. </p>
+
+<p>To get in you’ll need to [TBC] </p>
+<p>Click below when the cabinet is open. </p>
+ <span class="button-wrapper" aria-label="Click a button or link to move on">
+      <<button [[It's open|$nextpass]]>><</button>>
+    </span>
+
+	</main>
+	<<include "footer">>
+</div>
+
+:: cabinet5 [nobr]
+<<set $prevpass to "cabinet4">>
+<<set $passage to "cabinet5">>
+<<set $nextpass to "video7">>
+<div class="wrapper">
+	<<include "header">>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+<p>The Signal Fire System says I need to enter the note that is in the briefcase. </p>
+<p>Open it up and send me what is inside. </p>
+<p>It should be filled with bank notes according to the records here at the archives. </p>
+
+  <<include "pwCabinet">>
+	</main>
+	<<include "footer">>
+</div>
+
+
+:: pwCabinet [nobr]
+<div id="codewordWrapper" class="codeword-wrapper">
+  <label for="textbox--password" tabindex="0" ><span aria-label="Enter the word below" role="label">Enter the word below</span></label>
+  /% CODEWORD INPUT %/
+   <div class="code-input">
+     <<textbox "_password" "" >>
+    </div>
+   <span class="button-wrapper" aria-label="Click Button to go Check your answer">
+     <<button "Enter">>  
+   /% STANDARDISE INPUT %/
+       <<set _password to _password.toUpperCase()>>
+   /% CODEWORD CORRECT %/
+       <<if _password isnot "" and _password is "TADAH">>
+       <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+       <<timed 3s>><<goto $nextpass>><</timed>>
+      <</if>>
+        /% CODEWORD INCORRECT %/
+     <<if _password isnot "" and _password is not "TADAH">>
+        <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
+      <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+        <</if>><</button>> 
+     </span>
+
+   
+    /% CODEWORD FEEDBACK %/
+    <div id="coderesult"></div>
+
+    </div>
+
+
+
+:: video7[nobr]
+<<set $prevpass to "cabinet5">>
+<<set $passage to "video7">>
+<<set $nextpass to "lockers1">>
+/* VIDEO  */
+VIDEO 7
+<div class="wrapper">
+	<main id="main" class="video"><<set $title to "V6">>
+	<div id="video" role="video" class="video-wrapper"  aria-label="MOTT Training 6 video"><iframe src="https://player.vimeo.com/video/640381678?h=9ce4d85b97&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="MOTT Training 6"></iframe></div>
+	</main>
+		<footer><nav><div id="back" class="button-wrapper"><<link "Back" $prevpass>><</link>></div><div id="text"></div></nav></footer>
+</div>
+<<silently>>
+<<timed 0.1s t8n>><<append "#text">><br><span class="button-wrapper" aria-label="Click a button or link to move on"><<button "Next" $nextpass>><</button>></span><</append>> <</timed>>
+<</silently>>
+
+
+:: lockers1 [nobr]
+<<set $prevpass to "video7">>
+<<set $passage to "lockers1">>
+<<set $nextpass to "lockers2">>
+<div class="wrapper">
+	<<include "header">>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+<p>I hope this can reach you in time…</p>
+<p>Watch out for TADAH agents and to try to blend in – I know, pretend you are just visiting The National Archives today! </p>
+<p>I’ll send you details to log in remotely to the Chief Timer’s computer. You’ll need a password to access it. </p>
+
+<span class="button-wrapper" aria-label="Click a button or link to move on">
+      <<button [[Next|$nextpass]]>><</button>>
+    </span>
+
+	</main>
+	<<include "footer">>
+</div>
+
+
+:: lockers2 [nobr]
+<<set $prevpass to "lockers1">>
+<<set $passage to "lockers2">>
+<<set $nextpass to "video7">>
+<div class="wrapper">
+	<<include "header">>
+	<main id="main" class="">
+	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+
+<p>Find my friend, they should be by the cabinet table. They will have a MoTT badge on and have a MoTT tote bag. They can help you.</p>
+<p>They need to know they can trust you. Say to them </p>
+<p>Do you have the time?</p>
+<p>If they are the ones you are looking for they should respond with the phrase</p>
+<p>Tick Tock Tick Tock</p>
+<p>I’m losing the feed.</p>
+[the mobile slowly fades]
+
+
+	</main>
+	<<include "footer">>
+</div>
+
+
+:: footer [nobr]
+
+<footer><nav class="right"><div id="back" class="button-wrapper"><<back>></div></nav></footer>

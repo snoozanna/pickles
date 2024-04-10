@@ -10,4 +10,7 @@ source ~/.bash_profile &&
 tweego -o phone2.html phone2.twee -w
 
 source ~/.bash_profile &&
+tweego -o phone3.html phone3.twee -w
+
+source ~/.bash_profile &&
 tweego -o computer.html computer.twee -w
