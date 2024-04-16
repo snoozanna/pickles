@@ -228,9 +228,37 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 /* TODO Desktop has messages, locked folder and Signal Fire System logo. It could have some other folders to make it seem busier. 
 In the bottom right a chat box should open - perhaps a notification and then they click on it.  */
 
-&lt;div class=&quot;wrapper cogs &quot;&gt;
+&lt;div class=&quot;wrapper cogs desktop&quot;&gt;
+&lt;header&gt;
+  &lt;div class=&quot;header-item menus&quot;&gt;
+    &lt;span&gt;File&lt;/span&gt;
+    &lt;span&gt;Edit&lt;/span&gt;
+    &lt;span&gt;Diary&lt;/span&gt;
+    &lt;span&gt;Email Inbox&lt;/span&gt;
+    &lt;span&gt;Help&lt;/span&gt;
+  &lt;/div&gt;
+   &lt;div class=&quot;header-item symbols&quot;&gt;
+    &lt;span&gt;&lt;img src=&quot;assets/img/bat.png&quot;&gt;&lt;/span&gt;
+   &lt;span&gt;&lt;img src=&quot;assets/img/wifiW.png&quot;&gt;&lt;/span&gt;
+    &lt;span&gt;&lt;img src=&quot;assets/img/search.png&quot;&gt;&lt;/span&gt;
+    &lt;span&gt;Date&lt;/span&gt;
+    &lt;span&gt;Time&lt;/span&gt;
+  &lt;/div&gt;
+  
+&lt;/header&gt;
+
 	/* &lt;&lt;include &quot;header&quot;&gt;&gt; */
 	&lt;main id=&quot;main&quot; class=&quot;grid-container&quot; &gt;
+ &lt;div class=&quot;folder-container&quot;&gt; &lt;img src=&quot;assets/img/Green_Desktop_Folder.png&quot;/&gt;
+ &lt;span&gt;Receipts Folder&lt;/span&gt;&lt;/div&gt;
+  &lt;div class=&quot;folder-container&quot;&gt; &lt;img src=&quot;assets/img/Green_Desktop_Folder.png&quot;/&gt;
+ &lt;span&gt;Project Management&lt;/span&gt;&lt;/div&gt;
+ &lt;div class=&quot;folder-container&quot;&gt; &lt;img src=&quot;assets/img/Green_Desktop_Folder.png&quot;/&gt;
+ &lt;span&gt;Team Meeting Minutes&lt;/span&gt;&lt;/div&gt;
+
+  &lt;div class=&quot;doc-container&quot;&gt; &lt;img src=&quot;assets/img/4468641.png&quot;/&gt;
+ &lt;span&gt;Document 1&lt;/span&gt;&lt;/div&gt;
+
 	
 	&lt;div id=&quot;chatMount&quot; class=&quot;chatMount&quot;&gt;	
 	&lt;&lt;timed 2s&gt;&gt;
@@ -238,7 +266,8 @@ In the bottom right a chat box should open - perhaps a notification and then the
 		&lt;&lt;/timed&gt;&gt;&lt;/div&gt;
 	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
 
-	&lt;div id=&quot;sfsMount&quot; class=&quot;sfsMount&quot;&gt;&lt;/div&gt;
+	&lt;div id=&quot;sfsMount&quot; class=&quot;sfsMount&quot;&gt;   &lt;&lt;include &quot;SFSLocked&quot;&gt;&gt;&lt;/div&gt;
+
 	&lt;div id=&quot;fileMount&quot; class=&quot;fileMount&quot;&gt;&lt;&lt;include &quot;pwFile&quot;&gt;&gt;
 &lt;/div&gt;
 
@@ -500,7 +529,13 @@ In the bottom right a chat box should open - perhaps a notification and then the
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="pwSFSIcon" tags="nobr" position="225,225" size="100,100">&lt;h3&gt;SFS - Locked &lt;/h3&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="SFSLocked" tags="nobr" position="225,225" size="100,100">&lt;h2&gt;Signal Fire System&lt;/h2&gt; 
+&lt;&lt;button [img[&quot;assets/img/signal-w.png&quot;]]&gt;&gt;
+  &lt;&lt;replace &quot;#sfsMount&quot;&gt;&gt;
+  &lt;&lt;include &quot;pwSFSIcon&quot;&gt;&gt;
+  &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/button&gt;&gt;
+&lt;h2&gt;Locked&lt;/h2&gt;</tw-passagedata><tw-passagedata pid="13" name="pwSFSIcon" tags="nobr" position="350,225" size="100,100">&lt;h3&gt;SFS - Locked &lt;/h3&gt;
 &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
   &lt;label for=&quot;textbox--password&quot; tabindex=&quot;0&quot; &gt;&lt;span aria-label=&quot;Enter the word below&quot; role=&quot;label&quot;&gt;Enter the word below&lt;/span&gt;&lt;/label&gt;
   /% CODEWORD INPUT %/
@@ -536,7 +571,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
     /% CODEWORD FEEDBACK %/
     &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
 
-    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="pwSFSTarget" tags="nobr" position="350,225" size="100,100">&lt;h3&gt;SFS - Unlocked&lt;/h3&gt;
+    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="pwSFSTarget" tags="nobr" position="475,225" size="100,100">&lt;h3&gt;SFS - Unlocked&lt;/h3&gt;
 &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
   &lt;label for=&quot;textbox--password&quot; tabindex=&quot;0&quot; &gt;&lt;span aria-label=&quot;Enter the word below&quot; role=&quot;label&quot;&gt;Enter target:&lt;/span&gt;&lt;/label&gt;
   /% CODEWORD INPUT %/
@@ -568,7 +603,8 @@ In the bottom right a chat box should open - perhaps a notification and then the
     /% CODEWORD FEEDBACK %/
     &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
 
-    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="pwFile" tags="nobr" position="475,225" size="100,100">&lt;h3&gt;Locked File&lt;/h3&gt;
+    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="pwFile" tags="nobr" position="600,225" size="100,100">&lt;div class=&quot;doc-container&quot;&gt; &lt;img src=&quot;assets/img/4468641.png&quot;/&gt;
+ &lt;span&gt;Locked File&lt;/span&gt;
 &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
   &lt;label for=&quot;textbox--password&quot; tabindex=&quot;0&quot; &gt;&lt;span aria-label=&quot;Enter password&quot; role=&quot;label&quot;&gt;Enter password:&lt;/span&gt;&lt;/label&gt;
   /% CODEWORD INPUT %/
@@ -595,7 +631,8 @@ In the bottom right a chat box should open - perhaps a notification and then the
     /% CODEWORD FEEDBACK %/
     &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
 
-    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="chatText2" tags="nobr" position="600,225" size="100,100">&lt;div class=&quot;chat&quot;&gt;&lt;div class=&quot;messages-container&quot; id=&quot;messagesContainer&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="chatText2" tags="nobr" position="725,225" size="100,100">&lt;div class=&quot;chat&quot;&gt;&lt;div class=&quot;messages-container&quot; id=&quot;messagesContainer&quot;&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;&lt;timed 2s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
@@ -638,7 +675,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="chatText3" tags="nobr" position="725,225" size="100,100">&lt;div class=&quot;chat&quot;&gt;&lt;div class=&quot;messages-container&quot; id=&quot;messagesContainer&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="chatText3" tags="nobr" position="850,225" size="100,100">&lt;div class=&quot;chat&quot;&gt;&lt;div class=&quot;messages-container&quot; id=&quot;messagesContainer&quot;&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;&lt;timed 2s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
@@ -707,7 +744,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
 			&lt;&lt;/button&gt;&gt;
 			&lt;/span&gt;
   &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="chatText3b" tags="nobr" position="850,225" size="100,100">&lt;div class=&quot;chat&quot;&gt;&lt;div class=&quot;messages-container&quot; id=&quot;messagesContainer&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="chatText3b" tags="nobr" position="975,225" size="100,100">&lt;div class=&quot;chat&quot;&gt;&lt;div class=&quot;messages-container&quot; id=&quot;messagesContainer&quot;&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;&lt;timed 2s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
@@ -793,7 +830,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="video8" tags="nobr" position="975,225" size="100,100">&lt;&lt;set $prevpass to &quot;desktop&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="19" name="video8" tags="nobr" position="1100,225" size="100,100">&lt;&lt;set $prevpass to &quot;desktop&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;video8&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;desktop&quot;&gt;&gt;
 /* VIDEO  */
@@ -811,7 +848,7 @@ VIDEO 8
 &lt;&lt;goto $nextpass&gt;&gt;
 &lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;&lt;/append&gt;&gt; &lt;&lt;/timed&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
-&gt;&gt;</tw-passagedata><tw-passagedata pid="19" name="pillars1" tags="nobr" position="1100,225" size="100,100">&lt;&lt;set $prevpass to &quot;video1&quot;&gt;&gt;
+&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="pillars1" tags="nobr" position="1225,225" size="100,100">&lt;&lt;set $prevpass to &quot;video1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;pillars1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;video2&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs&quot;&gt;
@@ -822,7 +859,7 @@ VIDEO 8
 &lt;&lt;include &quot;pwPillar&quot;&gt;&gt;
 
 	&lt;/main&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="chatText4" tags="nobr" position="1225,225" size="100,100">&lt;div class=&quot;chat&quot;&gt;&lt;div class=&quot;messages-container&quot; id=&quot;messagesContainer&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="21" name="chatText4" tags="nobr" position="100,350" size="100,100">&lt;div class=&quot;chat&quot;&gt;&lt;div class=&quot;messages-container&quot; id=&quot;messagesContainer&quot;&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;&lt;timed 0.1s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
@@ -836,7 +873,7 @@ VIDEO 8
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="pwPillar" tags="nobr" position="100,350" size="100,100">/* TODO CHECK ACCESS  */
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="pwPillar" tags="nobr" position="225,350" size="100,100">/* TODO CHECK ACCESS  */
 &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
 &lt;div id=&quot;resultbutton&quot;&gt;
   /% CODEWORD INPUT %/
@@ -870,7 +907,7 @@ VIDEO 8
   &lt;&lt;/if&gt;&gt;
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="video2" tags="nobr" position="225,350" size="100,100">&lt;&lt;set $prevpass to &quot;pillars1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="video2" tags="nobr" position="350,350" size="100,100">&lt;&lt;set $prevpass to &quot;pillars1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;video2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;pillars2&quot;&gt;&gt;
 /* VIDEO  */
@@ -883,7 +920,7 @@ VIDEO 2
 &lt;/div&gt;
 &lt;&lt;silently&gt;&gt;
 &lt;&lt;timed 0.1s t8n&gt;&gt;&lt;&lt;append &quot;#text&quot;&gt;&gt;&lt;br&gt;&lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;&lt;&lt;button &quot;Next&quot; $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;&lt;/append&gt;&gt; &lt;&lt;/timed&gt;&gt;
-&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="pillars2" tags="nobr" position="350,350" size="100,100">&lt;&lt;set $prevpass to &quot;video2&quot;&gt;&gt;
+&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="pillars2" tags="nobr" position="475,350" size="100,100">&lt;&lt;set $prevpass to &quot;video2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;pillars2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;onboarding3&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs&quot;&gt;
@@ -903,11 +940,11 @@ VIDEO 2
 
 &lt;&lt;timed 180s&gt;&gt;
 	&lt;&lt;goto &quot;Start&quot;&gt;&gt;
-	&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="footer" tags="nobr" position="475,350" size="100,100">&lt;footer&gt;&lt;nav class=&quot;left&quot;&gt;
+	&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="footer" tags="nobr" position="600,350" size="100,100">&lt;footer&gt;&lt;nav class=&quot;left&quot;&gt;
 
-&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;&lt;&lt;back&gt;&gt;&lt;/div&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="25" name="footerentrance" tags="nobr" position="600,350" size="100,100">&lt;footer&gt;&lt;nav class=&quot;right&quot;&gt;
+&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;&lt;&lt;back&gt;&gt;&lt;/div&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="26" name="footerentrance" tags="nobr" position="725,350" size="100,100">&lt;footer&gt;&lt;nav class=&quot;right&quot;&gt;
 	&lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;&lt;&lt;button [[&quot;Chief Timers Computer&quot;|$nextpass]]&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
-	&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="26" name="footerdesktop" tags="nobr" position="725,350" size="100,100">&lt;footer&gt;&lt;nav class=&quot;right&quot; &gt;
+	&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="27" name="footerdesktop" tags="nobr" position="850,350" size="100,100">&lt;footer&gt;&lt;nav class=&quot;right&quot; &gt;
 
 	&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">

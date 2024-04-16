@@ -176,9 +176,37 @@ UIBar.destroy();
 /* TODO Desktop has messages, locked folder and Signal Fire System logo. It could have some other folders to make it seem busier. 
 In the bottom right a chat box should open - perhaps a notification and then they click on it.  */
 
-<div class="wrapper cogs ">
+<div class="wrapper cogs desktop">
+<header>
+  <div class="header-item menus">
+    <span>File</span>
+    <span>Edit</span>
+    <span>Diary</span>
+    <span>Email Inbox</span>
+    <span>Help</span>
+  </div>
+   <div class="header-item symbols">
+    <span><img src="assets/img/bat.png"></span>
+   <span><img src="assets/img/wifiW.png"></span>
+    <span><img src="assets/img/search.png"></span>
+    <span>Date</span>
+    <span>Time</span>
+  </div>
+  
+</header>
+
 	/* <<include "header">> */
 	<main id="main" class="grid-container" >
+ <div class="folder-container"> <img src="assets/img/Green_Desktop_Folder.png"/>
+ <span>Receipts Folder</span></div>
+  <div class="folder-container"> <img src="assets/img/Green_Desktop_Folder.png"/>
+ <span>Project Management</span></div>
+ <div class="folder-container"> <img src="assets/img/Green_Desktop_Folder.png"/>
+ <span>Team Meeting Minutes</span></div>
+
+  <div class="doc-container"> <img src="assets/img/4468641.png"/>
+ <span>Document 1</span></div>
+
 	
 	<div id="chatMount" class="chatMount">	
 	<<timed 2s>>
@@ -186,7 +214,8 @@ In the bottom right a chat box should open - perhaps a notification and then the
 		<</timed>></div>
 	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
 
-	<div id="sfsMount" class="sfsMount"></div>
+	<div id="sfsMount" class="sfsMount">   <<include "SFSLocked">></div>
+
 	<div id="fileMount" class="fileMount"><<include "pwFile">>
 </div>
 
@@ -463,8 +492,20 @@ In the bottom right a chat box should open - perhaps a notification and then the
   <</append>>
 <</timed>>
 
+:: SFSLocked [nobr]
+<h2>Signal Fire System</h2> 
+<<button [img["assets/img/signal-w.png"]]>>
+  <<replace "#sfsMount">>
+  <<include "pwSFSIcon">>
+  <</replace>>
+<</button>>
+<h2>Locked</h2> 
+
+
 
 :: pwSFSIcon [nobr]
+
+
 <h3>SFS - Locked </h3>
 <div id="codewordWrapper" class="codeword-wrapper">
   <label for="textbox--password" tabindex="0" ><span aria-label="Enter the word below" role="label">Enter the word below</span></label>
@@ -539,7 +580,8 @@ In the bottom right a chat box should open - perhaps a notification and then the
     </div>
 
 :: pwFile [nobr]
-<h3>Locked File</h3>
+  <div class="doc-container"> <img src="assets/img/4468641.png"/>
+ <span>Locked File</span>
 <div id="codewordWrapper" class="codeword-wrapper">
   <label for="textbox--password" tabindex="0" ><span aria-label="Enter password" role="label">Enter password:</span></label>
   /% CODEWORD INPUT %/
@@ -567,6 +609,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
     <div id="coderesult"></div>
 
     </div>
+  </div>
 
 :: chatText2 [nobr]
 <div class="chat"><div class="messages-container" id="messagesContainer"></div></div>
