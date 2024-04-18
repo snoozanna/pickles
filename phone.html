@@ -196,11 +196,24 @@ function log(msg) {
 // document.addEventListener("DOMContentLoaded", startup);
 
 setup.requestCameraPermission = () => {
+  const video = document.getElementById("video");
+  console.log("video", video)
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-      navigator.mediaDevices.getUserMedia({ video: true })
+      navigator.mediaDevices.getUserMedia({
+  audio: false,
+  video: {
+    facingMode: { ideal: "environment" },
+    height: 1280, width: 720
+  },
+})
         .then(function(stream) {
           // Camera permission granted, do something with the camera stream
           alert('Camera permission granted!');
+  
+         video.srcObject = stream;
+         video.onloadedmetadata = () => {
+         video.play();
+           };
         })
         .catch(function(error) {
           // Camera permission denied
@@ -520,30 +533,62 @@ VIDEO 3
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="mapintro2" tags="nobr" position="850,225" size="100,100">&lt;&lt;set $prevpass to &quot;mapintro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;mapintro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;ARIntro1&quot;&gt;&gt;
+&lt;&lt;set $currentInstructionIndex = 1&gt;&gt;
+&lt;&lt;set $instructions = {
+    1: { text: &quot;It is 11.01 – time to go&quot;, coords: &quot;one&quot; },
+    2: { text: &quot;Walk 19 paces forward. If I’m right, there should be a mark on the floor.&quot;, coords: &quot;two&quot; },
+    3: { text: &quot;Well done you’ve made it through the ‘emergency exit&#39;&quot;, coords: &quot;two&quot; },
+    4: { text: &quot;Use the cover of the pillar to your left.&quot;, coords: &quot;three&quot; },
+    5: { text: &quot;We need to watch out for security. Be careful!&quot;, coords: &quot;three&quot; },
+    6: { text: &quot;Hold it there’s someone ahead. Hold. Use the sounds of the church nearby, keep very quiet. There should be a postbox here. When I say go, move towards it, and stay close.&quot;, coords: &quot;four&quot; },
+    7: { text: &quot;GO.&quot;, coords: &quot;four&quot; },
+    8: { text: &quot;Well done but we’re not there yet. There’s toilets near you - they should be on your left. The lift is where we need to go - that’s to your right.&quot;, coords: &quot;four&quot; },
+    9: { text: &quot;Take 5 steps towards the lift…&quot;, coords: &quot;four&quot; },
+    10: { text: &quot;Hold it. Stay very still for 10 seconds. There is a security guard who is about to go to the toilet. Don’t move.&quot;, coords: &quot;four&quot; },
+    11: { text: &quot;He’s gone. Clearly in a rush. Move towards the wall near the lift, that is where the treasure is. Hold when you are there.&quot;, coords: &quot;five&quot; },
+    12: { text: &quot;Right, we must be careful now or we’ll set off the alarms. This is what we need. Now is the time, touch the cup.&quot;, coords: &quot;five&quot; }
+}&gt;&gt;
+
 &lt;div class=&quot;wrapper cogs&quot;&gt;
-	&lt;&lt;include &quot;header&quot;&gt;&gt;
-	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+
+	&lt;main id=&quot;main&quot; class=&quot;map&quot;&gt;
+
 	&lt;div&gt;
-//A map loads and we see our position on it – the map will replicate where we are in TNA but also the 1966 Stamp Collection.// 
+&lt;div class=&quot;map-container&quot; id=&quot;mapContainer&quot;&gt;
+&lt;img src=&quot;assets/img/map.jpeg&quot;/&gt;
+&lt;div class=&quot;location one&quot; id=&quot;location&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;instruction&quot; id=&quot;instruction&quot;&gt;
+&lt;p&gt;&lt;&lt;print $currentInstructionIndex&gt;&gt;.
+&lt;&lt;print $instructions[$currentInstructionIndex].text&gt;&gt;&lt;/p&gt;
 
-&lt;p&gt;1. ‘It is 11.01 – time to go’ &lt;/p&gt;
-&lt;p&gt;2. Walk 19 paces forward. If I’m right, there should be a mark on the floor. &lt;/p&gt;
-&lt;p&gt;3. ‘Well done you’ve made it through the ‘emergency exit’ &lt;/p&gt;
-&lt;p&gt;4. Use the cover of the pillar to your left. &lt;/p&gt;
-&lt;p&gt;5. We need to watch out for security. Be careful!&lt;/p&gt;
-&lt;p&gt;6. Hold it there’s someone ahead. Hold. Use the sounds of the church nearby, keep very quiet. There should be a postbox here, When I say go, move towards it, and stay close. &lt;/p&gt;
-&lt;p&gt;7. GO. &lt;/p&gt;
-&lt;p&gt;8. Well done but we’re not there yet. There’s toilets near you - they should be on your left. The lift is where we need to go - that’s to your right.  &lt;/p&gt;
-&lt;p&gt;9.	Take 5 steps towards the lift… &lt;/p&gt;
-&lt;p&gt;10.	Hold it. Stay very still for 10 seconds. There is a security guard who is about to go to the toilet. Don’t move. &lt;/p&gt;
-&lt;p&gt;11.	He’s gone. Clearly in a rush. Move towards the wall near the lift, that is where the treasure is. Hold when you are there &lt;/p&gt;
-&lt;p&gt;12.	Right, we must be careful now or we’ll set off the alarms. This is what we need. Now, is the time, touch the cup&lt;/p&gt;
+&lt;/div&gt;
+&lt;br/&gt;
+ &lt;span class=&quot;button-wrapper&quot; id=&quot;btnMount&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
+&lt;&lt;button &quot;I&#39;m here!&quot;&gt;&gt;
+  
+&lt;&lt;set $currentInstructionIndex += 1&gt;&gt;
+  &lt;&lt;if $currentInstructionIndex &gt;= 11&gt;&gt;
+  &lt;&lt;replace &quot;#btnMount&quot;&gt;&gt;
+    &lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
+        &lt;&lt;button [[I&#39;m by the cup|$nextpass]]&gt;&gt;&lt;&lt;/button&gt;&gt;
+      &lt;/span&gt;
+    &lt;&lt;/replace&gt;&gt;
+    &lt;&lt;else&gt;&gt;
+      &lt;&lt;removeclass &quot;#location&quot; $instructions[$currentInstructionIndex].coords&gt;&gt;
+    &lt;&lt;replace &quot;#instruction&quot;&gt;&gt;
+      &lt;&lt;print $currentInstructionIndex&gt;&gt;
+      &lt;div class=&quot;instruction&quot; id=&quot;instruction&quot;&gt;
+      &lt;p&gt;&lt;&lt;print $instructions[$currentInstructionIndex].text&gt;&gt;&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;&lt;/replace&gt;&gt;
+    &lt;&lt;removeclass &quot;#location&quot; &quot;one&quot;&gt;&gt;
+    &lt;&lt;set $position to $instructions[$currentInstructionIndex].coords &gt;&gt;
+    &lt;&lt;addclass &quot;#location&quot; $position &gt;&gt;
+  &lt;&lt;/if&gt;&gt;
+&lt;&lt;/button&gt;&gt;
+&lt;/span&gt;
 
-
- &lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
-      &lt;&lt;button [[Yes|$nextpass]]&gt;&gt;&lt;&lt;/button&gt;&gt;
-    &lt;/span&gt;
 	&lt;/div&gt;
 
 	&lt;/main&gt;
@@ -563,6 +608,7 @@ VIDEO 3
 
 &lt;h1&gt;Camera Permission&lt;/h1&gt;
 &lt;p&gt;This story requires access to your camera to scan a QR code.&lt;/p&gt;
+&lt;video class=&quot;video&quot; id=&quot;video&quot;&gt;&lt;/video&gt;
 &lt;&lt;button &quot;Grant Camera Permission&quot;&gt;&gt;
 	&lt;&lt;set $s to setup.requestCameraPermission()&gt;&gt;
 	&lt;&lt;/button&gt;&gt;

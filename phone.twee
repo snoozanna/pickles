@@ -115,11 +115,24 @@ function log(msg) {
 // document.addEventListener("DOMContentLoaded", startup);
 
 setup.requestCameraPermission = () => {
+  const video = document.getElementById("video");
+  console.log("video", video)
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-      navigator.mediaDevices.getUserMedia({ video: true })
+      navigator.mediaDevices.getUserMedia({
+  audio: false,
+  video: {
+    facingMode: { ideal: "environment" },
+    height: 1280, width: 720
+  },
+})
         .then(function(stream) {
           // Camera permission granted, do something with the camera stream
           alert('Camera permission granted!');
+  
+         video.srcObject = stream;
+         video.onloadedmetadata = () => {
+         video.play();
+           };
         })
         .catch(function(error) {
           // Camera permission denied
@@ -504,35 +517,76 @@ VIDEO 3
 <<set $prevpass to "mapintro1">>
 <<set $passage to "mapintro2">>
 <<set $nextpass to "ARIntro1">>
+<<set $currentInstructionIndex = 1>>
+<<set $instructions = {
+    1: { text: "It is 11.01 – time to go", coords: "one" },
+    2: { text: "Walk 19 paces forward. If I’m right, there should be a mark on the floor.", coords: "two" },
+    3: { text: "Well done you’ve made it through the ‘emergency exit'", coords: "two" },
+    4: { text: "Use the cover of the pillar to your left.", coords: "three" },
+    5: { text: "We need to watch out for security. Be careful!", coords: "three" },
+    6: { text: "Hold it there’s someone ahead. Hold. Use the sounds of the church nearby, keep very quiet. There should be a postbox here. When I say go, move towards it, and stay close.", coords: "four" },
+    7: { text: "GO.", coords: "four" },
+    8: { text: "Well done but we’re not there yet. There’s toilets near you - they should be on your left. The lift is where we need to go - that’s to your right.", coords: "four" },
+    9: { text: "Take 5 steps towards the lift…", coords: "four" },
+    10: { text: "Hold it. Stay very still for 10 seconds. There is a security guard who is about to go to the toilet. Don’t move.", coords: "four" },
+    11: { text: "He’s gone. Clearly in a rush. Move towards the wall near the lift, that is where the treasure is. Hold when you are there.", coords: "five" },
+    12: { text: "Right, we must be careful now or we’ll set off the alarms. This is what we need. Now is the time, touch the cup.", coords: "five" }
+}>>
+
 <div class="wrapper cogs">
-	<<include "header">>
-	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+	<main id="main" class="map">
+
 	<div>
-//A map loads and we see our position on it – the map will replicate where we are in TNA but also the 1966 Stamp Collection.// 
+<div class="map-container" id="mapContainer">
+<img src="assets/img/map.jpeg"/>
+<div class="location one" id="location"></div>
+</div>
+<div class="instruction" id="instruction">
+<p><<print $currentInstructionIndex>>.
+<<print $instructions[$currentInstructionIndex].text>></p>
 
-<p>1. ‘It is 11.01 – time to go’ </p>
-<p>2. Walk 19 paces forward. If I’m right, there should be a mark on the floor. </p>
-<p>3. ‘Well done you’ve made it through the ‘emergency exit’ </p>
-<p>4. Use the cover of the pillar to your left. </p>
-<p>5. We need to watch out for security. Be careful!</p>
-<p>6. Hold it there’s someone ahead. Hold. Use the sounds of the church nearby, keep very quiet. There should be a postbox here, When I say go, move towards it, and stay close. </p>
-<p>7. GO. </p>
-<p>8. Well done but we’re not there yet. There’s toilets near you - they should be on your left. The lift is where we need to go - that’s to your right.  </p>
-<p>9.	Take 5 steps towards the lift… </p>
-<p>10.	Hold it. Stay very still for 10 seconds. There is a security guard who is about to go to the toilet. Don’t move. </p>
-<p>11.	He’s gone. Clearly in a rush. Move towards the wall near the lift, that is where the treasure is. Hold when you are there </p>
-<p>12.	Right, we must be careful now or we’ll set off the alarms. This is what we need. Now, is the time, touch the cup</p>
+</div>
+<br/>
+ <span class="button-wrapper" id="btnMount" aria-label="Click a button or link to move on">
+<<button "I'm here!">>
+  
+<<set $currentInstructionIndex += 1>>
+  <<if $currentInstructionIndex >= 11>>
+  <<replace "#btnMount">>
+    <span class="button-wrapper" aria-label="Click a button or link to move on">
+        <<button [[I'm by the cup|$nextpass]]>><</button>>
+      </span>
+    <</replace>>
+    <<else>>
+      <<removeclass "#location" $instructions[$currentInstructionIndex].coords>>
+    <<replace "#instruction">>
+      <<print $currentInstructionIndex>>
+      <div class="instruction" id="instruction">
+      <p><<print $instructions[$currentInstructionIndex].text>></p>
+      </div>
+    <</replace>>
+    <<removeclass "#location" "one">>
+    <<set $position to $instructions[$currentInstructionIndex].coords >>
+    <<addclass "#location" $position >>
+  <</if>>
+<</button>>
+</span>
 
-
- <span class="button-wrapper" aria-label="Click a button or link to move on">
-      <<button [[Yes|$nextpass]]>><</button>>
-    </span>
 	</div>
 
 	</main>
 	<<include "footer">>
 </div>
+
+
+
+
+
+
+
+
+
 
 :: ARIntro1 [nobr]
 <<set $prevpass to "mapintro2">>
@@ -550,6 +604,7 @@ VIDEO 3
 
 <h1>Camera Permission</h1>
 <p>This story requires access to your camera to scan a QR code.</p>
+<video class="video" id="video"></video>
 <<button "Grant Camera Permission">>
 	<<set $s to setup.requestCameraPermission()>>
 	<</button>>
