@@ -342,11 +342,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
 
 
 
-<<timed 3s>>
-	<<replace "#sfsMount">>
-	<<include "pwSFSIcon">>
-	<</replace>>
-	<</timed>>
+
 
 :: chatText1b [nobr]
 <div class="chat"><div class="messages-container" id="messagesContainer"></div></div>
@@ -506,7 +502,8 @@ In the bottom right a chat box should open - perhaps a notification and then the
 :: pwSFSIcon [nobr]
 
 
-<h3>SFS - Locked </h3>
+<h2>Signal Fire System</h2> 
+<img src="assets/img/signal-w.png"/>
 <div id="codewordWrapper" class="codeword-wrapper">
   <label for="textbox--password" tabindex="0" ><span aria-label="Enter the word below" role="label">Enter the word below</span></label>
   /% CODEWORD INPUT %/
@@ -543,6 +540,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
     <div id="coderesult"></div>
 
     </div>
+  <h2>Locked</h2> 
 
 :: pwSFSTarget [nobr]
 <h3>SFS - Unlocked</h3>

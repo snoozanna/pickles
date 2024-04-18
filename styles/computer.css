@@ -102,7 +102,8 @@
   }
 }
 
-.doc-container > #codewordWrapper > .code-input {
+.doc-container > #codewordWrapper > .code-input,
+.sfsMount > #codewordWrapper > .code-input {
   input {
     min-width: inherit;
     max-width: 10rem;
@@ -116,7 +117,8 @@
   }
 }
 
-.doc-container > #codewordWrapper {
+.doc-container > #codewordWrapper,
+.sfsMount > #codewordWrapper {
   .button-wrapper {
     button {
       font-size: 1.2rem;
@@ -134,7 +136,8 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  button {
+  button,
+  img {
     background-color: transparent;
     width: 7rem;
     border: none;
