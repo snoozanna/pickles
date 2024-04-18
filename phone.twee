@@ -608,6 +608,24 @@ VIDEO 3
 
 <h1>Camera Permission</h1>
 <p>This story requires access to your camera to scan a QR code.</p>
+
+ <h1>Demo - Native camera in browsers</h1>
+
+    <!-- The `label` is attached to the hidden file input -->
+    <label for="cameraFileInput">
+      <span class="btn">Open camera</span>
+
+      <!-- The hidden file `input` for opening the native camera -->
+      <input
+        id="cameraFileInput"
+        type="file"
+        accept="image/*"
+        capture="environment"
+      />
+    </label>
+
+    <!-- displays the picture uploaded from the native camera -->
+    <img id="pictureFromCamera" />
 <video class="video" id="video"></video>
 <<button "Grant Camera Permission">>
 	<<set $s to setup.requestCameraPermission()>>
