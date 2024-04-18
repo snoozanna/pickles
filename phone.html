@@ -203,7 +203,7 @@ setup.requestCameraPermission = () => {
   audio: false,
   video: {
     facingMode: { ideal: "environment" },
-    height: 1280, width: 720
+    height: 600, width: 300
   },
 })
         .then(function(stream) {
@@ -568,7 +568,7 @@ VIDEO 3
 &lt;&lt;button &quot;I&#39;m here!&quot;&gt;&gt;
   
 &lt;&lt;set $currentInstructionIndex += 1&gt;&gt;
-  &lt;&lt;if $currentInstructionIndex &gt;= 11&gt;&gt;
+  &lt;&lt;if $currentInstructionIndex &gt;= 12&gt;&gt;
   &lt;&lt;replace &quot;#btnMount&quot;&gt;&gt;
     &lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
         &lt;&lt;button [[I&#39;m by the cup|$nextpass]]&gt;&gt;&lt;&lt;/button&gt;&gt;
