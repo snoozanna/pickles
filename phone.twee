@@ -115,6 +115,10 @@ function log(msg) {
 // document.addEventListener("DOMContentLoaded", startup);
 
 setup.requestCameraPermission = () => {
+  async function getDevices() {
+  const devices = await navigator.mediaDevices.enumerateDevices();
+  console.log("devices", devices);
+}
   const video = document.getElementById("video");
   console.log("video", video)
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
@@ -128,7 +132,7 @@ setup.requestCameraPermission = () => {
         .then(function(stream) {
           // Camera permission granted, do something with the camera stream
           alert('Camera permission granted!');
-  
+  getDevices();
          video.srcObject = stream;
          video.onloadedmetadata = () => {
          video.play();
