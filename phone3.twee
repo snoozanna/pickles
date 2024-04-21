@@ -1,5 +1,5 @@
 :: StoryTitle
-Pickles - National Archives - Phone 2
+Pickles - National Archives - Phone 3
 
 
 :: StoryData
@@ -158,26 +158,27 @@ setup.requestCameraPermission = () => {
 <<set $prevpass to "video6">>
 <<set $passage to "video6">>
 <<set $nextpass to "cabinet4">>
-/* VIDEO  */
-VIDEO 6
-<div class="wrapper">
+/* VIDEO 6 */
+<div class="wrapper landscape">
+<div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="video"><<set $title to "V6">>
 	<div id="video" role="video" class="video-wrapper"  aria-label="MOTT Training 6 video"><iframe src="https://player.vimeo.com/video/640381678?h=9ce4d85b97&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="MOTT Training 6"></iframe></div>
 	</main>
-		<footer><nav><div id="back" class="button-wrapper"><<link "Back" $prevpass>><</link>></div><div id="text"></div></nav></footer>
+<span class="button-wrapper videol" aria-label="Click a button to move back">
+  <<button "Back" $prevpass>><</button>>
+  </span>
+<span class="button-wrapper videor" aria-label="Click a button or link to move on">
+<<button "Next" $nextpass>><</button>></span>
 </div>
-<<silently>>
-<<timed 0.1s t8n>><<append "#text">><br><span class="button-wrapper" aria-label="Click a button or link to move on"><<button "Next" $nextpass>><</button>></span><</append>> <</timed>>
-<</silently>>
-
 
 
 :: cabinet4 [nobr]
 <<set $prevpass to "cabinet3">>
 <<set $passage to "cabinet4">>
 <<set $nextpass to "cabinet5">>
-<div class="wrapper">
+<div class="wrapper cogs portrait">
 	<<include "header">>
+   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
 	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
 
@@ -186,20 +187,32 @@ VIDEO 6
 
 <p>To get in you’ll need to [TBC] </p>
 <p>Click below when the cabinet is open. </p>
- <span class="button-wrapper" aria-label="Click a button or link to move on">
-      <<button [[It's open|$nextpass]]>><</button>>
-    </span>
+
 
 	</main>
-	<<include "footer">>
+	<<include "footeropen">>
 </div>
+
+:: footeropen [nobr]
+
+<footer><nav class=""><div id="back" class="button-wrapper">
+<<if passage() is not "onboarding1">>
+  <<button "Back">> 
+    <<goto $prevpass>>
+    <</button>>
+  <</if>>
+</div>
+ <span class="button-wrapper" aria-label="Click a button or link to move on">
+      <<button [[It's open|$nextpass]]>><</button>>
+    </span></nav></footer>
 
 :: cabinet5 [nobr]
 <<set $prevpass to "cabinet4">>
 <<set $passage to "cabinet5">>
 <<set $nextpass to "video7">>
-<div class="wrapper">
+<div class="wrapper cogs portrait">
 	<<include "header">>
+     <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
 	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
 
@@ -209,7 +222,7 @@ VIDEO 6
 
   <<include "pwCabinet">>
 	</main>
-	<<include "footer">>
+	<<include "footerback">>
 </div>
 
 
@@ -220,6 +233,8 @@ VIDEO 6
    <div class="code-input">
      <<textbox "_password" "" >>
     </div>
+        <br/>
+  <div class="result-wrapper">
    <span class="button-wrapper" aria-label="Click Button to go Check your answer">
      <<button "Enter">>  
    /% STANDARDISE INPUT %/
@@ -239,7 +254,7 @@ VIDEO 6
    
     /% CODEWORD FEEDBACK %/
     <div id="coderesult"></div>
-
+    </div>
     </div>
 
 
@@ -248,25 +263,28 @@ VIDEO 6
 <<set $prevpass to "cabinet5">>
 <<set $passage to "video7">>
 <<set $nextpass to "lockers1">>
-/* VIDEO  */
-VIDEO 7
-<div class="wrapper">
+/* VIDEO 5 */
+
+<div class="wrapper landscape">
+<div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="video"><<set $title to "V6">>
 	<div id="video" role="video" class="video-wrapper"  aria-label="MOTT Training 6 video"><iframe src="https://player.vimeo.com/video/640381678?h=9ce4d85b97&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="MOTT Training 6"></iframe></div>
 	</main>
-		<footer><nav><div id="back" class="button-wrapper"><<link "Back" $prevpass>><</link>></div><div id="text"></div></nav></footer>
+<span class="button-wrapper videol" aria-label="Click a button to move back">
+  <<button "Back" $prevpass>><</button>>
+  </span>
+<span class="button-wrapper videor" aria-label="Click a button or link to move on">
+<<button "Next" $nextpass>><</button>></span>
 </div>
-<<silently>>
-<<timed 0.1s t8n>><<append "#text">><br><span class="button-wrapper" aria-label="Click a button or link to move on"><<button "Next" $nextpass>><</button>></span><</append>> <</timed>>
-<</silently>>
 
 
 :: lockers1 [nobr]
 <<set $prevpass to "video7">>
 <<set $passage to "lockers1">>
 <<set $nextpass to "lockers2">>
-<div class="wrapper">
+<div class="wrapper cogs portrait">
 	<<include "header">>
+       <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
 	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
 
@@ -274,9 +292,7 @@ VIDEO 7
 <p>Watch out for TADAH agents and to try to blend in – I know, pretend you are just visiting The National Archives today! </p>
 <p>I’ll send you details to log in remotely to the Chief Timer’s computer. You’ll need a password to access it. </p>
 
-<span class="button-wrapper" aria-label="Click a button or link to move on">
-      <<button [[Next|$nextpass]]>><</button>>
-    </span>
+
 
 	</main>
 	<<include "footer">>
@@ -287,7 +303,7 @@ VIDEO 7
 <<set $prevpass to "lockers1">>
 <<set $passage to "lockers2">>
 <<set $nextpass to "video7">>
-<div class="wrapper">
+<div class="wrapper cogs portrait">
 	<<include "header">>
 	<main id="main" class="">
 	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
@@ -298,15 +314,38 @@ VIDEO 7
 <p>Do you have the time?</p>
 <p>If they are the ones you are looking for they should respond with the phrase</p>
 <p>Tick Tock Tick Tock</p>
-<p>I’m losing the feed.</p>
-[the mobile slowly fades]
+<p>I’m losing the feed...</p>
+
 
 
 	</main>
-	<<include "footer">>
+	<<include "footerback">>
 </div>
 
+<<timed 10s>>
+  <<addclass "#main" "dissolvephone">>
+  <</timed>>
 
 :: footer [nobr]
 
-<footer><nav class="right"><div id="back" class="button-wrapper"><<back>></div></nav></footer>
+<footer><nav class=""><div id="back" class="button-wrapper">
+<<if passage() is not "onboarding1">>
+  <<button "Back">> 
+    <<goto $prevpass>>
+    <</button>>
+  <</if>>
+</div>
+ <span class="button-wrapper" aria-label="Click a button or link to move on">
+      <<button [[Next|$nextpass]]>><</button>>
+    </span></nav></footer>
+
+:: footerback [nobr]
+
+<footer><nav class=""><div id="back" class="button-wrapper">
+<<if passage() is not "onboarding1">>
+  <<button "Back">> 
+    <<goto $prevpass>>
+    <</button>>
+  <</if>>
+</div>
+</nav></footer>

@@ -7,7 +7,7 @@ Pickles - National Archives - Computer
 	"ifid": "170811C8-C9ED-4656-AAF1-BFCE7DC19831",
 	"format": "SugarCube",
 	"format-version": "2.36.1",
-	"start": "Start",
+	"start": "office1",
 	"zoom": 0.6
 }
 
@@ -121,7 +121,7 @@ UIBar.destroy();
 
 
 :: office1 [nobr t8n]
-<<set $prevpass to "entrance">>
+<<set $prevpass to "office1">>
 <<set $passage to "office1">>
 <<set $nextpass to "desktop">>
 <<set $finaldesktop to false>>
@@ -134,7 +134,8 @@ UIBar.destroy();
 <div class="pwBox-wrapper"><<include "pwBox">></div>
 <</timed>>
 	</main>
-	<<include "footer">>
+	/* <<include "footer">> */
+  <footer/>
 </div>
 
 
@@ -197,6 +198,8 @@ In the bottom right a chat box should open - perhaps a notification and then the
 
 	/* <<include "header">> */
 	<main id="main" class="grid-container" >
+  	<div id="fileMount" class="fileMount"><<include "pwFile">>
+</div>
  <div class="folder-container"> <img src="assets/img/Green_Desktop_Folder.png"/>
  <span>Receipts Folder</span></div>
   <div class="folder-container"> <img src="assets/img/Green_Desktop_Folder.png"/>
@@ -216,8 +219,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
 
 	<div id="sfsMount" class="sfsMount">   <<include "SFSLocked">></div>
 
-	<div id="fileMount" class="fileMount"><<include "pwFile">>
-</div>
+
 
 	</main>
 </div>
@@ -524,6 +526,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
 				<</timed>>
        <<timed 3s>>
 				<<replace "#sfsMount">>
+          <<addclass "#sfsMount" "green">>
 					<<include "pwSFSTarget">>
 					<</replace>>
 			 <</timed>>
@@ -556,7 +559,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
        <<set _password to _password.toUpperCase()>>
    /% CODEWORD CORRECT %/
        <<if _password isnot "" and _password is "CORBETT">>
-       <<replace "#coderesult">><h2 class="subtitle complete">Target accepted</h2><</replace>>
+       <<replace "#coderesult3">><h2 class="subtitle complete">Target accepted</h2><</replace>>
        <<timed 3s>>
 				<<replace "#sfsMount">>
 <h2>Target accepted</h2>
@@ -573,7 +576,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
         <</if>><</button>> 
      </span>
     /% CODEWORD FEEDBACK %/
-    <div id="coderesult"></div>
+    <div id="coderesult3"></div>
 
     </div>
 

@@ -398,34 +398,35 @@ setup.requestCameraPermission = () => {
 
 :: pw360Overide [nobr]
 <div id="codewordWrapper" class="codeword-wrapper">
-  <label for="textbox--password" tabindex="0" ><span aria-label="Enter the word below" role="label">SFS OVERRIDE CODE:</span></label>
-  /% CODEWORD INPUT %/
-   <div class="code-input">
-     <<textbox "_password" "" >>
-    </div>
-    <br/>
+
+    <label for="textbox--password" tabindex="0" ><span aria-label="Enter the word below" role="label">SFS OVERRIDE CODE:</span></label>
+
+    /% CODEWORD INPUT %/
+      <div class="input-wrapper">
+     <div class="code-input">
+       <<textbox "_password" "" >>
+      </div>
    <span class="button-wrapper" aria-label="Click Button to go Check your answer">
      <<button "Enter">>  
    /% STANDARDISE INPUT %/
        <<set _password to _password.toUpperCase()>>
    /% CODEWORD CORRECT %/
        <<if _password isnot "" and _password is "CRUMPETS">>
-       <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+       <<replace "#coderesult">><h2 class="">Correct!</h2><</replace>>
        <<timed 3s>><<goto $nextpass>><</timed>>
       <</if>>
         /% CODEWORD INCORRECT %/
      <<if _password isnot "" and _password is not "CRUMPETS">>
-        <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<replace "#coderesult">><h2>Thats not right.</h2><</replace>>
       <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
         <</if>><</button>> 
      </span>
 
    
     /% CODEWORD FEEDBACK %/
-    <div id="coderesult"></div>
-
     </div>
-
+        <div id="coderesult"></div>
+</div>
 
 
 
@@ -467,36 +468,49 @@ setup.requestCameraPermission = () => {
 
 <iframe width="90%" height="500px" allowFullScreen="true" allow="accelerometer; magnetometer; gyroscope" style="display:block; margin:20px auto; border:0 none; max-width:880px;border-radius:8px; box-shadow: 0 1px 1px rgba(0,0,0,0.11),0 2px 2px rgba(0,0,0,0.11),0 4px 4px rgba(0,0,0,0.11),0 6px 8px rgba(0,0,0,0.11),0 8px 16px rgba(0,0,0,0.11);" src="https://panoraven.com/en/embed/p3nwFwQz8L"></iframe>
 
-  <<include "pw360Overide">>
-
 
 	</main>
-	/* <<include "footer">> */
+	<<include "footer360">>
 </div>
+
+:: footer360 [nobr]
+
+<footer class="pano">
+<nav class=""><div id="back" class="button-wrapper">
+  <<button "Back">> 
+    <<goto $prevpass>>
+    <</button>>
+</div></nav>
+  <<include "pw360Overide">></footer>
+
 
 :: video3[nobr]
 <<set $prevpass to "360image">>
 <<set $passage to "video3">>
 <<set $nextpass to "mapintro1">>
-/* VIDEO  */
-VIDEO 3
-<div class="wrapper">
+/* VIDEO 3 */
+
+<div class="wrapper landscape">
+<div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="video"><<set $title to "V6">>
 	<div id="video" role="video" class="video-wrapper"  aria-label="MOTT Training 6 video"><iframe src="https://player.vimeo.com/video/640381678?h=9ce4d85b97&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="MOTT Training 6"></iframe></div>
 	</main>
-		<footer><nav><div id="back" class="button-wrapper"><<link "Back" $prevpass>><</link>></div><div id="text"></div></nav></footer>
+<span class="button-wrapper videol" aria-label="Click a button to move back">
+  <<button "Back" $prevpass>><</button>>
+  </span>
+<span class="button-wrapper videor" aria-label="Click a button or link to move on">
+<<button "Next" $nextpass>><</button>></span>
 </div>
-<<silently>>
-<<timed 0.1s t8n>><<append "#text">><br><span class="button-wrapper" aria-label="Click a button or link to move on"><<button "Next" $nextpass>><</button>></span><</append>> <</timed>>
-<</silently>>
+
 
 
 :: mapintro1 [nobr]
 <<set $prevpass to "video3">>
 <<set $passage to "mapintro1">>
-<<set $nextpass to "mapintro2">>
-<div class="wrapper cogs">
+<<set $nextpass to "map">>
+<div class="wrapper cogs portrait">
 	<<include "header">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
 	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
 	<div>
@@ -517,9 +531,9 @@ VIDEO 3
 	<<include "footer">>
 </div>
 
-:: mapintro2 [nobr]
+:: map [nobr]
 <<set $prevpass to "mapintro1">>
-<<set $passage to "mapintro2">>
+<<set $passage to "map">>
 <<set $nextpass to "ARIntro1">>
 <<set $currentInstructionIndex = 1>>
 <<set $instructions = {
@@ -531,44 +545,64 @@ VIDEO 3
     6: { text: "Hold it there’s someone ahead. Hold. Use the sounds of the church nearby, keep very quiet. There should be a postbox here. When I say go, move towards it, and stay close.", coords: "four" },
     7: { text: "GO.", coords: "four" },
     8: { text: "Well done but we’re not there yet. There’s toilets near you - they should be on your left. The lift is where we need to go - that’s to your right.", coords: "four" },
-    9: { text: "Take 5 steps towards the lift…", coords: "four" },
-    10: { text: "Hold it. Stay very still for 10 seconds. There is a security guard who is about to go to the toilet. Don’t move.", coords: "four" },
+    9: { text: "Take 5 steps towards the lift…", coords: "five" },
+    10: { text: "Hold it. Stay very still for 10 seconds. There is a security guard who is about to go to the toilet. Don’t move.", coords: "five" },
     11: { text: "He’s gone. Clearly in a rush. Move towards the wall near the lift, that is where the treasure is. Hold when you are there.", coords: "five" },
     12: { text: "Right, we must be careful now or we’ll set off the alarms. This is what we need. Now is the time, touch the cup.", coords: "five" }
 }>>
 
 <div class="wrapper cogs">
+<div class="instruction" id="instruction">
+<p>
+/* <<print $currentInstructionIndex>>. */
+<<print $instructions[$currentInstructionIndex].text>></p>
 
+</div>
 	<main id="main" class="map">
 
 	<div>
 <div class="map-container" id="mapContainer">
 <img src="assets/img/map.jpeg"/>
-<div class="location one" id="location"></div>
+<div class="location one pulse" id="location"></div>
 </div>
-<div class="instruction" id="instruction">
-<p><<print $currentInstructionIndex>>.
-<<print $instructions[$currentInstructionIndex].text>></p>
+	</div>
 
+	</main>
+	<<include "footermap">>
 </div>
-<br/>
- <span class="button-wrapper" id="btnMount" aria-label="Click a button or link to move on">
-<<button "I'm here!">>
-  
+
+
+
+:: footermap [nobr]
+
+<footer class="map">
+<div id="back" class="button-wrapper">
+  <<button "Back">> 
+    <<goto $prevpass>>
+    <</button>>
+</div>
+<span class="button-wrapper" id="btnMount" aria-label="Click a button or link to move on">
+<<button "Next instruction!">>
+    <<removeclass "#location" $instructions[$currentInstructionIndex].coords>>
 <<set $currentInstructionIndex += 1>>
-  <<if $currentInstructionIndex >= 12>>
+  <<if $currentInstructionIndex === 12>>
+    <<replace "#instruction">>
+      /* <<print $currentInstructionIndex>> */
+      <p><<print $instructions[$currentInstructionIndex].text>></p>
+  
+    <</replace>>
+     <<addclass "#location" $instructions[$currentInstructionIndex].coords>>
   <<replace "#btnMount">>
     <span class="button-wrapper" aria-label="Click a button or link to move on">
         <<button [[I'm by the cup|$nextpass]]>><</button>>
       </span>
     <</replace>>
     <<else>>
-      <<removeclass "#location" $instructions[$currentInstructionIndex].coords>>
+    
     <<replace "#instruction">>
-      <<print $currentInstructionIndex>>
-      <div class="instruction" id="instruction">
+      /* <<print $currentInstructionIndex>> */
       <p><<print $instructions[$currentInstructionIndex].text>></p>
-      </div>
+  
     <</replace>>
     <<removeclass "#location" "one">>
     <<set $position to $instructions[$currentInstructionIndex].coords >>
@@ -576,16 +610,7 @@ VIDEO 3
   <</if>>
 <</button>>
 </span>
-
-	</div>
-
-	</main>
-	<<include "footer">>
-</div>
-
-
-
-
+</footer>
 
 
 
@@ -593,7 +618,7 @@ VIDEO 3
 
 
 :: ARIntro1 [nobr]
-<<set $prevpass to "mapintro2">>
+<<set $prevpass to "map">>
 <<set $passage to "ARIntro1">>
 <<set $nextpass to "AR">>
 <div class="wrapper">
@@ -601,15 +626,10 @@ VIDEO 3
 	<main id="main" class="">
 	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
 	<div>
-<p>Beatrix</p>
 <p>We need to scan the SFS code here it seems</p>
 <p>Then what did he say, touch the cup. </p>
-
-
-<h1>Camera Permission</h1>
 <p>This story requires access to your camera to scan a QR code.</p>
 
- <h1>Demo - Native camera in browsers</h1>
 
     <!-- The `label` is attached to the hidden file input -->
     <label for="cameraFileInput">
@@ -627,9 +647,7 @@ VIDEO 3
     <!-- displays the picture uploaded from the native camera -->
     <img id="pictureFromCamera" />
 <video class="video" id="video"></video>
-<<button "Grant Camera Permission">>
-	<<set $s to setup.requestCameraPermission()>>
-	<</button>>
+
 
 
 <span class="button-wrapper" aria-label="Click Button to confirm you have scanned image"><a href="https://deft-gaufre-490f8b.netlify.app/phone2" target="_blank" rel="noreferrer">IMAGE SCANNED</a></span>

@@ -82,11 +82,11 @@
 .grid-container {
   display: grid;
   grid-template-areas:
-    "file . chat"
+    ". file chat"
     "sfs . chat"
     ". . chat";
   grid-template-columns: 1fr 3fr 3fr;
-  grid-template-rows: 1fr 0.5fr 1fr;
+  grid-template-rows: 0.5fr 1fr 0.5fr;
   height: 100vh;
   gap: 2rem;
 }
@@ -149,6 +149,10 @@
     margin-block-end: 0;
     text-align: center;
   }
+}
+
+.sfsMount.green {
+  background-color: rgb(44, 170, 35);
 }
 
 .fileMount {

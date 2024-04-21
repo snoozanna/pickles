@@ -98,7 +98,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<!-- UUID://170811C8-C9ED-4656-AAF1-BFCE7DC19831// --><tw-storydata name="Pickles - National Archives - Computer" startnode="1" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="170811C8-C9ED-4656-AAF1-BFCE7DC19831" zoom="0.6" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Fondamento:ital@1&family=Italianno&family=Cairo:wght@500&family=Noto+Sans+Mono:wght@700&family=Tangerine:wght@400;700&family=IM+Fell+Double+Pica+SC&family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=Niconne&family=Montserrat:wght@400;800&display=swap');
+	<!-- UUID://170811C8-C9ED-4656-AAF1-BFCE7DC19831// --><tw-storydata name="Pickles - National Archives - Computer" startnode="5" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="170811C8-C9ED-4656-AAF1-BFCE7DC19831" zoom="0.6" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Fondamento:ital@1&family=Italianno&family=Cairo:wght@500&family=Noto+Sans+Mono:wght@700&family=Tangerine:wght@400;700&family=IM+Fell+Double+Pica+SC&family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=Niconne&family=Montserrat:wght@400;800&display=swap');
 
 @import url("/styles/generics.css");
 @import url("/styles/styles.css");
@@ -180,7 +180,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footerentrance&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="5" name="office1" tags="nobr t8n" position="600,100" size="100,100">&lt;&lt;set $prevpass to &quot;entrance&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="5" name="office1" tags="nobr t8n" position="600,100" size="100,100">&lt;&lt;set $prevpass to &quot;office1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;office1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;desktop&quot;&gt;&gt;
 &lt;&lt;set $finaldesktop to false&gt;&gt;
@@ -193,7 +193,8 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 &lt;div class=&quot;pwBox-wrapper&quot;&gt;&lt;&lt;include &quot;pwBox&quot;&gt;&gt;&lt;/div&gt;
 &lt;&lt;/timed&gt;&gt;
 	&lt;/main&gt;
-	&lt;&lt;include &quot;footer&quot;&gt;&gt;
+	/* &lt;&lt;include &quot;footer&quot;&gt;&gt; */
+  &lt;footer/&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="6" name="pwBox" tags="nobr" position="725,100" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper pwBox&quot;&gt;
 &lt;H3&gt;ENTER PASSWORD:&lt;/H3&gt;
 
@@ -249,6 +250,8 @@ In the bottom right a chat box should open - perhaps a notification and then the
 
 	/* &lt;&lt;include &quot;header&quot;&gt;&gt; */
 	&lt;main id=&quot;main&quot; class=&quot;grid-container&quot; &gt;
+  	&lt;div id=&quot;fileMount&quot; class=&quot;fileMount&quot;&gt;&lt;&lt;include &quot;pwFile&quot;&gt;&gt;
+&lt;/div&gt;
  &lt;div class=&quot;folder-container&quot;&gt; &lt;img src=&quot;assets/img/Green_Desktop_Folder.png&quot;/&gt;
  &lt;span&gt;Receipts Folder&lt;/span&gt;&lt;/div&gt;
   &lt;div class=&quot;folder-container&quot;&gt; &lt;img src=&quot;assets/img/Green_Desktop_Folder.png&quot;/&gt;
@@ -268,8 +271,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
 
 	&lt;div id=&quot;sfsMount&quot; class=&quot;sfsMount&quot;&gt;   &lt;&lt;include &quot;SFSLocked&quot;&gt;&gt;&lt;/div&gt;
 
-	&lt;div id=&quot;fileMount&quot; class=&quot;fileMount&quot;&gt;&lt;&lt;include &quot;pwFile&quot;&gt;&gt;
-&lt;/div&gt;
+
 
 	&lt;/main&gt;
 &lt;/div&gt;
@@ -549,6 +551,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
 				&lt;&lt;/timed&gt;&gt;
        &lt;&lt;timed 3s&gt;&gt;
 				&lt;&lt;replace &quot;#sfsMount&quot;&gt;&gt;
+          &lt;&lt;addclass &quot;#sfsMount&quot; &quot;green&quot;&gt;&gt;
 					&lt;&lt;include &quot;pwSFSTarget&quot;&gt;&gt;
 					&lt;&lt;/replace&gt;&gt;
 			 &lt;&lt;/timed&gt;&gt;
@@ -578,7 +581,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
        &lt;&lt;set _password to _password.toUpperCase()&gt;&gt;
    /% CODEWORD CORRECT %/
        &lt;&lt;if _password isnot &quot;&quot; and _password is &quot;CORBETT&quot;&gt;&gt;
-       &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;Target accepted&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+       &lt;&lt;replace &quot;#coderesult3&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;Target accepted&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
        &lt;&lt;timed 3s&gt;&gt;
 				&lt;&lt;replace &quot;#sfsMount&quot;&gt;&gt;
 &lt;h2&gt;Target accepted&lt;/h2&gt;
@@ -595,7 +598,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
         &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt; 
      &lt;/span&gt;
     /% CODEWORD FEEDBACK %/
-    &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
+    &lt;div id=&quot;coderesult3&quot;&gt;&lt;/div&gt;
 
     &lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="pwFile" tags="nobr" position="600,225" size="100,100">&lt;div class=&quot;doc-container&quot;&gt; &lt;img src=&quot;assets/img/4468641.png&quot;/&gt;
  &lt;span&gt;Locked File&lt;/span&gt;

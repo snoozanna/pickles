@@ -433,33 +433,35 @@ setup.requestCameraPermission = () => {
 &lt;/span&gt;
 &lt;/div&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="pw360Overide" tags="nobr" position="225,225" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
-  &lt;label for=&quot;textbox--password&quot; tabindex=&quot;0&quot; &gt;&lt;span aria-label=&quot;Enter the word below&quot; role=&quot;label&quot;&gt;SFS OVERRIDE CODE:&lt;/span&gt;&lt;/label&gt;
-  /% CODEWORD INPUT %/
-   &lt;div class=&quot;code-input&quot;&gt;
-     &lt;&lt;textbox &quot;_password&quot; &quot;&quot; &gt;&gt;
-    &lt;/div&gt;
-    &lt;br/&gt;
+
+    &lt;label for=&quot;textbox--password&quot; tabindex=&quot;0&quot; &gt;&lt;span aria-label=&quot;Enter the word below&quot; role=&quot;label&quot;&gt;SFS OVERRIDE CODE:&lt;/span&gt;&lt;/label&gt;
+
+    /% CODEWORD INPUT %/
+      &lt;div class=&quot;input-wrapper&quot;&gt;
+     &lt;div class=&quot;code-input&quot;&gt;
+       &lt;&lt;textbox &quot;_password&quot; &quot;&quot; &gt;&gt;
+      &lt;/div&gt;
    &lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click Button to go Check your answer&quot;&gt;
      &lt;&lt;button &quot;Enter&quot;&gt;&gt;  
    /% STANDARDISE INPUT %/
        &lt;&lt;set _password to _password.toUpperCase()&gt;&gt;
    /% CODEWORD CORRECT %/
        &lt;&lt;if _password isnot &quot;&quot; and _password is &quot;CRUMPETS&quot;&gt;&gt;
-       &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+       &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;&quot;&gt;Correct!&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
        &lt;&lt;timed 3s&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
       &lt;&lt;/if&gt;&gt;
         /% CODEWORD INCORRECT %/
      &lt;&lt;if _password isnot &quot;&quot; and _password is not &quot;CRUMPETS&quot;&gt;&gt;
-        &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+        &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
       &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
         &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt; 
      &lt;/span&gt;
 
    
     /% CODEWORD FEEDBACK %/
-    &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
-
-    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="360intro" tags="nobr" position="350,225" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding6&quot;&gt;&gt;
+    &lt;/div&gt;
+        &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="360intro" tags="nobr" position="350,225" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding6&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;360intro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;360image&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs&quot;&gt;
@@ -493,29 +495,36 @@ setup.requestCameraPermission = () => {
 
 &lt;iframe width=&quot;90%&quot; height=&quot;500px&quot; allowFullScreen=&quot;true&quot; allow=&quot;accelerometer; magnetometer; gyroscope&quot; style=&quot;display:block; margin:20px auto; border:0 none; max-width:880px;border-radius:8px; box-shadow: 0 1px 1px rgba(0,0,0,0.11),0 2px 2px rgba(0,0,0,0.11),0 4px 4px rgba(0,0,0,0.11),0 6px 8px rgba(0,0,0,0.11),0 8px 16px rgba(0,0,0,0.11);&quot; src=&quot;https://panoraven.com/en/embed/p3nwFwQz8L&quot;&gt;&lt;/iframe&gt;
 
-  &lt;&lt;include &quot;pw360Overide&quot;&gt;&gt;
-
 
 	&lt;/main&gt;
-	/* &lt;&lt;include &quot;footer&quot;&gt;&gt; */
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="video3" tags="nobr" position="600,225" size="100,100">&lt;&lt;set $prevpass to &quot;360image&quot;&gt;&gt;
+	&lt;&lt;include &quot;footer360&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="footer360" tags="nobr" position="600,225" size="100,100">&lt;footer class=&quot;pano&quot;&gt;
+&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
+  &lt;&lt;button &quot;Back&quot;&gt;&gt; 
+    &lt;&lt;goto $prevpass&gt;&gt;
+    &lt;&lt;/button&gt;&gt;
+&lt;/div&gt;&lt;/nav&gt;
+  &lt;&lt;include &quot;pw360Overide&quot;&gt;&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="16" name="video3" tags="nobr" position="725,225" size="100,100">&lt;&lt;set $prevpass to &quot;360image&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;video3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;mapintro1&quot;&gt;&gt;
-/* VIDEO  */
-VIDEO 3
-&lt;div class=&quot;wrapper&quot;&gt;
+/* VIDEO 3 */
+
+&lt;div class=&quot;wrapper landscape&quot;&gt;
+&lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;video&quot;&gt;&lt;&lt;set $title to &quot;V6&quot;&gt;&gt;
 	&lt;div id=&quot;video&quot; role=&quot;video&quot; class=&quot;video-wrapper&quot;  aria-label=&quot;MOTT Training 6 video&quot;&gt;&lt;iframe src=&quot;https://player.vimeo.com/video/640381678?h=9ce4d85b97&amp;amp;badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture&quot; allowfullscreen title=&quot;MOTT Training 6&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
 	&lt;/main&gt;
-		&lt;footer&gt;&lt;nav&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;&lt;&lt;link &quot;Back&quot; $prevpass&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/div&gt;&lt;div id=&quot;text&quot;&gt;&lt;/div&gt;&lt;/nav&gt;&lt;/footer&gt;
-&lt;/div&gt;
-&lt;&lt;silently&gt;&gt;
-&lt;&lt;timed 0.1s t8n&gt;&gt;&lt;&lt;append &quot;#text&quot;&gt;&gt;&lt;br&gt;&lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;&lt;&lt;button &quot;Next&quot; $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;&lt;/append&gt;&gt; &lt;&lt;/timed&gt;&gt;
-&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="mapintro1" tags="nobr" position="725,225" size="100,100">&lt;&lt;set $prevpass to &quot;video3&quot;&gt;&gt;
+&lt;span class=&quot;button-wrapper videol&quot; aria-label=&quot;Click a button to move back&quot;&gt;
+  &lt;&lt;button &quot;Back&quot; $prevpass&gt;&gt;&lt;&lt;/button&gt;&gt;
+  &lt;/span&gt;
+&lt;span class=&quot;button-wrapper videor&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
+&lt;&lt;button &quot;Next&quot; $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="mapintro1" tags="nobr" position="850,225" size="100,100">&lt;&lt;set $prevpass to &quot;video3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;mapintro1&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;mapintro2&quot;&gt;&gt;
-&lt;div class=&quot;wrapper cogs&quot;&gt;
+&lt;&lt;set $nextpass to &quot;map&quot;&gt;&gt;
+&lt;div class=&quot;wrapper cogs portrait&quot;&gt;
 	&lt;&lt;include &quot;header&quot;&gt;&gt;
+  &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
 	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
 	&lt;div&gt;
@@ -534,8 +543,8 @@ VIDEO 3
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="mapintro2" tags="nobr" position="850,225" size="100,100">&lt;&lt;set $prevpass to &quot;mapintro1&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;mapintro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="18" name="map" tags="nobr" position="975,225" size="100,100">&lt;&lt;set $prevpass to &quot;mapintro1&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;map&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;ARIntro1&quot;&gt;&gt;
 &lt;&lt;set $currentInstructionIndex = 1&gt;&gt;
 &lt;&lt;set $instructions = {
@@ -547,44 +556,58 @@ VIDEO 3
     6: { text: &quot;Hold it there’s someone ahead. Hold. Use the sounds of the church nearby, keep very quiet. There should be a postbox here. When I say go, move towards it, and stay close.&quot;, coords: &quot;four&quot; },
     7: { text: &quot;GO.&quot;, coords: &quot;four&quot; },
     8: { text: &quot;Well done but we’re not there yet. There’s toilets near you - they should be on your left. The lift is where we need to go - that’s to your right.&quot;, coords: &quot;four&quot; },
-    9: { text: &quot;Take 5 steps towards the lift…&quot;, coords: &quot;four&quot; },
-    10: { text: &quot;Hold it. Stay very still for 10 seconds. There is a security guard who is about to go to the toilet. Don’t move.&quot;, coords: &quot;four&quot; },
+    9: { text: &quot;Take 5 steps towards the lift…&quot;, coords: &quot;five&quot; },
+    10: { text: &quot;Hold it. Stay very still for 10 seconds. There is a security guard who is about to go to the toilet. Don’t move.&quot;, coords: &quot;five&quot; },
     11: { text: &quot;He’s gone. Clearly in a rush. Move towards the wall near the lift, that is where the treasure is. Hold when you are there.&quot;, coords: &quot;five&quot; },
     12: { text: &quot;Right, we must be careful now or we’ll set off the alarms. This is what we need. Now is the time, touch the cup.&quot;, coords: &quot;five&quot; }
 }&gt;&gt;
 
 &lt;div class=&quot;wrapper cogs&quot;&gt;
+&lt;div class=&quot;instruction&quot; id=&quot;instruction&quot;&gt;
+&lt;p&gt;
+/* &lt;&lt;print $currentInstructionIndex&gt;&gt;. */
+&lt;&lt;print $instructions[$currentInstructionIndex].text&gt;&gt;&lt;/p&gt;
 
+&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;map&quot;&gt;
 
 	&lt;div&gt;
 &lt;div class=&quot;map-container&quot; id=&quot;mapContainer&quot;&gt;
 &lt;img src=&quot;assets/img/map.jpeg&quot;/&gt;
-&lt;div class=&quot;location one&quot; id=&quot;location&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;location one pulse&quot; id=&quot;location&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&quot;instruction&quot; id=&quot;instruction&quot;&gt;
-&lt;p&gt;&lt;&lt;print $currentInstructionIndex&gt;&gt;.
-&lt;&lt;print $instructions[$currentInstructionIndex].text&gt;&gt;&lt;/p&gt;
+	&lt;/div&gt;
 
+	&lt;/main&gt;
+	&lt;&lt;include &quot;footermap&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name="footermap" tags="nobr" position="1100,225" size="100,100">&lt;footer class=&quot;map&quot;&gt;
+&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
+  &lt;&lt;button &quot;Back&quot;&gt;&gt; 
+    &lt;&lt;goto $prevpass&gt;&gt;
+    &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
-&lt;br/&gt;
- &lt;span class=&quot;button-wrapper&quot; id=&quot;btnMount&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
-&lt;&lt;button &quot;I&#39;m here!&quot;&gt;&gt;
-  
+&lt;span class=&quot;button-wrapper&quot; id=&quot;btnMount&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
+&lt;&lt;button &quot;Next instruction!&quot;&gt;&gt;
+    &lt;&lt;removeclass &quot;#location&quot; $instructions[$currentInstructionIndex].coords&gt;&gt;
 &lt;&lt;set $currentInstructionIndex += 1&gt;&gt;
-  &lt;&lt;if $currentInstructionIndex &gt;= 12&gt;&gt;
+  &lt;&lt;if $currentInstructionIndex === 12&gt;&gt;
+    &lt;&lt;replace &quot;#instruction&quot;&gt;&gt;
+      /* &lt;&lt;print $currentInstructionIndex&gt;&gt; */
+      &lt;p&gt;&lt;&lt;print $instructions[$currentInstructionIndex].text&gt;&gt;&lt;/p&gt;
+  
+    &lt;&lt;/replace&gt;&gt;
+     &lt;&lt;addclass &quot;#location&quot; $instructions[$currentInstructionIndex].coords&gt;&gt;
   &lt;&lt;replace &quot;#btnMount&quot;&gt;&gt;
     &lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
         &lt;&lt;button [[I&#39;m by the cup|$nextpass]]&gt;&gt;&lt;&lt;/button&gt;&gt;
       &lt;/span&gt;
     &lt;&lt;/replace&gt;&gt;
     &lt;&lt;else&gt;&gt;
-      &lt;&lt;removeclass &quot;#location&quot; $instructions[$currentInstructionIndex].coords&gt;&gt;
+    
     &lt;&lt;replace &quot;#instruction&quot;&gt;&gt;
-      &lt;&lt;print $currentInstructionIndex&gt;&gt;
-      &lt;div class=&quot;instruction&quot; id=&quot;instruction&quot;&gt;
+      /* &lt;&lt;print $currentInstructionIndex&gt;&gt; */
       &lt;p&gt;&lt;&lt;print $instructions[$currentInstructionIndex].text&gt;&gt;&lt;/p&gt;
-      &lt;/div&gt;
+  
     &lt;&lt;/replace&gt;&gt;
     &lt;&lt;removeclass &quot;#location&quot; &quot;one&quot;&gt;&gt;
     &lt;&lt;set $position to $instructions[$currentInstructionIndex].coords &gt;&gt;
@@ -592,12 +615,7 @@ VIDEO 3
   &lt;&lt;/if&gt;&gt;
 &lt;&lt;/button&gt;&gt;
 &lt;/span&gt;
-
-	&lt;/div&gt;
-
-	&lt;/main&gt;
-	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="18" name="ARIntro1" tags="nobr" position="975,225" size="100,100">&lt;&lt;set $prevpass to &quot;mapintro2&quot;&gt;&gt;
+&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="20" name="ARIntro1" tags="nobr" position="1225,225" size="100,100">&lt;&lt;set $prevpass to &quot;map&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;ARIntro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;AR&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
@@ -605,15 +623,10 @@ VIDEO 3
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
 	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
 	&lt;div&gt;
-&lt;p&gt;Beatrix&lt;/p&gt;
 &lt;p&gt;We need to scan the SFS code here it seems&lt;/p&gt;
 &lt;p&gt;Then what did he say, touch the cup. &lt;/p&gt;
-
-
-&lt;h1&gt;Camera Permission&lt;/h1&gt;
 &lt;p&gt;This story requires access to your camera to scan a QR code.&lt;/p&gt;
 
- &lt;h1&gt;Demo - Native camera in browsers&lt;/h1&gt;
 
     &lt;!-- The `label` is attached to the hidden file input --&gt;
     &lt;label for=&quot;cameraFileInput&quot;&gt;
@@ -631,9 +644,7 @@ VIDEO 3
     &lt;!-- displays the picture uploaded from the native camera --&gt;
     &lt;img id=&quot;pictureFromCamera&quot; /&gt;
 &lt;video class=&quot;video&quot; id=&quot;video&quot;&gt;&lt;/video&gt;
-&lt;&lt;button &quot;Grant Camera Permission&quot;&gt;&gt;
-	&lt;&lt;set $s to setup.requestCameraPermission()&gt;&gt;
-	&lt;&lt;/button&gt;&gt;
+
 
 
 &lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click Button to confirm you have scanned image&quot;&gt;&lt;a href=&quot;https://deft-gaufre-490f8b.netlify.app/phone2&quot; target=&quot;_blank&quot; rel=&quot;noreferrer&quot;&gt;IMAGE SCANNED&lt;/a&gt;&lt;/span&gt;
@@ -641,7 +652,7 @@ VIDEO 3
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name="footer" tags="nobr" position="1100,225" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="21" name="footer" tags="nobr" position="100,350" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
 &lt;&lt;if passage() is not &quot;onboarding1&quot;&gt;&gt;
   &lt;&lt;button &quot;Back&quot;&gt;&gt; 
     &lt;&lt;goto $prevpass&gt;&gt;
