@@ -411,12 +411,12 @@ setup.requestCameraPermission = () => {
    /% STANDARDISE INPUT %/
        <<set _password to _password.toUpperCase()>>
    /% CODEWORD CORRECT %/
-       <<if _password isnot "" and _password is "CRUMPETS">>
+       <<if _password isnot "" and _password is "CRUMPET">>
        <<replace "#coderesult">><h2 class="">Correct!</h2><</replace>>
        <<timed 3s>><<goto $nextpass>><</timed>>
       <</if>>
         /% CODEWORD INCORRECT %/
-     <<if _password isnot "" and _password is not "CRUMPETS">>
+     <<if _password isnot "" and _password is not "CRUMPET">>
         <<replace "#coderesult">><h2>Thats not right.</h2><</replace>>
       <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
         <</if>><</button>> 
@@ -493,7 +493,7 @@ setup.requestCameraPermission = () => {
 <div class="wrapper landscape">
 <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="video"><<set $title to "V6">>
-	<div id="video" role="video" class="video-wrapper"  aria-label="MOTT Training 6 video"><iframe src="https://player.vimeo.com/video/640381678?h=9ce4d85b97&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="MOTT Training 6"></iframe></div>
+	<div id="video" role="video" class="video-wrapper"  aria-label="MOTT Training 3 video"><iframe src="https://player.vimeo.com/video/570863558?h=9a6492803a&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="MOTT Training 3"></iframe></div>
 	</main>
 <span class="button-wrapper videol" aria-label="Click a button to move back">
   <<button "Back" $prevpass>><</button>>

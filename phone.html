@@ -446,12 +446,12 @@ setup.requestCameraPermission = () => {
    /% STANDARDISE INPUT %/
        &lt;&lt;set _password to _password.toUpperCase()&gt;&gt;
    /% CODEWORD CORRECT %/
-       &lt;&lt;if _password isnot &quot;&quot; and _password is &quot;CRUMPETS&quot;&gt;&gt;
+       &lt;&lt;if _password isnot &quot;&quot; and _password is &quot;CRUMPET&quot;&gt;&gt;
        &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;&quot;&gt;Correct!&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
        &lt;&lt;timed 3s&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
       &lt;&lt;/if&gt;&gt;
         /% CODEWORD INCORRECT %/
-     &lt;&lt;if _password isnot &quot;&quot; and _password is not &quot;CRUMPETS&quot;&gt;&gt;
+     &lt;&lt;if _password isnot &quot;&quot; and _password is not &quot;CRUMPET&quot;&gt;&gt;
         &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
       &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
         &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -512,7 +512,7 @@ setup.requestCameraPermission = () => {
 &lt;div class=&quot;wrapper landscape&quot;&gt;
 &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;video&quot;&gt;&lt;&lt;set $title to &quot;V6&quot;&gt;&gt;
-	&lt;div id=&quot;video&quot; role=&quot;video&quot; class=&quot;video-wrapper&quot;  aria-label=&quot;MOTT Training 6 video&quot;&gt;&lt;iframe src=&quot;https://player.vimeo.com/video/640381678?h=9ce4d85b97&amp;amp;badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture&quot; allowfullscreen title=&quot;MOTT Training 6&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+	&lt;div id=&quot;video&quot; role=&quot;video&quot; class=&quot;video-wrapper&quot;  aria-label=&quot;MOTT Training 3 video&quot;&gt;&lt;iframe src=&quot;https://player.vimeo.com/video/570863558?h=9a6492803a&amp;amp;badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture&quot; allowfullscreen title=&quot;MOTT Training 3&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
 	&lt;/main&gt;
 &lt;span class=&quot;button-wrapper videol&quot; aria-label=&quot;Click a button to move back&quot;&gt;
   &lt;&lt;button &quot;Back&quot; $prevpass&gt;&gt;&lt;&lt;/button&gt;&gt;

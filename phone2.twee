@@ -226,7 +226,7 @@ function log(msg) {
 <div class="wrapper landscape">
 <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="video"><<set $title to "V6">>
-	<div id="video" role="video" class="video-wrapper"  aria-label="MOTT Training 6 video"><iframe src="https://player.vimeo.com/video/640381678?h=9ce4d85b97&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="MOTT Training 6"></iframe></div>
+	<div id="video" role="video" class="video-wrapper"  aria-label="MOTT Training 6 video"><iframe src="https://player.vimeo.com/video/570864138?h=b0ec469fb5&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="MOTT Training 6"></iframe></div>
 	</main>
 <span class="button-wrapper videol" aria-label="Click a button to move back">
   <<button "Back" $prevpass>><</button>>
@@ -349,7 +349,7 @@ function log(msg) {
 <div class="wrapper landscape">
 <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="video"><<set $title to "V6">>
-	<div id="video" role="video" class="video-wrapper"  aria-label="MOTT Training 6 video"><iframe src="https://player.vimeo.com/video/640381678?h=9ce4d85b97&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="MOTT Training 6"></iframe></div>
+	<div id="video" role="video" class="video-wrapper"  aria-label="MOTT Training 6 video"><iframe src="https://player.vimeo.com/video/570864874?h=941c85b945&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="MOTT Training 6"></iframe></div>
 	</main>
 <span class="button-wrapper videol" aria-label="Click a button to move back">
   <<button "Back" $prevpass>><</button>>

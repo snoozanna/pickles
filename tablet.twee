@@ -157,11 +157,12 @@ UIBar.destroy();
 <<set $prevpass to "entrance">>
 <<set $passage to "video1">>
 <<set $nextpass to "pillars1">>
-/* VIDEO  */
-VIDEO 1
+/* VIDEO 1  */
+
 <div class="wrapper">
 	<main id="main" class="video"><<set $title to "V6">>
-	<div id="video" role="video" class="video-wrapper"  aria-label="MOTT Training 6 video"><iframe src="https://player.vimeo.com/video/640381678?h=9ce4d85b97&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="MOTT Training 6"></iframe></div>
+	<div id="video" role="video" class="video-wrapper"  aria-label="MOTT Training 6 video"><iframe src="https://player.vimeo.com/video/570862001?h=c5306be0ef&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="MOTT Training 6"></iframe></div>
+	
 	</main>
 		<footer><nav><div id="back" class="button-wrapper"><<link "Back" $prevpass>><</link>></div><div id="text"></div></nav></footer>
 </div>
@@ -179,8 +180,14 @@ VIDEO 1
 	<main id="main" class="flex-container-col"><<set $title to 1>>
 	<<if $audioClick isnot true>><<set $audioOn to true>><</if>>
 	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+		<div class="intro-text">
+	<p>To gain entry you need to find a codeword.</p>
+<p>The codeword is made of 4 letters.</p>
+<p>It is hiding in plain sight – like we have been.</p>
+<p>You should be able to find them by standing in a particular spot next to you.</p>
+<p>Type it below. </p>
 <<include "pwPillar">>
-
+</div>
 	</main>
 	<<include "footer">>
 </div>
@@ -206,8 +213,8 @@ VIDEO 1
   <<set $code1 to $code1.toUpperCase()>>
   <<set $code2 to $code2.toUpperCase()>>
   <<set $code3 to $code3.toUpperCase()>>
-	<<set $code4 to $code3.toUpperCase()>>
-	<<set $code5 to $code3.toUpperCase()>>
+	<<set $code4 to $code4.toUpperCase()>>
+
   /% CODEWORD CORRECT %/
   <<if $code1 isnot "" and $code2 isnot "" and $code3 isnot "" and $code4 isnot "">>
     <<if ($code1 + $code2 + $code3 + $code4) is "MOTT">>
@@ -231,12 +238,13 @@ VIDEO 1
 <<set $prevpass to "pillars1">>
 <<set $passage to "video2">>
 <<set $nextpass to "pillars2">>
-/* VIDEO  */
-VIDEO 2
+/* VIDEO 2 */
+
 <div class="wrapper">
 	<main id="main" class="video"><<set $title to "V6">>
-	<div id="video" role="video" class="video-wrapper"  aria-label="MOTT Training 6 video"><iframe src="https://player.vimeo.com/video/640381678?h=9ce4d85b97&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="MOTT Training 6"></iframe></div>
+	<div id="video" role="video" class="video-wrapper"  aria-label="MOTT Training 6 video"><iframe src="https://player.vimeo.com/video/570862555?h=f4e7a923cf&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="MOTT Training 6"></iframe></div>
 	</main>
+
 		<footer><nav><div id="back" class="button-wrapper"><<link "Back" $prevpass>><</link>></div><div id="text"></div></nav></footer>
 </div>
 <<silently>>
