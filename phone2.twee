@@ -515,6 +515,6 @@ function log(msg) {
     <</button>>
   <</if>>
 </div>
-<span class="button-wrapper" aria-label="Click Button to confirm you have scanned image"><a href="https://pickles-charisma.netlify.app/" target="_blank" rel="noreferrer">We're ready</a></span></nav></footer>
+<span class="button-wrapper" aria-label="Click Button to confirm you have scanned image"><a href="https://pickles-charisma.netlify.app/betchley" target="_blank" rel="noreferrer">We're ready</a></span></nav></footer>
 
     
