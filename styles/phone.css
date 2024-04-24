@@ -103,6 +103,12 @@ footer.ar > .nav-wrapper > .nav-item > #mount > span {
   font-size: 1.4rem;
 }
 
+footer.ar-footer{
+  position: fixed;
+    bottom: 0;
+    width: 84%;
+}
+
 @media screen and (min-width: 450px) {
   .ai-option-wrapper {
     display: flex;

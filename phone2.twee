@@ -160,7 +160,7 @@ function log(msg) {
 
 	</main>
   <<timed 5s>>
-	<<include "footer">>
+	<<include "footerar">>
   <</timed>>
 </div>
 <<done>><<set $s to setup.startup()>><</done>>
@@ -231,6 +231,20 @@ function log(msg) {
 <span class="button-wrapper videor" aria-label="Click a button or link to move on">
 <<button "Next" $nextpass>><</button>></span>
 </div>
+
+:: footerar [nobr]
+
+<footer class="ar-footer"><nav class=""><div id="back" class="button-wrapper">
+
+  <<button "Back">> 
+    <<goto $prevpass>>
+    <</button>>
+
+</div>
+ <span class="button-wrapper" aria-label="Click a button or link to move on">
+      <<button [[Next|$nextpass]]>><</button>>
+    </span></nav></footer>
+
 
 
 :: footer [nobr]
