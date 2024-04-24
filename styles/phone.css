@@ -120,7 +120,7 @@ footer.ar > .nav-wrapper > .nav-item > #mount > span {
   }
 }
 .dissolve {
-  animation: 2s dissolve 0.5s ease-out forwards;
+  animation: 10s dissolve 0.5s ease-out forwards;
 }
 
 @keyframes appear {
@@ -218,25 +218,30 @@ footer.map {
 
 .location.one {
   left: 41%;
-  bottom: 13%;
+  bottom: 3%;
 }
 
 .location.two {
   left: 41%;
-  bottom: 57%;
+  bottom: 13%;
 }
 
 .location.three {
+  left: 41%;
+  bottom: 57%;
+}
+
+.location.four {
   left: 22%;
   bottom: 63%;
 }
 
-.location.four {
+.location.five {
   left: 32%;
   bottom: 72%;
 }
 
-.location.five {
+.location.six {
   right: 3%;
   top: 16%;
 }

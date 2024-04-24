@@ -147,7 +147,7 @@ function log(msg) {
 	<main id="main" class="">
 	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
 	<div>
-
+<h2>Touch the Cup</h2>
   <div class="ar-imgs-container">
     <div class="ar-img-wrapper touch bottom" id="initial" >
       <img src="assets/img/trophy.jpg" class="">
@@ -177,9 +177,6 @@ function log(msg) {
 
 <p>Woh - what happened? </p>
 <p>Can you enter the reference number on the image you found?</p>
-[MEPO 2/10966]
-
-
   <<include "pwAR">>
 	</main>
 	<<include "footerback">>
@@ -461,7 +458,7 @@ function log(msg) {
 	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
 
 <p>What you need to know before the call is this. </p>
-<p>Joe Mears was taken unwell – so a police officer went undercover –pretended to be Joe Mears. </p>
+<p>Joe Mears was taken unwell – so a police officer went undercover –pretending to be Joe Mears. </p>
 <p>But something is changing it. Changing what was said. </p>
 <p>Something or someone must have changed the police officer’s response in the past so it doesn’t match the transcript anymore! </p>
 <p>We need to correct that.</p>

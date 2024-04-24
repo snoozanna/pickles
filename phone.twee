@@ -225,7 +225,7 @@ setup.requestCameraPermission = () => {
 
 	<div class="intro-text">
 	  <p>Welcome to The National Archives.</p>
-	  <p>This experience requires you to tap through on a screen. You just need to look for the circle to click on. Try it now.  </p>
+	  <p>This experience requires you to tap through on a screen. You just need to look for the NEXT button to click on. Try it now.  </p>
 	  
 	  <div class="flex-container-row"><p class="fit">Try it now.</p>
 		<br/><span class="button-wrapper circle" aria-label="Click a button or link to move on"><<button [["Next"|$nextpass]]>><</button>></span></div>
@@ -325,10 +325,14 @@ setup.requestCameraPermission = () => {
 
 	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
   <div class="intro-text">
-	  <p>To begin, enter the word BEGIN into the tablet.</p>
-   <span class="button-wrapper" aria-label="Click a button or link to move on">
-      <<button [[Next|$nextpass]]>><</button>>
-    </span>
+	  <p>To begin, enter the word BEGIN into the tablet near the red chairs.</p>
+   
+     <<timed 60s>>
+      <span class="button-wrapper" aria-label="Click a button or link to move on">
+       <<button [[Next|$nextpass]]>><</button>>
+        </span>
+     <</timed>>
+   
 	</div>
 	</main>
 	<<include "footer">>
@@ -345,7 +349,7 @@ setup.requestCameraPermission = () => {
 	<<if $audioClick isnot true>><<set $audioOn to true>><</if>>
 	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
 
-<<timed 2s>>
+<<timed 0.1s>>
   	<div class="intro-text">
 	   <p>Enter the codeword:</p>
 	</div>
@@ -449,7 +453,7 @@ setup.requestCameraPermission = () => {
 <p>The live feed is a 360 camera so you may need to move your phone around to find the code. </p>
 
       <span class="button-wrapper" aria-label="Click a button or link to move on">
-      <<button [[Next|$nextpass]]>><</button>>
+      <<button [[We're here|$nextpass]]>><</button>>
     </span>
 	</div>
 
@@ -507,7 +511,7 @@ setup.requestCameraPermission = () => {
 :: mapintro1 [nobr]
 <<set $prevpass to "video3">>
 <<set $passage to "mapintro1">>
-<<set $nextpass to "map">>
+<<set $nextpass to "robberintro">>
 <div class="wrapper cogs portrait">
 	<<include "header">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
@@ -531,24 +535,52 @@ setup.requestCameraPermission = () => {
 	<<include "footer">>
 </div>
 
+:: robberintro [nobr]
+<<set $prevpass to "mapintro1">>
+<<set $passage to "robberintro">>
+<<set $nextpass to "map">>
+<div class="wrapper cogs portrait">
+	<<include "header">>
+  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
+	<main id="main" >
+	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<div class="instruction">
+<p>Start by the doors.</p>
+<p>You need to follow my plans exactly.</p>
+<p>There's no room for mistakes if we want this to go well for us.</p>
+<p>I've mapped out the place.</p>
+<p>I've done the planning.</p>
+<p>You just need to follow my instructions and we'll get what we deserve.</p>
+
+	</div>
+ 
+
+	</main>
+	<<include "footernext">>
+</div>
+
 :: map [nobr]
 <<set $prevpass to "mapintro1">>
 <<set $passage to "map">>
 <<set $nextpass to "ARIntro1">>
 <<set $currentInstructionIndex = 1>>
 <<set $instructions = {
-    1: { text: "It is 11.01 – time to go", coords: "one" },
-    2: { text: "Walk 19 paces forward. If I’m right, there should be a mark on the floor.", coords: "two" },
-    3: { text: "Well done you’ve made it through the ‘emergency exit'", coords: "two" },
-    4: { text: "Use the cover of the pillar to your left.", coords: "three" },
-    5: { text: "We need to watch out for security. Be careful!", coords: "three" },
-    6: { text: "Hold it there’s someone ahead. Hold. Use the sounds of the church nearby, keep very quiet. There should be a postbox here. When I say go, move towards it, and stay close.", coords: "four" },
-    7: { text: "GO.", coords: "four" },
-    8: { text: "Well done but we’re not there yet. There’s toilets near you - they should be on your left. The lift is where we need to go - that’s to your right.", coords: "four" },
-    9: { text: "Take 5 steps towards the lift…", coords: "five" },
-    10: { text: "Hold it. Stay very still for 10 seconds. There is a security guard who is about to go to the toilet. Don’t move.", coords: "five" },
-    11: { text: "He’s gone. Clearly in a rush. Move towards the wall near the lift, that is where the treasure is. Hold when you are there.", coords: "five" },
-    12: { text: "Right, we must be careful now or we’ll set off the alarms. This is what we need. Now is the time, touch the cup.", coords: "five" }
+    1: { text: "We're ready to go.<br/>
+Step through the double doors and keep left.", coords: "one" },
+    2: { text: "Good we're through the emergency exit.", coords: "two" },
+    3: { text: "If I'm correct, take 19 steps forward and you'll be near a mark on the floor.", coords: "three" },
+    4: { text: "From here there should be a pillar to your left. Use it for cover.", coords: "four" },
+    5: { text: "The exhibition is empty but there are security guards we need to look out for.", coords: "four" },
+    6: { text: "You'll see a postbox near you. <br/> Postbox in a stamp exhibition!<br/> Use the sounds of the church nearby to cover you.<br/> 3 - 2 - 1 GO.", coords: "five" },
+    7: { text: "Right. We're nearly there. <br/>
+  With your backs to the toilets head towards the lift....wait. <br/>
+  That security guard is nearby. <br/>
+  Hold still whilst he goes past.", coords: "five" },
+    8: { text: "Ok, he's gone. Clearly in a rush!<br/>
+Let's get our prize.<br/>
+Head towards the lift.<br/>
+The exhibit we need is there.<br/>
+Get the trophy.", coords: "six" }
 }>>
 
 <div class="wrapper cogs">
@@ -585,7 +617,7 @@ setup.requestCameraPermission = () => {
 <<button "Next instruction!">>
     <<removeclass "#location" $instructions[$currentInstructionIndex].coords>>
 <<set $currentInstructionIndex += 1>>
-  <<if $currentInstructionIndex === 12>>
+  <<if $currentInstructionIndex === 8>>
     <<replace "#instruction">>
       /* <<print $currentInstructionIndex>> */
       <p><<print $instructions[$currentInstructionIndex].text>></p>
@@ -628,7 +660,7 @@ setup.requestCameraPermission = () => {
 	<div>
 <p>We need to scan the SFS code here it seems</p>
 <p>Then what did he say, touch the cup. </p>
-<p>This story requires access to your camera to scan a QR code.</p>
+<p>Use your camera to scan the QR code or your own app to get what we need.</p>
 
 
     <!-- The `label` is attached to the hidden file input -->
@@ -650,7 +682,7 @@ setup.requestCameraPermission = () => {
 
 
 
-<span class="button-wrapper" aria-label="Click Button to confirm you have scanned image"><a href="https://deft-gaufre-490f8b.netlify.app/phone2" target="_blank" rel="noreferrer">IMAGE SCANNED</a></span>
+<span class="button-wrapper" aria-label="Click Button to confirm you have scanned image"><a href="https://pickles-playtest.netlify.app/phone2.html" target="_blank" rel="noreferrer">IMAGE SCANNED</a></span>
 	</div>
 
 	</main>
@@ -668,3 +700,15 @@ setup.requestCameraPermission = () => {
   <</if>>
 </div></nav></footer>
 
+:: footernext [nobr]
+
+<footer><nav class=""><div id="back" class="button-wrapper">
+<<if passage() is not "onboarding1">>
+  <<button "Back">> 
+    <<goto $prevpass>>
+    <</button>>
+  <</if>>
+</div>
+ <span class="button-wrapper" aria-label="Click a button or link to move on">
+      <<button [[Next|$nextpass]]>><</button>>
+    </span></nav></footer>
