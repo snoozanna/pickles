@@ -238,7 +238,7 @@ function log(msg) {
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
 	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
 
-&lt;p&gt;Woh - what happened? &lt;/p&gt;
+&lt;p&gt;Woh - what just happened? &lt;/p&gt;
 &lt;p&gt;Can you enter the reference number on the image you found?&lt;/p&gt;
   &lt;&lt;include &quot;pwAR&quot;&gt;&gt;
 	&lt;/main&gt;
@@ -256,12 +256,13 @@ function log(msg) {
      /% STANDARDISE INPUT %/
          &lt;&lt;set _password to _password.toUpperCase()&gt;&gt;
      /% CODEWORD CORRECT %/
-         &lt;&lt;if _password isnot &quot;&quot; and _password is &quot;MEPO 2/10966&quot;&gt;&gt;
+         &lt;&lt;if _password isnot &quot;&quot; and _password is &quot;DPP 2/4167&quot;&gt;&gt;
          &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;Correct!&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+             &lt;&lt;audio &quot;correct&quot; play&gt;&gt;
          &lt;&lt;timed 3s&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
         &lt;&lt;/if&gt;&gt;
           /% CODEWORD INCORRECT %/
-       &lt;&lt;if _password isnot &quot;&quot; and _password is not &quot;MEPO 2/10966&quot;&gt;&gt;
+       &lt;&lt;if _password isnot &quot;&quot; and _password is not &quot;DPP 2/4167&quot;&gt;&gt;
           &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
         &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
           &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -325,14 +326,14 @@ function log(msg) {
 
 &lt;p&gt;Head there and ask the bookkeeper if they have a parcel from the past?&lt;/p&gt;
 
-&lt;p&gt;When you have the parcel, have a seat and click below.&lt;/p&gt;
+&lt;p&gt;When you have the parcel, have a seat in the cafe and click below.&lt;/p&gt;
 
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="11" name="shop2" tags="nobr" position="100,225" size="100,100">&lt;&lt;set $prevpass to &quot;shop1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;shop2&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;video5&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;shop2a&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs portrait&quot;&gt;
 	&lt;&lt;include &quot;header&quot;&gt;&gt;
    &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
@@ -350,7 +351,20 @@ function log(msg) {
   &lt;&lt;include &quot;pwShop&quot;&gt;&gt;
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footerback&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="pwShop" tags="nobr" position="225,225" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="shop2a" tags="nobr" position="225,225" size="100,100">&lt;&lt;set $prevpass to &quot;shop2&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;shop2a&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;video5&quot;&gt;&gt;
+&lt;div class=&quot;wrapper cogs portrait&quot;&gt;
+	&lt;&lt;include &quot;header&quot;&gt;&gt;
+   &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
+	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
+	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+
+&lt;p&gt;Head back to where you were sitting and I’ll connect.&lt;/p&gt;
+
+	&lt;/main&gt;
+	&lt;&lt;include &quot;footerhere&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="pwShop" tags="nobr" position="350,225" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
   &lt;label for=&quot;textbox--password&quot; tabindex=&quot;0&quot; &gt;&lt;span aria-label=&quot;Enter the word below&quot; role=&quot;label&quot;&gt;Enter the word below&lt;/span&gt;&lt;/label&gt;
   /% CODEWORD INPUT %/
    &lt;div class=&quot;code-input&quot;&gt;
@@ -365,6 +379,7 @@ function log(msg) {
    /% CODEWORD CORRECT %/
        &lt;&lt;if _password isnot &quot;&quot; and _password is &quot;JOE&quot;&gt;&gt;
        &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;Correct!&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+           &lt;&lt;audio &quot;correct&quot; play&gt;&gt;
        &lt;&lt;timed 3s&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
       &lt;&lt;/if&gt;&gt;
         /% CODEWORD INCORRECT %/
@@ -379,7 +394,7 @@ function log(msg) {
     &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
 
     &lt;/div&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="video5" tags="nobr" position="350,225" size="100,100">&lt;&lt;set $prevpass to &quot;shop2&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="video5" tags="nobr" position="475,225" size="100,100">&lt;&lt;set $prevpass to &quot;shop2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;video5&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;shop3&quot;&gt;&gt;
 /* VIDEO 5 */
@@ -394,7 +409,7 @@ function log(msg) {
   &lt;/span&gt;
 &lt;span class=&quot;button-wrapper videor&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
 &lt;&lt;button &quot;Next&quot; $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="shop3" tags="nobr" position="475,225" size="100,100">&lt;&lt;set $prevpass to &quot;video5&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="shop3" tags="nobr" position="600,225" size="100,100">&lt;&lt;set $prevpass to &quot;video5&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;shop3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;shop4&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs portrait&quot;&gt;
@@ -410,7 +425,7 @@ function log(msg) {
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="shop4" tags="nobr" position="600,225" size="100,100">&lt;&lt;set $prevpass to &quot;shop3&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="shop4" tags="nobr" position="725,225" size="100,100">&lt;&lt;set $prevpass to &quot;shop3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;shop4&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;cabinet1&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs portrait&quot;&gt;
@@ -422,8 +437,7 @@ function log(msg) {
 &lt;p&gt;Head up the stairs to level one.&lt;/p&gt;
 &lt;p&gt;On the first floor, go through the barriers, turn right and head towards the library. Look for the information desk in front of the library – it is the R.E.D. desk. &lt;/p&gt;
 &lt;p&gt;Give the individual the file number we found in the ‘picture’ downstairs &lt;/p&gt;
-&lt;p&gt;
-	MEPO 2/10966 – and they will give you a copy of the transcript!
+&lt;p&gt;DPP 2/4167 – and they will give you a copy of the transcript!
 	We need it before we can nudge. 
 &lt;/p&gt;
 &lt;p&gt;When you have it click below.&lt;/p&gt;
@@ -431,7 +445,7 @@ function log(msg) {
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footerhaveit&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="footerhaveit" tags="nobr" position="725,225" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="footerhaveit" tags="nobr" position="850,225" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
 &lt;&lt;if passage() is not &quot;onboarding1&quot;&gt;&gt;
   &lt;&lt;button &quot;Back&quot;&gt;&gt; 
     &lt;&lt;goto $prevpass&gt;&gt;
@@ -440,7 +454,7 @@ function log(msg) {
 &lt;/div&gt;
  &lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
       &lt;&lt;button [[We have it!|$nextpass]]&gt;&gt;&lt;&lt;/button&gt;&gt;
-    &lt;/span&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="17" name="cabinet1" tags="nobr" position="850,225" size="100,100">&lt;&lt;set $prevpass to &quot;shop4&quot;&gt;&gt;
+    &lt;/span&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="18" name="cabinet1" tags="nobr" position="975,225" size="100,100">&lt;&lt;set $prevpass to &quot;shop4&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;cabinet1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;cabinet2&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs portrait&quot;&gt;
@@ -450,14 +464,18 @@ function log(msg) {
 	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
 
 &lt;p&gt;Right, now you have the transcript, I need you to go to the spot where we can work together. &lt;/p&gt;
-&lt;p&gt;We need to find a place we can make a phone call.&lt;/p&gt;
-&lt;p&gt;Head to large green table – it’s a replica of the real cabinet table in number 10! Find prime minister Harold Wilson (PM in 1966) and take a seat. &lt;/p&gt;
+
+&lt;p&gt;We need to find a place where we can make a phone call.&lt;/p&gt;
+
+&lt;p&gt;Head to the large green table – it’s a replica of the real cabinet table in number 10! Find prime minister Harold Wilson (PM in 1966) and take a seat. &lt;/p&gt;
+
 &lt;p&gt;There is a MoTT Aerial above the seat that will amplify your call and help the nudge. &lt;/p&gt;
-&lt;p&gt;When there click below. &lt;/p&gt;
+
+&lt;p&gt;When there, click below. &lt;/p&gt;
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footerhere&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="18" name="footerhere" tags="nobr" position="975,225" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name="footerhere" tags="nobr" position="1100,225" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
 &lt;&lt;if passage() is not &quot;onboarding1&quot;&gt;&gt;
   &lt;&lt;button &quot;Back&quot;&gt;&gt; 
     &lt;&lt;goto $prevpass&gt;&gt;
@@ -466,7 +484,7 @@ function log(msg) {
 &lt;/div&gt;
  &lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
       &lt;&lt;button [[We&#39;re here|$nextpass]]&gt;&gt;&lt;&lt;/button&gt;&gt;
-    &lt;/span&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="19" name="cabinet2" tags="nobr" position="1100,225" size="100,100">&lt;&lt;set $prevpass to &quot;cabinet1&quot;&gt;&gt;
+    &lt;/span&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="20" name="cabinet2" tags="nobr" position="1225,225" size="100,100">&lt;&lt;set $prevpass to &quot;cabinet1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;cabinet2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;cabinet3&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs portrait&quot;&gt;
@@ -486,7 +504,7 @@ function log(msg) {
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footerokay&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="footerokay" tags="nobr" position="1225,225" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="21" name="footerokay" tags="nobr" position="100,350" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
 &lt;&lt;if passage() is not &quot;onboarding1&quot;&gt;&gt;
   &lt;&lt;button &quot;Back&quot;&gt;&gt; 
     &lt;&lt;goto $prevpass&gt;&gt;
@@ -495,7 +513,7 @@ function log(msg) {
 &lt;/div&gt;
  &lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
       &lt;&lt;button [[Okay|$nextpass]]&gt;&gt;&lt;&lt;/button&gt;&gt;
-    &lt;/span&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="21" name="cabinet3" tags="nobr" position="100,350" size="100,100">&lt;&lt;set $prevpass to &quot;cabinet2&quot;&gt;&gt;
+    &lt;/span&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="22" name="cabinet3" tags="nobr" position="225,350" size="100,100">&lt;&lt;set $prevpass to &quot;cabinet2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;cabinet3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;cabinet3&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs portrait&quot;&gt;
@@ -512,7 +530,7 @@ function log(msg) {
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footerready&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="footerready" tags="nobr" position="225,350" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="footerready" tags="nobr" position="350,350" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
 &lt;&lt;if passage() is not &quot;onboarding1&quot;&gt;&gt;
   &lt;&lt;button &quot;Back&quot;&gt;&gt; 
     &lt;&lt;goto $prevpass&gt;&gt;

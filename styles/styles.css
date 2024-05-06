@@ -211,7 +211,7 @@ img.logomott {
 .button-wrapper > button,
 .button-wrapper > a,
 .button-wrapper.circle > button,
-.button-wrapper.orange > button {
+.button-wrapper.orange > button{
   color: black;
   background-color: transparent;
   font-weight: 700;
@@ -614,19 +614,26 @@ h3.subtitle > span.orange {
 /* TABLET COLOUR INPUT  */
 
 .multi-input-wrapper > .red > input {
-  background-color: red;
+  background-color: rgb(176, 38, 38);
 }
 
 .multi-input-wrapper > .blue > input {
-  background-color: blue;
+  background-color: rgb(75, 173, 215);
 }
 
 .multi-input-wrapper > .green > input {
-  background-color: green;
+  background-color: rgb(21, 98, 21);
 }
 
-.multi-input-wrapper > .yellow > input {
-  background-color: yellow;
+.multi-input-wrapper > .purple > input {
+  background-color: rgb(153, 54, 153);
+}
+
+.code-input.multibox > .multi-input-wrapper.colors > div > input.macro-textbox{
+  border: 2px solid white;
+  font-size:3rem;
+  color: white;
+  width: 5rem;
 }
 
 /* ANIMATION  */

@@ -16,7 +16,8 @@ Pickles - National Archives - Tablet
 @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Fondamento:ital@1&family=Italianno&family=Cairo:wght@500&family=Noto+Sans+Mono:wght@700&family=Tangerine:wght@400;700&family=IM+Fell+Double+Pica+SC&family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=Niconne&family=Montserrat:wght@400;800&display=swap');
 
 @import url("/styles/generics.css");
-@import url("/styles/styles.css");s
+@import url("/styles/styles.css");
+@import url("/styles/tablet.css");s
 /* @import url("ogstyles.css"); */
 
 
@@ -100,8 +101,7 @@ UIBar.destroy();
 <<set $nextpass to "video1">>
 <div class="wrapper cogs">
 	<<include "header">>
-	<main id="main" class="flex-container-col"><<set $title to 1>>
-	<<if $audioClick isnot true>><<set $audioOn to true>><</if>>
+	<main id="main" class="flex-container-col tabletmain">
 	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
 <<include "pwEntrance">>
 
@@ -114,6 +114,7 @@ UIBar.destroy();
 :: pwEntrance [nobr]
 /* TODO CHECK ACCESS  */
 <div id="coderesult"></div>
+<br/><br/>
 <div id="resultbutton">
   /% CODEWORD INPUT %/
   <div class="code-input entrance multibox center-col">
@@ -138,6 +139,7 @@ UIBar.destroy();
   <<if $code1 isnot "" and $code2 isnot "" and $code3 isnot "" and $code4 isnot "" and $code5 isnot "">>
     <<if ($code1 + $code2 + $code3 + $code4 + $code5) is "BEGIN">>
       <<replace "#coderesult">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
+	    <<audio "correct" play>>
       <<timed 3s>><<goto $nextpass>><</timed>>
     <</if>>
   <</if>>
@@ -199,11 +201,11 @@ UIBar.destroy();
 <div id="resultbutton">
   /% CODEWORD INPUT %/
   <div class="code-input entrance multibox center-col">
-    <div class="multi-input-wrapper">
+    <div class="multi-input-wrapper colors">
     	<div class="red"><<textbox "$code1" "">></div>
 	    <div class="blue"><<textbox "$code2" "">></div>
 	   <div class="green"> <<textbox "$code3" "">></div>
-			<div class="yellow"><<textbox "$code4" "">></div>
+			<div class="purple"><<textbox "$code4" "">></div>
     </div>
 		<br/>
  <span class="button-wrapper" aria-label="Click a button or link to move on">
@@ -219,6 +221,7 @@ UIBar.destroy();
   <<if $code1 isnot "" and $code2 isnot "" and $code3 isnot "" and $code4 isnot "">>
     <<if ($code1 + $code2 + $code3 + $code4) is "MOTT">>
       <<replace "#coderesult">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
+	      <<audio "correct" play>>
       <<timed 3s>><<goto $nextpass>><</timed>>
     <</if>>
   <</if>>

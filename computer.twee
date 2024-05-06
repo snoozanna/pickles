@@ -155,6 +155,7 @@ UIBar.destroy();
    /% CODEWORD CORRECT %/
        <<if _password isnot "" and _password is "PICKLES">>
        <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+          <<audio "correct" play>>
        <<timed 3s>><<goto $nextpass>><</timed>>
       <</if>>
         /% CODEWORD INCORRECT %/
@@ -499,7 +500,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
   <<append "#messagesContainer">>
     <div class="message">
       <div class="message-container" >
-	<p>Quickly we need to find the number to access the Signal Fire System. </p>
+	<p>Quickly we need to find the pin to access the Signal Fire System from here. </p>
       </div>
     </div>
   <</append>>
@@ -555,6 +556,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
    /% CODEWORD CORRECT %/
        <<if _password isnot "" and _password is "1966">>
        <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+          <<audio "correct" play>>
 			 <<timed 1s>>
 					<<replace "#chatMount">>
 					<<include "chatText2">>
@@ -596,6 +598,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
    /% CODEWORD CORRECT %/
        <<if _password isnot "" and _password is "CORBETT">>
        <<replace "#coderesult3">><h2 class="subtitle complete">Target accepted</h2><</replace>>
+           <<audio "correct" play>>
        <<timed 3s>>
 				<<replace "#sfsMount">>
 <h2>Target accepted</h2>
@@ -632,6 +635,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
    /% CODEWORD CORRECT %/
        <<if _password isnot "" and _password is "REVEAL">>
        <<replace "#coderesult">><h2 class="subtitle complete">File unlocked</h2><</replace>>
+          <<audio "correct" play>>
        <<timed 3s>>
 				<<goto "video8">>
 			 <</timed>>
@@ -658,7 +662,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
       </div>
       <div class="message-container" >
         <span class="sender">User</span>
-    <p>Yes – that is the pin. It looks like the number we need. </p>
+    <p>Yes – that is the pin.</p>
       </div>
     </div>
   <</append>>
@@ -961,7 +965,7 @@ VIDEO 8
       </div>
       <div class="message-container" >
         <span class="sender">User</span>
-    				<p>Give the Pickles Dog Collar back to my friend in the Cabinet Table and they may give you something in return...</p>
+    				<p>Give the Pickles Dog Collar back to my friend near the Cabinet Table and they may give you something in return...</p>
       </div>
     </div>
   <</append>>
@@ -992,6 +996,7 @@ VIDEO 8
   <<if $code1 isnot "" and $code2 isnot "" and $code3 isnot "" and $code4 isnot "">>
     <<if ($code1 + $code2 + $code3 + $code4) is "MOTT">>
       <<replace "#coderesult">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
+        <<audio "correct" play>>
       <<timed 3s>><<goto $nextpass>><</timed>>
     <</if>>
   <</if>>

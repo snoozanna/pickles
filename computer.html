@@ -210,6 +210,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
    /% CODEWORD CORRECT %/
        &lt;&lt;if _password isnot &quot;&quot; and _password is &quot;PICKLES&quot;&gt;&gt;
        &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+          &lt;&lt;audio &quot;correct&quot; play&gt;&gt;
        &lt;&lt;timed 3s&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
       &lt;&lt;/if&gt;&gt;
         /% CODEWORD INCORRECT %/
@@ -533,7 +534,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;message-container&quot; &gt;
-	&lt;p&gt;Quickly we need to find the number to access the Signal Fire System. &lt;/p&gt;
+	&lt;p&gt;Quickly we need to find the pin to access the Signal Fire System from here. &lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
@@ -579,6 +580,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
    /% CODEWORD CORRECT %/
        &lt;&lt;if _password isnot &quot;&quot; and _password is &quot;1966&quot;&gt;&gt;
        &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+          &lt;&lt;audio &quot;correct&quot; play&gt;&gt;
 			 &lt;&lt;timed 1s&gt;&gt;
 					&lt;&lt;replace &quot;#chatMount&quot;&gt;&gt;
 					&lt;&lt;include &quot;chatText2&quot;&gt;&gt;
@@ -617,6 +619,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
    /% CODEWORD CORRECT %/
        &lt;&lt;if _password isnot &quot;&quot; and _password is &quot;CORBETT&quot;&gt;&gt;
        &lt;&lt;replace &quot;#coderesult3&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;Target accepted&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+           &lt;&lt;audio &quot;correct&quot; play&gt;&gt;
        &lt;&lt;timed 3s&gt;&gt;
 				&lt;&lt;replace &quot;#sfsMount&quot;&gt;&gt;
 &lt;h2&gt;Target accepted&lt;/h2&gt;
@@ -650,6 +653,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
    /% CODEWORD CORRECT %/
        &lt;&lt;if _password isnot &quot;&quot; and _password is &quot;REVEAL&quot;&gt;&gt;
        &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;File unlocked&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+          &lt;&lt;audio &quot;correct&quot; play&gt;&gt;
        &lt;&lt;timed 3s&gt;&gt;
 				&lt;&lt;goto &quot;video8&quot;&gt;&gt;
 			 &lt;&lt;/timed&gt;&gt;
@@ -673,7 +677,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
       &lt;/div&gt;
       &lt;div class=&quot;message-container&quot; &gt;
         &lt;span class=&quot;sender&quot;&gt;User&lt;/span&gt;
-    &lt;p&gt;Yes – that is the pin. It looks like the number we need. &lt;/p&gt;
+    &lt;p&gt;Yes – that is the pin.&lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
@@ -947,7 +951,7 @@ VIDEO 8
       &lt;/div&gt;
       &lt;div class=&quot;message-container&quot; &gt;
         &lt;span class=&quot;sender&quot;&gt;User&lt;/span&gt;
-    				&lt;p&gt;Give the Pickles Dog Collar back to my friend in the Cabinet Table and they may give you something in return...&lt;/p&gt;
+    				&lt;p&gt;Give the Pickles Dog Collar back to my friend near the Cabinet Table and they may give you something in return...&lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
@@ -973,6 +977,7 @@ VIDEO 8
   &lt;&lt;if $code1 isnot &quot;&quot; and $code2 isnot &quot;&quot; and $code3 isnot &quot;&quot; and $code4 isnot &quot;&quot;&gt;&gt;
     &lt;&lt;if ($code1 + $code2 + $code3 + $code4) is &quot;MOTT&quot;&gt;&gt;
       &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;div class=&quot;confirmation&quot; id=&quot;confirmation&quot;&gt;Correct!&lt;/div&gt;&lt;&lt;/replace&gt;&gt;
+        &lt;&lt;audio &quot;correct&quot; play&gt;&gt;
       &lt;&lt;timed 3s&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
     &lt;&lt;/if&gt;&gt;
   &lt;&lt;/if&gt;&gt;

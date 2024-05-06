@@ -222,6 +222,14 @@ footer.map {
   position: absolute;
 }
 
+.guard {
+  background-color: rgb(206, 142, 14);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: absolute;
+}
+
 .location.one {
   left: 41%;
   bottom: 3%;
@@ -238,8 +246,8 @@ footer.map {
 }
 
 .location.four {
-  left: 22%;
-  bottom: 63%;
+  left: 41%;
+  top: 20%
 }
 
 .location.five {
@@ -249,8 +257,33 @@ footer.map {
 
 .location.six {
   right: 3%;
-  top: 16%;
+  top: 20%;
 }
+
+.guard.hide{
+display: none;
+}
+
+.guard.gone{
+  right: 3%;
+  top: 20%;
+}
+
+.guard.gtwo{
+  right: 44%;
+  top: 20%;
+}
+
+.guard.gthree{
+  right: 44%;
+  top: 61%;
+}
+
+.guard.gfour{
+  right: 75%;
+  top: 61%;
+}
+
 
 /* QR CODE  */
 
@@ -272,11 +305,13 @@ video.video {
 
 .btn {
   display: inline-block;
-  background-color: #00b531;
+  background-color:transparent;
+  border: 2px solid white;
   color: white;
-  padding: 8px 12px;
-  border-radius: 4px;
-  font-size: 16px;
+  padding: 4px 6px;
+  border-radius: 1rem;
+  font-size: 2rem;
+  text-transform: uppercase;
   cursor: pointer;
 }
 

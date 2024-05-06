@@ -98,7 +98,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<!-- UUID://B3CC7B75-82B1-4C5E-A453-149BC0AA8D60// --><tw-storydata name="Pickles - National Archives - Phone 1" startnode="4" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="B3CC7B75-82B1-4C5E-A453-149BC0AA8D60" zoom="0.6" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Fondamento:ital@1&family=Italianno&family=Cairo:wght@500&family=Noto+Sans+Mono:wght@700&family=Tangerine:wght@400;700&family=IM+Fell+Double+Pica+SC&family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=Niconne&family=Montserrat:wght@400;800&display=swap');
+	<!-- UUID://B3CC7B75-82B1-4C5E-A453-149BC0AA8D60// --><tw-storydata name="Pickles - National Archives - Phone 1" startnode="5" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="B3CC7B75-82B1-4C5E-A453-149BC0AA8D60" zoom="0.6" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Fondamento:ital@1&family=Italianno&family=Cairo:wght@500&family=Noto+Sans+Mono:wght@700&family=Tangerine:wght@400;700&family=IM+Fell+Double+Pica+SC&family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=Niconne&family=Montserrat:wght@400;800&display=swap');
 
 @import url("/styles/generics.css");
 @import url("/styles/styles.css");
@@ -226,7 +226,12 @@ setup.requestCameraPermission = () => {
     } else {
       alert('getUserMedia is not supported on this browser');
     }
-  }</script><tw-passagedata pid="1" name="Start" tags="nobr" position="134,244.33333333333337" size="100,100">&lt;div class=&quot;wrapper audio&quot; id=&quot;mount&quot;&gt;
+  }</script><tw-passagedata pid="1" name="StoryInit" tags="" position="100,100" size="100,100">&lt;&lt;cacheaudio &quot;ping1&quot; &quot;assets/sound/ping1.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;correct&quot; &quot;assets/sound/keep2.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;uploading&quot; &quot;assets/sound/uploading.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;complete&quot; &quot;assets/sound/uploadcomplete.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;signal&quot; &quot;assets/sound/signal.mp3&quot;&gt;&gt;
+&lt;&lt;waitforaudio&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="Start" tags="nobr" position="134,244.33333333333337" size="100,100">&lt;div class=&quot;wrapper audio&quot; id=&quot;mount&quot;&gt;
 	&lt;div class=&quot;phone-warning&quot;&gt;&lt;p&gt;Phone&lt;/p&gt;&lt;/div&gt;
 &lt;div class=&quot;multiple-btn-wrapper&quot;&gt;
 	&lt;span aria-label=&quot;Click Button to begin&quot; class=&quot;button-wrapper&quot;&gt;
@@ -237,8 +242,8 @@ setup.requestCameraPermission = () => {
 
 	
 &lt;/div&gt;
-  &lt;/div &gt;</tw-passagedata><tw-passagedata pid="2" name="header" tags="nobr" position="225,100" size="100,100">&lt;header&gt;
-	&lt;div class=&quot;logo-wrapper&quot;&gt;&lt;img src=&quot;assets/img/na-logo.png&quot; alt=&quot;The National Archives Logo&quot; class=&quot;logo na&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt; &lt;/header&gt;</tw-passagedata><tw-passagedata pid="3" name="audioChoice" tags="nobr" position="134,244.33333333333337" size="100,100">&lt;div class=&quot;wrapper audio&quot; id=&quot;mount&quot;&gt;
+  &lt;/div &gt;</tw-passagedata><tw-passagedata pid="3" name="header" tags="nobr" position="350,100" size="100,100">&lt;header&gt;
+	&lt;div class=&quot;logo-wrapper&quot;&gt;&lt;img src=&quot;assets/img/na-logo.png&quot; alt=&quot;The National Archives Logo&quot; class=&quot;logo na&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt; &lt;/header&gt;</tw-passagedata><tw-passagedata pid="4" name="audioChoice" tags="nobr" position="134,244.33333333333337" size="100,100">&lt;div class=&quot;wrapper audio&quot; id=&quot;mount&quot;&gt;
 	&lt;div class=&quot;phone-warning&quot;&gt;&lt;p&gt;MOTT is best experienced on a computer or tablet&lt;/p&gt;&lt;/div&gt;
 &lt;audio src=&quot;https://remote.co.com/MoTT/AgentTraining/assets/audio/Audioon_off.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 
@@ -278,7 +283,7 @@ setup.requestCameraPermission = () => {
 	&lt;&lt;/button&gt;&gt;&lt;/span&gt;
 &lt;/div&gt;
 
-  &lt;/div &gt;</tw-passagedata><tw-passagedata pid="4" name="onboarding1" tags="nobr" position="475,100" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding1&quot;&gt;&gt;
+  &lt;/div &gt;</tw-passagedata><tw-passagedata pid="5" name="onboarding1" tags="nobr" position="600,100" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;onboarding1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;onboarding2&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs&quot;&gt;
@@ -289,7 +294,7 @@ setup.requestCameraPermission = () => {
 
 	&lt;div class=&quot;intro-text&quot;&gt;
 	  &lt;p&gt;Welcome to The National Archives.&lt;/p&gt;
-	  &lt;p&gt;This experience requires you to tap through on a screen. You just need to look for the NEXT button to click on. Try it now.  &lt;/p&gt;
+	  &lt;p&gt;This experience requires you to tap through on a screen. You just need to look for the NEXT button to click on. &lt;/p&gt;
 	  
 	  &lt;div class=&quot;flex-container-row&quot;&gt;&lt;p class=&quot;fit&quot;&gt;Try it now.&lt;/p&gt;
 		&lt;br/&gt;&lt;span class=&quot;button-wrapper circle&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;&lt;&lt;button [[&quot;Next&quot;|$nextpass]]&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;/div&gt;
@@ -297,7 +302,7 @@ setup.requestCameraPermission = () => {
 	&lt;div class=&quot;holding&quot;&gt;&lt;/div&gt;
 	&lt;/main&gt;
   &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="5" name="onboarding2" tags="nobr" position="600,100" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="6" name="onboarding2" tags="nobr" position="725,100" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;onboarding2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;onboarding3&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs&quot;&gt;
@@ -313,7 +318,7 @@ setup.requestCameraPermission = () => {
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="6" name="onboarding3" tags="nobr" position="725,100" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="7" name="onboarding3" tags="nobr" position="850,100" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;onboarding3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;onboarding4&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs&quot;&gt;
@@ -322,7 +327,7 @@ setup.requestCameraPermission = () => {
 	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
 
 	&lt;div class=&quot;intro-text&quot;&gt;
-	  &lt;p&gt;You’ll need to rotate your screen at points – sometimes on your phone you need to allow your phone to do this on settings.&lt;/p&gt;
+	  &lt;p&gt;You’ll need to rotate your screen at points – sometimes on your phone you need to do this on settings.&lt;/p&gt;
 	 &lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
       &lt;&lt;button [[Next|$nextpass]]&gt;&gt;&lt;&lt;/button&gt;&gt;
     &lt;/span&gt;
@@ -330,7 +335,7 @@ setup.requestCameraPermission = () => {
 	
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="7" name="onboarding4" tags="nobr" position="850,100" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding3&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="8" name="onboarding4" tags="nobr" position="975,100" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;onboarding4&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;onboarding5&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs&quot;&gt;
@@ -339,7 +344,8 @@ setup.requestCameraPermission = () => {
 	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
 
 	&lt;div class=&quot;intro-text&quot;&gt;
-	  &lt;p&gt;You can get captions on all the videos. You may want to go full screen on some of the videos but do remember you need to exit full screen to continue. (It may just be best to stay off full screen mode)&lt;/p&gt;
+	  &lt;p&gt;You can get captions on all the videos.&lt;/p&gt; 
+    &lt;p&gt;You may want to go full screen on some of the videos but do remember you need to exit full screen to continue. (It may just be best to stay off full screen mode)&lt;/p&gt;
 	
 		 &lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
       &lt;&lt;button [[Next|$nextpass]]&gt;&gt;&lt;&lt;/button&gt;&gt;
@@ -347,7 +353,7 @@ setup.requestCameraPermission = () => {
   &lt;/div&gt;
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="8" name="onboarding5" tags="nobr" position="975,100" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding4&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="9" name="onboarding5" tags="nobr" position="1100,100" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding4&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;onboarding5&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;onboarding5a&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs&quot;&gt;
@@ -363,7 +369,7 @@ setup.requestCameraPermission = () => {
 	&lt;/div&gt;
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="9" name="onboarding5a" tags="nobr" position="1100,100" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding5&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="onboarding5a" tags="nobr" position="1225,100" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding5&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;onboarding5a&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;onboarding6&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs&quot;&gt;
@@ -383,7 +389,7 @@ setup.requestCameraPermission = () => {
 	&lt;/div&gt;
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="onboarding6" tags="nobr" position="1225,100" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding5a&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="11" name="onboarding6" tags="nobr" position="100,225" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding5a&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;onboarding6&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;360intro&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs&quot;&gt;
@@ -400,7 +406,7 @@ setup.requestCameraPermission = () => {
   &lt;&lt;/timed&gt;&gt;
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="11" name="pwSFS" tags="nobr" position="100,225" size="100,100">/* TODO CHECK ACCESS  */
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="pwSFS" tags="nobr" position="225,225" size="100,100">/* TODO CHECK ACCESS  */
 &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
 &lt;div id=&quot;resultbutton&quot;&gt;
   /% CODEWORD INPUT %/
@@ -423,6 +429,7 @@ setup.requestCameraPermission = () => {
   &lt;&lt;if $code1 isnot &quot;&quot; and $code2 isnot &quot;&quot; and $code3 isnot &quot;&quot;&gt;&gt;
     &lt;&lt;if ($code1 + $code2 + $code3) is &quot;SFS&quot;&gt;&gt;
       &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;div class=&quot;confirmation&quot; id=&quot;confirmation&quot;&gt;Correct!&lt;/div&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;audio &quot;correct&quot; play&gt;&gt;
       &lt;&lt;timed 3s&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
     &lt;&lt;/if&gt;&gt;
   &lt;&lt;/if&gt;&gt;
@@ -436,7 +443,7 @@ setup.requestCameraPermission = () => {
 &lt;&lt;/button&gt;&gt;
 &lt;/span&gt;
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="pw360Overide" tags="nobr" position="225,225" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="pw360Overide" tags="nobr" position="350,225" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
 
     &lt;label for=&quot;textbox--password&quot; tabindex=&quot;0&quot; &gt;&lt;span aria-label=&quot;Enter the word below&quot; role=&quot;label&quot;&gt;SFS OVERRIDE CODE:&lt;/span&gt;&lt;/label&gt;
 
@@ -451,6 +458,7 @@ setup.requestCameraPermission = () => {
        &lt;&lt;set _password to _password.toUpperCase()&gt;&gt;
    /% CODEWORD CORRECT %/
        &lt;&lt;if _password isnot &quot;&quot; and _password is &quot;CRUMPET&quot;&gt;&gt;
+            &lt;&lt;audio &quot;correct&quot; play&gt;&gt;
        &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;&quot;&gt;Correct!&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
        &lt;&lt;timed 3s&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
       &lt;&lt;/if&gt;&gt;
@@ -465,7 +473,7 @@ setup.requestCameraPermission = () => {
     /% CODEWORD FEEDBACK %/
     &lt;/div&gt;
         &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="360intro" tags="nobr" position="350,225" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding6&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="360intro" tags="nobr" position="475,225" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding6&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;360intro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;360image&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs&quot;&gt;
@@ -489,7 +497,7 @@ setup.requestCameraPermission = () => {
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="360image" tags="nobr" position="475,225" size="100,100">&lt;&lt;set $prevpass to &quot;360intro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="360image" tags="nobr" position="600,225" size="100,100">&lt;&lt;set $prevpass to &quot;360intro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;360image&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;video3&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs&quot;&gt;
@@ -502,13 +510,13 @@ setup.requestCameraPermission = () => {
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer360&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="footer360" tags="nobr" position="600,225" size="100,100">&lt;footer class=&quot;pano&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="footer360" tags="nobr" position="725,225" size="100,100">&lt;footer class=&quot;pano&quot;&gt;
 &lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
   &lt;&lt;button &quot;Back&quot;&gt;&gt; 
     &lt;&lt;goto $prevpass&gt;&gt;
     &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;&lt;/nav&gt;
-  &lt;&lt;include &quot;pw360Overide&quot;&gt;&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="16" name="video3" tags="nobr" position="725,225" size="100,100">&lt;&lt;set $prevpass to &quot;360image&quot;&gt;&gt;
+  &lt;&lt;include &quot;pw360Overide&quot;&gt;&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="17" name="video3" tags="nobr" position="850,225" size="100,100">&lt;&lt;set $prevpass to &quot;360image&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;video3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;mapintro1&quot;&gt;&gt;
 /* VIDEO 3 */
@@ -523,7 +531,7 @@ setup.requestCameraPermission = () => {
   &lt;/span&gt;
 &lt;span class=&quot;button-wrapper videor&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
 &lt;&lt;button &quot;Next&quot; $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="mapintro1" tags="nobr" position="850,225" size="100,100">&lt;&lt;set $prevpass to &quot;video3&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="18" name="mapintro1" tags="nobr" position="975,225" size="100,100">&lt;&lt;set $prevpass to &quot;video3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;mapintro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;robberintro&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs portrait&quot;&gt;
@@ -547,7 +555,7 @@ setup.requestCameraPermission = () => {
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="18" name="robberintro" tags="nobr" position="975,225" size="100,100">&lt;&lt;set $prevpass to &quot;mapintro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name="robberintro" tags="nobr" position="1100,225" size="100,100">&lt;&lt;set $prevpass to &quot;mapintro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;robberintro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;map&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs portrait&quot;&gt;
@@ -562,33 +570,22 @@ setup.requestCameraPermission = () => {
 &lt;p&gt;I&#39;ve mapped out the place.&lt;/p&gt;
 &lt;p&gt;I&#39;ve done the planning.&lt;/p&gt;
 &lt;p&gt;You just need to follow my instructions and we&#39;ll get what we deserve.&lt;/p&gt;
-
 	&lt;/div&gt;
  
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footernext&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name="map" tags="nobr" position="1100,225" size="100,100">&lt;&lt;set $prevpass to &quot;mapintro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="map" tags="nobr" position="1225,225" size="100,100">&lt;&lt;set $prevpass to &quot;mapintro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;map&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;ARIntro1&quot;&gt;&gt;
 &lt;&lt;set $currentInstructionIndex = 1&gt;&gt;
 &lt;&lt;set $instructions = {
     1: { text: &quot;We&#39;re ready to go.&lt;br/&gt;
-Step through the double doors and keep left.&quot;, coords: &quot;one&quot; },
-    2: { text: &quot;Good we&#39;re through the emergency exit.&quot;, coords: &quot;two&quot; },
-    3: { text: &quot;If I&#39;m correct, take 19 steps forward and you&#39;ll be near a mark on the floor.&quot;, coords: &quot;three&quot; },
-    4: { text: &quot;From here there should be a pillar to your left. Use it for cover.&quot;, coords: &quot;four&quot; },
-    5: { text: &quot;The exhibition is empty but there are security guards we need to look out for.&quot;, coords: &quot;four&quot; },
-    6: { text: &quot;You&#39;ll see a postbox near you. &lt;br/&gt; Postbox in a stamp exhibition!&lt;br/&gt; Use the sounds of the church nearby to cover you.&lt;br/&gt; 3 - 2 - 1 GO.&quot;, coords: &quot;five&quot; },
-    7: { text: &quot;Right. We&#39;re nearly there. &lt;br/&gt;
-  With your backs to the toilets head towards the lift....wait. &lt;br/&gt;
-  That security guard is nearby. &lt;br/&gt;
-  Hold still whilst he goes past.&quot;, coords: &quot;five&quot; },
-    8: { text: &quot;Ok, he&#39;s gone. Clearly in a rush!&lt;br/&gt;
-Let&#39;s get our prize.&lt;br/&gt;
-Head towards the lift.&lt;br/&gt;
-The exhibit we need is there.&lt;br/&gt;
-Get the trophy.&quot;, coords: &quot;six&quot; }
+Step through the doors - then take 19 steps forward and you&#39;ll be near a mark on the floor.&quot;, coords: &quot;one&quot;, nxtcoord: &quot;three&quot;},
+    2: { text: &quot;The stamp exhibition looks quiet but&lt;br/&gt;Hold on. 
+Someone is going past. 
+Stay very still.&quot;, coords: &quot;three&quot; },
+    3: { text: &quot;Ok, he&#39;s gone. Clearly in a rush!&lt;br/&gt;Let&#39;s get our prize.&lt;br/&gt;Head quickly towards the lift.&lt;br/&gt;The exhibit we need is there.&lt;br/&gt;Get the trophy.&quot;, coords: &quot;six&quot; }
 }&gt;&gt;
 
 &lt;div class=&quot;wrapper cogs&quot;&gt;
@@ -604,31 +601,71 @@ Get the trophy.&quot;, coords: &quot;six&quot; }
 &lt;div class=&quot;map-container&quot; id=&quot;mapContainer&quot;&gt;
 &lt;img src=&quot;assets/img/map.jpeg&quot;/&gt;
 &lt;div class=&quot;location one pulse&quot; id=&quot;location&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;guard hide pulse&quot; id=&quot;guard&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
 	&lt;/div&gt;
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footermap&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="footermap" tags="nobr" position="1225,225" size="100,100">&lt;footer class=&quot;map&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="21" name="footermap" tags="nobr" position="100,350" size="100,100">&lt;footer class=&quot;map&quot;&gt;
 &lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
   &lt;&lt;button &quot;Back&quot;&gt;&gt; 
     &lt;&lt;goto $prevpass&gt;&gt;
     &lt;&lt;/button&gt;&gt;
+
 &lt;/div&gt;
+
 &lt;span class=&quot;button-wrapper&quot; id=&quot;btnMount&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
 &lt;&lt;button &quot;Next instruction!&quot;&gt;&gt;
-    &lt;&lt;removeclass &quot;#location&quot; $instructions[$currentInstructionIndex].coords&gt;&gt;
+  
+    /* &lt;&lt;removeclass &quot;#location&quot; $instructions[$currentInstructionIndex].coords&gt;&gt; */
 &lt;&lt;set $currentInstructionIndex += 1&gt;&gt;
-  &lt;&lt;if $currentInstructionIndex === 8&gt;&gt;
+  &lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;if $currentInstructionIndex === 2 &gt;&gt;
+  &lt;&lt;timed 1s&gt;&gt;
+       &lt;&lt;removeclass &quot;#guard&quot; &quot;hide&quot;&gt;&gt;
+    &lt;&lt;addclass &quot;#guard&quot; &quot;gone&quot;&gt;&gt;
+    &lt;&lt;/timed&gt;&gt;
+ &lt;&lt;timed 4s&gt;&gt;
+   &lt;&lt;removeclass &quot;#guard&quot; &quot;gone&quot;&gt;&gt;
+    &lt;&lt;addclass &quot;#guard&quot; &quot;gtwo&quot;&gt;&gt;
+    &lt;&lt;/timed&gt;&gt;
+ &lt;&lt;timed 6s&gt;&gt;
+    &lt;&lt;removeclass &quot;#guard&quot; &quot;gtwo&quot;&gt;&gt;
+    &lt;&lt;addclass &quot;#guard&quot; &quot;gthree&quot;&gt;&gt;
+    &lt;&lt;/timed&gt;&gt;
+ &lt;&lt;timed 9s&gt;&gt;
+    &lt;&lt;removeclass &quot;#guard&quot; &quot;gthree&quot;&gt;&gt;
+    &lt;&lt;addclass &quot;#guard&quot; &quot;gfour&quot;&gt;&gt;
+    &lt;&lt;/timed&gt;&gt;
+ &lt;&lt;timed 11s&gt;&gt;
+    &lt;&lt;removeclass &quot;#guard&quot; &quot;gfour&quot;&gt;&gt;
+        &lt;&lt;addclass &quot;#guard&quot; &quot;hide&quot;&gt;&gt;
+    &lt;&lt;/timed&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+    &lt;&lt;/timed&gt;&gt;
+      &lt;&lt;timed 0.1s&gt;&gt;
+  &lt;&lt;if $currentInstructionIndex === 3 &gt;&gt;
+     &lt;&lt;timed 2s&gt;&gt;
+   &lt;&lt;removeclass &quot;#location&quot; &quot;three&quot;&gt;&gt;
+    &lt;&lt;addclass &quot;#location&quot; &quot;four&quot;&gt;&gt;
+    &lt;&lt;/timed&gt;&gt;
+    &lt;&lt;timed 4s&gt;&gt;
+    &lt;&lt;removeclass &quot;#location&quot; &quot;four&quot;&gt;&gt;
+    &lt;&lt;addclass &quot;#location&quot; &quot;six&quot;&gt;&gt;
+    &lt;&lt;/timed&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+  &lt;&lt;if $currentInstructionIndex === 3&gt;&gt;
     &lt;&lt;replace &quot;#instruction&quot;&gt;&gt;
       /* &lt;&lt;print $currentInstructionIndex&gt;&gt; */
       &lt;p&gt;&lt;&lt;print $instructions[$currentInstructionIndex].text&gt;&gt;&lt;/p&gt;
   
     &lt;&lt;/replace&gt;&gt;
-     &lt;&lt;addclass &quot;#location&quot; $instructions[$currentInstructionIndex].coords&gt;&gt;
+   
   &lt;&lt;replace &quot;#btnMount&quot;&gt;&gt;
     &lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
-        &lt;&lt;button [[I&#39;m by the cup|$nextpass]]&gt;&gt;&lt;&lt;/button&gt;&gt;
+        &lt;&lt;button [[I have the trophy|$nextpass]]&gt;&gt;&lt;&lt;/button&gt;&gt;
       &lt;/span&gt;
     &lt;&lt;/replace&gt;&gt;
     &lt;&lt;else&gt;&gt;
@@ -644,7 +681,16 @@ Get the trophy.&quot;, coords: &quot;six&quot; }
   &lt;&lt;/if&gt;&gt;
 &lt;&lt;/button&gt;&gt;
 &lt;/span&gt;
-&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="21" name="ARIntro1" tags="nobr" position="100,350" size="100,100">&lt;&lt;set $prevpass to &quot;map&quot;&gt;&gt;
+&lt;/footer&gt;
+
+&lt;&lt;timed 0.1s&gt;&gt;
+&lt;&lt;if $currentInstructionIndex === 1 &gt;&gt;
+  &lt;&lt;timed 4s&gt;&gt;
+    &lt;&lt;removeclass &quot;#location&quot; &quot;one&quot;&gt;&gt;
+    &lt;&lt;addclass &quot;#location&quot; &quot;three&quot;&gt;&gt;
+    &lt;&lt;/timed&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+    &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="ARIntro1" tags="nobr" position="225,350" size="100,100">&lt;&lt;set $prevpass to &quot;map&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;ARIntro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;AR&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
@@ -652,9 +698,10 @@ Get the trophy.&quot;, coords: &quot;six&quot; }
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
 	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
 	&lt;div&gt;
+
 &lt;p&gt;We need to scan the SFS code here it seems&lt;/p&gt;
 &lt;p&gt;Then what did he say, touch the cup. &lt;/p&gt;
-&lt;p&gt;Use your camera to scan the QR code or your own app to get what we need.&lt;/p&gt;
+&lt;p&gt;Use your camera or app to scan the QR code.&lt;/p&gt;
 
 
     &lt;!-- The `label` is attached to the hidden file input --&gt;
@@ -681,13 +728,13 @@ Get the trophy.&quot;, coords: &quot;six&quot; }
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="footer" tags="nobr" position="225,350" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="footer" tags="nobr" position="350,350" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
 &lt;&lt;if passage() is not &quot;onboarding1&quot;&gt;&gt;
   &lt;&lt;button &quot;Back&quot;&gt;&gt; 
     &lt;&lt;goto $prevpass&gt;&gt;
     &lt;&lt;/button&gt;&gt;
   &lt;&lt;/if&gt;&gt;
-&lt;/div&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="23" name="footernext" tags="nobr" position="350,350" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
+&lt;/div&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="24" name="footernext" tags="nobr" position="475,350" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
 &lt;&lt;if passage() is not &quot;onboarding1&quot;&gt;&gt;
   &lt;&lt;button &quot;Back&quot;&gt;&gt; 
     &lt;&lt;goto $prevpass&gt;&gt;

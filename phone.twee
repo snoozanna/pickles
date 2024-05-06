@@ -148,6 +148,15 @@ setup.requestCameraPermission = () => {
   }
 
 
+:: StoryInit
+<<cacheaudio "ping1" "assets/sound/ping1.mp3">>
+<<cacheaudio "correct" "assets/sound/keep2.mp3">>
+<<cacheaudio "uploading" "assets/sound/uploading.mp3">>
+<<cacheaudio "complete" "assets/sound/uploadcomplete.mp3">>
+<<cacheaudio "signal" "assets/sound/signal.mp3">>
+<<waitforaudio>>
+
+
 :: Start [nobr] {"position":"134,244.33333333333337","size":"100,100"}
 
 
@@ -225,7 +234,7 @@ setup.requestCameraPermission = () => {
 
 	<div class="intro-text">
 	  <p>Welcome to The National Archives.</p>
-	  <p>This experience requires you to tap through on a screen. You just need to look for the NEXT button to click on. Try it now.  </p>
+	  <p>This experience requires you to tap through on a screen. You just need to look for the NEXT button to click on. </p>
 	  
 	  <div class="flex-container-row"><p class="fit">Try it now.</p>
 		<br/><span class="button-wrapper circle" aria-label="Click a button or link to move on"><<button [["Next"|$nextpass]]>><</button>></span></div>
@@ -265,7 +274,7 @@ setup.requestCameraPermission = () => {
 	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
 
 	<div class="intro-text">
-	  <p>You’ll need to rotate your screen at points – sometimes on your phone you need to allow your phone to do this on settings.</p>
+	  <p>You’ll need to rotate your screen at points – sometimes on your phone you need to do this on settings.</p>
 	 <span class="button-wrapper" aria-label="Click a button or link to move on">
       <<button [[Next|$nextpass]]>><</button>>
     </span>
@@ -285,7 +294,8 @@ setup.requestCameraPermission = () => {
 	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
 
 	<div class="intro-text">
-	  <p>You can get captions on all the videos. You may want to go full screen on some of the videos but do remember you need to exit full screen to continue. (It may just be best to stay off full screen mode)</p>
+	  <p>You can get captions on all the videos.</p> 
+    <p>You may want to go full screen on some of the videos but do remember you need to exit full screen to continue. (It may just be best to stay off full screen mode)</p>
 	
 		 <span class="button-wrapper" aria-label="Click a button or link to move on">
       <<button [[Next|$nextpass]]>><</button>>
@@ -385,6 +395,7 @@ setup.requestCameraPermission = () => {
   <<if $code1 isnot "" and $code2 isnot "" and $code3 isnot "">>
     <<if ($code1 + $code2 + $code3) is "SFS">>
       <<replace "#coderesult">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
+      <<audio "correct" play>>
       <<timed 3s>><<goto $nextpass>><</timed>>
     <</if>>
   <</if>>
@@ -416,6 +427,7 @@ setup.requestCameraPermission = () => {
        <<set _password to _password.toUpperCase()>>
    /% CODEWORD CORRECT %/
        <<if _password isnot "" and _password is "CRUMPET">>
+            <<audio "correct" play>>
        <<replace "#coderesult">><h2 class="">Correct!</h2><</replace>>
        <<timed 3s>><<goto $nextpass>><</timed>>
       <</if>>
@@ -551,7 +563,6 @@ setup.requestCameraPermission = () => {
 <p>I've mapped out the place.</p>
 <p>I've done the planning.</p>
 <p>You just need to follow my instructions and we'll get what we deserve.</p>
-
 	</div>
  
 
@@ -566,21 +577,11 @@ setup.requestCameraPermission = () => {
 <<set $currentInstructionIndex = 1>>
 <<set $instructions = {
     1: { text: "We're ready to go.<br/>
-Step through the double doors and keep left.", coords: "one" },
-    2: { text: "Good we're through the emergency exit.", coords: "two" },
-    3: { text: "If I'm correct, take 19 steps forward and you'll be near a mark on the floor.", coords: "three" },
-    4: { text: "From here there should be a pillar to your left. Use it for cover.", coords: "four" },
-    5: { text: "The exhibition is empty but there are security guards we need to look out for.", coords: "four" },
-    6: { text: "You'll see a postbox near you. <br/> Postbox in a stamp exhibition!<br/> Use the sounds of the church nearby to cover you.<br/> 3 - 2 - 1 GO.", coords: "five" },
-    7: { text: "Right. We're nearly there. <br/>
-  With your backs to the toilets head towards the lift....wait. <br/>
-  That security guard is nearby. <br/>
-  Hold still whilst he goes past.", coords: "five" },
-    8: { text: "Ok, he's gone. Clearly in a rush!<br/>
-Let's get our prize.<br/>
-Head towards the lift.<br/>
-The exhibit we need is there.<br/>
-Get the trophy.", coords: "six" }
+Step through the doors - then take 19 steps forward and you'll be near a mark on the floor.", coords: "one", nxtcoord: "three"},
+    2: { text: "The stamp exhibition looks quiet but<br/>Hold on. 
+Someone is going past. 
+Stay very still.", coords: "three" },
+    3: { text: "Ok, he's gone. Clearly in a rush!<br/>Let's get our prize.<br/>Head quickly towards the lift.<br/>The exhibit we need is there.<br/>Get the trophy.", coords: "six" }
 }>>
 
 <div class="wrapper cogs">
@@ -596,6 +597,7 @@ Get the trophy.", coords: "six" }
 <div class="map-container" id="mapContainer">
 <img src="assets/img/map.jpeg"/>
 <div class="location one pulse" id="location"></div>
+<div class="guard hide pulse" id="guard"></div>
 </div>
 	</div>
 
@@ -612,21 +614,60 @@ Get the trophy.", coords: "six" }
   <<button "Back">> 
     <<goto $prevpass>>
     <</button>>
+
 </div>
+
 <span class="button-wrapper" id="btnMount" aria-label="Click a button or link to move on">
 <<button "Next instruction!">>
-    <<removeclass "#location" $instructions[$currentInstructionIndex].coords>>
+  
+    /* <<removeclass "#location" $instructions[$currentInstructionIndex].coords>> */
 <<set $currentInstructionIndex += 1>>
-  <<if $currentInstructionIndex === 8>>
+  <<timed 0.1s>>
+<<if $currentInstructionIndex === 2 >>
+  <<timed 1s>>
+       <<removeclass "#guard" "hide">>
+    <<addclass "#guard" "gone">>
+    <</timed>>
+ <<timed 4s>>
+   <<removeclass "#guard" "gone">>
+    <<addclass "#guard" "gtwo">>
+    <</timed>>
+ <<timed 6s>>
+    <<removeclass "#guard" "gtwo">>
+    <<addclass "#guard" "gthree">>
+    <</timed>>
+ <<timed 9s>>
+    <<removeclass "#guard" "gthree">>
+    <<addclass "#guard" "gfour">>
+    <</timed>>
+ <<timed 11s>>
+    <<removeclass "#guard" "gfour">>
+        <<addclass "#guard" "hide">>
+    <</timed>>
+    <</if>>
+    <</timed>>
+      <<timed 0.1s>>
+  <<if $currentInstructionIndex === 3 >>
+     <<timed 2s>>
+   <<removeclass "#location" "three">>
+    <<addclass "#location" "four">>
+    <</timed>>
+    <<timed 4s>>
+    <<removeclass "#location" "four">>
+    <<addclass "#location" "six">>
+    <</timed>>
+    <</if>>
+      <</timed>>
+  <<if $currentInstructionIndex === 3>>
     <<replace "#instruction">>
       /* <<print $currentInstructionIndex>> */
       <p><<print $instructions[$currentInstructionIndex].text>></p>
   
     <</replace>>
-     <<addclass "#location" $instructions[$currentInstructionIndex].coords>>
+   
   <<replace "#btnMount">>
     <span class="button-wrapper" aria-label="Click a button or link to move on">
-        <<button [[I'm by the cup|$nextpass]]>><</button>>
+        <<button [[I have the trophy|$nextpass]]>><</button>>
       </span>
     <</replace>>
     <<else>>
@@ -644,7 +685,14 @@ Get the trophy.", coords: "six" }
 </span>
 </footer>
 
-
+<<timed 0.1s>>
+<<if $currentInstructionIndex === 1 >>
+  <<timed 4s>>
+    <<removeclass "#location" "one">>
+    <<addclass "#location" "three">>
+    <</timed>>
+    <</if>>
+    <</timed>>
 
 
 
@@ -658,9 +706,10 @@ Get the trophy.", coords: "six" }
 	<main id="main" class="">
 	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
 	<div>
+
 <p>We need to scan the SFS code here it seems</p>
 <p>Then what did he say, touch the cup. </p>
-<p>Use your camera to scan the QR code or your own app to get what we need.</p>
+<p>Use your camera or app to scan the QR code.</p>
 
 
     <!-- The `label` is attached to the hidden file input -->

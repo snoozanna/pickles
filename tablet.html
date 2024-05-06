@@ -101,7 +101,8 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 	<!-- UUID://C6CD0243-7442-40D7-956A-7CC2FE623604// --><tw-storydata name="Pickles - National Archives - Tablet" startnode="4" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="C6CD0243-7442-40D7-956A-7CC2FE623604" zoom="0.6" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Fondamento:ital@1&family=Italianno&family=Cairo:wght@500&family=Noto+Sans+Mono:wght@700&family=Tangerine:wght@400;700&family=IM+Fell+Double+Pica+SC&family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=Niconne&family=Montserrat:wght@400;800&display=swap');
 
 @import url("/styles/generics.css");
-@import url("/styles/styles.css");s
+@import url("/styles/styles.css");
+@import url("/styles/tablet.css");s
 /* @import url("ogstyles.css"); */</style><script role="script" id="twine-user-script" type="text/twine-javascript">UIBar.destroy();</script><tw-passagedata pid="1" name="Start" tags="nobr" position="134,244.33333333333337" size="100,100">&lt;div class=&quot;wrapper audio&quot; id=&quot;mount&quot;&gt;
 	&lt;div class=&quot;phone-warning&quot;&gt;&lt;p&gt;Tablet&lt;/p&gt;&lt;/div&gt;
 &lt;div class=&quot;multiple-btn-wrapper&quot;&gt;
@@ -163,8 +164,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 &lt;&lt;set $nextpass to &quot;video1&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs&quot;&gt;
 	&lt;&lt;include &quot;header&quot;&gt;&gt;
-	&lt;main id=&quot;main&quot; class=&quot;flex-container-col&quot;&gt;&lt;&lt;set $title to 1&gt;&gt;
-	&lt;&lt;if $audioClick isnot true&gt;&gt;&lt;&lt;set $audioOn to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+	&lt;main id=&quot;main&quot; class=&quot;flex-container-col tabletmain&quot;&gt;
 	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
 &lt;&lt;include &quot;pwEntrance&quot;&gt;&gt;
 
@@ -172,6 +172,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="5" name="pwEntrance" tags="nobr" position="600,100" size="100,100">/* TODO CHECK ACCESS  */
 &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
+&lt;br/&gt;&lt;br/&gt;
 &lt;div id=&quot;resultbutton&quot;&gt;
   /% CODEWORD INPUT %/
   &lt;div class=&quot;code-input entrance multibox center-col&quot;&gt;
@@ -196,6 +197,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
   &lt;&lt;if $code1 isnot &quot;&quot; and $code2 isnot &quot;&quot; and $code3 isnot &quot;&quot; and $code4 isnot &quot;&quot; and $code5 isnot &quot;&quot;&gt;&gt;
     &lt;&lt;if ($code1 + $code2 + $code3 + $code4 + $code5) is &quot;BEGIN&quot;&gt;&gt;
       &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;div class=&quot;confirmation&quot; id=&quot;confirmation&quot;&gt;Correct!&lt;/div&gt;&lt;&lt;/replace&gt;&gt;
+	    &lt;&lt;audio &quot;correct&quot; play&gt;&gt;
       &lt;&lt;timed 3s&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
     &lt;&lt;/if&gt;&gt;
   &lt;&lt;/if&gt;&gt;
@@ -246,11 +248,11 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 &lt;div id=&quot;resultbutton&quot;&gt;
   /% CODEWORD INPUT %/
   &lt;div class=&quot;code-input entrance multibox center-col&quot;&gt;
-    &lt;div class=&quot;multi-input-wrapper&quot;&gt;
+    &lt;div class=&quot;multi-input-wrapper colors&quot;&gt;
     	&lt;div class=&quot;red&quot;&gt;&lt;&lt;textbox &quot;$code1&quot; &quot;&quot;&gt;&gt;&lt;/div&gt;
 	    &lt;div class=&quot;blue&quot;&gt;&lt;&lt;textbox &quot;$code2&quot; &quot;&quot;&gt;&gt;&lt;/div&gt;
 	   &lt;div class=&quot;green&quot;&gt; &lt;&lt;textbox &quot;$code3&quot; &quot;&quot;&gt;&gt;&lt;/div&gt;
-			&lt;div class=&quot;yellow&quot;&gt;&lt;&lt;textbox &quot;$code4&quot; &quot;&quot;&gt;&gt;&lt;/div&gt;
+			&lt;div class=&quot;purple&quot;&gt;&lt;&lt;textbox &quot;$code4&quot; &quot;&quot;&gt;&gt;&lt;/div&gt;
     &lt;/div&gt;
 		&lt;br/&gt;
  &lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
@@ -266,6 +268,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
   &lt;&lt;if $code1 isnot &quot;&quot; and $code2 isnot &quot;&quot; and $code3 isnot &quot;&quot; and $code4 isnot &quot;&quot;&gt;&gt;
     &lt;&lt;if ($code1 + $code2 + $code3 + $code4) is &quot;MOTT&quot;&gt;&gt;
       &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;div class=&quot;confirmation&quot; id=&quot;confirmation&quot;&gt;Correct!&lt;/div&gt;&lt;&lt;/replace&gt;&gt;
+	      &lt;&lt;audio &quot;correct&quot; play&gt;&gt;
       &lt;&lt;timed 3s&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
     &lt;&lt;/if&gt;&gt;
   &lt;&lt;/if&gt;&gt;
@@ -305,7 +308,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 	 &lt;p&gt;I need you to find the override code for the Signal Fire System. &lt;/p&gt;
 &lt;p&gt;I can patch you into a live feed of the Signal Fire System and you need to find the override code. &lt;/p&gt;
 &lt;p&gt;You’ll need to do this using your phone as I need you to go to a specific location to access the live feed image.  &lt;/p&gt;
-&lt;p&gt;On your phone enter the letters SFS. &lt;/p&gt;
+&lt;p&gt;On your phone enter the letters SFS into the online portal.&lt;/p&gt;
     &lt;/div&gt;
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
