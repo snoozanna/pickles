@@ -24,112 +24,34 @@ Pickles - National Archives - Computer
 UIBar.destroy();
 
 
+:: StoryInit
+<<cacheaudio "ping1" "assets/sound/ping1.mp3">>
+<<cacheaudio "correct" "assets/sound/keep2.mp3">>
+<<cacheaudio "uploading" "assets/sound/uploading.mp3">>
+<<cacheaudio "complete" "assets/sound/uploadcomplete.mp3">>
+<<cacheaudio "signal" "assets/sound/signal.mp3">>
+<<waitforaudio>>
 
-
-:: Start [nobr] {"position":"134,244.33333333333337","size":"100,100"}
-
-
-  <div class="wrapper audio" id="mount">
-	<div class="phone-warning"><p>Computer</p></div>
-<div class="multiple-btn-wrapper">
-	<span aria-label="Click Button to begin" class="button-wrapper">
-		<<button "Begin">>
-			<<goto "audioChoice">>
-		<</button>>
-	</span>
-
-	
-</div>
-  </div >
 
 :: header [nobr]
 <header>
 	<div class="logo-wrapper"><img src="assets/img/na-logo.png" alt="The National Archives Logo" class="logo na" aria-hidden="true"></div> </header>
 
-:: audioChoice [nobr] {"position":"134,244.33333333333337","size":"100,100"}
-<<set $prevpass to "Start">>
-<<set $passage to "audioChoice">>
-<<set $nextpass to "entrance">>
-
-  <div class="wrapper audio" id="mount">
-	<div class="phone-warning"><p>MOTT is best experienced on a computer or tablet</p></div>
-<audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Audioon_off.mp3" autoplay>Audio is not supported on your device</audio>
-
-	<p><span class="inline-icon-wrap"><img src="assets/img/audio.png" alt="volume icon"></span>This experience has the option of an audio soundtrack.  </p>
-	<p>Would you like audio on or off? </p>
-<div class="multiple-btn-wrapper">
-	<span aria-label="Click Button to turn audio on" class="button-wrapper ">
-		<<button "On">>
-			<<set $audioOn to true>>
-			<<set $audioClick to true>>
-			<<replace "#mount">>
-				<strong> <span class="inline-icon-wrap"><img src="assets/img/audio.png"></span> Audio On</strong>
-				<br>
-				<p>Press the power on button to continue</p>
-				<poweron><a data-passage="entrance" class="link-internal link-image" role="link" tabindex="0" ><img src="https://remote.co.com/MoTT/AgentTraining/Images/onicon.png" alt="Power On button"></a></poweron>
-				<br>
-			<br>
-				<<link "Back">><<goto "Start">><</link>>
-				
-	<</replace>>
-		<</button>>
-	</span>
-	<span class="button-wrapper " aria-label="Click Button to turn audio off">
-	<<button "Off">>
-		<<set $audioOn to false>>
-		<<set $audioClick to true>>
-<<replace "#mount">>
-			<strong> Audio Off</strong>
-			<p>Press the power on button to continue</p>
-			<a data-passage="entrance" class="link-internal link-image" role="link" tabindex="0" aria-label="Click this power on icon to continue" alt="Power on button icon" ><img src="https://remote.co.com/MoTT/AgentTraining/Images/onicon.png" alt="Power On button"></a>
-	
-			<br>
-			<br>
-			<span aria-label="Click Button to go back"><<link "Back">><<goto "Start">><</link>>
-			</span>
-		<</replace>>
-	<</button>></span>
-</div>
-
-  </div >
 
 
-:: entrance [nobr]
-<<set $prevpass to "audioChoice">>
-<<set $passage to "entrance">>
-<<set $nextpass to "office1">>
-/* TODO ADD TO ORIGINAL ENTRANCE  */
-<div class="wrapper cogs">
-	<<include "header">>
-	<main id="main" class="flex-container-col"><<set $title to 1>>
-	<<if $audioClick isnot true>><<set $audioOn to true>><</if>>
-	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
-
-	<div class="intro-text">
-	  <p>Welcome to The National Archives.</p>
-	  <p>This experience requires you to tap through on a screen. You just need to look for the circle to click on. Try it now.  </p>
-	  
-	  <div class="flex-container-row"><p class="fit">Try it now.</p>
-		<br/><span class="button-wrapper" aria-label="Click a button or link to move on"><<button "Training">><</button>></span>
-	
-		</div>
-	</div>
-
-	</main>
-	<<include "footerentrance">>
-</div>
 
 
 :: office1 [nobr t8n]
 <<set $prevpass to "office1">>
 <<set $passage to "office1">>
 <<set $nextpass to "desktop">>
+<<set $audioOn to true>>
 <<set $finaldesktop to false>>
 <div class="wrapper cogs">
 	<<include "header">>
 	<main id="main" class="flex-container-col"><<set $title to 1>>
 
-	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	
 	<<timed 1s>>
 <div class="pwBox-wrapper"><<include "pwBox">></div>
 <</timed>>
@@ -175,9 +97,7 @@ UIBar.destroy();
 <<set $prevpass to "office1">>
 <<set $passage to "desktop">>
 <<set $nextpass to "video8">>
-/* TODO Desktop has messages, locked folder and Signal Fire System logo. It could have some other folders to make it seem busier. 
-In the bottom right a chat box should open - perhaps a notification and then they click on it.  */
-
+<<if $audioOn is true>><div id="audio"></div><</if>>
 <div class="wrapper cogs desktop">
 <header>
   <div class="header-item menus">
@@ -191,8 +111,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
     <span><img src="assets/img/bat.png"></span>
    <span><img src="assets/img/wifiW.png"></span>
     <span><img src="assets/img/search.png"></span>
-    <span>Date</span>
-    <span>Time</span>
+
   </div>
   
 </header>
@@ -214,6 +133,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
 	
 	<div id="chatMount" class="chatMount">	
 	<<timed 2s>>
+     <<audio "ping1" play>>
 			<<include "chatNotification">>
 		<</timed>></div>
 	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
@@ -253,6 +173,9 @@ In the bottom right a chat box should open - perhaps a notification and then the
 <div class="chat"><div class="messages-container" id="messagesContainer"></div></div>
 
 <<timed 2s>>
+  <<replace "#audio">>
+  <audio src="assets/audio/COMPUTER_1_MoTT_1.mp3" autoplay>Audio not supported in your browser</audio>
+  <</replace>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
@@ -267,7 +190,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
   <</append>>
 <</timed>>
 
-<<timed 4s>>
+<<timed 6s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="message-container" >
@@ -277,7 +200,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
   <</append>>
 <</timed>>
 
-<<timed 6s>>
+<<timed 12s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="message-container" >
@@ -288,7 +211,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
   <</append>>
 <</timed>>
 
-<<timed 8s>>
+<<timed 16s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="message-container" >
@@ -298,7 +221,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
   <</append>>
 <</timed>>
 	
-<<timed 10s>>
+<<timed 17s>>
   <<append "#messagesContainer">>
 		<span class="button-wrapper" aria-label="Click a button or link to move on">
     <<button "Next">>
@@ -315,6 +238,9 @@ In the bottom right a chat box should open - perhaps a notification and then the
 <div class="chat"><div class="messages-container" id="messagesContainer"></div></div>
 
 <<timed 2s>>
+   <<replace "#audio">>
+  <audio src="assets/audio/COMPUTER_1_MoTT_2.mp3" autoplay>Audio not supported in your browser</audio>
+  <</replace>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
@@ -350,7 +276,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
   <</append>>
 <</timed>>
 
-<<timed 8s>>
+<<timed 9s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="message-container" >
@@ -360,7 +286,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
   <</append>>
 <</timed>>
 
-<<timed 10s>>
+<<timed 12s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="message-container" >
@@ -370,7 +296,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
   <</append>>
 <</timed>>
 	
-<<timed 10s>>
+<<timed 14s>>
   <<append "#messagesContainer">>
 		<span class="button-wrapper" aria-label="Click a button or link to move on">
     <<button "Next">>
@@ -387,6 +313,9 @@ In the bottom right a chat box should open - perhaps a notification and then the
 <div class="chat"><div class="messages-container" id="messagesContainer"></div></div>
 
 <<timed 2s>>
+   <<replace "#audio">>
+  <audio src="assets/audio/COMPUTER_1_MoTT_3.mp3" autoplay>Audio not supported in your browser</audio>
+  <</replace>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
@@ -400,7 +329,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
   <</append>>
 <</timed>>
 
-<<timed 4s>>
+<<timed 6s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="message-container" >
@@ -410,7 +339,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
   <</append>>
 <</timed>>
 
-<<timed 6s>>
+<<timed 7.5s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="message-container" >
@@ -421,7 +350,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
   <</append>>
 <</timed>>
 
-<<timed 8s>>
+<<timed 9.5s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="message-container" >
@@ -433,7 +362,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
 <</timed>>
 	
 
-<<timed 10s>>
+<<timed 11.5s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="message-container" >
@@ -444,7 +373,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
   <</append>>
 <</timed>>
 
-<<timed 12s>>
+<<timed 13s>>
   <<append "#messagesContainer">>
 			<span class="button-wrapper" aria-label="Click a button or link to move on">
     <<button "Next">>
@@ -462,6 +391,9 @@ In the bottom right a chat box should open - perhaps a notification and then the
 <div class="chat"><div class="messages-container" id="messagesContainer"></div></div>
 
 <<timed 2s>>
+   <<replace "#audio">>
+  <audio src="assets/audio/COMPUTER_1_MoTT_4.mp3" autoplay>Audio not supported in your browser</audio>
+  <</replace>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
@@ -507,7 +439,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
 <</timed>>
 	
 
-<<timed 10s>>
+<<timed 14s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="message-container" >
@@ -517,7 +449,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
   <</append>>
 <</timed>>
 
-<<timed 12s>>
+<<timed 18s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="message-container" >
@@ -529,11 +461,13 @@ In the bottom right a chat box should open - perhaps a notification and then the
 
 :: SFSLocked [nobr]
 <h2>Signal Fire System</h2> 
+<br/>
 <<button [img["assets/img/signal-w.png"]]>>
   <<replace "#sfsMount">>
   <<include "pwSFSIcon">>
   <</replace>>
 <</button>>
+<br/>
 <h2>Locked</h2> 
 
 
@@ -542,6 +476,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
 
 
 <h2>Signal Fire System</h2> 
+<br/>
 <img src="assets/img/signal-w.png"/>
 <div id="codewordWrapper" class="codeword-wrapper">
   <label for="textbox--password" tabindex="0" ><span aria-label="Enter the word below" role="label">Enter the word below</span></label>
@@ -555,7 +490,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
        <<set _password to _password.toUpperCase()>>
    /% CODEWORD CORRECT %/
        <<if _password isnot "" and _password is "1966">>
-       <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+       <<replace "#coderesultsfs">><h2 class="subtitle complete">CORRECT</h2><</replace>>
           <<audio "correct" play>>
 			 <<timed 1s>>
 					<<replace "#chatMount">>
@@ -571,20 +506,23 @@ In the bottom right a chat box should open - perhaps a notification and then the
       <</if>>
         /% CODEWORD INCORRECT %/
      <<if _password isnot "" and _password is not "1966">>
-        <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
-      <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+        <<replace "#coderesultsfs">><h2 class="subtitle">Thats not right.</h2><</replace>>
+      <<timed 1.5s>><<replace "#coderesultsfs">> <h2>Locked</h2> <</replace>><</timed>>
         <</if>><</button>> 
      </span>
 
    
     /% CODEWORD FEEDBACK %/
-    <div id="coderesult"></div>
+      <br/>
+    <div id="coderesultsfs"> <h2>Locked</h2> </div>
 
     </div>
-  <h2>Locked</h2> 
+  
+ 
 
 :: pwSFSTarget [nobr]
-<h3>SFS - Unlocked</h3>
+<h2>Signal Fire System <br/>Unlocked</h2> 
+
 <div id="codewordWrapper" class="codeword-wrapper">
   <label for="textbox--password" tabindex="0" ><span aria-label="Enter the word below" role="label">Enter target:</span></label>
   /% CODEWORD INPUT %/
@@ -592,6 +530,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
      <<textbox "_password" "" >>
     </div>
    <span class="button-wrapper" aria-label="Click Button to go Check your answer">
+   <br/>
      <<button "Enter">>  
    /% STANDARDISE INPUT %/
        <<set _password to _password.toUpperCase()>>
@@ -602,6 +541,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
        <<timed 3s>>
 				<<replace "#sfsMount">>
 <h2>Target accepted</h2>
+<div id="accessMount"></div>
 	<</replace>>
 			<<replace "#chatMount">>
 				<<include "chatText3">>
@@ -610,11 +550,12 @@ In the bottom right a chat box should open - perhaps a notification and then the
       <</if>>
         /% CODEWORD INCORRECT %/
      <<if _password isnot "" and _password is not "CORBETT">>
-        <<replace "#coderesult">><h2 class="subtitle">Try again.</h2><</replace>>
-      <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+        <<replace "#coderesult3">><h2 class="subtitle">Try again.</h2><</replace>>
+      <<timed 1.5s>><<replace "#coderesult3">><</replace>><</timed>>
         <</if>><</button>> 
      </span>
     /% CODEWORD FEEDBACK %/
+    <br/>
     <div id="coderesult3"></div>
 
     </div>
@@ -655,6 +596,9 @@ In the bottom right a chat box should open - perhaps a notification and then the
 :: chatText2 [nobr]
 <div class="chat"><div class="messages-container" id="messagesContainer"></div></div>
 <<timed 2s>>
+   <<replace "#audio">>
+  <audio src="assets/audio/COMPUTER_2_thatsthepin_1.mp3" autoplay>Audio not supported in your browser</audio>
+  <</replace>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
@@ -668,7 +612,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
   <</append>>
 <</timed>>
 
-<<timed 4s>>
+<<timed 5s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="message-container" >
@@ -695,6 +639,9 @@ In the bottom right a chat box should open - perhaps a notification and then the
 :: chatText2b [nobr]
 <div class="chat"><div class="messages-container" id="messagesContainer"></div></div>
 <<timed 2s>>
+   <<replace "#audio">>
+  <audio src="assets/audio/COMPUTER_2_thatsthepin_2.mp3" autoplay>Audio not supported in your browser</audio>
+  <</replace>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
@@ -708,7 +655,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
   <</append>>
 <</timed>>
 
-<<timed 4s>>
+<<timed 6s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="message-container" >
@@ -724,6 +671,9 @@ Signal Fire System.</p>
 <div class="chat"><div class="messages-container" id="messagesContainer"></div></div>
 
 <<timed 2s>>
+   <<replace "#audio">>
+  <audio src="assets/audio/COMPUTER_3_corbett.mp3" autoplay>Audio not supported in your browser</audio>
+  <</replace>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
@@ -737,7 +687,7 @@ Signal Fire System.</p>
   <</append>>
 <</timed>>
 
-<<timed 4s>>
+<<timed 6s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="message-container" >
@@ -747,35 +697,34 @@ Signal Fire System.</p>
   <</append>>
 <</timed>>
 
-<<timed 6s>>
+<<timed 9s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="message-container" >
-	<p>You have the specific name. </p>
+	<p>I’m going to give you the access code to open the SFS conduit nearby - 8910 </p>
    
       </div>
     </div>
   <</append>>
 <</timed>>
+<<timed 10s>>
+  <<replace "#accessMount">>
+    <h3>Access code: 8910</h3>
+    <</replace>>
+  <</timed>>
 
-<<timed 8s>>
-  <<append "#messagesContainer">>
-			<span class="button-wrapper" aria-label="Click a button or link to move on">
-    <<button "Next">>
+<<timed 18s>>
+  
 			<<replace "#chatMount">>
 	<<include "chatText3a">>
-
 	<</replace>>
-			<</button>>
-			</span>
-  <</append>>
 <</timed>>
 
 
 :: chatText3a [nobr]
 <div class="chat"><div class="messages-container" id="messagesContainer"></div></div>
 
-<<timed 2s>>
+<<timed 0.1s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
@@ -783,23 +732,23 @@ Signal Fire System.</p>
       </div>
       <div class="message-container" >
         <span class="sender">User</span>
-    		<p>You need to keep Corbett on the line.</p>
+    		<p>Answer the call</p>
       </div>
     </div>
   <</append>>
 <</timed>>
 
-<<timed 4s>>
+<<timed 3s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="message-container" >
- 	<p>You can’t let him come off the phone. </p>
+ 	<p>You need to keep Corbett on the line. </p>
       </div>
     </div>
   <</append>>
 <</timed>>
 
-<<timed 6s>>
+<<timed 5s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="message-container" >
@@ -810,7 +759,7 @@ Signal Fire System.</p>
   <</append>>
 <</timed>>
 
-<<timed 8s>>
+<<timed 7s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="message-container" >
@@ -821,7 +770,7 @@ Signal Fire System.</p>
 <</timed>>
 	
 
-<<timed 10s>>
+<<timed 9s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="message-container" >
@@ -841,19 +790,27 @@ Signal Fire System.</p>
   <</append>>
 <</timed>>
 
+<<timed 12s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="message-container" >
+	<p>Time to save time.</p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
 
-<<timed 14s>>
+/* <<timed 14s>>
   <<append "#messagesContainer">>
 			<span class="button-wrapper" aria-label="Click a button or link to move on">
     <<button "Next">>
 			<<replace "#chatMount">>
 	<<include "chatText3b">>
-
 	<</replace>>
 			<</button>>
 			</span>
   <</append>>
-<</timed>>
+<</timed>> */
 
 
 :: chatText3b [nobr]
@@ -958,6 +915,9 @@ VIDEO 8
 <div class="chat"><div class="messages-container" id="messagesContainer"></div></div>
 
 <<timed 0.1s>>
+   <<replace "#audio">>
+  <audio src="assets/audio/COMPUTER_4_collar.mp3" autoplay>Audio not supported in your browser</audio>
+  <</replace>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
@@ -1000,7 +960,8 @@ VIDEO 8
       <<timed 3s>><<goto $nextpass>><</timed>>
     <</if>>
   <</if>>
-  /% CODEWORD INCORRECT %/
+  /% CODEWORD INy
+   %/
   <<if $code1 isnot "" and $code2 isnot "" and $code3 isnot "" and $code4 isnot "">>
     <<if ($code1 + $code2 + $code3 + $code4 ) is not "MOTT">>
       <<replace "#coderesult">><div class="confirmation" id="confirmation">That's not right...</div><</replace>>

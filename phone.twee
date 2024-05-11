@@ -7,7 +7,7 @@ Pickles - National Archives - Phone 1
 	"ifid": "B3CC7B75-82B1-4C5E-A453-149BC0AA8D60",
 	"format": "SugarCube",
 	"format-version": "2.36.1",
-	"start": "onboarding1",
+	"start": "Start",
 	"zoom": 0.6
 }
 
@@ -165,7 +165,7 @@ setup.requestCameraPermission = () => {
 <div class="multiple-btn-wrapper">
 	<span aria-label="Click Button to begin" class="button-wrapper">
 		<<button "Begin">>
-			<<goto "audioChoice">>
+			<<goto "onboarding1">>
 		<</button>>
 	</span>
 
@@ -175,7 +175,11 @@ setup.requestCameraPermission = () => {
 
 :: header [nobr]
 <header>
-	<div class="logo-wrapper"><img src="assets/img/na-logo.png" alt="The National Archives Logo" class="logo na" aria-hidden="true"></div> </header>
+	<div class="logo-wrapper"><img src="assets/img/mottlogo-w.png" alt="The National Archives Logo" class="logo na" aria-hidden="true"></div> </header>
+
+:: headerb [nobr]
+<header>
+	<div class="logo-wrapper"><img src="assets/img/mott-logo-thick.png" alt="The National Archives Logo" class="logo na" aria-hidden="true"></div> </header>
 
 :: audioChoice [nobr] {"position":"134,244.33333333333337","size":"100,100"}
 
@@ -226,11 +230,12 @@ setup.requestCameraPermission = () => {
 <<set $prevpass to "onboarding1">>
 <<set $passage to "onboarding1">>
 <<set $nextpass to "onboarding2">>
-<div class="wrapper cogs">
-	<<include "header">>
-	<main id="main" class="flex-container-col"><<set $title to 1>>
-	<<if $audioClick isnot true>><<set $audioOn to true>><</if>>
-	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+  <<addclass "body" "orange">> 
+		<<set $audioOn to true>>
+<div class="wrapper manb">
+	<<include "headerb">>
+	<main id="main" class="flex-container-col">
+	<<if $audioOn is true>><audio src="assets/audio/PHONE_1_owndevice_01.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 	<div class="intro-text">
 	  <p>Welcome to The National Archives.</p>
@@ -249,13 +254,15 @@ setup.requestCameraPermission = () => {
 <<set $prevpass to "onboarding1">>
 <<set $passage to "onboarding2">>
 <<set $nextpass to "onboarding3">>
-<div class="wrapper cogs">
-	<<include "header">>
-	<main id="main" class="flex-container-col"><<set $title to 1>>
-	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+  <<addclass "body" "orange">> 
+<div class="wrapper mans">
+	<<include "headerb">>
+	<main id="main" class="flex-container-col">
+	<<if $audioOn is true>><audio src="assets/audio/PHONE_1_owndevice_02.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 	<div class="intro-text">
-	  <p>There will be a back button if you miss something. Don’t refresh your page – as you may lose your position in the experience and will have to jump through. </p>
+	  <p>There will be a back button if you miss something.  </p>
+   <p> Don’t refresh your page – as you may lose your position in the experience and will have to jump through.</p>
 	 <span class="button-wrapper" aria-label="Click a button or link to move on"><<button [[Next|$nextpass]]>><</button>></span>
     </div>
 
@@ -268,10 +275,11 @@ setup.requestCameraPermission = () => {
 <<set $prevpass to "onboarding2">>
 <<set $passage to "onboarding3">>
 <<set $nextpass to "onboarding4">>
-<div class="wrapper cogs">
-	<<include "header">>
+  <<addclass "body" "orange">> 
+<div class="wrapper mans">
+	<<include "headerb">>
 	<main id="main" class="flex-container-col">
-	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/PHONE_1_owndevice_03.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 	<div class="intro-text">
 	  <p>You’ll need to rotate your screen at points – sometimes on your phone you need to do this on settings.</p>
@@ -288,10 +296,11 @@ setup.requestCameraPermission = () => {
 <<set $prevpass to "onboarding3">>
 <<set $passage to "onboarding4">>
 <<set $nextpass to "onboarding5">>
-<div class="wrapper cogs">
-	<<include "header">>
+  <<addclass "body" "orange">> 
+<div class="wrapper mans">
+	<<include "headerb">>
 	<main id="main" class="flex-container-col">
-	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/PHONE_1_owndevice_04.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 	<div class="intro-text">
 	  <p>You can get captions on all the videos.</p> 
@@ -310,11 +319,11 @@ setup.requestCameraPermission = () => {
 <<set $prevpass to "onboarding4">>
 <<set $passage to "onboarding5">>
 <<set $nextpass to "onboarding5a">>
-<div class="wrapper cogs">
-	<<include "header">>
+  <<addclass "body" "orange">> 
+<div class="wrapper mans">
+	<<include "headerb">>
 	<main id="main" class="flex-container-col">
-
-	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/PHONE_1_owndevice_05.mp3" autoplay>Audio not supported in your browser</audio><</if>>
   <div class="intro-text">
 	  <p>If you have any problems throughout do speak to The National Archives staff and they will be able to help you out. </p>
    <span class="button-wrapper" aria-label="Click a button or link to move on">
@@ -329,11 +338,12 @@ setup.requestCameraPermission = () => {
 <<set $prevpass to "onboarding5">>
 <<set $passage to "onboarding5a">>
 <<set $nextpass to "onboarding6">>
-<div class="wrapper cogs">
-	<<include "header">>
+  <<addclass "body" "orange">> 
+<div class="wrapper mans">
+	<<include "headerb">>
 	<main id="main" class="flex-container-col">
 
-	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/PHONE_1_owndevice_06_redchairs.mp3" autoplay>Audio not supported in your browser</audio><</if>>
   <div class="intro-text">
 	  <p>To begin, enter the word BEGIN into the tablet near the red chairs.</p>
    
@@ -353,10 +363,11 @@ setup.requestCameraPermission = () => {
 <<set $prevpass to "onboarding5a">>
 <<set $passage to "onboarding6">>
 <<set $nextpass to "360intro">>
-<div class="wrapper cogs">
-	<<include "header">>
+  <<addclass "body" "orange">> 
+<div class="wrapper manb">
+	<<include "headerb">>
 	<main id="main" class="center-col">
-	<<if $audioClick isnot true>><<set $audioOn to true>><</if>>
+	
 	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
 
 <<timed 0.1s>>
@@ -394,7 +405,7 @@ setup.requestCameraPermission = () => {
   /% CODEWORD CORRECT %/
   <<if $code1 isnot "" and $code2 isnot "" and $code3 isnot "">>
     <<if ($code1 + $code2 + $code3) is "SFS">>
-      <<replace "#coderesult">><div class="confirmation" id="confirmation">Correct!</div><</replace>>
+      <<replace "#coderesult">><div class="confirmation" id="confirmation"><p>Correct!</p></div><</replace>>
       <<audio "correct" play>>
       <<timed 3s>><<goto $nextpass>><</timed>>
     <</if>>
@@ -452,8 +463,9 @@ setup.requestCameraPermission = () => {
 <<set $nextpass to "360image">>
 <div class="wrapper cogs">
 	<<include "header">>
-	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
+	<main id="main">
+	<<if $audioOn is true>><audio src="assets/audio/PHONE_2_lookingforgold.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 	<div class="intro-text">
 <p>Excellent work. </p>
 <p>The feed is of a room that is five floors below so, to get the connection, I need you to go to the centre of the room you are in.  </p>
@@ -528,7 +540,7 @@ setup.requestCameraPermission = () => {
 	<<include "header">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 	<div>
 <p>The Signal Fire System seems to have sent us a map.</p> 
 <p>It’s not just a map though – there’s instructions. </p>
@@ -555,7 +567,7 @@ setup.requestCameraPermission = () => {
 	<<include "header">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" >
-	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 	<div class="instruction">
 <p>Start by the doors.</p>
 <p>You need to follow my plans exactly.</p>
@@ -583,6 +595,7 @@ Someone is going past.
 Stay very still.", coords: "three" },
     3: { text: "Ok, he's gone. Clearly in a rush!<br/>Let's get our prize.<br/>Head quickly towards the lift.<br/>The exhibit we need is there.<br/>Get the trophy.", coords: "six" }
 }>>
+	<<if $audioOn is true>><div id="audio"><audio src="assets/audio/PHONE_3_linkintocafespace_4.mp3" autoplay>Audio not supported in your browser</audio></div><</if>>
 
 <div class="wrapper cogs">
 <div class="instruction" id="instruction">
@@ -624,6 +637,9 @@ Stay very still.", coords: "three" },
 <<set $currentInstructionIndex += 1>>
   <<timed 0.1s>>
 <<if $currentInstructionIndex === 2 >>
+  <<replace "#audio">>
+    <audio src="assets/audio/PHONE_3_linkintocafespace_5.mp3" autoplay>Audio not supported in your browser</audio>
+    <</replace>>
   <<timed 1s>>
        <<removeclass "#guard" "hide">>
     <<addclass "#guard" "gone">>
@@ -648,6 +664,18 @@ Stay very still.", coords: "three" },
     <</timed>>
       <<timed 0.1s>>
   <<if $currentInstructionIndex === 3 >>
+    <<replace "#audio">>
+    <audio src="assets/audio/PHONE_3_linkintocafespace_6_alt-trophy.mp3" autoplay>Audio not supported in your browser</audio>
+    <</replace>>
+      <<replace "#btnMount">>
+    <span class="button-wrapper" aria-label="Click a button or link to move on">
+        <<button [[I have the trophy|$nextpass]]>><</button>>
+      </span>
+    <</replace>>
+    <<replace "#instruction">>
+      /* <<print $currentInstructionIndex>> */
+      <p><<print $instructions[$currentInstructionIndex].text>></p>
+    <</replace>>
      <<timed 2s>>
    <<removeclass "#location" "three">>
     <<addclass "#location" "four">>
@@ -656,20 +684,11 @@ Stay very still.", coords: "three" },
     <<removeclass "#location" "four">>
     <<addclass "#location" "six">>
     <</timed>>
+
     <</if>>
       <</timed>>
   <<if $currentInstructionIndex === 3>>
-    <<replace "#instruction">>
-      /* <<print $currentInstructionIndex>> */
-      <p><<print $instructions[$currentInstructionIndex].text>></p>
-  
-    <</replace>>
-   
-  <<replace "#btnMount">>
-    <span class="button-wrapper" aria-label="Click a button or link to move on">
-        <<button [[I have the trophy|$nextpass]]>><</button>>
-      </span>
-    <</replace>>
+    
     <<else>>
     
     <<replace "#instruction">>
@@ -704,7 +723,7 @@ Stay very still.", coords: "three" },
 <div class="wrapper">
 	<<include "header">>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_7.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 	<div>
 
 <p>We need to scan the SFS code here it seems</p>

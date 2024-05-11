@@ -27,8 +27,18 @@ body.blue {
   background: rgb(14, 113, 120);
 }
 
+body.orange {
+  background: var(--orange);
+  background: linear-gradient(
+    360deg,
+    rgba(255, 109, 45, 1)  10%,
+    white 100%
+  );
+}
+
 p {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
+  font-weight: 900;
 }
 
 a:hover {
@@ -86,17 +96,41 @@ body[data-tags~="t8n-dissolve"] .transition-out {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: linear-gradient(
+  /* background: linear-gradient(
     -39deg,
     rgba(14, 113, 120, 1) 45%,
     rgba(255, 109, 45, 1) 100%
-  );
+  ); */
+    /* background: linear-gradient(
+      360deg,
+      rgba(255, 109, 45, 1)  30%,
+      white 100%
+    ); */
   padding: 3rem;
 }
 
 .wrapper.cogs {
   background-image: url("/assets/img/bg-detail.png");
   background-size: cover;
+}
+
+.wrapper.manb {
+  background-image: url(/assets/img/manlooking2.png), url(/assets/img/circle.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom left, 20rem 80%;
+  background-size: 60%, 100%;
+
+}
+
+
+.wrapper.mans {
+  background-image: url(/assets/img/manlooking-rot.png), url(/assets/img/circle.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 100% 22%, 10rem 80%;
+  background-size: 45%, 100%;
+
 }
 
 main.cogs {

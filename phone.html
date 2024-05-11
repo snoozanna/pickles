@@ -98,7 +98,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<!-- UUID://B3CC7B75-82B1-4C5E-A453-149BC0AA8D60// --><tw-storydata name="Pickles - National Archives - Phone 1" startnode="5" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="B3CC7B75-82B1-4C5E-A453-149BC0AA8D60" zoom="0.6" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Fondamento:ital@1&family=Italianno&family=Cairo:wght@500&family=Noto+Sans+Mono:wght@700&family=Tangerine:wght@400;700&family=IM+Fell+Double+Pica+SC&family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=Niconne&family=Montserrat:wght@400;800&display=swap');
+	<!-- UUID://B3CC7B75-82B1-4C5E-A453-149BC0AA8D60// --><tw-storydata name="Pickles - National Archives - Phone 1" startnode="2" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="B3CC7B75-82B1-4C5E-A453-149BC0AA8D60" zoom="0.6" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Fondamento:ital@1&family=Italianno&family=Cairo:wght@500&family=Noto+Sans+Mono:wght@700&family=Tangerine:wght@400;700&family=IM+Fell+Double+Pica+SC&family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=Niconne&family=Montserrat:wght@400;800&display=swap');
 
 @import url("/styles/generics.css");
 @import url("/styles/styles.css");
@@ -236,14 +236,15 @@ setup.requestCameraPermission = () => {
 &lt;div class=&quot;multiple-btn-wrapper&quot;&gt;
 	&lt;span aria-label=&quot;Click Button to begin&quot; class=&quot;button-wrapper&quot;&gt;
 		&lt;&lt;button &quot;Begin&quot;&gt;&gt;
-			&lt;&lt;goto &quot;audioChoice&quot;&gt;&gt;
+			&lt;&lt;goto &quot;onboarding1&quot;&gt;&gt;
 		&lt;&lt;/button&gt;&gt;
 	&lt;/span&gt;
 
 	
 &lt;/div&gt;
   &lt;/div &gt;</tw-passagedata><tw-passagedata pid="3" name="header" tags="nobr" position="350,100" size="100,100">&lt;header&gt;
-	&lt;div class=&quot;logo-wrapper&quot;&gt;&lt;img src=&quot;assets/img/na-logo.png&quot; alt=&quot;The National Archives Logo&quot; class=&quot;logo na&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt; &lt;/header&gt;</tw-passagedata><tw-passagedata pid="4" name="audioChoice" tags="nobr" position="134,244.33333333333337" size="100,100">&lt;div class=&quot;wrapper audio&quot; id=&quot;mount&quot;&gt;
+	&lt;div class=&quot;logo-wrapper&quot;&gt;&lt;img src=&quot;assets/img/mottlogo-w.png&quot; alt=&quot;The National Archives Logo&quot; class=&quot;logo na&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt; &lt;/header&gt;</tw-passagedata><tw-passagedata pid="4" name="headerb" tags="nobr" position="475,100" size="100,100">&lt;header&gt;
+	&lt;div class=&quot;logo-wrapper&quot;&gt;&lt;img src=&quot;assets/img/mott-logo-thick.png&quot; alt=&quot;The National Archives Logo&quot; class=&quot;logo na&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt; &lt;/header&gt;</tw-passagedata><tw-passagedata pid="5" name="audioChoice" tags="nobr" position="134,244.33333333333337" size="100,100">&lt;div class=&quot;wrapper audio&quot; id=&quot;mount&quot;&gt;
 	&lt;div class=&quot;phone-warning&quot;&gt;&lt;p&gt;MOTT is best experienced on a computer or tablet&lt;/p&gt;&lt;/div&gt;
 &lt;audio src=&quot;https://remote.co.com/MoTT/AgentTraining/assets/audio/Audioon_off.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 
@@ -283,14 +284,15 @@ setup.requestCameraPermission = () => {
 	&lt;&lt;/button&gt;&gt;&lt;/span&gt;
 &lt;/div&gt;
 
-  &lt;/div &gt;</tw-passagedata><tw-passagedata pid="5" name="onboarding1" tags="nobr" position="600,100" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding1&quot;&gt;&gt;
+  &lt;/div &gt;</tw-passagedata><tw-passagedata pid="6" name="onboarding1" tags="nobr" position="725,100" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;onboarding1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;onboarding2&quot;&gt;&gt;
-&lt;div class=&quot;wrapper cogs&quot;&gt;
-	&lt;&lt;include &quot;header&quot;&gt;&gt;
-	&lt;main id=&quot;main&quot; class=&quot;flex-container-col&quot;&gt;&lt;&lt;set $title to 1&gt;&gt;
-	&lt;&lt;if $audioClick isnot true&gt;&gt;&lt;&lt;set $audioOn to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+  &lt;&lt;addclass &quot;body&quot; &quot;orange&quot;&gt;&gt; 
+		&lt;&lt;set $audioOn to true&gt;&gt;
+&lt;div class=&quot;wrapper manb&quot;&gt;
+	&lt;&lt;include &quot;headerb&quot;&gt;&gt;
+	&lt;main id=&quot;main&quot; class=&quot;flex-container-col&quot;&gt;
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_1_owndevice_01.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
 	&lt;div class=&quot;intro-text&quot;&gt;
 	  &lt;p&gt;Welcome to The National Archives.&lt;/p&gt;
@@ -302,29 +304,32 @@ setup.requestCameraPermission = () => {
 	&lt;div class=&quot;holding&quot;&gt;&lt;/div&gt;
 	&lt;/main&gt;
   &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="6" name="onboarding2" tags="nobr" position="725,100" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="7" name="onboarding2" tags="nobr" position="850,100" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;onboarding2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;onboarding3&quot;&gt;&gt;
-&lt;div class=&quot;wrapper cogs&quot;&gt;
-	&lt;&lt;include &quot;header&quot;&gt;&gt;
-	&lt;main id=&quot;main&quot; class=&quot;flex-container-col&quot;&gt;&lt;&lt;set $title to 1&gt;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+  &lt;&lt;addclass &quot;body&quot; &quot;orange&quot;&gt;&gt; 
+&lt;div class=&quot;wrapper mans&quot;&gt;
+	&lt;&lt;include &quot;headerb&quot;&gt;&gt;
+	&lt;main id=&quot;main&quot; class=&quot;flex-container-col&quot;&gt;
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_1_owndevice_02.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
 	&lt;div class=&quot;intro-text&quot;&gt;
-	  &lt;p&gt;There will be a back button if you miss something. Don’t refresh your page – as you may lose your position in the experience and will have to jump through. &lt;/p&gt;
+	  &lt;p&gt;There will be a back button if you miss something.  &lt;/p&gt;
+   &lt;p&gt; Don’t refresh your page – as you may lose your position in the experience and will have to jump through.&lt;/p&gt;
 	 &lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;&lt;&lt;button [[Next|$nextpass]]&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
     &lt;/div&gt;
 
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="7" name="onboarding3" tags="nobr" position="850,100" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="8" name="onboarding3" tags="nobr" position="975,100" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;onboarding3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;onboarding4&quot;&gt;&gt;
-&lt;div class=&quot;wrapper cogs&quot;&gt;
-	&lt;&lt;include &quot;header&quot;&gt;&gt;
+  &lt;&lt;addclass &quot;body&quot; &quot;orange&quot;&gt;&gt; 
+&lt;div class=&quot;wrapper mans&quot;&gt;
+	&lt;&lt;include &quot;headerb&quot;&gt;&gt;
 	&lt;main id=&quot;main&quot; class=&quot;flex-container-col&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_1_owndevice_03.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
 	&lt;div class=&quot;intro-text&quot;&gt;
 	  &lt;p&gt;You’ll need to rotate your screen at points – sometimes on your phone you need to do this on settings.&lt;/p&gt;
@@ -335,13 +340,14 @@ setup.requestCameraPermission = () => {
 	
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="8" name="onboarding4" tags="nobr" position="975,100" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding3&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="9" name="onboarding4" tags="nobr" position="1100,100" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;onboarding4&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;onboarding5&quot;&gt;&gt;
-&lt;div class=&quot;wrapper cogs&quot;&gt;
-	&lt;&lt;include &quot;header&quot;&gt;&gt;
+  &lt;&lt;addclass &quot;body&quot; &quot;orange&quot;&gt;&gt; 
+&lt;div class=&quot;wrapper mans&quot;&gt;
+	&lt;&lt;include &quot;headerb&quot;&gt;&gt;
 	&lt;main id=&quot;main&quot; class=&quot;flex-container-col&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_1_owndevice_04.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
 	&lt;div class=&quot;intro-text&quot;&gt;
 	  &lt;p&gt;You can get captions on all the videos.&lt;/p&gt; 
@@ -353,14 +359,14 @@ setup.requestCameraPermission = () => {
   &lt;/div&gt;
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="9" name="onboarding5" tags="nobr" position="1100,100" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding4&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="onboarding5" tags="nobr" position="1225,100" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding4&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;onboarding5&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;onboarding5a&quot;&gt;&gt;
-&lt;div class=&quot;wrapper cogs&quot;&gt;
-	&lt;&lt;include &quot;header&quot;&gt;&gt;
+  &lt;&lt;addclass &quot;body&quot; &quot;orange&quot;&gt;&gt; 
+&lt;div class=&quot;wrapper mans&quot;&gt;
+	&lt;&lt;include &quot;headerb&quot;&gt;&gt;
 	&lt;main id=&quot;main&quot; class=&quot;flex-container-col&quot;&gt;
-
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_1_owndevice_05.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
   &lt;div class=&quot;intro-text&quot;&gt;
 	  &lt;p&gt;If you have any problems throughout do speak to The National Archives staff and they will be able to help you out. &lt;/p&gt;
    &lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
@@ -369,14 +375,15 @@ setup.requestCameraPermission = () => {
 	&lt;/div&gt;
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="onboarding5a" tags="nobr" position="1225,100" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding5&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="11" name="onboarding5a" tags="nobr" position="100,225" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding5&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;onboarding5a&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;onboarding6&quot;&gt;&gt;
-&lt;div class=&quot;wrapper cogs&quot;&gt;
-	&lt;&lt;include &quot;header&quot;&gt;&gt;
+  &lt;&lt;addclass &quot;body&quot; &quot;orange&quot;&gt;&gt; 
+&lt;div class=&quot;wrapper mans&quot;&gt;
+	&lt;&lt;include &quot;headerb&quot;&gt;&gt;
 	&lt;main id=&quot;main&quot; class=&quot;flex-container-col&quot;&gt;
 
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_1_owndevice_06_redchairs.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
   &lt;div class=&quot;intro-text&quot;&gt;
 	  &lt;p&gt;To begin, enter the word BEGIN into the tablet near the red chairs.&lt;/p&gt;
    
@@ -389,13 +396,14 @@ setup.requestCameraPermission = () => {
 	&lt;/div&gt;
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="11" name="onboarding6" tags="nobr" position="100,225" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding5a&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="onboarding6" tags="nobr" position="225,225" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding5a&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;onboarding6&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;360intro&quot;&gt;&gt;
-&lt;div class=&quot;wrapper cogs&quot;&gt;
-	&lt;&lt;include &quot;header&quot;&gt;&gt;
+  &lt;&lt;addclass &quot;body&quot; &quot;orange&quot;&gt;&gt; 
+&lt;div class=&quot;wrapper manb&quot;&gt;
+	&lt;&lt;include &quot;headerb&quot;&gt;&gt;
 	&lt;main id=&quot;main&quot; class=&quot;center-col&quot;&gt;
-	&lt;&lt;if $audioClick isnot true&gt;&gt;&lt;&lt;set $audioOn to true&gt;&gt;&lt;&lt;/if&gt;&gt;
+	
 	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
 
 &lt;&lt;timed 0.1s&gt;&gt;
@@ -406,7 +414,7 @@ setup.requestCameraPermission = () => {
   &lt;&lt;/timed&gt;&gt;
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="pwSFS" tags="nobr" position="225,225" size="100,100">/* TODO CHECK ACCESS  */
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="pwSFS" tags="nobr" position="350,225" size="100,100">/* TODO CHECK ACCESS  */
 &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
 &lt;div id=&quot;resultbutton&quot;&gt;
   /% CODEWORD INPUT %/
@@ -428,7 +436,7 @@ setup.requestCameraPermission = () => {
   /% CODEWORD CORRECT %/
   &lt;&lt;if $code1 isnot &quot;&quot; and $code2 isnot &quot;&quot; and $code3 isnot &quot;&quot;&gt;&gt;
     &lt;&lt;if ($code1 + $code2 + $code3) is &quot;SFS&quot;&gt;&gt;
-      &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;div class=&quot;confirmation&quot; id=&quot;confirmation&quot;&gt;Correct!&lt;/div&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;div class=&quot;confirmation&quot; id=&quot;confirmation&quot;&gt;&lt;p&gt;Correct!&lt;/p&gt;&lt;/div&gt;&lt;&lt;/replace&gt;&gt;
       &lt;&lt;audio &quot;correct&quot; play&gt;&gt;
       &lt;&lt;timed 3s&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
     &lt;&lt;/if&gt;&gt;
@@ -443,7 +451,7 @@ setup.requestCameraPermission = () => {
 &lt;&lt;/button&gt;&gt;
 &lt;/span&gt;
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="pw360Overide" tags="nobr" position="350,225" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="pw360Overide" tags="nobr" position="475,225" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
 
     &lt;label for=&quot;textbox--password&quot; tabindex=&quot;0&quot; &gt;&lt;span aria-label=&quot;Enter the word below&quot; role=&quot;label&quot;&gt;SFS OVERRIDE CODE:&lt;/span&gt;&lt;/label&gt;
 
@@ -473,13 +481,14 @@ setup.requestCameraPermission = () => {
     /% CODEWORD FEEDBACK %/
     &lt;/div&gt;
         &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="360intro" tags="nobr" position="475,225" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding6&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="360intro" tags="nobr" position="600,225" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding6&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;360intro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;360image&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs&quot;&gt;
 	&lt;&lt;include &quot;header&quot;&gt;&gt;
-	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+
+	&lt;main id=&quot;main&quot;&gt;
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_2_lookingforgold.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 	&lt;div class=&quot;intro-text&quot;&gt;
 &lt;p&gt;Excellent work. &lt;/p&gt;
 &lt;p&gt;The feed is of a room that is five floors below so, to get the connection, I need you to go to the centre of the room you are in.  &lt;/p&gt;
@@ -497,7 +506,7 @@ setup.requestCameraPermission = () => {
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="360image" tags="nobr" position="600,225" size="100,100">&lt;&lt;set $prevpass to &quot;360intro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="360image" tags="nobr" position="725,225" size="100,100">&lt;&lt;set $prevpass to &quot;360intro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;360image&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;video3&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs&quot;&gt;
@@ -510,13 +519,13 @@ setup.requestCameraPermission = () => {
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer360&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="footer360" tags="nobr" position="725,225" size="100,100">&lt;footer class=&quot;pano&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="footer360" tags="nobr" position="850,225" size="100,100">&lt;footer class=&quot;pano&quot;&gt;
 &lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
   &lt;&lt;button &quot;Back&quot;&gt;&gt; 
     &lt;&lt;goto $prevpass&gt;&gt;
     &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;&lt;/nav&gt;
-  &lt;&lt;include &quot;pw360Overide&quot;&gt;&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="17" name="video3" tags="nobr" position="850,225" size="100,100">&lt;&lt;set $prevpass to &quot;360image&quot;&gt;&gt;
+  &lt;&lt;include &quot;pw360Overide&quot;&gt;&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="18" name="video3" tags="nobr" position="975,225" size="100,100">&lt;&lt;set $prevpass to &quot;360image&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;video3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;mapintro1&quot;&gt;&gt;
 /* VIDEO 3 */
@@ -531,14 +540,14 @@ setup.requestCameraPermission = () => {
   &lt;/span&gt;
 &lt;span class=&quot;button-wrapper videor&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
 &lt;&lt;button &quot;Next&quot; $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="18" name="mapintro1" tags="nobr" position="975,225" size="100,100">&lt;&lt;set $prevpass to &quot;video3&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name="mapintro1" tags="nobr" position="1100,225" size="100,100">&lt;&lt;set $prevpass to &quot;video3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;mapintro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;robberintro&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs portrait&quot;&gt;
 	&lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_1and2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 	&lt;div&gt;
 &lt;p&gt;The Signal Fire System seems to have sent us a map.&lt;/p&gt; 
 &lt;p&gt;It’s not just a map though – there’s instructions. &lt;/p&gt;
@@ -555,14 +564,14 @@ setup.requestCameraPermission = () => {
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name="robberintro" tags="nobr" position="1100,225" size="100,100">&lt;&lt;set $prevpass to &quot;mapintro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="robberintro" tags="nobr" position="1225,225" size="100,100">&lt;&lt;set $prevpass to &quot;mapintro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;robberintro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;map&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs portrait&quot;&gt;
 	&lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; &gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 	&lt;div class=&quot;instruction&quot;&gt;
 &lt;p&gt;Start by the doors.&lt;/p&gt;
 &lt;p&gt;You need to follow my plans exactly.&lt;/p&gt;
@@ -575,7 +584,7 @@ setup.requestCameraPermission = () => {
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footernext&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="map" tags="nobr" position="1225,225" size="100,100">&lt;&lt;set $prevpass to &quot;mapintro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="21" name="map" tags="nobr" position="100,350" size="100,100">&lt;&lt;set $prevpass to &quot;mapintro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;map&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;ARIntro1&quot;&gt;&gt;
 &lt;&lt;set $currentInstructionIndex = 1&gt;&gt;
@@ -587,6 +596,7 @@ Someone is going past.
 Stay very still.&quot;, coords: &quot;three&quot; },
     3: { text: &quot;Ok, he&#39;s gone. Clearly in a rush!&lt;br/&gt;Let&#39;s get our prize.&lt;br/&gt;Head quickly towards the lift.&lt;br/&gt;The exhibit we need is there.&lt;br/&gt;Get the trophy.&quot;, coords: &quot;six&quot; }
 }&gt;&gt;
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;div id=&quot;audio&quot;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_4.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;/div&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;div class=&quot;wrapper cogs&quot;&gt;
 &lt;div class=&quot;instruction&quot; id=&quot;instruction&quot;&gt;
@@ -607,7 +617,7 @@ Stay very still.&quot;, coords: &quot;three&quot; },
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footermap&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="21" name="footermap" tags="nobr" position="100,350" size="100,100">&lt;footer class=&quot;map&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="footermap" tags="nobr" position="225,350" size="100,100">&lt;footer class=&quot;map&quot;&gt;
 &lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
   &lt;&lt;button &quot;Back&quot;&gt;&gt; 
     &lt;&lt;goto $prevpass&gt;&gt;
@@ -622,6 +632,9 @@ Stay very still.&quot;, coords: &quot;three&quot; },
 &lt;&lt;set $currentInstructionIndex += 1&gt;&gt;
   &lt;&lt;timed 0.1s&gt;&gt;
 &lt;&lt;if $currentInstructionIndex === 2 &gt;&gt;
+  &lt;&lt;replace &quot;#audio&quot;&gt;&gt;
+    &lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_5.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;
+    &lt;&lt;/replace&gt;&gt;
   &lt;&lt;timed 1s&gt;&gt;
        &lt;&lt;removeclass &quot;#guard&quot; &quot;hide&quot;&gt;&gt;
     &lt;&lt;addclass &quot;#guard&quot; &quot;gone&quot;&gt;&gt;
@@ -646,6 +659,18 @@ Stay very still.&quot;, coords: &quot;three&quot; },
     &lt;&lt;/timed&gt;&gt;
       &lt;&lt;timed 0.1s&gt;&gt;
   &lt;&lt;if $currentInstructionIndex === 3 &gt;&gt;
+    &lt;&lt;replace &quot;#audio&quot;&gt;&gt;
+    &lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_6_alt-trophy.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;
+    &lt;&lt;/replace&gt;&gt;
+      &lt;&lt;replace &quot;#btnMount&quot;&gt;&gt;
+    &lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
+        &lt;&lt;button [[I have the trophy|$nextpass]]&gt;&gt;&lt;&lt;/button&gt;&gt;
+      &lt;/span&gt;
+    &lt;&lt;/replace&gt;&gt;
+    &lt;&lt;replace &quot;#instruction&quot;&gt;&gt;
+      /* &lt;&lt;print $currentInstructionIndex&gt;&gt; */
+      &lt;p&gt;&lt;&lt;print $instructions[$currentInstructionIndex].text&gt;&gt;&lt;/p&gt;
+    &lt;&lt;/replace&gt;&gt;
      &lt;&lt;timed 2s&gt;&gt;
    &lt;&lt;removeclass &quot;#location&quot; &quot;three&quot;&gt;&gt;
     &lt;&lt;addclass &quot;#location&quot; &quot;four&quot;&gt;&gt;
@@ -654,20 +679,11 @@ Stay very still.&quot;, coords: &quot;three&quot; },
     &lt;&lt;removeclass &quot;#location&quot; &quot;four&quot;&gt;&gt;
     &lt;&lt;addclass &quot;#location&quot; &quot;six&quot;&gt;&gt;
     &lt;&lt;/timed&gt;&gt;
+
     &lt;&lt;/if&gt;&gt;
       &lt;&lt;/timed&gt;&gt;
   &lt;&lt;if $currentInstructionIndex === 3&gt;&gt;
-    &lt;&lt;replace &quot;#instruction&quot;&gt;&gt;
-      /* &lt;&lt;print $currentInstructionIndex&gt;&gt; */
-      &lt;p&gt;&lt;&lt;print $instructions[$currentInstructionIndex].text&gt;&gt;&lt;/p&gt;
-  
-    &lt;&lt;/replace&gt;&gt;
-   
-  &lt;&lt;replace &quot;#btnMount&quot;&gt;&gt;
-    &lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
-        &lt;&lt;button [[I have the trophy|$nextpass]]&gt;&gt;&lt;&lt;/button&gt;&gt;
-      &lt;/span&gt;
-    &lt;&lt;/replace&gt;&gt;
+    
     &lt;&lt;else&gt;&gt;
     
     &lt;&lt;replace &quot;#instruction&quot;&gt;&gt;
@@ -690,13 +706,13 @@ Stay very still.&quot;, coords: &quot;three&quot; },
     &lt;&lt;addclass &quot;#location&quot; &quot;three&quot;&gt;&gt;
     &lt;&lt;/timed&gt;&gt;
     &lt;&lt;/if&gt;&gt;
-    &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="ARIntro1" tags="nobr" position="225,350" size="100,100">&lt;&lt;set $prevpass to &quot;map&quot;&gt;&gt;
+    &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="ARIntro1" tags="nobr" position="350,350" size="100,100">&lt;&lt;set $prevpass to &quot;map&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;ARIntro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;AR&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
 	&lt;&lt;include &quot;header&quot;&gt;&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_7.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 	&lt;div&gt;
 
 &lt;p&gt;We need to scan the SFS code here it seems&lt;/p&gt;
@@ -728,13 +744,13 @@ Stay very still.&quot;, coords: &quot;three&quot; },
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="footer" tags="nobr" position="350,350" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="footer" tags="nobr" position="475,350" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
 &lt;&lt;if passage() is not &quot;onboarding1&quot;&gt;&gt;
   &lt;&lt;button &quot;Back&quot;&gt;&gt; 
     &lt;&lt;goto $prevpass&gt;&gt;
     &lt;&lt;/button&gt;&gt;
   &lt;&lt;/if&gt;&gt;
-&lt;/div&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="24" name="footernext" tags="nobr" position="475,350" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
+&lt;/div&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="25" name="footernext" tags="nobr" position="600,350" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
 &lt;&lt;if passage() is not &quot;onboarding1&quot;&gt;&gt;
   &lt;&lt;button &quot;Back&quot;&gt;&gt; 
     &lt;&lt;goto $prevpass&gt;&gt;

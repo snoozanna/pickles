@@ -9,3 +9,17 @@ font-size: 3rem;
 .intro-text{
     max-width: 70%;
 }
+
+img.logo.na {
+    max-width: 16%;
+}
+
+.code-input.multibox > .multi-input-wrapper > input.macro-textbox, .code-input.multibox > .multi-input-wrapper > div > input.macro-textbox {
+    width: 6rem;
+    min-width: inherit;
+    color: black;
+    margin-inline-end: 1rem;
+    text-align: center;
+    font-weight: 900;
+    font-size: 3.5rem;
+}

@@ -98,7 +98,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<!-- UUID://5618C9D7-9024-4BDE-B90C-A2A5AC441AF6// --><tw-storydata name="Pickles - National Archives - Phone 2" startnode="3" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="5618C9D7-9024-4BDE-B90C-A2A5AC441AF6" zoom="0.6" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Fondamento:ital@1&family=Italianno&family=Cairo:wght@500&family=Noto+Sans+Mono:wght@700&family=Tangerine:wght@400;700&family=IM+Fell+Double+Pica+SC&family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=Niconne&family=Montserrat:wght@400;800&display=swap');
+	<!-- UUID://5618C9D7-9024-4BDE-B90C-A2A5AC441AF6// --><tw-storydata name="Pickles - National Archives - Phone 2" startnode="4" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="5618C9D7-9024-4BDE-B90C-A2A5AC441AF6" zoom="0.6" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Fondamento:ital@1&family=Italianno&family=Cairo:wght@500&family=Noto+Sans+Mono:wght@700&family=Tangerine:wght@400;700&family=IM+Fell+Double+Pica+SC&family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=Niconne&family=Montserrat:wght@400;800&display=swap');
 
 @import url("/styles/generics.css");
 @import url("/styles/styles.css");
@@ -193,7 +193,12 @@ function log(msg) {
   // el.addEventListener("touchmove", handleMove);
   // log("Initialized.", el);
 }
-// document.addEventListener("DOMContentLoaded", startup);</script><tw-passagedata pid="1" name="Start" tags="nobr" position="134,244.33333333333337" size="100,100">&lt;div class=&quot;wrapper audio&quot; id=&quot;mount&quot;&gt;
+// document.addEventListener("DOMContentLoaded", startup);</script><tw-passagedata pid="1" name="StoryInit" tags="" position="100,100" size="100,100">&lt;&lt;cacheaudio &quot;ping1&quot; &quot;assets/sound/ping1.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;correct&quot; &quot;assets/sound/keep2.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;uploading&quot; &quot;assets/sound/uploading.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;complete&quot; &quot;assets/sound/uploadcomplete.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;signal&quot; &quot;assets/sound/signal.mp3&quot;&gt;&gt;
+&lt;&lt;waitforaudio&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="Start" tags="nobr" position="134,244.33333333333337" size="100,100">&lt;div class=&quot;wrapper audio&quot; id=&quot;mount&quot;&gt;
 	&lt;div class=&quot;phone-warning&quot;&gt;&lt;p&gt;Phone&lt;/p&gt;&lt;/div&gt;
 &lt;div class=&quot;multiple-btn-wrapper&quot;&gt;
 	&lt;span aria-label=&quot;Click Button to begin&quot; class=&quot;button-wrapper&quot;&gt;
@@ -204,10 +209,11 @@ function log(msg) {
 
 	
 &lt;/div&gt;
-  &lt;/div &gt;</tw-passagedata><tw-passagedata pid="2" name="header" tags="nobr" position="225,100" size="100,100">&lt;header&gt;
-	&lt;div class=&quot;logo-wrapper&quot;&gt;&lt;img src=&quot;assets/img/na-logo.png&quot; alt=&quot;The National Archives Logo&quot; class=&quot;logo na&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt; &lt;/header&gt;</tw-passagedata><tw-passagedata pid="3" name="AR" tags="nobr" position="350,100" size="100,100">&lt;&lt;set $prevpass to &quot;AR&quot;&gt;&gt;
+  &lt;/div &gt;</tw-passagedata><tw-passagedata pid="3" name="header" tags="nobr" position="350,100" size="100,100">&lt;header&gt;
+	&lt;div class=&quot;logo-wrapper&quot;&gt;&lt;img src=&quot;assets/img/na-logo.png&quot; alt=&quot;The National Archives Logo&quot; class=&quot;logo na&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt; &lt;/header&gt;</tw-passagedata><tw-passagedata pid="4" name="AR" tags="nobr" position="475,100" size="100,100">&lt;&lt;set $prevpass to &quot;AR&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;AR&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;ARpost&quot;&gt;&gt;
+	&lt;&lt;set $audioOn to true&gt;&gt;
 &lt;div class=&quot;wrapper cogs portrait&quot;&gt;
 	/* &lt;&lt;include &quot;header&quot;&gt;&gt; */
     &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
@@ -230,20 +236,20 @@ function log(msg) {
 	&lt;&lt;include &quot;footerar&quot;&gt;&gt;
   &lt;&lt;/timed&gt;&gt;
 &lt;/div&gt;
-&lt;&lt;done&gt;&gt;&lt;&lt;set $s to setup.startup()&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="ARpost" tags="nobr" position="475,100" size="100,100">&lt;&lt;set $prevpass to &quot;AR&quot;&gt;&gt;
+&lt;&lt;done&gt;&gt;&lt;&lt;set $s to setup.startup()&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="ARpost" tags="nobr" position="600,100" size="100,100">&lt;&lt;set $prevpass to &quot;AR&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;ARpost&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;video4&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs&quot;&gt;
 	&lt;&lt;include &quot;header&quot;&gt;&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_8.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;p&gt;Woh - what just happened? &lt;/p&gt;
 &lt;p&gt;Can you enter the reference number on the image you found?&lt;/p&gt;
   &lt;&lt;include &quot;pwAR&quot;&gt;&gt;
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footerback&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="5" name="pwAR" tags="nobr" position="600,100" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="6" name="pwAR" tags="nobr" position="725,100" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
   &lt;label for=&quot;textbox--password&quot; tabindex=&quot;0&quot; &gt;&lt;span aria-label=&quot;Enter the word below&quot; role=&quot;label&quot;&gt;Enter the code below:&lt;/span&gt;&lt;/label&gt;
   /% CODEWORD INPUT %/
    &lt;div class=&quot;code-input&quot;&gt;
@@ -273,7 +279,7 @@ function log(msg) {
       &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
   
   &lt;/div&gt;
-    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="6" name="video4" tags="nobr" position="725,100" size="100,100">&lt;&lt;set $prevpass to &quot;ARpost&quot;&gt;&gt;
+    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="7" name="video4" tags="nobr" position="850,100" size="100,100">&lt;&lt;set $prevpass to &quot;ARpost&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;video4&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;shop1&quot;&gt;&gt;
 /* VIDEO4  */
@@ -288,7 +294,7 @@ function log(msg) {
   &lt;/span&gt;
 &lt;span class=&quot;button-wrapper videor&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
 &lt;&lt;button &quot;Next&quot; $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="7" name="footerar" tags="nobr" position="850,100" size="100,100">&lt;footer class=&quot;ar-footer&quot;&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="8" name="footerar" tags="nobr" position="975,100" size="100,100">&lt;footer class=&quot;ar-footer&quot;&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
 
   &lt;&lt;button &quot;Back&quot;&gt;&gt; 
     &lt;&lt;goto $prevpass&gt;&gt;
@@ -297,7 +303,7 @@ function log(msg) {
 &lt;/div&gt;
  &lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
       &lt;&lt;button [[Next|$nextpass]]&gt;&gt;&lt;&lt;/button&gt;&gt;
-    &lt;/span&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="8" name="footer" tags="nobr" position="975,100" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
+    &lt;/span&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="9" name="footer" tags="nobr" position="1100,100" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
 &lt;&lt;if passage() is not &quot;onboarding1&quot;&gt;&gt;
   &lt;&lt;button &quot;Back&quot;&gt;&gt; 
     &lt;&lt;goto $prevpass&gt;&gt;
@@ -306,21 +312,21 @@ function log(msg) {
 &lt;/div&gt;
  &lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
       &lt;&lt;button [[Next|$nextpass]]&gt;&gt;&lt;&lt;/button&gt;&gt;
-    &lt;/span&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="9" name="footerback" tags="nobr" position="1100,100" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
+    &lt;/span&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="10" name="footerback" tags="nobr" position="1225,100" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
 &lt;&lt;if passage() is not &quot;onboarding1&quot;&gt;&gt;
   &lt;&lt;button &quot;Back&quot;&gt;&gt; 
     &lt;&lt;goto $prevpass&gt;&gt;
     &lt;&lt;/button&gt;&gt;
   &lt;&lt;/if&gt;&gt;
 &lt;/div&gt;
-&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="10" name="shop1" tags="nobr" position="1225,100" size="100,100">&lt;&lt;set $prevpass to &quot;ARpost&quot;&gt;&gt;
+&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="11" name="shop1" tags="nobr" position="100,225" size="100,100">&lt;&lt;set $prevpass to &quot;ARpost&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;shop1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;shop2&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs portrait&quot;&gt;
 	&lt;&lt;include &quot;header&quot;&gt;&gt;
     &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_4_headtotheshop_1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;p&gt;The SFS seems to have sent the parcel. You can find it at the bookshop. &lt;/p&gt;
 
@@ -331,14 +337,14 @@ function log(msg) {
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="11" name="shop2" tags="nobr" position="100,225" size="100,100">&lt;&lt;set $prevpass to &quot;shop1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="shop2" tags="nobr" position="225,225" size="100,100">&lt;&lt;set $prevpass to &quot;shop1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;shop2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;shop2a&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs portrait&quot;&gt;
 	&lt;&lt;include &quot;header&quot;&gt;&gt;
    &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_4_headtotheshop_2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;p&gt;This is what we know... &lt;/p&gt;
 
@@ -351,20 +357,20 @@ function log(msg) {
   &lt;&lt;include &quot;pwShop&quot;&gt;&gt;
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footerback&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="shop2a" tags="nobr" position="225,225" size="100,100">&lt;&lt;set $prevpass to &quot;shop2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="shop2a" tags="nobr" position="350,225" size="100,100">&lt;&lt;set $prevpass to &quot;shop2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;shop2a&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;video5&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs portrait&quot;&gt;
 	&lt;&lt;include &quot;header&quot;&gt;&gt;
    &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_5_outsideshop_1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;p&gt;Head back to where you were sitting and I’ll connect.&lt;/p&gt;
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footerhere&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="pwShop" tags="nobr" position="350,225" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="pwShop" tags="nobr" position="475,225" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
   &lt;label for=&quot;textbox--password&quot; tabindex=&quot;0&quot; &gt;&lt;span aria-label=&quot;Enter the word below&quot; role=&quot;label&quot;&gt;Enter the word below&lt;/span&gt;&lt;/label&gt;
   /% CODEWORD INPUT %/
    &lt;div class=&quot;code-input&quot;&gt;
@@ -394,7 +400,7 @@ function log(msg) {
     &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
 
     &lt;/div&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="video5" tags="nobr" position="475,225" size="100,100">&lt;&lt;set $prevpass to &quot;shop2&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="video5" tags="nobr" position="600,225" size="100,100">&lt;&lt;set $prevpass to &quot;shop2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;video5&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;shop3&quot;&gt;&gt;
 /* VIDEO 5 */
@@ -409,14 +415,14 @@ function log(msg) {
   &lt;/span&gt;
 &lt;span class=&quot;button-wrapper videor&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
 &lt;&lt;button &quot;Next&quot; $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="shop3" tags="nobr" position="600,225" size="100,100">&lt;&lt;set $prevpass to &quot;video5&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="shop3" tags="nobr" position="725,225" size="100,100">&lt;&lt;set $prevpass to &quot;video5&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;shop3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;shop4&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs portrait&quot;&gt;
 	&lt;&lt;include &quot;header&quot;&gt;&gt;
      &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_5_outsideshop_2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;p&gt;Joe Mears, the FA Chairman, placed the note in the paper as requested and then a phone call happened, between a police officer and the thief, Betchley.  &lt;/p&gt;
 &lt;p&gt;We have the transcript, a document that explains the real conversation, of what really happened between Betchley and the police. It is in the archives... but on my screen it’s fading. &lt;/p&gt; 
@@ -425,14 +431,14 @@ function log(msg) {
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="shop4" tags="nobr" position="725,225" size="100,100">&lt;&lt;set $prevpass to &quot;shop3&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="shop4" tags="nobr" position="850,225" size="100,100">&lt;&lt;set $prevpass to &quot;shop3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;shop4&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;cabinet1&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs portrait&quot;&gt;
 	&lt;&lt;include &quot;header&quot;&gt;&gt;
     &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_5_outsideshop_3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;p&gt;Head up the stairs to level one.&lt;/p&gt;
 &lt;p&gt;On the first floor, go through the barriers, turn right and head towards the library. Look for the information desk in front of the library – it is the R.E.D. desk. &lt;/p&gt;
@@ -445,7 +451,7 @@ function log(msg) {
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footerhaveit&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="footerhaveit" tags="nobr" position="850,225" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="18" name="footerhaveit" tags="nobr" position="975,225" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
 &lt;&lt;if passage() is not &quot;onboarding1&quot;&gt;&gt;
   &lt;&lt;button &quot;Back&quot;&gt;&gt; 
     &lt;&lt;goto $prevpass&gt;&gt;
@@ -454,14 +460,14 @@ function log(msg) {
 &lt;/div&gt;
  &lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
       &lt;&lt;button [[We have it!|$nextpass]]&gt;&gt;&lt;&lt;/button&gt;&gt;
-    &lt;/span&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="18" name="cabinet1" tags="nobr" position="975,225" size="100,100">&lt;&lt;set $prevpass to &quot;shop4&quot;&gt;&gt;
+    &lt;/span&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="19" name="cabinet1" tags="nobr" position="1100,225" size="100,100">&lt;&lt;set $prevpass to &quot;shop4&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;cabinet1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;cabinet2&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs portrait&quot;&gt;
 	&lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_6_cabinettable_1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;p&gt;Right, now you have the transcript, I need you to go to the spot where we can work together. &lt;/p&gt;
 
@@ -475,7 +481,7 @@ function log(msg) {
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footerhere&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name="footerhere" tags="nobr" position="1100,225" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="footerhere" tags="nobr" position="1225,225" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
 &lt;&lt;if passage() is not &quot;onboarding1&quot;&gt;&gt;
   &lt;&lt;button &quot;Back&quot;&gt;&gt; 
     &lt;&lt;goto $prevpass&gt;&gt;
@@ -484,14 +490,14 @@ function log(msg) {
 &lt;/div&gt;
  &lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
       &lt;&lt;button [[We&#39;re here|$nextpass]]&gt;&gt;&lt;&lt;/button&gt;&gt;
-    &lt;/span&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="20" name="cabinet2" tags="nobr" position="1225,225" size="100,100">&lt;&lt;set $prevpass to &quot;cabinet1&quot;&gt;&gt;
+    &lt;/span&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="21" name="cabinet2" tags="nobr" position="100,350" size="100,100">&lt;&lt;set $prevpass to &quot;cabinet1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;cabinet2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;cabinet3&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs portrait&quot;&gt;
 	&lt;&lt;include &quot;header&quot;&gt;&gt;
  &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
     	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_6_cabinettable_2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;p&gt;What you need to know before the call is this. &lt;/p&gt;
 &lt;p&gt;Joe Mears was taken unwell – so a police officer went undercover –pretending to be Joe Mears. &lt;/p&gt;
@@ -504,7 +510,7 @@ function log(msg) {
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footerokay&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="21" name="footerokay" tags="nobr" position="100,350" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="footerokay" tags="nobr" position="225,350" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
 &lt;&lt;if passage() is not &quot;onboarding1&quot;&gt;&gt;
   &lt;&lt;button &quot;Back&quot;&gt;&gt; 
     &lt;&lt;goto $prevpass&gt;&gt;
@@ -513,14 +519,14 @@ function log(msg) {
 &lt;/div&gt;
  &lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
       &lt;&lt;button [[Okay|$nextpass]]&gt;&gt;&lt;&lt;/button&gt;&gt;
-    &lt;/span&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="22" name="cabinet3" tags="nobr" position="225,350" size="100,100">&lt;&lt;set $prevpass to &quot;cabinet2&quot;&gt;&gt;
+    &lt;/span&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="23" name="cabinet3" tags="nobr" position="350,350" size="100,100">&lt;&lt;set $prevpass to &quot;cabinet2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;cabinet3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;cabinet3&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs portrait&quot;&gt;
 	&lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_6_cabinettable_3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
 &lt;p&gt;You can’t let Betchley know you aren’t Joe Mears. Answer the questions to give him all the information from the transcript. &lt;/p&gt;
 &lt;p&gt;I’ve matched our phone communications with those from 1966 through the Signal Fire System so what you say here should appear in 1966.&lt;/p&gt; 
@@ -530,7 +536,7 @@ function log(msg) {
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footerready&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="footerready" tags="nobr" position="350,350" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="footerready" tags="nobr" position="475,350" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
 &lt;&lt;if passage() is not &quot;onboarding1&quot;&gt;&gt;
   &lt;&lt;button &quot;Back&quot;&gt;&gt; 
     &lt;&lt;goto $prevpass&gt;&gt;

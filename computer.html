@@ -98,104 +98,33 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<!-- UUID://170811C8-C9ED-4656-AAF1-BFCE7DC19831// --><tw-storydata name="Pickles - National Archives - Computer" startnode="5" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="170811C8-C9ED-4656-AAF1-BFCE7DC19831" zoom="0.6" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Fondamento:ital@1&family=Italianno&family=Cairo:wght@500&family=Noto+Sans+Mono:wght@700&family=Tangerine:wght@400;700&family=IM+Fell+Double+Pica+SC&family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=Niconne&family=Montserrat:wght@400;800&display=swap');
+	<!-- UUID://170811C8-C9ED-4656-AAF1-BFCE7DC19831// --><tw-storydata name="Pickles - National Archives - Computer" startnode="3" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="170811C8-C9ED-4656-AAF1-BFCE7DC19831" zoom="0.6" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Fondamento:ital@1&family=Italianno&family=Cairo:wght@500&family=Noto+Sans+Mono:wght@700&family=Tangerine:wght@400;700&family=IM+Fell+Double+Pica+SC&family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=Niconne&family=Montserrat:wght@400;800&display=swap');
 
 @import url("/styles/generics.css");
 @import url("/styles/styles.css");
-@import url("/styles/computer.css");</style><script role="script" id="twine-user-script" type="text/twine-javascript">UIBar.destroy();</script><tw-passagedata pid="1" name="Start" tags="nobr" position="134,244.33333333333337" size="100,100">&lt;div class=&quot;wrapper audio&quot; id=&quot;mount&quot;&gt;
-	&lt;div class=&quot;phone-warning&quot;&gt;&lt;p&gt;Computer&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;multiple-btn-wrapper&quot;&gt;
-	&lt;span aria-label=&quot;Click Button to begin&quot; class=&quot;button-wrapper&quot;&gt;
-		&lt;&lt;button &quot;Begin&quot;&gt;&gt;
-			&lt;&lt;goto &quot;audioChoice&quot;&gt;&gt;
-		&lt;&lt;/button&gt;&gt;
-	&lt;/span&gt;
-
-	
-&lt;/div&gt;
-  &lt;/div &gt;</tw-passagedata><tw-passagedata pid="2" name="header" tags="nobr" position="225,100" size="100,100">&lt;header&gt;
-	&lt;div class=&quot;logo-wrapper&quot;&gt;&lt;img src=&quot;assets/img/na-logo.png&quot; alt=&quot;The National Archives Logo&quot; class=&quot;logo na&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt; &lt;/header&gt;</tw-passagedata><tw-passagedata pid="3" name="audioChoice" tags="nobr" position="134,244.33333333333337" size="100,100">&lt;&lt;set $prevpass to &quot;Start&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;audioChoice&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;entrance&quot;&gt;&gt;
-
-  &lt;div class=&quot;wrapper audio&quot; id=&quot;mount&quot;&gt;
-	&lt;div class=&quot;phone-warning&quot;&gt;&lt;p&gt;MOTT is best experienced on a computer or tablet&lt;/p&gt;&lt;/div&gt;
-&lt;audio src=&quot;https://remote.co.com/MoTT/AgentTraining/assets/audio/Audioon_off.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-
-	&lt;p&gt;&lt;span class=&quot;inline-icon-wrap&quot;&gt;&lt;img src=&quot;assets/img/audio.png&quot; alt=&quot;volume icon&quot;&gt;&lt;/span&gt;This experience has the option of an audio soundtrack.  &lt;/p&gt;
-	&lt;p&gt;Would you like audio on or off? &lt;/p&gt;
-&lt;div class=&quot;multiple-btn-wrapper&quot;&gt;
-	&lt;span aria-label=&quot;Click Button to turn audio on&quot; class=&quot;button-wrapper &quot;&gt;
-		&lt;&lt;button &quot;On&quot;&gt;&gt;
-			&lt;&lt;set $audioOn to true&gt;&gt;
-			&lt;&lt;set $audioClick to true&gt;&gt;
-			&lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-				&lt;strong&gt; &lt;span class=&quot;inline-icon-wrap&quot;&gt;&lt;img src=&quot;assets/img/audio.png&quot;&gt;&lt;/span&gt; Audio On&lt;/strong&gt;
-				&lt;br&gt;
-				&lt;p&gt;Press the power on button to continue&lt;/p&gt;
-				&lt;poweron&gt;&lt;a data-passage=&quot;entrance&quot; class=&quot;link-internal link-image&quot; role=&quot;link&quot; tabindex=&quot;0&quot; &gt;&lt;img src=&quot;https://remote.co.com/MoTT/AgentTraining/Images/onicon.png&quot; alt=&quot;Power On button&quot;&gt;&lt;/a&gt;&lt;/poweron&gt;
-				&lt;br&gt;
-			&lt;br&gt;
-				&lt;&lt;link &quot;Back&quot;&gt;&gt;&lt;&lt;goto &quot;Start&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;
-				
-	&lt;&lt;/replace&gt;&gt;
-		&lt;&lt;/button&gt;&gt;
-	&lt;/span&gt;
-	&lt;span class=&quot;button-wrapper &quot; aria-label=&quot;Click Button to turn audio off&quot;&gt;
-	&lt;&lt;button &quot;Off&quot;&gt;&gt;
-		&lt;&lt;set $audioOn to false&gt;&gt;
-		&lt;&lt;set $audioClick to true&gt;&gt;
-&lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-			&lt;strong&gt; Audio Off&lt;/strong&gt;
-			&lt;p&gt;Press the power on button to continue&lt;/p&gt;
-			&lt;a data-passage=&quot;entrance&quot; class=&quot;link-internal link-image&quot; role=&quot;link&quot; tabindex=&quot;0&quot; aria-label=&quot;Click this power on icon to continue&quot; alt=&quot;Power on button icon&quot; &gt;&lt;img src=&quot;https://remote.co.com/MoTT/AgentTraining/Images/onicon.png&quot; alt=&quot;Power On button&quot;&gt;&lt;/a&gt;
-	
-			&lt;br&gt;
-			&lt;br&gt;
-			&lt;span aria-label=&quot;Click Button to go back&quot;&gt;&lt;&lt;link &quot;Back&quot;&gt;&gt;&lt;&lt;goto &quot;Start&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;
-			&lt;/span&gt;
-		&lt;&lt;/replace&gt;&gt;
-	&lt;&lt;/button&gt;&gt;&lt;/span&gt;
-&lt;/div&gt;
-
-  &lt;/div &gt;</tw-passagedata><tw-passagedata pid="4" name="entrance" tags="nobr" position="475,100" size="100,100">&lt;&lt;set $prevpass to &quot;audioChoice&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;entrance&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;office1&quot;&gt;&gt;
-/* TODO ADD TO ORIGINAL ENTRANCE  */
-&lt;div class=&quot;wrapper cogs&quot;&gt;
-	&lt;&lt;include &quot;header&quot;&gt;&gt;
-	&lt;main id=&quot;main&quot; class=&quot;flex-container-col&quot;&gt;&lt;&lt;set $title to 1&gt;&gt;
-	&lt;&lt;if $audioClick isnot true&gt;&gt;&lt;&lt;set $audioOn to true&gt;&gt;&lt;&lt;/if&gt;&gt;
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
-
-	&lt;div class=&quot;intro-text&quot;&gt;
-	  &lt;p&gt;Welcome to The National Archives.&lt;/p&gt;
-	  &lt;p&gt;This experience requires you to tap through on a screen. You just need to look for the circle to click on. Try it now.  &lt;/p&gt;
-	  
-	  &lt;div class=&quot;flex-container-row&quot;&gt;&lt;p class=&quot;fit&quot;&gt;Try it now.&lt;/p&gt;
-		&lt;br/&gt;&lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;&lt;&lt;button &quot;Training&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
-	
-		&lt;/div&gt;
-	&lt;/div&gt;
-
-	&lt;/main&gt;
-	&lt;&lt;include &quot;footerentrance&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="5" name="office1" tags="nobr t8n" position="600,100" size="100,100">&lt;&lt;set $prevpass to &quot;office1&quot;&gt;&gt;
+@import url("/styles/computer.css");</style><script role="script" id="twine-user-script" type="text/twine-javascript">UIBar.destroy();</script><tw-passagedata pid="1" name="StoryInit" tags="" position="100,100" size="100,100">&lt;&lt;cacheaudio &quot;ping1&quot; &quot;assets/sound/ping1.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;correct&quot; &quot;assets/sound/keep2.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;uploading&quot; &quot;assets/sound/uploading.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;complete&quot; &quot;assets/sound/uploadcomplete.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;signal&quot; &quot;assets/sound/signal.mp3&quot;&gt;&gt;
+&lt;&lt;waitforaudio&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="header" tags="nobr" position="225,100" size="100,100">&lt;header&gt;
+	&lt;div class=&quot;logo-wrapper&quot;&gt;&lt;img src=&quot;assets/img/na-logo.png&quot; alt=&quot;The National Archives Logo&quot; class=&quot;logo na&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt; &lt;/header&gt;</tw-passagedata><tw-passagedata pid="3" name="office1" tags="nobr t8n" position="350,100" size="100,100">&lt;&lt;set $prevpass to &quot;office1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;office1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;desktop&quot;&gt;&gt;
+&lt;&lt;set $audioOn to true&gt;&gt;
 &lt;&lt;set $finaldesktop to false&gt;&gt;
 &lt;div class=&quot;wrapper cogs&quot;&gt;
 	&lt;&lt;include &quot;header&quot;&gt;&gt;
 	&lt;main id=&quot;main&quot; class=&quot;flex-container-col&quot;&gt;&lt;&lt;set $title to 1&gt;&gt;
 
-	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
+	
 	&lt;&lt;timed 1s&gt;&gt;
 &lt;div class=&quot;pwBox-wrapper&quot;&gt;&lt;&lt;include &quot;pwBox&quot;&gt;&gt;&lt;/div&gt;
 &lt;&lt;/timed&gt;&gt;
 	&lt;/main&gt;
 	/* &lt;&lt;include &quot;footer&quot;&gt;&gt; */
   &lt;footer/&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="6" name="pwBox" tags="nobr" position="725,100" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper pwBox&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="4" name="pwBox" tags="nobr" position="475,100" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper pwBox&quot;&gt;
 &lt;H3&gt;ENTER PASSWORD:&lt;/H3&gt;
 
   &lt;label for=&quot;textbox--password&quot; tabindex=&quot;0&quot; &gt;&lt;span aria-label=&quot;Enter the name on the Dog Tag&quot; role=&quot;label&quot;&gt;Enter the name on the Dog Tag&lt;/span&gt;&lt;/label&gt;
@@ -224,12 +153,10 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
     /% CODEWORD FEEDBACK %/
     &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
 
-    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="7" name="desktop" tags="nobr" position="850,100" size="100,100">&lt;&lt;set $prevpass to &quot;office1&quot;&gt;&gt;
+    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="5" name="desktop" tags="nobr" position="600,100" size="100,100">&lt;&lt;set $prevpass to &quot;office1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;desktop&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;video8&quot;&gt;&gt;
-/* TODO Desktop has messages, locked folder and Signal Fire System logo. It could have some other folders to make it seem busier. 
-In the bottom right a chat box should open - perhaps a notification and then they click on it.  */
-
+&lt;&lt;if $audioOn is true&gt;&gt;&lt;div id=&quot;audio&quot;&gt;&lt;/div&gt;&lt;&lt;/if&gt;&gt;
 &lt;div class=&quot;wrapper cogs desktop&quot;&gt;
 &lt;header&gt;
   &lt;div class=&quot;header-item menus&quot;&gt;
@@ -243,8 +170,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
     &lt;span&gt;&lt;img src=&quot;assets/img/bat.png&quot;&gt;&lt;/span&gt;
    &lt;span&gt;&lt;img src=&quot;assets/img/wifiW.png&quot;&gt;&lt;/span&gt;
     &lt;span&gt;&lt;img src=&quot;assets/img/search.png&quot;&gt;&lt;/span&gt;
-    &lt;span&gt;Date&lt;/span&gt;
-    &lt;span&gt;Time&lt;/span&gt;
+
   &lt;/div&gt;
   
 &lt;/header&gt;
@@ -266,6 +192,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
 	
 	&lt;div id=&quot;chatMount&quot; class=&quot;chatMount&quot;&gt;	
 	&lt;&lt;timed 2s&gt;&gt;
+     &lt;&lt;audio &quot;ping1&quot; play&gt;&gt;
 			&lt;&lt;include &quot;chatNotification&quot;&gt;&gt;
 		&lt;&lt;/timed&gt;&gt;&lt;/div&gt;
 	/* &lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt; */
@@ -290,15 +217,18 @@ In the bottom right a chat box should open - perhaps a notification and then the
 	&lt;&lt;timed 180s&gt;&gt;
 		&lt;&lt;goto &quot;entrance&quot;&gt;&gt;
 		&lt;&lt;/timed&gt;&gt;
-	&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="chatNotification" tags="" position="975,100" size="100,100">&lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click to open Chatbox&quot; id=&quot;remove&quot;&gt;&lt;&lt;button &quot;New message!&quot;&gt;&gt;
+	&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="chatNotification" tags="" position="725,100" size="100,100">&lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click to open Chatbox&quot; id=&quot;remove&quot;&gt;&lt;&lt;button &quot;New message!&quot;&gt;&gt;
 	&lt;&lt;replace &quot;#chatMount&quot;&gt;&gt;
 	&lt;&lt;include &quot;chatText1a&quot;&gt;&gt;
 	&lt;&lt;remove &quot;#remove&quot;&gt;&gt;
 	&lt;&lt;/replace&gt;&gt;
 	&lt;&lt;/button&gt;&gt;
-&lt;/span&gt;</tw-passagedata><tw-passagedata pid="9" name="chatText1a" tags="nobr" position="1100,100" size="100,100">&lt;div class=&quot;chat&quot;&gt;&lt;div class=&quot;messages-container&quot; id=&quot;messagesContainer&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/span&gt;</tw-passagedata><tw-passagedata pid="7" name="chatText1a" tags="nobr" position="850,100" size="100,100">&lt;div class=&quot;chat&quot;&gt;&lt;div class=&quot;messages-container&quot; id=&quot;messagesContainer&quot;&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;&lt;timed 2s&gt;&gt;
+  &lt;&lt;replace &quot;#audio&quot;&gt;&gt;
+  &lt;audio src=&quot;assets/audio/COMPUTER_1_MoTT_1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;
+  &lt;&lt;/replace&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;avatar&quot;&gt;
@@ -313,7 +243,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 4s&gt;&gt;
+&lt;&lt;timed 6s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;message-container&quot; &gt;
@@ -323,7 +253,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 6s&gt;&gt;
+&lt;&lt;timed 12s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;message-container&quot; &gt;
@@ -334,7 +264,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 8s&gt;&gt;
+&lt;&lt;timed 16s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;message-container&quot; &gt;
@@ -344,7 +274,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 	
-&lt;&lt;timed 10s&gt;&gt;
+&lt;&lt;timed 17s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
 		&lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
     &lt;&lt;button &quot;Next&quot;&gt;&gt;
@@ -354,9 +284,12 @@ In the bottom right a chat box should open - perhaps a notification and then the
 			&lt;&lt;/button&gt;&gt;
 			&lt;/span&gt;
   &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="chatText1a2" tags="nobr" position="1225,100" size="100,100">&lt;div class=&quot;chat&quot;&gt;&lt;div class=&quot;messages-container&quot; id=&quot;messagesContainer&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="chatText1a2" tags="nobr" position="975,100" size="100,100">&lt;div class=&quot;chat&quot;&gt;&lt;div class=&quot;messages-container&quot; id=&quot;messagesContainer&quot;&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;&lt;timed 2s&gt;&gt;
+   &lt;&lt;replace &quot;#audio&quot;&gt;&gt;
+  &lt;audio src=&quot;assets/audio/COMPUTER_1_MoTT_2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;
+  &lt;&lt;/replace&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;avatar&quot;&gt;
@@ -392,7 +325,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 8s&gt;&gt;
+&lt;&lt;timed 9s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;message-container&quot; &gt;
@@ -402,7 +335,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 10s&gt;&gt;
+&lt;&lt;timed 12s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;message-container&quot; &gt;
@@ -412,7 +345,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 	
-&lt;&lt;timed 10s&gt;&gt;
+&lt;&lt;timed 14s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
 		&lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
     &lt;&lt;button &quot;Next&quot;&gt;&gt;
@@ -422,9 +355,12 @@ In the bottom right a chat box should open - perhaps a notification and then the
 			&lt;&lt;/button&gt;&gt;
 			&lt;/span&gt;
   &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="chatText1b" tags="nobr" position="100,225" size="100,100">&lt;div class=&quot;chat&quot;&gt;&lt;div class=&quot;messages-container&quot; id=&quot;messagesContainer&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="chatText1b" tags="nobr" position="1100,100" size="100,100">&lt;div class=&quot;chat&quot;&gt;&lt;div class=&quot;messages-container&quot; id=&quot;messagesContainer&quot;&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;&lt;timed 2s&gt;&gt;
+   &lt;&lt;replace &quot;#audio&quot;&gt;&gt;
+  &lt;audio src=&quot;assets/audio/COMPUTER_1_MoTT_3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;
+  &lt;&lt;/replace&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;avatar&quot;&gt;
@@ -438,7 +374,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 4s&gt;&gt;
+&lt;&lt;timed 6s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;message-container&quot; &gt;
@@ -448,7 +384,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 6s&gt;&gt;
+&lt;&lt;timed 7.5s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;message-container&quot; &gt;
@@ -459,7 +395,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 8s&gt;&gt;
+&lt;&lt;timed 9.5s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;message-container&quot; &gt;
@@ -471,7 +407,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
 &lt;&lt;/timed&gt;&gt;
 	
 
-&lt;&lt;timed 10s&gt;&gt;
+&lt;&lt;timed 11.5s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;message-container&quot; &gt;
@@ -482,7 +418,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 12s&gt;&gt;
+&lt;&lt;timed 13s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
 			&lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
     &lt;&lt;button &quot;Next&quot;&gt;&gt;
@@ -493,9 +429,12 @@ In the bottom right a chat box should open - perhaps a notification and then the
 			&lt;&lt;/button&gt;&gt;
 			&lt;/span&gt;
   &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="chatText1c" tags="nobr" position="225,225" size="100,100">&lt;div class=&quot;chat&quot;&gt;&lt;div class=&quot;messages-container&quot; id=&quot;messagesContainer&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="chatText1c" tags="nobr" position="1225,100" size="100,100">&lt;div class=&quot;chat&quot;&gt;&lt;div class=&quot;messages-container&quot; id=&quot;messagesContainer&quot;&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;&lt;timed 2s&gt;&gt;
+   &lt;&lt;replace &quot;#audio&quot;&gt;&gt;
+  &lt;audio src=&quot;assets/audio/COMPUTER_1_MoTT_4.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;
+  &lt;&lt;/replace&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;avatar&quot;&gt;
@@ -541,7 +480,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
 &lt;&lt;/timed&gt;&gt;
 	
 
-&lt;&lt;timed 10s&gt;&gt;
+&lt;&lt;timed 14s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;message-container&quot; &gt;
@@ -551,7 +490,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 12s&gt;&gt;
+&lt;&lt;timed 18s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;message-container&quot; &gt;
@@ -559,13 +498,16 @@ In the bottom right a chat box should open - perhaps a notification and then the
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="SFSLocked" tags="nobr" position="350,225" size="100,100">&lt;h2&gt;Signal Fire System&lt;/h2&gt; 
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="SFSLocked" tags="nobr" position="100,225" size="100,100">&lt;h2&gt;Signal Fire System&lt;/h2&gt; 
+&lt;br/&gt;
 &lt;&lt;button [img[&quot;assets/img/signal-w.png&quot;]]&gt;&gt;
   &lt;&lt;replace &quot;#sfsMount&quot;&gt;&gt;
   &lt;&lt;include &quot;pwSFSIcon&quot;&gt;&gt;
   &lt;&lt;/replace&gt;&gt;
 &lt;&lt;/button&gt;&gt;
-&lt;h2&gt;Locked&lt;/h2&gt;</tw-passagedata><tw-passagedata pid="14" name="pwSFSIcon" tags="nobr" position="475,225" size="100,100">&lt;h2&gt;Signal Fire System&lt;/h2&gt; 
+&lt;br/&gt;
+&lt;h2&gt;Locked&lt;/h2&gt;</tw-passagedata><tw-passagedata pid="12" name="pwSFSIcon" tags="nobr" position="225,225" size="100,100">&lt;h2&gt;Signal Fire System&lt;/h2&gt; 
+&lt;br/&gt;
 &lt;img src=&quot;assets/img/signal-w.png&quot;/&gt;
 &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
   &lt;label for=&quot;textbox--password&quot; tabindex=&quot;0&quot; &gt;&lt;span aria-label=&quot;Enter the word below&quot; role=&quot;label&quot;&gt;Enter the word below&lt;/span&gt;&lt;/label&gt;
@@ -579,7 +521,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
        &lt;&lt;set _password to _password.toUpperCase()&gt;&gt;
    /% CODEWORD CORRECT %/
        &lt;&lt;if _password isnot &quot;&quot; and _password is &quot;1966&quot;&gt;&gt;
-       &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+       &lt;&lt;replace &quot;#coderesultsfs&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
           &lt;&lt;audio &quot;correct&quot; play&gt;&gt;
 			 &lt;&lt;timed 1s&gt;&gt;
 					&lt;&lt;replace &quot;#chatMount&quot;&gt;&gt;
@@ -595,17 +537,18 @@ In the bottom right a chat box should open - perhaps a notification and then the
       &lt;&lt;/if&gt;&gt;
         /% CODEWORD INCORRECT %/
      &lt;&lt;if _password isnot &quot;&quot; and _password is not &quot;1966&quot;&gt;&gt;
-        &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-      &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+        &lt;&lt;replace &quot;#coderesultsfs&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesultsfs&quot;&gt;&gt; &lt;h2&gt;Locked&lt;/h2&gt; &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
         &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt; 
      &lt;/span&gt;
 
    
     /% CODEWORD FEEDBACK %/
-    &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
+      &lt;br/&gt;
+    &lt;div id=&quot;coderesultsfs&quot;&gt; &lt;h2&gt;Locked&lt;/h2&gt; &lt;/div&gt;
 
-    &lt;/div&gt;
-  &lt;h2&gt;Locked&lt;/h2&gt;</tw-passagedata><tw-passagedata pid="15" name="pwSFSTarget" tags="nobr" position="600,225" size="100,100">&lt;h3&gt;SFS - Unlocked&lt;/h3&gt;
+    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="pwSFSTarget" tags="nobr" position="350,225" size="100,100">&lt;h2&gt;Signal Fire System &lt;br/&gt;Unlocked&lt;/h2&gt; 
+
 &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
   &lt;label for=&quot;textbox--password&quot; tabindex=&quot;0&quot; &gt;&lt;span aria-label=&quot;Enter the word below&quot; role=&quot;label&quot;&gt;Enter target:&lt;/span&gt;&lt;/label&gt;
   /% CODEWORD INPUT %/
@@ -613,6 +556,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
      &lt;&lt;textbox &quot;_password&quot; &quot;&quot; &gt;&gt;
     &lt;/div&gt;
    &lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click Button to go Check your answer&quot;&gt;
+   &lt;br/&gt;
      &lt;&lt;button &quot;Enter&quot;&gt;&gt;  
    /% STANDARDISE INPUT %/
        &lt;&lt;set _password to _password.toUpperCase()&gt;&gt;
@@ -623,6 +567,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
        &lt;&lt;timed 3s&gt;&gt;
 				&lt;&lt;replace &quot;#sfsMount&quot;&gt;&gt;
 &lt;h2&gt;Target accepted&lt;/h2&gt;
+&lt;div id=&quot;accessMount&quot;&gt;&lt;/div&gt;
 	&lt;&lt;/replace&gt;&gt;
 			&lt;&lt;replace &quot;#chatMount&quot;&gt;&gt;
 				&lt;&lt;include &quot;chatText3&quot;&gt;&gt;
@@ -631,14 +576,15 @@ In the bottom right a chat box should open - perhaps a notification and then the
       &lt;&lt;/if&gt;&gt;
         /% CODEWORD INCORRECT %/
      &lt;&lt;if _password isnot &quot;&quot; and _password is not &quot;CORBETT&quot;&gt;&gt;
-        &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Try again.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-      &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+        &lt;&lt;replace &quot;#coderesult3&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Try again.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult3&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
         &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt; 
      &lt;/span&gt;
     /% CODEWORD FEEDBACK %/
+    &lt;br/&gt;
     &lt;div id=&quot;coderesult3&quot;&gt;&lt;/div&gt;
 
-    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="pwFile" tags="nobr" position="725,225" size="100,100">&lt;div class=&quot;doc-container&quot;&gt; &lt;img src=&quot;assets/img/4468641.png&quot;/&gt;
+    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="pwFile" tags="nobr" position="475,225" size="100,100">&lt;div class=&quot;doc-container&quot;&gt; &lt;img src=&quot;assets/img/4468641.png&quot;/&gt;
  &lt;span&gt;Locked File&lt;/span&gt;
 &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
   &lt;label for=&quot;textbox--password&quot; tabindex=&quot;0&quot; &gt;&lt;span aria-label=&quot;Enter password&quot; role=&quot;label&quot;&gt;Enter password:&lt;/span&gt;&lt;/label&gt;
@@ -668,8 +614,11 @@ In the bottom right a chat box should open - perhaps a notification and then the
     &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
 
     &lt;/div&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="chatText2" tags="nobr" position="850,225" size="100,100">&lt;div class=&quot;chat&quot;&gt;&lt;div class=&quot;messages-container&quot; id=&quot;messagesContainer&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="chatText2" tags="nobr" position="600,225" size="100,100">&lt;div class=&quot;chat&quot;&gt;&lt;div class=&quot;messages-container&quot; id=&quot;messagesContainer&quot;&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;&lt;timed 2s&gt;&gt;
+   &lt;&lt;replace &quot;#audio&quot;&gt;&gt;
+  &lt;audio src=&quot;assets/audio/COMPUTER_2_thatsthepin_1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;
+  &lt;&lt;/replace&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;avatar&quot;&gt;
@@ -683,7 +632,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 4s&gt;&gt;
+&lt;&lt;timed 5s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;message-container&quot; &gt;
@@ -704,8 +653,11 @@ In the bottom right a chat box should open - perhaps a notification and then the
 			&lt;&lt;/button&gt;&gt;
 			&lt;/span&gt;
   &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="chatText2b" tags="nobr" position="975,225" size="100,100">&lt;div class=&quot;chat&quot;&gt;&lt;div class=&quot;messages-container&quot; id=&quot;messagesContainer&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="chatText2b" tags="nobr" position="725,225" size="100,100">&lt;div class=&quot;chat&quot;&gt;&lt;div class=&quot;messages-container&quot; id=&quot;messagesContainer&quot;&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;&lt;timed 2s&gt;&gt;
+   &lt;&lt;replace &quot;#audio&quot;&gt;&gt;
+  &lt;audio src=&quot;assets/audio/COMPUTER_2_thatsthepin_2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;
+  &lt;&lt;/replace&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;avatar&quot;&gt;
@@ -719,7 +671,7 @@ In the bottom right a chat box should open - perhaps a notification and then the
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 4s&gt;&gt;
+&lt;&lt;timed 6s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;message-container&quot; &gt;
@@ -728,9 +680,12 @@ Signal Fire System.&lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="19" name="chatText3" tags="nobr" position="1100,225" size="100,100">&lt;div class=&quot;chat&quot;&gt;&lt;div class=&quot;messages-container&quot; id=&quot;messagesContainer&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="chatText3" tags="nobr" position="850,225" size="100,100">&lt;div class=&quot;chat&quot;&gt;&lt;div class=&quot;messages-container&quot; id=&quot;messagesContainer&quot;&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;&lt;timed 2s&gt;&gt;
+   &lt;&lt;replace &quot;#audio&quot;&gt;&gt;
+  &lt;audio src=&quot;assets/audio/COMPUTER_3_corbett.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;
+  &lt;&lt;/replace&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;avatar&quot;&gt;
@@ -744,7 +699,7 @@ Signal Fire System.&lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 4s&gt;&gt;
+&lt;&lt;timed 6s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;message-container&quot; &gt;
@@ -754,31 +709,30 @@ Signal Fire System.&lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 6s&gt;&gt;
+&lt;&lt;timed 9s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;message-container&quot; &gt;
-	&lt;p&gt;You have the specific name. &lt;/p&gt;
+	&lt;p&gt;I’m going to give you the access code to open the SFS conduit nearby - 8910 &lt;/p&gt;
    
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 10s&gt;&gt;
+  &lt;&lt;replace &quot;#accessMount&quot;&gt;&gt;
+    &lt;h3&gt;Access code: 8910&lt;/h3&gt;
+    &lt;&lt;/replace&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 8s&gt;&gt;
-  &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
-			&lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
-    &lt;&lt;button &quot;Next&quot;&gt;&gt;
+&lt;&lt;timed 18s&gt;&gt;
+  
 			&lt;&lt;replace &quot;#chatMount&quot;&gt;&gt;
 	&lt;&lt;include &quot;chatText3a&quot;&gt;&gt;
-
 	&lt;&lt;/replace&gt;&gt;
-			&lt;&lt;/button&gt;&gt;
-			&lt;/span&gt;
-  &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="chatText3a" tags="nobr" position="1225,225" size="100,100">&lt;div class=&quot;chat&quot;&gt;&lt;div class=&quot;messages-container&quot; id=&quot;messagesContainer&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="chatText3a" tags="nobr" position="975,225" size="100,100">&lt;div class=&quot;chat&quot;&gt;&lt;div class=&quot;messages-container&quot; id=&quot;messagesContainer&quot;&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;&lt;timed 2s&gt;&gt;
+&lt;&lt;timed 0.1s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;avatar&quot;&gt;
@@ -786,23 +740,23 @@ Signal Fire System.&lt;/p&gt;
       &lt;/div&gt;
       &lt;div class=&quot;message-container&quot; &gt;
         &lt;span class=&quot;sender&quot;&gt;User&lt;/span&gt;
-    		&lt;p&gt;You need to keep Corbett on the line.&lt;/p&gt;
+    		&lt;p&gt;Answer the call&lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 4s&gt;&gt;
+&lt;&lt;timed 3s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;message-container&quot; &gt;
- 	&lt;p&gt;You can’t let him come off the phone. &lt;/p&gt;
+ 	&lt;p&gt;You need to keep Corbett on the line. &lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 6s&gt;&gt;
+&lt;&lt;timed 5s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;message-container&quot; &gt;
@@ -813,7 +767,7 @@ Signal Fire System.&lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 8s&gt;&gt;
+&lt;&lt;timed 7s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;message-container&quot; &gt;
@@ -824,7 +778,7 @@ Signal Fire System.&lt;/p&gt;
 &lt;&lt;/timed&gt;&gt;
 	
 
-&lt;&lt;timed 10s&gt;&gt;
+&lt;&lt;timed 9s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;message-container&quot; &gt;
@@ -844,19 +798,27 @@ Signal Fire System.&lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
+&lt;&lt;timed 12s&gt;&gt;
+  &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
+    &lt;div class=&quot;message&quot;&gt;
+      &lt;div class=&quot;message-container&quot; &gt;
+	&lt;p&gt;Time to save time.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 14s&gt;&gt;
+/* &lt;&lt;timed 14s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
 			&lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
     &lt;&lt;button &quot;Next&quot;&gt;&gt;
 			&lt;&lt;replace &quot;#chatMount&quot;&gt;&gt;
 	&lt;&lt;include &quot;chatText3b&quot;&gt;&gt;
-
 	&lt;&lt;/replace&gt;&gt;
 			&lt;&lt;/button&gt;&gt;
 			&lt;/span&gt;
   &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="chatText3b" tags="nobr" position="100,350" size="100,100">&lt;div class=&quot;chat&quot;&gt;&lt;div class=&quot;messages-container&quot; id=&quot;messagesContainer&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;&lt;/timed&gt;&gt; */</tw-passagedata><tw-passagedata pid="19" name="chatText3b" tags="nobr" position="1100,225" size="100,100">&lt;div class=&quot;chat&quot;&gt;&lt;div class=&quot;messages-container&quot; id=&quot;messagesContainer&quot;&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;&lt;timed 2s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
@@ -912,7 +874,7 @@ Signal Fire System.&lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="video8" tags="nobr" position="225,350" size="100,100">&lt;&lt;set $prevpass to &quot;desktop&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="video8" tags="nobr" position="1225,225" size="100,100">&lt;&lt;set $prevpass to &quot;desktop&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;video8&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;desktop&quot;&gt;&gt;
 /* VIDEO  */
@@ -930,7 +892,7 @@ VIDEO 8
 &lt;&lt;goto $nextpass&gt;&gt;
 &lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;&lt;/append&gt;&gt; &lt;&lt;/timed&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
-&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="pillars1" tags="nobr" position="350,350" size="100,100">&lt;&lt;set $prevpass to &quot;video1&quot;&gt;&gt;
+&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="pillars1" tags="nobr" position="100,350" size="100,100">&lt;&lt;set $prevpass to &quot;video1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;pillars1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;video2&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs&quot;&gt;
@@ -941,9 +903,12 @@ VIDEO 8
 &lt;&lt;include &quot;pwPillar&quot;&gt;&gt;
 
 	&lt;/main&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="chatText4" tags="nobr" position="475,350" size="100,100">&lt;div class=&quot;chat&quot;&gt;&lt;div class=&quot;messages-container&quot; id=&quot;messagesContainer&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="chatText4" tags="nobr" position="225,350" size="100,100">&lt;div class=&quot;chat&quot;&gt;&lt;div class=&quot;messages-container&quot; id=&quot;messagesContainer&quot;&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;&lt;timed 0.1s&gt;&gt;
+   &lt;&lt;replace &quot;#audio&quot;&gt;&gt;
+  &lt;audio src=&quot;assets/audio/COMPUTER_4_collar.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;
+  &lt;&lt;/replace&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;avatar&quot;&gt;
@@ -955,7 +920,7 @@ VIDEO 8
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="pwPillar" tags="nobr" position="600,350" size="100,100">/* TODO CHECK ACCESS  */
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="pwPillar" tags="nobr" position="350,350" size="100,100">/* TODO CHECK ACCESS  */
 &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
 &lt;div id=&quot;resultbutton&quot;&gt;
   /% CODEWORD INPUT %/
@@ -981,7 +946,8 @@ VIDEO 8
       &lt;&lt;timed 3s&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
     &lt;&lt;/if&gt;&gt;
   &lt;&lt;/if&gt;&gt;
-  /% CODEWORD INCORRECT %/
+  /% CODEWORD INy
+   %/
   &lt;&lt;if $code1 isnot &quot;&quot; and $code2 isnot &quot;&quot; and $code3 isnot &quot;&quot; and $code4 isnot &quot;&quot;&gt;&gt;
     &lt;&lt;if ($code1 + $code2 + $code3 + $code4 ) is not &quot;MOTT&quot;&gt;&gt;
       &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;div class=&quot;confirmation&quot; id=&quot;confirmation&quot;&gt;That&#39;s not right...&lt;/div&gt;&lt;&lt;/replace&gt;&gt;
@@ -990,7 +956,7 @@ VIDEO 8
   &lt;&lt;/if&gt;&gt;
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="video2" tags="nobr" position="725,350" size="100,100">&lt;&lt;set $prevpass to &quot;pillars1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="video2" tags="nobr" position="475,350" size="100,100">&lt;&lt;set $prevpass to &quot;pillars1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;video2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;pillars2&quot;&gt;&gt;
 /* VIDEO  */
@@ -1003,7 +969,7 @@ VIDEO 2
 &lt;/div&gt;
 &lt;&lt;silently&gt;&gt;
 &lt;&lt;timed 0.1s t8n&gt;&gt;&lt;&lt;append &quot;#text&quot;&gt;&gt;&lt;br&gt;&lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;&lt;&lt;button &quot;Next&quot; $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;&lt;/append&gt;&gt; &lt;&lt;/timed&gt;&gt;
-&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="pillars2" tags="nobr" position="850,350" size="100,100">&lt;&lt;set $prevpass to &quot;video2&quot;&gt;&gt;
+&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="pillars2" tags="nobr" position="600,350" size="100,100">&lt;&lt;set $prevpass to &quot;video2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;pillars2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;onboarding3&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs&quot;&gt;
@@ -1023,11 +989,11 @@ VIDEO 2
 
 &lt;&lt;timed 180s&gt;&gt;
 	&lt;&lt;goto &quot;Start&quot;&gt;&gt;
-	&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="footer" tags="nobr" position="975,350" size="100,100">&lt;footer&gt;&lt;nav class=&quot;left&quot;&gt;
+	&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="footer" tags="nobr" position="725,350" size="100,100">&lt;footer&gt;&lt;nav class=&quot;left&quot;&gt;
 
-&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;&lt;&lt;back&gt;&gt;&lt;/div&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="29" name="footerentrance" tags="nobr" position="1100,350" size="100,100">&lt;footer&gt;&lt;nav class=&quot;right&quot;&gt;
+&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;&lt;&lt;back&gt;&gt;&lt;/div&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="27" name="footerentrance" tags="nobr" position="850,350" size="100,100">&lt;footer&gt;&lt;nav class=&quot;right&quot;&gt;
 	&lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;&lt;&lt;button [[&quot;Chief Timers Computer&quot;|$nextpass]]&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
-	&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="30" name="footerdesktop" tags="nobr" position="1225,350" size="100,100">&lt;footer&gt;&lt;nav class=&quot;right&quot; &gt;
+	&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="28" name="footerdesktop" tags="nobr" position="975,350" size="100,100">&lt;footer&gt;&lt;nav class=&quot;right&quot; &gt;
 
 	&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">

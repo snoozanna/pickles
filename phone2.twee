@@ -114,6 +114,14 @@ function log(msg) {
 }
 // document.addEventListener("DOMContentLoaded", startup);
 
+:: StoryInit
+<<cacheaudio "ping1" "assets/sound/ping1.mp3">>
+<<cacheaudio "correct" "assets/sound/keep2.mp3">>
+<<cacheaudio "uploading" "assets/sound/uploading.mp3">>
+<<cacheaudio "complete" "assets/sound/uploadcomplete.mp3">>
+<<cacheaudio "signal" "assets/sound/signal.mp3">>
+<<waitforaudio>>
+
 
 :: Start [nobr] {"position":"134,244.33333333333337","size":"100,100"}
 
@@ -141,6 +149,7 @@ function log(msg) {
 <<set $prevpass to "AR">>
 <<set $passage to "AR">>
 <<set $nextpass to "ARpost">>
+	<<set $audioOn to true>>
 <div class="wrapper cogs portrait">
 	/* <<include "header">> */
     <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
@@ -173,7 +182,7 @@ function log(msg) {
 <div class="wrapper cogs">
 	<<include "header">>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_8.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <p>Woh - what just happened? </p>
 <p>Can you enter the reference number on the image you found?</p>
@@ -281,7 +290,7 @@ function log(msg) {
 	<<include "header">>
     <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/PHONE_4_headtotheshop_1.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <p>The SFS seems to have sent the parcel. You can find it at the bookshop. </p>
 
@@ -303,7 +312,7 @@ function log(msg) {
 	<<include "header">>
    <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/PHONE_4_headtotheshop_2.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <p>This is what we know... </p>
 
@@ -327,7 +336,7 @@ function log(msg) {
 	<<include "header">>
    <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/PHONE_5_outsideshop_1.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <p>Head back to where you were sitting and I’ll connect.</p>
 
@@ -398,7 +407,7 @@ function log(msg) {
 	<<include "header">>
      <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/PHONE_5_outsideshop_2.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <p>Joe Mears, the FA Chairman, placed the note in the paper as requested and then a phone call happened, between a police officer and the thief, Betchley.  </p>
 <p>We have the transcript, a document that explains the real conversation, of what really happened between Betchley and the police. It is in the archives... but on my screen it’s fading. </p> 
@@ -418,7 +427,7 @@ function log(msg) {
 	<<include "header">>
     <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/PHONE_5_outsideshop_3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <p>Head up the stairs to level one.</p>
 <p>On the first floor, go through the barriers, turn right and head towards the library. Look for the information desk in front of the library – it is the R.E.D. desk. </p>
@@ -455,7 +464,7 @@ function log(msg) {
 	<<include "header">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/PHONE_6_cabinettable_1.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <p>Right, now you have the transcript, I need you to go to the spot where we can work together. </p>
 
@@ -492,7 +501,7 @@ function log(msg) {
 	<<include "header">>
  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
     	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/PHONE_6_cabinettable_2.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <p>What you need to know before the call is this. </p>
 <p>Joe Mears was taken unwell – so a police officer went undercover –pretending to be Joe Mears. </p>
@@ -528,7 +537,7 @@ function log(msg) {
 	<<include "header">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/PHONE_6_cabinettable_3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <p>You can’t let Betchley know you aren’t Joe Mears. Answer the questions to give him all the information from the transcript. </p>
 <p>I’ve matched our phone communications with those from 1966 through the Signal Fire System so what you say here should appear in 1966.</p> 

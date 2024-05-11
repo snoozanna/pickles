@@ -130,9 +130,16 @@ setup.requestCameraPermission = () => {
     }
   }
 
+:: StoryInit
+<<cacheaudio "ping1" "assets/sound/ping1.mp3">>
+<<cacheaudio "correct" "assets/sound/keep2.mp3">>
+<<cacheaudio "uploading" "assets/sound/uploading.mp3">>
+<<cacheaudio "complete" "assets/sound/uploadcomplete.mp3">>
+<<cacheaudio "signal" "assets/sound/signal.mp3">>
+<<waitforaudio>>
+
 
 :: Start [nobr] {"position":"134,244.33333333333337","size":"100,100"}
-
 
   <div class="wrapper audio" id="mount">
 	<div class="phone-warning"><p>Phone</p></div>
@@ -158,6 +165,7 @@ setup.requestCameraPermission = () => {
 <<set $prevpass to "video6">>
 <<set $passage to "video6">>
 <<set $nextpass to "cabinet4">>
+<<set $audioOn to true>>
 /* VIDEO 6 */
 <div class="wrapper landscape">
 <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
@@ -173,14 +181,15 @@ setup.requestCameraPermission = () => {
 
 
 :: cabinet4 [nobr]
-<<set $prevpass to "cabinet3">>
+<<set $prevpass to "video6">>
 <<set $passage to "cabinet4">>
 <<set $nextpass to "cabinet5">>
 <div class="wrapper cogs portrait">
 	<<include "header">>
    <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/PHONE_6_cabinettable_4.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+  /* TODO ADD IN TO GET IN  */
 
 <p>Right, time to finish this mission.</p> 
 <p>Hand back the transcript to the librarian and then look for the wooden cabinet in between the R.E.D. desk and the cabinet table. It seems the SFS has sent the briefcase there. </p>
@@ -214,7 +223,7 @@ setup.requestCameraPermission = () => {
 	<<include "header">>
      <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/PHONE_6_cabinettable_6.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <p>The Signal Fire System says I need to enter the note that is in the briefcase. </p>
 <p>Open it up and send me what is inside. </p>
@@ -242,6 +251,7 @@ setup.requestCameraPermission = () => {
    /% CODEWORD CORRECT %/
        <<if _password isnot "" and _password is "TADAH">>
        <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+           <<audio "correct" play>>
        <<timed 3s>><<goto $nextpass>><</timed>>
       <</if>>
         /% CODEWORD INCORRECT %/
@@ -286,7 +296,7 @@ setup.requestCameraPermission = () => {
 	<<include "header">>
        <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	<<if $audioOn is true>><audio src="assets/audio/PHONE_7_lockers_1.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <p>I hope this can reach you in time…</p>
 <p>Watch out for TADAH agents and to try to blend in – I know, pretend you are just visiting The National Archives today! </p>
@@ -306,8 +316,7 @@ setup.requestCameraPermission = () => {
 <div class="wrapper cogs portrait">
 	<<include "header">>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
-
+	<<if $audioOn is true>><audio src="assets/audio/PHONE_7_lockers_2.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <p>Find my friend, they should be by the cabinet table. They will have a MoTT badge on and have a MoTT tote bag. They can help you.</p>
 <p>They need to know they can trust you. Say to them </p>

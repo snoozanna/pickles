@@ -119,6 +119,11 @@
 
 .doc-container > #codewordWrapper,
 .sfsMount > #codewordWrapper {
+  display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
   .button-wrapper {
     button {
       font-size: 1.2rem;
@@ -132,6 +137,7 @@
   padding: 1rem;
   grid-area: sfs;
   width: fit-content;
+  min-width: 20rem;
   display: flex;
   justify-content: center;
   align-items: center;
