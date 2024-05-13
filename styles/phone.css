@@ -42,8 +42,9 @@ footer {
   position: relative;
   width: 100%;
   height: 80vh;
-  background-image: url("./../assets/img/big_stage_by_B.Yemets.jpg");
-  background-size: cover;
+  background-image: url(../assets/img/stand.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .ar-img-wrapper,
@@ -61,7 +62,8 @@ footer {
 .ar-img-wrapper > img,
 .hidden-img-wrapper > img,
 .static-img-wrapper > img {
-  height: 100%;
+
+  width: 100%;
   object-fit: cover;
 }
 
@@ -388,6 +390,13 @@ video.video {
 
 @media only screen and (orientation: landscape) {
   /* Your landscape-specific styles here */
+
+  .wrapper.video{
+    background-image: url(/assets/img/bg-mob2.png);
+    background-size: 108vw;
+    background-position: -3rem;
+    background-repeat: repeat;
+  }
 
   .button-wrapper.videol {
     button {

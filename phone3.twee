@@ -167,7 +167,7 @@ setup.requestCameraPermission = () => {
 <<set $nextpass to "cabinet4">>
 <<set $audioOn to true>>
 /* VIDEO 6 */
-<div class="wrapper landscape">
+<div class="wrapper landscape video">
 <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="video"><<set $title to "V6">>
 	<div id="video" role="video" class="video-wrapper"  aria-label="MOTT Training 6 video"><iframe src="https://player.vimeo.com/video/570867983?h=2afdf7b032&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="MOTT Training 6"></iframe></div>
@@ -275,7 +275,7 @@ setup.requestCameraPermission = () => {
 <<set $nextpass to "lockers1">>
 /* VIDEO 7 */
 
-<div class="wrapper landscape">
+<div class="wrapper landscape video">
 <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="video"><<set $title to "V6">>
 	<div id="video" role="video" class="video-wrapper"  aria-label="MOTT Training 6 video"><iframe src="https://player.vimeo.com/video/570859334?h=e57ea52382&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="MOTT Training 6"></iframe></div>
