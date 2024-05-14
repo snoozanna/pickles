@@ -143,20 +143,24 @@ function log(msg) {
 <header>
 	<div class="logo-wrapper"><img src="assets/img/na-logo.png" alt="The National Archives Logo" class="logo na" aria-hidden="true"></div> </header>
 
-
+:: headerb [nobr]
+<header>
+	<div class="logo-wrapper"><img src="assets/img/mott-logo-thick.png" alt="The National Archives Logo" class="logo na" aria-hidden="true"></div> </header>
 
 :: AR [nobr]
 <<set $prevpass to "AR">>
 <<set $passage to "AR">>
 <<set $nextpass to "ARpost">>
+ <<addclass "body" "orange">>
+ <<addclass "html" "orange" >>
 	<<set $audioOn to true>>
-<div class="wrapper cogs portrait">
+<div class="wrapper dots portrait">
 	/* <<include "header">> */
     <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
 	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
 
-<h2>Touch the Cup</h2>
+<h2 class="bluehighlighttext">Touch the Cup</h2>
   <div class="ar-imgs-container">
     <div class="ar-img-wrapper touch bottom" id="initial" >
       <img src="assets/img/wcborder.png" class="">
@@ -179,13 +183,17 @@ function log(msg) {
 <<set $prevpass to "AR">>
 <<set $passage to "ARpost">>
 <<set $nextpass to "video4">>
-<div class="wrapper cogs">
-	<<include "header">>
+ <<addclass "body" "orange">>
+ <<addclass "html" "orange" >>
+<div class="wrapper manb">
+	<<include "headerb">>
 	<main id="main" class="">
 	<<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_8.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
-<p>Woh - what just happened? </p>
-<p>Can you enter the reference number on the image you found?</p>
+<div class="intro-text">
+  <p>Woh - what just happened? </p>
+  <p>Can you enter the reference number on the image you found?</p>
+</div>
   <<include "pwAR">>
 	</main>
 	<<include "footerback">>
@@ -193,7 +201,7 @@ function log(msg) {
 
 :: pwAR [nobr]
 <div id="codewordWrapper" class="codeword-wrapper">
-  <label for="textbox--password" tabindex="0" ><span aria-label="Enter the word below" role="label">Enter the code below:</span></label>
+  <label for="textbox--password" tabindex="0" ><span aria-label="Enter the word below" role="label" style="color:black">Enter the code below:</span></label>
   /% CODEWORD INPUT %/
    <div class="code-input">
      <<textbox "_password" "" >>
@@ -206,7 +214,7 @@ function log(msg) {
          <<set _password to _password.toUpperCase()>>
      /% CODEWORD CORRECT %/
          <<if _password isnot "" and _password is "DPP 2/4167">>
-         <<replace "#coderesult">><h2 class="subtitle complete">Correct!</h2><</replace>>
+         <<replace "#coderesult">><h2 class="subtitle complete bluehighlighttext">Correct!</h2><</replace>>
              <<audio "correct" play>>
          <<timed 3s>><<goto $nextpass>><</timed>>
         <</if>>
@@ -228,6 +236,8 @@ function log(msg) {
 <<set $prevpass to "ARpost">>
 <<set $passage to "video4">>
 <<set $nextpass to "shop1">>
+  <<addclass "body" "orange">>
+  <<addclass "html" "orange" >> 
 /* VIDEO4  */
 
 <div class="wrapper landscape video">
@@ -286,17 +296,21 @@ function log(msg) {
 <<set $prevpass to "ARpost">>
 <<set $passage to "shop1">>
 <<set $nextpass to "shop2">>
-<div class="wrapper cogs portrait">
-	<<include "header">>
+ <<addclass "body" "orange">>
+  <<addclass "html" "orange" >> 
+<div class="wrapper dots portrait">
+	<<include "headerb">>
     <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
 	<<if $audioOn is true>><audio src="assets/audio/PHONE_4_headtotheshop_1.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
-<p>The SFS seems to have sent the parcel. You can find it at the bookshop. </p>
-
-<p>Head there and ask the bookkeeper if they have a parcel from the past?</p>
-
-<p>When you have the parcel, have a seat in the cafe and click below.</p>
+<div class="intro-text">
+  <p>The SFS seems to have sent the parcel. You can find it at the bookshop. </p>
+  
+  <p>Head there and ask the bookkeeper if they have a parcel from the past?</p>
+  
+  <p>When you have the parcel, have a seat in the cafe and click below.</p>
+</div>
 
 
 	</main>
@@ -308,19 +322,23 @@ function log(msg) {
 <<set $prevpass to "shop1">>
 <<set $passage to "shop2">>
 <<set $nextpass to "shop2a">>
-<div class="wrapper cogs portrait">
-	<<include "header">>
+ <<addclass "body" "orange">>
+  <<addclass "html" "orange" >> 
+<div class="wrapper dots portrait">
+	<<include "headerb">>
    <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
 	<<if $audioOn is true>><audio src="assets/audio/PHONE_4_headtotheshop_2.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
-<p>This is what we know... </p>
-
-<p>On the day after the theft of the cup had taken place, Joe Mears, the Chairman of the Football Association & of Chelsea FC, received a phone call from a man who would not give his name. </p>
-<p>He told him to expect a parcel, which would be of interest to him. </p>
-
-<p>Read the letter and when you are done hand it back to the bookkeeper and tell them the phrase Joe Mears had to put into the personal column. They’ll give you the codeword to move on. </p>
-
+<div class="intro-text">
+  <p>This is what we know... </p>
+  
+  <p>On the day after the theft of the cup had taken place, Joe Mears, the Chairman of the Football Association & of Chelsea FC, received a phone call from a man who would not give his name. </p>
+  <p>He told him to expect a parcel, which would be of interest to him. </p>
+  
+  <p>Read the letter and when you are done hand it back to the bookkeeper and tell them the phrase Joe Mears had to put into the personal column. They’ll give you the codeword to move on. </p>
+  
+</div>
 
   <<include "pwShop">>
 	</main>
@@ -332,13 +350,15 @@ function log(msg) {
 <<set $prevpass to "shop2">>
 <<set $passage to "shop2a">>
 <<set $nextpass to "video5">>
-<div class="wrapper cogs portrait">
-	<<include "header">>
+ <<addclass "body" "orange">>
+  <<addclass "html" "orange" >> 
+<div class="wrapper mans portrait">
+	<<include "headerb">>
    <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
 	<<if $audioOn is true>><audio src="assets/audio/PHONE_5_outsideshop_1.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
-<p>Head back to where you were sitting and I’ll connect.</p>
+<div class="intro-text"><p>Head back to where you were sitting and I’ll connect.</p></div>
 
 	</main>
 	<<include "footerhere">>
@@ -348,7 +368,7 @@ function log(msg) {
 
 :: pwShop [nobr]
 <div id="codewordWrapper" class="codeword-wrapper">
-  <label for="textbox--password" tabindex="0" ><span aria-label="Enter the word below" role="label">Enter the word below</span></label>
+  <label for="textbox--password" tabindex="0" ><span aria-label="Enter the word below" role="label" style="color:black">Enter the word below</span></label>
   /% CODEWORD INPUT %/
    <div class="code-input">
      <<textbox "_password" "" >>
@@ -361,7 +381,7 @@ function log(msg) {
        <<set _password to _password.toUpperCase()>>
    /% CODEWORD CORRECT %/
        <<if _password isnot "" and _password is "JOE">>
-       <<replace "#coderesult">><h2 class="subtitle complete">Correct!</h2><</replace>>
+       <<replace "#coderesult">><h2 class="subtitle complete bluehighlighttext">Correct!</h2><</replace>>
            <<audio "correct" play>>
        <<timed 3s>><<goto $nextpass>><</timed>>
       <</if>>
@@ -384,6 +404,8 @@ function log(msg) {
 <<set $prevpass to "shop2">>
 <<set $passage to "video5">>
 <<set $nextpass to "shop3">>
+  <<addclass "body" "orange">>
+  <<addclass "html" "orange" >> 
 /* VIDEO 5 */
 
 <div class="wrapper landscape video">
@@ -403,16 +425,20 @@ function log(msg) {
 <<set $prevpass to "video5">>
 <<set $passage to "shop3">>
 <<set $nextpass to "shop4">>
-<div class="wrapper cogs portrait">
-	<<include "header">>
+  <<addclass "body" "orange">>
+  <<addclass "html" "orange" >> 
+<div class="wrapper dots portrait">
+	<<include "headerb">>
      <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
 	<<if $audioOn is true>><audio src="assets/audio/PHONE_5_outsideshop_2.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
-<p>Joe Mears, the FA Chairman, placed the note in the paper as requested and then a phone call happened, between a police officer and the thief, Betchley.  </p>
-<p>We have the transcript, a document that explains the real conversation, of what really happened between Betchley and the police. It is in the archives... but on my screen it’s fading. </p> 
-<p>Which shouldn’t happen. </p>
-<p>I need you to get a physical copy.</p> 
+<div class="intro-text">
+  <p>Joe Mears, the FA Chairman, placed the note in the paper as requested and then a phone call happened, between a police officer and the thief, Betchley.  </p>
+  <p>We have the transcript, a document that explains the real conversation, of what really happened between Betchley and the police. It is in the archives... but on my screen it’s fading. </p> 
+  <p>Which shouldn’t happen. </p>
+  <p>I need you to get a physical copy.</p> 
+</div>
 
 	</main>
 	<<include "footer">>
@@ -423,19 +449,23 @@ function log(msg) {
 <<set $prevpass to "shop3">>
 <<set $passage to "shop4">>
 <<set $nextpass to "cabinet1">>
-<div class="wrapper cogs portrait">
-	<<include "header">>
+  <<addclass "body" "orange">>
+  <<addclass "html" "orange" >> 
+<div class="wrapper dots portrait">
+	<<include "headerb">>
     <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
 	<<if $audioOn is true>><audio src="assets/audio/PHONE_5_outsideshop_3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
-<p>Head up the stairs to level one.</p>
-<p>On the first floor, go through the barriers, turn right and head towards the library. Look for the information desk in front of the library – it is the R.E.D. desk. </p>
-<p>Give the individual the file number we found in the ‘picture’ downstairs </p>
-<p>DPP 2/4167 – and they will give you a copy of the transcript!
-	We need it before we can nudge. 
-</p>
-<p>When you have it click below.</p>
+<div class="intro-text">
+  <p>Head up the stairs to level one.</p>
+  <p>On the first floor, go through the barriers, turn right and head towards the library. Look for the information desk in front of the library – it is the R.E.D. desk. </p>
+  <p>Give the individual the file number we found in the ‘picture’ downstairs </p>
+  <p>DPP 2/4167 – and they will give you a copy of the transcript!
+  	We need it before we can nudge. 
+  </p>
+  <p>When you have it click below.</p>
+</div>
  
 
 	</main>
@@ -460,21 +490,25 @@ function log(msg) {
 <<set $prevpass to "shop4">>
 <<set $passage to "cabinet1">>
 <<set $nextpass to "cabinet2">>
-<div class="wrapper cogs portrait">
-	<<include "header">>
+  <<addclass "body" "orange">>
+  <<addclass "html" "orange" >> 
+<div class="wrapper dots portrait">
+	<<include "headerb">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
 	<<if $audioOn is true>><audio src="assets/audio/PHONE_6_cabinettable_1.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
-<p>Right, now you have the transcript, I need you to go to the spot where we can work together. </p>
-
-<p>We need to find a place where we can make a phone call.</p>
-
-<p>Head to the large green table – it’s a replica of the real cabinet table in number 10! Find prime minister Harold Wilson (PM in 1966) and take a seat. </p>
-
-<p>There is a MoTT Aerial above the seat that will amplify your call and help the nudge. </p>
-
-<p>When there, click below. </p>
+<div class="intro-text">
+  <p>Right, now you have the transcript, I need you to go to the spot where we can work together. </p>
+  
+  <p>We need to find a place where we can make a phone call.</p>
+  
+  <p>Head to the large green table – it’s a replica of the real cabinet table in number 10! Find prime minister Harold Wilson (PM in 1966) and take a seat. </p>
+  
+  <p>There is a MoTT Aerial above the seat that will amplify your call and help the nudge. </p>
+  
+  <p>When there, click below. </p>
+</div>
 
 	</main>
 	<<include "footerhere">>
@@ -497,18 +531,22 @@ function log(msg) {
 <<set $prevpass to "cabinet1">>
 <<set $passage to "cabinet2">>
 <<set $nextpass to "cabinet3">>
-<div class="wrapper cogs portrait">
-	<<include "header">>
+ <<addclass "body" "orange">>
+  <<addclass "html" "orange" >> 
+<div class="wrapper dots portrait">
+	<<include "headerb">>
  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
     	<main id="main" class="">
 	<<if $audioOn is true>><audio src="assets/audio/PHONE_6_cabinettable_2.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
-<p>What you need to know before the call is this. </p>
-<p>Joe Mears was taken unwell – so a police officer went undercover –pretending to be Joe Mears. </p>
-<p>But something is changing it. Changing what was said. </p>
-<p>Something or someone must have changed the police officer’s response in the past so it doesn’t match the transcript anymore! </p>
-<p>We need to correct that.</p>
-<p>You’ll have to do it for them. You are going to have to be the police officer!</p>
+<div class="intro-text">
+  <p>What you need to know before the call is this. </p>
+  <p>Joe Mears was taken unwell – so a police officer went undercover –pretending to be Joe Mears. </p>
+  <p>But something is changing it. Changing what was said. </p>
+  <p>Something or someone must have changed the police officer’s response in the past so it doesn’t match the transcript anymore! </p>
+  <p>We need to correct that.</p>
+  <p>You’ll have to do it for them. You are going to have to be the police officer!</p>
+</div>
 
 
 
@@ -533,17 +571,21 @@ function log(msg) {
 <<set $prevpass to "cabinet2">>
 <<set $passage to "cabinet3">>
 <<set $nextpass to "cabinet3">>
-<div class="wrapper cogs portrait">
-	<<include "header">>
+ <<addclass "body" "orange">>
+  <<addclass "html" "orange" >> 
+<div class="wrapper dots portrait">
+	<<include "headerb">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
 	<<if $audioOn is true>><audio src="assets/audio/PHONE_6_cabinettable_3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
-<p>You can’t let Betchley know you aren’t Joe Mears. Answer the questions to give him all the information from the transcript. </p>
-<p>I’ve matched our phone communications with those from 1966 through the Signal Fire System so what you say here should appear in 1966.</p> 
-<p>Don't worry about the science, you just worry about getting the information correct.</p>
-<p>It’s time to NUDGE and fix this problem.</p>
-<p>Click below when you are ready.</p>
+<div class="intro-text">
+  <p>You can’t let Betchley know you aren’t Joe Mears. Answer the questions to give him all the information from the transcript. </p>
+  <p>I’ve matched our phone communications with those from 1966 through the Signal Fire System so what you say here should appear in 1966.</p> 
+  <p>Don't worry about the science, you just worry about getting the information correct.</p>
+  <p>It’s time to NUDGE and fix this problem.</p>
+  <p>Click below when you are ready.</p>
+</div>
 
 	</main>
 	<<include "footerready">>
@@ -558,6 +600,6 @@ function log(msg) {
     <</button>>
   <</if>>
 </div>
-<span class="button-wrapper" aria-label="Click Button to confirm you have scanned image"><a href="https://pickles-charisma.netlify.app/betchley" target="_blank" rel="noreferrer">We're ready</a></span></nav></footer>
+<span class="button-wrapper" aria-label="Click Button to confirm you have scanned image"><a href="https://na-coney-charisma.netlify.app/betchley" target="_blank" rel="noreferrer">We're ready</a></span></nav></footer>
 
     

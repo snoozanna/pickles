@@ -158,13 +158,17 @@ setup.requestCameraPermission = () => {
 <header>
 	<div class="logo-wrapper"><img src="assets/img/na-logo.png" alt="The National Archives Logo" class="logo na" aria-hidden="true"></div> </header>
 
-
+:: headerb [nobr]
+<header>
+	<div class="logo-wrapper"><img src="assets/img/mott-logo-thick.png" alt="The National Archives Logo" class="logo na" aria-hidden="true"></div> </header>
 
 
 :: video6[nobr]
 <<set $prevpass to "video6">>
 <<set $passage to "video6">>
 <<set $nextpass to "cabinet4">>
+  <<addclass "body" "orange">>
+  <<addclass "html" "orange" >> 
 <<set $audioOn to true>>
 /* VIDEO 6 */
 <div class="wrapper landscape video">
@@ -184,18 +188,22 @@ setup.requestCameraPermission = () => {
 <<set $prevpass to "video6">>
 <<set $passage to "cabinet4">>
 <<set $nextpass to "cabinet5">>
-<div class="wrapper cogs portrait">
-	<<include "header">>
+  <<addclass "body" "orange">>
+  <<addclass "html" "orange" >> 
+<div class="wrapper manb portrait">
+	<<include "headerb">>
    <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
 	<<if $audioOn is true>><audio src="assets/audio/PHONE_6_cabinettable_4.mp3" autoplay>Audio not supported in your browser</audio><</if>>
   /* TODO ADD IN TO GET IN  */
 
-<p>Right, time to finish this mission.</p> 
-<p>Hand back the transcript to the librarian and then look for the wooden cabinet in between the R.E.D. desk and the cabinet table. It seems the SFS has sent the briefcase there. </p>
-
-<p>To get in you’ll need to [TBC] </p>
-<p>Click next when the cabinet is open. </p>
+<div class="intro-text">
+  <p>Right, time to finish this mission.</p> 
+  <p>Hand back the transcript to the librarian and then look for the wooden cabinet in between the R.E.D. desk and the cabinet table. It seems the SFS has sent the briefcase there. </p>
+  
+  <p>To get in you’ll need to [TBC] </p>
+  <p>Click next when the cabinet is open. </p>
+</div>
 
 
 	</main>
@@ -219,15 +227,19 @@ setup.requestCameraPermission = () => {
 <<set $prevpass to "cabinet4">>
 <<set $passage to "cabinet5">>
 <<set $nextpass to "video7">>
-<div class="wrapper cogs portrait">
-	<<include "header">>
+  <<addclass "body" "orange">>
+  <<addclass "html" "orange" >> 
+<div class="wrapper dots portrait">
+	<<include "headerb">>
      <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
 	<<if $audioOn is true>><audio src="assets/audio/PHONE_6_cabinettable_6.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
-<p>The Signal Fire System says I need to enter the note that is in the briefcase. </p>
-<p>Open it up and send me what is inside. </p>
-<p>It should be filled with bank notes according to the records here at the archives. </p>
+<div class="intro-text">
+  <p>The Signal Fire System says I need to enter the note that is in the briefcase. </p>
+  <p>Open it up and send me what is inside. </p>
+  <p>It should be filled with bank notes according to the records here at the archives. </p>
+</div>
 
   <<include "pwCabinet">>
 	</main>
@@ -237,7 +249,7 @@ setup.requestCameraPermission = () => {
 
 :: pwCabinet [nobr]
 <div id="codewordWrapper" class="codeword-wrapper">
-  <label for="textbox--password" tabindex="0" ><span aria-label="Enter the word below" role="label">Enter the word below</span></label>
+  <label for="textbox--password" tabindex="0" ><span aria-label="Enter the word below" role="label" style="color:black">Enter the word below</span></label>
   /% CODEWORD INPUT %/
    <div class="code-input">
      <<textbox "_password" "" >>
@@ -273,6 +285,8 @@ setup.requestCameraPermission = () => {
 <<set $prevpass to "cabinet5">>
 <<set $passage to "video7">>
 <<set $nextpass to "lockers1">>
+  <<addclass "body" "orange">>
+  <<addclass "html" "orange" >> 
 /* VIDEO 7 */
 
 <div class="wrapper landscape video">
@@ -292,16 +306,20 @@ setup.requestCameraPermission = () => {
 <<set $prevpass to "video7">>
 <<set $passage to "lockers1">>
 <<set $nextpass to "lockers2">>
-<div class="wrapper cogs portrait">
-	<<include "header">>
+  <<addclass "body" "orange">>
+  <<addclass "html" "orange" >> 
+<div class="wrapper dots portrait">
+	<<include "headerb">>
        <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
 	<<if $audioOn is true>><audio src="assets/audio/PHONE_7_lockers_1.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
-<p>I hope this can reach you in time…</p>
-<p>Watch out for TADAH agents and to try to blend in – I know, pretend you are just visiting The National Archives today! </p>
-<p>I’ll send you details to log in remotely to the Chief Timer’s computer. You’ll need a password to access it. </p>
-
+<div class="intro-text">
+  <p>I hope this can reach you in time…</p>
+  <p>Watch out for TADAH agents and to try to blend in – I know, pretend you are just visiting The National Archives today! </p>
+  <p>I’ll send you details to log in remotely to the Chief Timer’s computer. You’ll need a password to access it. </p>
+  
+</div>
 
 
 	</main>
@@ -313,17 +331,21 @@ setup.requestCameraPermission = () => {
 <<set $prevpass to "lockers1">>
 <<set $passage to "lockers2">>
 <<set $nextpass to "video7">>
-<div class="wrapper cogs portrait">
-	<<include "header">>
+  <<addclass "body" "orange">>
+  <<addclass "html" "orange" >> 
+<div class="wrapper dots portrait">
+	<<include "headerb">>
 	<main id="main" class="">
 	<<if $audioOn is true>><audio src="assets/audio/PHONE_7_lockers_2.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
-<p>Find my friend, they should be by the cabinet table. They will have a MoTT badge on and have a MoTT tote bag. They can help you.</p>
-<p>They need to know they can trust you. Say to them </p>
-<p>Do you have the time?</p>
-<p>If they are the ones you are looking for they should respond with the phrase</p>
-<p>Tick Tock Tick Tock</p>
-<p>I’m losing the feed...</p>
+<div class="intro-text">
+  <p>Find my friend, they should be by the cabinet table. They will have a MoTT badge on and have a MoTT tote bag. They can help you.</p>
+  <p>They need to know they can trust you. Say to them </p>
+  <p>Do you have the time?</p>
+  <p>If they are the ones you are looking for they should respond with the phrase</p>
+  <p>Tick Tock Tick Tock</p>
+  <p>I’m losing the feed...</p>
+</div>
 
 
 

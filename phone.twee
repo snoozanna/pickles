@@ -230,7 +230,8 @@ setup.requestCameraPermission = () => {
 <<set $prevpass to "onboarding1">>
 <<set $passage to "onboarding1">>
 <<set $nextpass to "onboarding2">>
-  <<addclass "body" "orange">> 
+  <<addclass "body" "orange">>
+  <<addclass "html" "orange" >> 
 		<<set $audioOn to true>>
 <div class="wrapper manb">
 	<<include "headerb">>
@@ -254,7 +255,8 @@ setup.requestCameraPermission = () => {
 <<set $prevpass to "onboarding1">>
 <<set $passage to "onboarding2">>
 <<set $nextpass to "onboarding3">>
-  <<addclass "body" "orange">> 
+  <<addclass "body" "orange">>
+  <<addclass "html" "orange" >> 
 <div class="wrapper mans">
 	<<include "headerb">>
 	<main id="main" class="flex-container-col">
@@ -275,14 +277,17 @@ setup.requestCameraPermission = () => {
 <<set $prevpass to "onboarding2">>
 <<set $passage to "onboarding3">>
 <<set $nextpass to "onboarding4">>
-  <<addclass "body" "orange">> 
+  <<addclass "body" "orange">>
+  <<addclass "html" "orange" >> 
 <div class="wrapper mans">
 	<<include "headerb">>
 	<main id="main" class="flex-container-col">
 	<<if $audioOn is true>><audio src="assets/audio/PHONE_1_owndevice_03.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 	<div class="intro-text">
-	  <p>You’ll need to rotate your screen at points – sometimes on your phone you need to do this on settings.</p>
+	  <p>You’ll need to rotate your screen at points.</p>
+    
+    <p>Sometimes on your phone you need to do this on settings.</p>
 	 <span class="button-wrapper" aria-label="Click a button or link to move on">
       <<button [[Next|$nextpass]]>><</button>>
     </span>
@@ -296,7 +301,8 @@ setup.requestCameraPermission = () => {
 <<set $prevpass to "onboarding3">>
 <<set $passage to "onboarding4">>
 <<set $nextpass to "onboarding5">>
-  <<addclass "body" "orange">> 
+  <<addclass "body" "orange">>
+  <<addclass "html" "orange" >> 
 <div class="wrapper mans">
 	<<include "headerb">>
 	<main id="main" class="flex-container-col">
@@ -304,7 +310,9 @@ setup.requestCameraPermission = () => {
 
 	<div class="intro-text">
 	  <p>You can get captions on all the videos.</p> 
-    <p>You may want to go full screen on some of the videos but do remember you need to exit full screen to continue. (It may just be best to stay off full screen mode)</p>
+    <p>You may want to go full screen on some of the videos but do remember you need to exit full screen to continue.</p>
+    
+   <p>It may just be best to stay off full screen mode.</p>
 	
 		 <span class="button-wrapper" aria-label="Click a button or link to move on">
       <<button [[Next|$nextpass]]>><</button>>
@@ -319,7 +327,8 @@ setup.requestCameraPermission = () => {
 <<set $prevpass to "onboarding4">>
 <<set $passage to "onboarding5">>
 <<set $nextpass to "onboarding5a">>
-  <<addclass "body" "orange">> 
+  <<addclass "body" "orange">>
+  <<addclass "html" "orange" >> 
 <div class="wrapper mans">
 	<<include "headerb">>
 	<main id="main" class="flex-container-col">
@@ -338,7 +347,8 @@ setup.requestCameraPermission = () => {
 <<set $prevpass to "onboarding5">>
 <<set $passage to "onboarding5a">>
 <<set $nextpass to "onboarding6">>
-  <<addclass "body" "orange">> 
+  <<addclass "body" "orange">>
+  <<addclass "html" "orange" >> 
 <div class="wrapper mans">
 	<<include "headerb">>
 	<main id="main" class="flex-container-col">
@@ -363,7 +373,8 @@ setup.requestCameraPermission = () => {
 <<set $prevpass to "onboarding5a">>
 <<set $passage to "onboarding6">>
 <<set $nextpass to "360intro">>
-  <<addclass "body" "orange">> 
+  <<addclass "body" "orange">>
+  <<addclass "html" "orange" >> 
 <div class="wrapper manb">
 	<<include "headerb">>
 	<main id="main" class="center-col">
@@ -405,7 +416,7 @@ setup.requestCameraPermission = () => {
   /% CODEWORD CORRECT %/
   <<if $code1 isnot "" and $code2 isnot "" and $code3 isnot "">>
     <<if ($code1 + $code2 + $code3) is "SFS">>
-      <<replace "#coderesult">><div class="confirmation" id="confirmation"><p>Correct!</p></div><</replace>>
+      <<replace "#coderesult">><div class="confirmation" id="confirmation"><p class="bluehighlighttext">Correct!</p></div><</replace>>
       <<audio "correct" play>>
       <<timed 3s>><<goto $nextpass>><</timed>>
     <</if>>
@@ -461,8 +472,10 @@ setup.requestCameraPermission = () => {
 <<set $prevpass to "onboarding6">>
 <<set $passage to "360intro">>
 <<set $nextpass to "360image">>
-<div class="wrapper cogs">
-	<<include "header">>
+  <<addclass "body" "orange">>
+  <<addclass "html" "orange" >> 
+<div class="wrapper dots">
+	<<include "headerb">>
 
 	<main id="main">
 	<<if $audioOn is true>><audio src="assets/audio/PHONE_2_lookingforgold.mp3" autoplay>Audio not supported in your browser</audio><</if>>
@@ -516,7 +529,8 @@ setup.requestCameraPermission = () => {
 <<set $prevpass to "360image">>
 <<set $passage to "video3">>
 <<set $nextpass to "mapintro1">>
-  <<addclass "body" "orange">> 
+  <<addclass "body" "orange">>
+  <<addclass "html" "orange" >> 
 /* VIDEO 3 */
 
 <div class="wrapper landscape video">
@@ -537,19 +551,24 @@ setup.requestCameraPermission = () => {
 <<set $prevpass to "video3">>
 <<set $passage to "mapintro1">>
 <<set $nextpass to "robberintro">>
-<div class="wrapper cogs portrait">
-	<<include "header">>
+ <<addclass "body" "orange">>
+ <<addclass "html" "orange" >> 
+<div class="wrapper dots portrait">
+	<<include "headerb">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
 	<<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_1and2.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 	<div>
-<p>The Signal Fire System seems to have sent us a map.</p> 
-<p>It’s not just a map though – there’s instructions. </p>
-<p>From a man from 1966 – that’s strange. </p>
-<p>Maybe they will lead us to what we need to find.  </p>
-<p>I’ll patch it into your phone. </p>
-<p>Don’t load it until you’ve gone past security as they may need to check your bags. </p>
-<p>READY?</p>
+<div class="intro-text" id="intro">
+  <p>The Signal Fire System seems to have sent us a map.</p> 
+  <p>It’s not just a map though – there’s instructions. </p>
+  <p>From a man from 1966 – that’s strange. </p>
+
+  <p>Maybe they will lead us to what we need to find.  </p>
+  <p>I’ll patch it into your phone. </p>
+  <p>Don’t load it until you’ve gone past security as they may need to check your bags. </p>
+  <p>READY?</p>
+</div>
 
  <span class="button-wrapper" aria-label="Click a button or link to move on">
       <<button [[Yes|$nextpass]]>><</button>>
@@ -564,8 +583,10 @@ setup.requestCameraPermission = () => {
 <<set $prevpass to "mapintro1">>
 <<set $passage to "robberintro">>
 <<set $nextpass to "map">>
-<div class="wrapper cogs portrait">
-	<<include "header">>
+  <<addclass "body" "orange">>
+  <<addclass "html" "orange" >> 
+<div class="wrapper manb portrait">
+	<<include "headerb">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" >
 	<<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
@@ -587,6 +608,8 @@ setup.requestCameraPermission = () => {
 <<set $prevpass to "mapintro1">>
 <<set $passage to "map">>
 <<set $nextpass to "ARIntro1">>
+ <<addclass "body" "orange">>
+ <<addclass "html" "orange" >>
 <<set $currentInstructionIndex = 1>>
 <<set $instructions = {
     1: { text: "We're ready to go.<br/>
@@ -594,11 +617,11 @@ Step through the doors - then take 19 steps forward and you'll be near a mark on
     2: { text: "The stamp exhibition looks quiet but<br/>Hold on. 
 Someone is going past. 
 Stay very still.", coords: "three" },
-    3: { text: "Ok, he's gone. Clearly in a rush!<br/>Let's get our prize.<br/>Head quickly towards the lift.<br/>The exhibit we need is there.<br/>Get the trophy.", coords: "six" }
+    3: { text: "Ok, he's gone. Clearly in a rush!<br/>Let's get our prize.<br/>Head quickly towards the lift.<br/>The exhibit we need is there.<br/>Get the trophy.<br/> Touch the cup!", coords: "six" }
 }>>
 	<<if $audioOn is true>><div id="audio"><audio src="assets/audio/PHONE_3_linkintocafespace_4.mp3" autoplay>Audio not supported in your browser</audio></div><</if>>
 
-<div class="wrapper cogs">
+<div class="wrapper dots">
 <div class="instruction" id="instruction">
 <p>
 /* <<print $currentInstructionIndex>>. */
@@ -609,7 +632,7 @@ Stay very still.", coords: "three" },
 
 	<div>
 <div class="map-container" id="mapContainer">
-<img src="assets/img/map.jpeg"/>
+<img src="assets/img/map.png"/>
 <div class="location one pulse" id="location"></div>
 <div class="guard hide pulse" id="guard"></div>
 </div>
@@ -721,15 +744,19 @@ Stay very still.", coords: "three" },
 <<set $prevpass to "map">>
 <<set $passage to "ARIntro1">>
 <<set $nextpass to "AR">>
-<div class="wrapper">
-	<<include "header">>
+ <<addclass "body" "orange">>
+ <<addclass "html" "orange" >>
+<div class="wrapper dots">
+	<<include "headerb">>
 	<main id="main" class="">
 	<<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_7.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 	<div>
-
-<p>We need to scan the SFS code here it seems</p>
-<p>Then what did he say, touch the cup. </p>
-<p>Use your camera or app to scan the QR code.</p>
+<br/>
+<div class="intro-text">
+  <p>We need to scan the SFS code here it seems</p>
+  <p>Then what did he say, touch the cup. </p>
+  <p>Use your camera or app to scan the QR code.</p>
+</div>
 
 
     <!-- The `label` is attached to the hidden file input -->
@@ -751,7 +778,7 @@ Stay very still.", coords: "three" },
 
 
 
-<span class="button-wrapper" aria-label="Click Button to confirm you have scanned image"><a href="https://pickles-playtest.netlify.app/phone2.html" target="_blank" rel="noreferrer">IMAGE SCANNED</a></span>
+<span class="button-wrapper" aria-label="Click Button to confirm you have scanned image"><a href="phone2.html" target="_blank" rel="noreferrer">IMAGE SCANNED</a></span>
 	</div>
 
 	</main>

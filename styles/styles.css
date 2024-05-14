@@ -27,7 +27,11 @@ body.blue {
   background: rgb(14, 113, 120);
 }
 
-body.orange {
+html.orange{
+  background: var(--orange);
+  }
+
+body.orange{
   background: var(--orange);
   background: linear-gradient(
     360deg,
@@ -114,12 +118,25 @@ body[data-tags~="t8n-dissolve"] .transition-out {
   background-size: cover;
 }
 
+.wrapper.dots {
+  background-image: url(/assets/img/trans-dots-or.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+
+.wrapper.bluedots {
+  background-image: url(/assets/img/bg-blue-dots.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .wrapper.manb {
   background-image: url(/assets/img/manlooking2.png), url(/assets/img/circle.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom left, 20rem 80%;
-  background-size: 60%, 100%;
+  background-size: 60%, 78%;
 
 }
 
@@ -129,7 +146,7 @@ body[data-tags~="t8n-dissolve"] .transition-out {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: 100% 22%, 10rem 80%;
-  background-size: 45%, 100%;
+  background-size: 60%, 100%;
 
 }
 
@@ -164,7 +181,8 @@ nav.right {
 }
 
 .intro-text > p,
-.intro-text > .flex-container-row > p {
+.intro-text > .flex-container-row > p, p.bluehighlighttext, 
+h2.bluehighlighttext {
   background-color: var(--blue);
   width: fit-content;
   padding: 5px;

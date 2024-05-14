@@ -217,7 +217,7 @@ footer.map {
 }
 
 .location {
-  background-color: red;
+  background-color: #3cc00e;
   width: 15px;
   height: 15px;
   border-radius: 50%;
@@ -225,7 +225,7 @@ footer.map {
 }
 
 .guard {
-  background-color: rgb(206, 142, 14);
+  background-color: rgb(227, 51, 51);
   width: 15px;
   height: 15px;
   border-radius: 50%;
@@ -307,12 +307,13 @@ video.video {
 
 .btn {
   display: inline-block;
-  background-color:transparent;
+  background-color:white;
   border: 2px solid white;
-  color: white;
+  color: black;
   padding: 4px 6px;
   border-radius: 1rem;
   font-size: 2rem;
+  font-weight: 900;
   text-transform: uppercase;
   cursor: pointer;
 }

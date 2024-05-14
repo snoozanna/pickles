@@ -287,7 +287,8 @@ setup.requestCameraPermission = () => {
   &lt;/div &gt;</tw-passagedata><tw-passagedata pid="6" name="onboarding1" tags="nobr" position="725,100" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;onboarding1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;onboarding2&quot;&gt;&gt;
-  &lt;&lt;addclass &quot;body&quot; &quot;orange&quot;&gt;&gt; 
+  &lt;&lt;addclass &quot;body&quot; &quot;orange&quot;&gt;&gt;
+  &lt;&lt;addclass &quot;html&quot; &quot;orange&quot; &gt;&gt; 
 		&lt;&lt;set $audioOn to true&gt;&gt;
 &lt;div class=&quot;wrapper manb&quot;&gt;
 	&lt;&lt;include &quot;headerb&quot;&gt;&gt;
@@ -307,7 +308,8 @@ setup.requestCameraPermission = () => {
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="7" name="onboarding2" tags="nobr" position="850,100" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;onboarding2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;onboarding3&quot;&gt;&gt;
-  &lt;&lt;addclass &quot;body&quot; &quot;orange&quot;&gt;&gt; 
+  &lt;&lt;addclass &quot;body&quot; &quot;orange&quot;&gt;&gt;
+  &lt;&lt;addclass &quot;html&quot; &quot;orange&quot; &gt;&gt; 
 &lt;div class=&quot;wrapper mans&quot;&gt;
 	&lt;&lt;include &quot;headerb&quot;&gt;&gt;
 	&lt;main id=&quot;main&quot; class=&quot;flex-container-col&quot;&gt;
@@ -325,14 +327,17 @@ setup.requestCameraPermission = () => {
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="8" name="onboarding3" tags="nobr" position="975,100" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;onboarding3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;onboarding4&quot;&gt;&gt;
-  &lt;&lt;addclass &quot;body&quot; &quot;orange&quot;&gt;&gt; 
+  &lt;&lt;addclass &quot;body&quot; &quot;orange&quot;&gt;&gt;
+  &lt;&lt;addclass &quot;html&quot; &quot;orange&quot; &gt;&gt; 
 &lt;div class=&quot;wrapper mans&quot;&gt;
 	&lt;&lt;include &quot;headerb&quot;&gt;&gt;
 	&lt;main id=&quot;main&quot; class=&quot;flex-container-col&quot;&gt;
 	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_1_owndevice_03.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
 	&lt;div class=&quot;intro-text&quot;&gt;
-	  &lt;p&gt;You’ll need to rotate your screen at points – sometimes on your phone you need to do this on settings.&lt;/p&gt;
+	  &lt;p&gt;You’ll need to rotate your screen at points.&lt;/p&gt;
+    
+    &lt;p&gt;Sometimes on your phone you need to do this on settings.&lt;/p&gt;
 	 &lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
       &lt;&lt;button [[Next|$nextpass]]&gt;&gt;&lt;&lt;/button&gt;&gt;
     &lt;/span&gt;
@@ -343,7 +348,8 @@ setup.requestCameraPermission = () => {
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="9" name="onboarding4" tags="nobr" position="1100,100" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;onboarding4&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;onboarding5&quot;&gt;&gt;
-  &lt;&lt;addclass &quot;body&quot; &quot;orange&quot;&gt;&gt; 
+  &lt;&lt;addclass &quot;body&quot; &quot;orange&quot;&gt;&gt;
+  &lt;&lt;addclass &quot;html&quot; &quot;orange&quot; &gt;&gt; 
 &lt;div class=&quot;wrapper mans&quot;&gt;
 	&lt;&lt;include &quot;headerb&quot;&gt;&gt;
 	&lt;main id=&quot;main&quot; class=&quot;flex-container-col&quot;&gt;
@@ -351,7 +357,9 @@ setup.requestCameraPermission = () => {
 
 	&lt;div class=&quot;intro-text&quot;&gt;
 	  &lt;p&gt;You can get captions on all the videos.&lt;/p&gt; 
-    &lt;p&gt;You may want to go full screen on some of the videos but do remember you need to exit full screen to continue. (It may just be best to stay off full screen mode)&lt;/p&gt;
+    &lt;p&gt;You may want to go full screen on some of the videos but do remember you need to exit full screen to continue.&lt;/p&gt;
+    
+   &lt;p&gt;It may just be best to stay off full screen mode.&lt;/p&gt;
 	
 		 &lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
       &lt;&lt;button [[Next|$nextpass]]&gt;&gt;&lt;&lt;/button&gt;&gt;
@@ -362,7 +370,8 @@ setup.requestCameraPermission = () => {
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="onboarding5" tags="nobr" position="1225,100" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding4&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;onboarding5&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;onboarding5a&quot;&gt;&gt;
-  &lt;&lt;addclass &quot;body&quot; &quot;orange&quot;&gt;&gt; 
+  &lt;&lt;addclass &quot;body&quot; &quot;orange&quot;&gt;&gt;
+  &lt;&lt;addclass &quot;html&quot; &quot;orange&quot; &gt;&gt; 
 &lt;div class=&quot;wrapper mans&quot;&gt;
 	&lt;&lt;include &quot;headerb&quot;&gt;&gt;
 	&lt;main id=&quot;main&quot; class=&quot;flex-container-col&quot;&gt;
@@ -378,7 +387,8 @@ setup.requestCameraPermission = () => {
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="11" name="onboarding5a" tags="nobr" position="100,225" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding5&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;onboarding5a&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;onboarding6&quot;&gt;&gt;
-  &lt;&lt;addclass &quot;body&quot; &quot;orange&quot;&gt;&gt; 
+  &lt;&lt;addclass &quot;body&quot; &quot;orange&quot;&gt;&gt;
+  &lt;&lt;addclass &quot;html&quot; &quot;orange&quot; &gt;&gt; 
 &lt;div class=&quot;wrapper mans&quot;&gt;
 	&lt;&lt;include &quot;headerb&quot;&gt;&gt;
 	&lt;main id=&quot;main&quot; class=&quot;flex-container-col&quot;&gt;
@@ -399,7 +409,8 @@ setup.requestCameraPermission = () => {
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="onboarding6" tags="nobr" position="225,225" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding5a&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;onboarding6&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;360intro&quot;&gt;&gt;
-  &lt;&lt;addclass &quot;body&quot; &quot;orange&quot;&gt;&gt; 
+  &lt;&lt;addclass &quot;body&quot; &quot;orange&quot;&gt;&gt;
+  &lt;&lt;addclass &quot;html&quot; &quot;orange&quot; &gt;&gt; 
 &lt;div class=&quot;wrapper manb&quot;&gt;
 	&lt;&lt;include &quot;headerb&quot;&gt;&gt;
 	&lt;main id=&quot;main&quot; class=&quot;center-col&quot;&gt;
@@ -436,7 +447,7 @@ setup.requestCameraPermission = () => {
   /% CODEWORD CORRECT %/
   &lt;&lt;if $code1 isnot &quot;&quot; and $code2 isnot &quot;&quot; and $code3 isnot &quot;&quot;&gt;&gt;
     &lt;&lt;if ($code1 + $code2 + $code3) is &quot;SFS&quot;&gt;&gt;
-      &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;div class=&quot;confirmation&quot; id=&quot;confirmation&quot;&gt;&lt;p&gt;Correct!&lt;/p&gt;&lt;/div&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;div class=&quot;confirmation&quot; id=&quot;confirmation&quot;&gt;&lt;p class=&quot;bluehighlighttext&quot;&gt;Correct!&lt;/p&gt;&lt;/div&gt;&lt;&lt;/replace&gt;&gt;
       &lt;&lt;audio &quot;correct&quot; play&gt;&gt;
       &lt;&lt;timed 3s&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
     &lt;&lt;/if&gt;&gt;
@@ -484,8 +495,10 @@ setup.requestCameraPermission = () => {
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="360intro" tags="nobr" position="600,225" size="100,100">&lt;&lt;set $prevpass to &quot;onboarding6&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;360intro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;360image&quot;&gt;&gt;
-&lt;div class=&quot;wrapper cogs&quot;&gt;
-	&lt;&lt;include &quot;header&quot;&gt;&gt;
+  &lt;&lt;addclass &quot;body&quot; &quot;orange&quot;&gt;&gt;
+  &lt;&lt;addclass &quot;html&quot; &quot;orange&quot; &gt;&gt; 
+&lt;div class=&quot;wrapper dots&quot;&gt;
+	&lt;&lt;include &quot;headerb&quot;&gt;&gt;
 
 	&lt;main id=&quot;main&quot;&gt;
 	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_2_lookingforgold.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
@@ -528,7 +541,8 @@ setup.requestCameraPermission = () => {
   &lt;&lt;include &quot;pw360Overide&quot;&gt;&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="18" name="video3" tags="nobr" position="975,225" size="100,100">&lt;&lt;set $prevpass to &quot;360image&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;video3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;mapintro1&quot;&gt;&gt;
-  &lt;&lt;addclass &quot;body&quot; &quot;orange&quot;&gt;&gt; 
+  &lt;&lt;addclass &quot;body&quot; &quot;orange&quot;&gt;&gt;
+  &lt;&lt;addclass &quot;html&quot; &quot;orange&quot; &gt;&gt; 
 /* VIDEO 3 */
 
 &lt;div class=&quot;wrapper landscape video&quot;&gt;
@@ -544,19 +558,24 @@ setup.requestCameraPermission = () => {
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name="mapintro1" tags="nobr" position="1100,225" size="100,100">&lt;&lt;set $prevpass to &quot;video3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;mapintro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;robberintro&quot;&gt;&gt;
-&lt;div class=&quot;wrapper cogs portrait&quot;&gt;
-	&lt;&lt;include &quot;header&quot;&gt;&gt;
+ &lt;&lt;addclass &quot;body&quot; &quot;orange&quot;&gt;&gt;
+ &lt;&lt;addclass &quot;html&quot; &quot;orange&quot; &gt;&gt; 
+&lt;div class=&quot;wrapper dots portrait&quot;&gt;
+	&lt;&lt;include &quot;headerb&quot;&gt;&gt;
   &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
 	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_1and2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 	&lt;div&gt;
-&lt;p&gt;The Signal Fire System seems to have sent us a map.&lt;/p&gt; 
-&lt;p&gt;It’s not just a map though – there’s instructions. &lt;/p&gt;
-&lt;p&gt;From a man from 1966 – that’s strange. &lt;/p&gt;
-&lt;p&gt;Maybe they will lead us to what we need to find.  &lt;/p&gt;
-&lt;p&gt;I’ll patch it into your phone. &lt;/p&gt;
-&lt;p&gt;Don’t load it until you’ve gone past security as they may need to check your bags. &lt;/p&gt;
-&lt;p&gt;READY?&lt;/p&gt;
+&lt;div class=&quot;intro-text&quot; id=&quot;intro&quot;&gt;
+  &lt;p&gt;The Signal Fire System seems to have sent us a map.&lt;/p&gt; 
+  &lt;p&gt;It’s not just a map though – there’s instructions. &lt;/p&gt;
+  &lt;p&gt;From a man from 1966 – that’s strange. &lt;/p&gt;
+
+  &lt;p&gt;Maybe they will lead us to what we need to find.  &lt;/p&gt;
+  &lt;p&gt;I’ll patch it into your phone. &lt;/p&gt;
+  &lt;p&gt;Don’t load it until you’ve gone past security as they may need to check your bags. &lt;/p&gt;
+  &lt;p&gt;READY?&lt;/p&gt;
+&lt;/div&gt;
 
  &lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
       &lt;&lt;button [[Yes|$nextpass]]&gt;&gt;&lt;&lt;/button&gt;&gt;
@@ -568,8 +587,10 @@ setup.requestCameraPermission = () => {
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="robberintro" tags="nobr" position="1225,225" size="100,100">&lt;&lt;set $prevpass to &quot;mapintro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;robberintro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;map&quot;&gt;&gt;
-&lt;div class=&quot;wrapper cogs portrait&quot;&gt;
-	&lt;&lt;include &quot;header&quot;&gt;&gt;
+  &lt;&lt;addclass &quot;body&quot; &quot;orange&quot;&gt;&gt;
+  &lt;&lt;addclass &quot;html&quot; &quot;orange&quot; &gt;&gt; 
+&lt;div class=&quot;wrapper manb portrait&quot;&gt;
+	&lt;&lt;include &quot;headerb&quot;&gt;&gt;
   &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; &gt;
 	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_3.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
@@ -588,6 +609,8 @@ setup.requestCameraPermission = () => {
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="21" name="map" tags="nobr" position="100,350" size="100,100">&lt;&lt;set $prevpass to &quot;mapintro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;map&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;ARIntro1&quot;&gt;&gt;
+ &lt;&lt;addclass &quot;body&quot; &quot;orange&quot;&gt;&gt;
+ &lt;&lt;addclass &quot;html&quot; &quot;orange&quot; &gt;&gt;
 &lt;&lt;set $currentInstructionIndex = 1&gt;&gt;
 &lt;&lt;set $instructions = {
     1: { text: &quot;We&#39;re ready to go.&lt;br/&gt;
@@ -595,11 +618,11 @@ Step through the doors - then take 19 steps forward and you&#39;ll be near a mar
     2: { text: &quot;The stamp exhibition looks quiet but&lt;br/&gt;Hold on. 
 Someone is going past. 
 Stay very still.&quot;, coords: &quot;three&quot; },
-    3: { text: &quot;Ok, he&#39;s gone. Clearly in a rush!&lt;br/&gt;Let&#39;s get our prize.&lt;br/&gt;Head quickly towards the lift.&lt;br/&gt;The exhibit we need is there.&lt;br/&gt;Get the trophy.&quot;, coords: &quot;six&quot; }
+    3: { text: &quot;Ok, he&#39;s gone. Clearly in a rush!&lt;br/&gt;Let&#39;s get our prize.&lt;br/&gt;Head quickly towards the lift.&lt;br/&gt;The exhibit we need is there.&lt;br/&gt;Get the trophy.&lt;br/&gt; Touch the cup!&quot;, coords: &quot;six&quot; }
 }&gt;&gt;
 	&lt;&lt;if $audioOn is true&gt;&gt;&lt;div id=&quot;audio&quot;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_4.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;/div&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;div class=&quot;wrapper cogs&quot;&gt;
+&lt;div class=&quot;wrapper dots&quot;&gt;
 &lt;div class=&quot;instruction&quot; id=&quot;instruction&quot;&gt;
 &lt;p&gt;
 /* &lt;&lt;print $currentInstructionIndex&gt;&gt;. */
@@ -610,7 +633,7 @@ Stay very still.&quot;, coords: &quot;three&quot; },
 
 	&lt;div&gt;
 &lt;div class=&quot;map-container&quot; id=&quot;mapContainer&quot;&gt;
-&lt;img src=&quot;assets/img/map.jpeg&quot;/&gt;
+&lt;img src=&quot;assets/img/map.png&quot;/&gt;
 &lt;div class=&quot;location one pulse&quot; id=&quot;location&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;guard hide pulse&quot; id=&quot;guard&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
@@ -710,15 +733,19 @@ Stay very still.&quot;, coords: &quot;three&quot; },
     &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="ARIntro1" tags="nobr" position="350,350" size="100,100">&lt;&lt;set $prevpass to &quot;map&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;ARIntro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;AR&quot;&gt;&gt;
-&lt;div class=&quot;wrapper&quot;&gt;
-	&lt;&lt;include &quot;header&quot;&gt;&gt;
+ &lt;&lt;addclass &quot;body&quot; &quot;orange&quot;&gt;&gt;
+ &lt;&lt;addclass &quot;html&quot; &quot;orange&quot; &gt;&gt;
+&lt;div class=&quot;wrapper dots&quot;&gt;
+	&lt;&lt;include &quot;headerb&quot;&gt;&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
 	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_3_linkintocafespace_7.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 	&lt;div&gt;
-
-&lt;p&gt;We need to scan the SFS code here it seems&lt;/p&gt;
-&lt;p&gt;Then what did he say, touch the cup. &lt;/p&gt;
-&lt;p&gt;Use your camera or app to scan the QR code.&lt;/p&gt;
+&lt;br/&gt;
+&lt;div class=&quot;intro-text&quot;&gt;
+  &lt;p&gt;We need to scan the SFS code here it seems&lt;/p&gt;
+  &lt;p&gt;Then what did he say, touch the cup. &lt;/p&gt;
+  &lt;p&gt;Use your camera or app to scan the QR code.&lt;/p&gt;
+&lt;/div&gt;
 
 
     &lt;!-- The `label` is attached to the hidden file input --&gt;
@@ -740,7 +767,7 @@ Stay very still.&quot;, coords: &quot;three&quot; },
 
 
 
-&lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click Button to confirm you have scanned image&quot;&gt;&lt;a href=&quot;https://pickles-playtest.netlify.app/phone2.html&quot; target=&quot;_blank&quot; rel=&quot;noreferrer&quot;&gt;IMAGE SCANNED&lt;/a&gt;&lt;/span&gt;
+&lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click Button to confirm you have scanned image&quot;&gt;&lt;a href=&quot;phone2.html&quot; target=&quot;_blank&quot; rel=&quot;noreferrer&quot;&gt;IMAGE SCANNED&lt;/a&gt;&lt;/span&gt;
 	&lt;/div&gt;
 
 	&lt;/main&gt;

@@ -98,7 +98,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<!-- UUID://AC7935DC-C73A-435D-A36C-3A7B20C56850// --><tw-storydata name="Pickles - National Archives - Phone 3" startnode="4" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="AC7935DC-C73A-435D-A36C-3A7B20C56850" zoom="0.6" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Fondamento:ital@1&family=Italianno&family=Cairo:wght@500&family=Noto+Sans+Mono:wght@700&family=Tangerine:wght@400;700&family=IM+Fell+Double+Pica+SC&family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=Niconne&family=Montserrat:wght@400;800&display=swap');
+	<!-- UUID://AC7935DC-C73A-435D-A36C-3A7B20C56850// --><tw-storydata name="Pickles - National Archives - Phone 3" startnode="5" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="AC7935DC-C73A-435D-A36C-3A7B20C56850" zoom="0.6" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Fondamento:ital@1&family=Italianno&family=Cairo:wght@500&family=Noto+Sans+Mono:wght@700&family=Tangerine:wght@400;700&family=IM+Fell+Double+Pica+SC&family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=Niconne&family=Montserrat:wght@400;800&display=swap');
 
 @import url("/styles/generics.css");
 @import url("/styles/styles.css");
@@ -226,9 +226,12 @@ setup.requestCameraPermission = () => {
 	
 &lt;/div&gt;
   &lt;/div &gt;</tw-passagedata><tw-passagedata pid="3" name="header" tags="nobr" position="350,100" size="100,100">&lt;header&gt;
-	&lt;div class=&quot;logo-wrapper&quot;&gt;&lt;img src=&quot;assets/img/na-logo.png&quot; alt=&quot;The National Archives Logo&quot; class=&quot;logo na&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt; &lt;/header&gt;</tw-passagedata><tw-passagedata pid="4" name="video6" tags="nobr" position="475,100" size="100,100">&lt;&lt;set $prevpass to &quot;video6&quot;&gt;&gt;
+	&lt;div class=&quot;logo-wrapper&quot;&gt;&lt;img src=&quot;assets/img/na-logo.png&quot; alt=&quot;The National Archives Logo&quot; class=&quot;logo na&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt; &lt;/header&gt;</tw-passagedata><tw-passagedata pid="4" name="headerb" tags="nobr" position="475,100" size="100,100">&lt;header&gt;
+	&lt;div class=&quot;logo-wrapper&quot;&gt;&lt;img src=&quot;assets/img/mott-logo-thick.png&quot; alt=&quot;The National Archives Logo&quot; class=&quot;logo na&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt; &lt;/header&gt;</tw-passagedata><tw-passagedata pid="5" name="video6" tags="nobr" position="600,100" size="100,100">&lt;&lt;set $prevpass to &quot;video6&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;video6&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;cabinet4&quot;&gt;&gt;
+  &lt;&lt;addclass &quot;body&quot; &quot;orange&quot;&gt;&gt;
+  &lt;&lt;addclass &quot;html&quot; &quot;orange&quot; &gt;&gt; 
 &lt;&lt;set $audioOn to true&gt;&gt;
 /* VIDEO 6 */
 &lt;div class=&quot;wrapper landscape video&quot;&gt;
@@ -241,26 +244,30 @@ setup.requestCameraPermission = () => {
   &lt;/span&gt;
 &lt;span class=&quot;button-wrapper videor&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
 &lt;&lt;button &quot;Next&quot; $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="5" name="cabinet4" tags="nobr" position="600,100" size="100,100">&lt;&lt;set $prevpass to &quot;video6&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="6" name="cabinet4" tags="nobr" position="725,100" size="100,100">&lt;&lt;set $prevpass to &quot;video6&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;cabinet4&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;cabinet5&quot;&gt;&gt;
-&lt;div class=&quot;wrapper cogs portrait&quot;&gt;
-	&lt;&lt;include &quot;header&quot;&gt;&gt;
+  &lt;&lt;addclass &quot;body&quot; &quot;orange&quot;&gt;&gt;
+  &lt;&lt;addclass &quot;html&quot; &quot;orange&quot; &gt;&gt; 
+&lt;div class=&quot;wrapper manb portrait&quot;&gt;
+	&lt;&lt;include &quot;headerb&quot;&gt;&gt;
    &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
 	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_6_cabinettable_4.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
   /* TODO ADD IN TO GET IN  */
 
-&lt;p&gt;Right, time to finish this mission.&lt;/p&gt; 
-&lt;p&gt;Hand back the transcript to the librarian and then look for the wooden cabinet in between the R.E.D. desk and the cabinet table. It seems the SFS has sent the briefcase there. &lt;/p&gt;
-
-&lt;p&gt;To get in you’ll need to [TBC] &lt;/p&gt;
-&lt;p&gt;Click next when the cabinet is open. &lt;/p&gt;
+&lt;div class=&quot;intro-text&quot;&gt;
+  &lt;p&gt;Right, time to finish this mission.&lt;/p&gt; 
+  &lt;p&gt;Hand back the transcript to the librarian and then look for the wooden cabinet in between the R.E.D. desk and the cabinet table. It seems the SFS has sent the briefcase there. &lt;/p&gt;
+  
+  &lt;p&gt;To get in you’ll need to [TBC] &lt;/p&gt;
+  &lt;p&gt;Click next when the cabinet is open. &lt;/p&gt;
+&lt;/div&gt;
 
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footeropen&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="6" name="footeropen" tags="nobr" position="725,100" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="7" name="footeropen" tags="nobr" position="850,100" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
 &lt;&lt;if passage() is not &quot;onboarding1&quot;&gt;&gt;
   &lt;&lt;button &quot;Back&quot;&gt;&gt; 
     &lt;&lt;goto $prevpass&gt;&gt;
@@ -269,24 +276,28 @@ setup.requestCameraPermission = () => {
 &lt;/div&gt;
  &lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
       &lt;&lt;button [[It&#39;s open|$nextpass]]&gt;&gt;&lt;&lt;/button&gt;&gt;
-    &lt;/span&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="7" name="cabinet5" tags="nobr" position="850,100" size="100,100">&lt;&lt;set $prevpass to &quot;cabinet4&quot;&gt;&gt;
+    &lt;/span&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="8" name="cabinet5" tags="nobr" position="975,100" size="100,100">&lt;&lt;set $prevpass to &quot;cabinet4&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;cabinet5&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;video7&quot;&gt;&gt;
-&lt;div class=&quot;wrapper cogs portrait&quot;&gt;
-	&lt;&lt;include &quot;header&quot;&gt;&gt;
+  &lt;&lt;addclass &quot;body&quot; &quot;orange&quot;&gt;&gt;
+  &lt;&lt;addclass &quot;html&quot; &quot;orange&quot; &gt;&gt; 
+&lt;div class=&quot;wrapper dots portrait&quot;&gt;
+	&lt;&lt;include &quot;headerb&quot;&gt;&gt;
      &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
 	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_6_cabinettable_6.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;p&gt;The Signal Fire System says I need to enter the note that is in the briefcase. &lt;/p&gt;
-&lt;p&gt;Open it up and send me what is inside. &lt;/p&gt;
-&lt;p&gt;It should be filled with bank notes according to the records here at the archives. &lt;/p&gt;
+&lt;div class=&quot;intro-text&quot;&gt;
+  &lt;p&gt;The Signal Fire System says I need to enter the note that is in the briefcase. &lt;/p&gt;
+  &lt;p&gt;Open it up and send me what is inside. &lt;/p&gt;
+  &lt;p&gt;It should be filled with bank notes according to the records here at the archives. &lt;/p&gt;
+&lt;/div&gt;
 
   &lt;&lt;include &quot;pwCabinet&quot;&gt;&gt;
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footerback&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="8" name="pwCabinet" tags="nobr" position="975,100" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
-  &lt;label for=&quot;textbox--password&quot; tabindex=&quot;0&quot; &gt;&lt;span aria-label=&quot;Enter the word below&quot; role=&quot;label&quot;&gt;Enter the word below&lt;/span&gt;&lt;/label&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="9" name="pwCabinet" tags="nobr" position="1100,100" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+  &lt;label for=&quot;textbox--password&quot; tabindex=&quot;0&quot; &gt;&lt;span aria-label=&quot;Enter the word below&quot; role=&quot;label&quot; style=&quot;color:black&quot;&gt;Enter the word below&lt;/span&gt;&lt;/label&gt;
   /% CODEWORD INPUT %/
    &lt;div class=&quot;code-input&quot;&gt;
      &lt;&lt;textbox &quot;_password&quot; &quot;&quot; &gt;&gt;
@@ -314,9 +325,11 @@ setup.requestCameraPermission = () => {
     /% CODEWORD FEEDBACK %/
     &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
     &lt;/div&gt;
-    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="9" name="video7" tags="nobr" position="1100,100" size="100,100">&lt;&lt;set $prevpass to &quot;cabinet5&quot;&gt;&gt;
+    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="video7" tags="nobr" position="1225,100" size="100,100">&lt;&lt;set $prevpass to &quot;cabinet5&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;video7&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;lockers1&quot;&gt;&gt;
+  &lt;&lt;addclass &quot;body&quot; &quot;orange&quot;&gt;&gt;
+  &lt;&lt;addclass &quot;html&quot; &quot;orange&quot; &gt;&gt; 
 /* VIDEO 7 */
 
 &lt;div class=&quot;wrapper landscape video&quot;&gt;
@@ -329,37 +342,45 @@ setup.requestCameraPermission = () => {
   &lt;/span&gt;
 &lt;span class=&quot;button-wrapper videor&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
 &lt;&lt;button &quot;Next&quot; $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="lockers1" tags="nobr" position="1225,100" size="100,100">&lt;&lt;set $prevpass to &quot;video7&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="11" name="lockers1" tags="nobr" position="100,225" size="100,100">&lt;&lt;set $prevpass to &quot;video7&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;lockers1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;lockers2&quot;&gt;&gt;
-&lt;div class=&quot;wrapper cogs portrait&quot;&gt;
-	&lt;&lt;include &quot;header&quot;&gt;&gt;
+  &lt;&lt;addclass &quot;body&quot; &quot;orange&quot;&gt;&gt;
+  &lt;&lt;addclass &quot;html&quot; &quot;orange&quot; &gt;&gt; 
+&lt;div class=&quot;wrapper dots portrait&quot;&gt;
+	&lt;&lt;include &quot;headerb&quot;&gt;&gt;
        &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
 	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_7_lockers_1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;p&gt;I hope this can reach you in time…&lt;/p&gt;
-&lt;p&gt;Watch out for TADAH agents and to try to blend in – I know, pretend you are just visiting The National Archives today! &lt;/p&gt;
-&lt;p&gt;I’ll send you details to log in remotely to the Chief Timer’s computer. You’ll need a password to access it. &lt;/p&gt;
-
+&lt;div class=&quot;intro-text&quot;&gt;
+  &lt;p&gt;I hope this can reach you in time…&lt;/p&gt;
+  &lt;p&gt;Watch out for TADAH agents and to try to blend in – I know, pretend you are just visiting The National Archives today! &lt;/p&gt;
+  &lt;p&gt;I’ll send you details to log in remotely to the Chief Timer’s computer. You’ll need a password to access it. &lt;/p&gt;
+  
+&lt;/div&gt;
 
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="11" name="lockers2" tags="nobr" position="100,225" size="100,100">&lt;&lt;set $prevpass to &quot;lockers1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="lockers2" tags="nobr" position="225,225" size="100,100">&lt;&lt;set $prevpass to &quot;lockers1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;lockers2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;video7&quot;&gt;&gt;
-&lt;div class=&quot;wrapper cogs portrait&quot;&gt;
-	&lt;&lt;include &quot;header&quot;&gt;&gt;
+  &lt;&lt;addclass &quot;body&quot; &quot;orange&quot;&gt;&gt;
+  &lt;&lt;addclass &quot;html&quot; &quot;orange&quot; &gt;&gt; 
+&lt;div class=&quot;wrapper dots portrait&quot;&gt;
+	&lt;&lt;include &quot;headerb&quot;&gt;&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
 	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_7_lockers_2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;p&gt;Find my friend, they should be by the cabinet table. They will have a MoTT badge on and have a MoTT tote bag. They can help you.&lt;/p&gt;
-&lt;p&gt;They need to know they can trust you. Say to them &lt;/p&gt;
-&lt;p&gt;Do you have the time?&lt;/p&gt;
-&lt;p&gt;If they are the ones you are looking for they should respond with the phrase&lt;/p&gt;
-&lt;p&gt;Tick Tock Tick Tock&lt;/p&gt;
-&lt;p&gt;I’m losing the feed...&lt;/p&gt;
+&lt;div class=&quot;intro-text&quot;&gt;
+  &lt;p&gt;Find my friend, they should be by the cabinet table. They will have a MoTT badge on and have a MoTT tote bag. They can help you.&lt;/p&gt;
+  &lt;p&gt;They need to know they can trust you. Say to them &lt;/p&gt;
+  &lt;p&gt;Do you have the time?&lt;/p&gt;
+  &lt;p&gt;If they are the ones you are looking for they should respond with the phrase&lt;/p&gt;
+  &lt;p&gt;Tick Tock Tick Tock&lt;/p&gt;
+  &lt;p&gt;I’m losing the feed...&lt;/p&gt;
+&lt;/div&gt;
 
 
 
@@ -369,7 +390,7 @@ setup.requestCameraPermission = () => {
 
 &lt;&lt;timed 10s&gt;&gt;
   &lt;&lt;addclass &quot;#main&quot; &quot;dissolvephone&quot;&gt;&gt;
-  &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="footer" tags="nobr" position="225,225" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
+  &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="footer" tags="nobr" position="350,225" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
 &lt;&lt;if passage() is not &quot;onboarding1&quot;&gt;&gt;
   &lt;&lt;button &quot;Back&quot;&gt;&gt; 
     &lt;&lt;goto $prevpass&gt;&gt;
@@ -378,7 +399,7 @@ setup.requestCameraPermission = () => {
 &lt;/div&gt;
  &lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
       &lt;&lt;button [[Next|$nextpass]]&gt;&gt;&lt;&lt;/button&gt;&gt;
-    &lt;/span&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="13" name="footerback" tags="nobr" position="350,225" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
+    &lt;/span&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="14" name="footerback" tags="nobr" position="475,225" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
 &lt;&lt;if passage() is not &quot;onboarding1&quot;&gt;&gt;
   &lt;&lt;button &quot;Back&quot;&gt;&gt; 
     &lt;&lt;goto $prevpass&gt;&gt;
