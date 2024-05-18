@@ -236,7 +236,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
       &lt;/div&gt;
       &lt;div class=&quot;message-container&quot; &gt;
         &lt;span class=&quot;sender&quot;&gt;User&lt;/span&gt;
-        	&lt;p&gt;Hello, I’m sending this through to you&lt;/p&gt;
+        	&lt;p&gt;Hello? I’m sending this through to you&lt;/p&gt;
 					
       &lt;/div&gt;
     &lt;/div&gt;
@@ -473,7 +473,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;message-container&quot; &gt;
-	&lt;p&gt;Quickly we need to find the pin to access the Signal Fire System from here. &lt;/p&gt;
+	&lt;p&gt;Quickly, we need to find the pin to access the Signal Fire System from here. &lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
@@ -510,7 +510,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 &lt;br/&gt;
 &lt;img src=&quot;assets/img/signal-w.png&quot;/&gt;
 &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
-  &lt;label for=&quot;textbox--password&quot; tabindex=&quot;0&quot; &gt;&lt;span aria-label=&quot;Enter the word below&quot; role=&quot;label&quot;&gt;Enter the word below&lt;/span&gt;&lt;/label&gt;
+  &lt;label for=&quot;textbox--password&quot; tabindex=&quot;0&quot; &gt;&lt;span aria-label=&quot;Enter the pin below&quot; role=&quot;label&quot;&gt;Enter the pin below&lt;/span&gt;&lt;/label&gt;
   /% CODEWORD INPUT %/
    &lt;div class=&quot;code-input&quot;&gt;
      &lt;&lt;textbox &quot;_password&quot; &quot;&quot; &gt;&gt;
@@ -520,7 +520,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
    /% STANDARDISE INPUT %/
        &lt;&lt;set _password to _password.toUpperCase()&gt;&gt;
    /% CODEWORD CORRECT %/
-       &lt;&lt;if _password isnot &quot;&quot; and _password is &quot;1966&quot;&gt;&gt;
+       &lt;&lt;if _password isnot &quot;&quot; and _password is &quot;8910&quot;&gt;&gt;
        &lt;&lt;replace &quot;#coderesultsfs&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
           &lt;&lt;audio &quot;correct&quot; play&gt;&gt;
 			 &lt;&lt;timed 1s&gt;&gt;
@@ -536,7 +536,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 			 &lt;&lt;/timed&gt;&gt;
       &lt;&lt;/if&gt;&gt;
         /% CODEWORD INCORRECT %/
-     &lt;&lt;if _password isnot &quot;&quot; and _password is not &quot;1966&quot;&gt;&gt;
+     &lt;&lt;if _password isnot &quot;&quot; and _password is not &quot;8910&quot;&gt;&gt;
         &lt;&lt;replace &quot;#coderesultsfs&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
       &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesultsfs&quot;&gt;&gt; &lt;h2&gt;Locked&lt;/h2&gt; &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
         &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -626,7 +626,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
       &lt;/div&gt;
       &lt;div class=&quot;message-container&quot; &gt;
         &lt;span class=&quot;sender&quot;&gt;User&lt;/span&gt;
-    &lt;p&gt;Yes – that is the pin.&lt;/p&gt;
+    &lt;p&gt;Yes – that&#39;s the pin.&lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
@@ -681,8 +681,8 @@ Signal Fire System.&lt;/p&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="chatText3" tags="nobr" position="850,225" size="100,100">&lt;div class=&quot;chat&quot;&gt;&lt;div class=&quot;messages-container&quot; id=&quot;messagesContainer&quot;&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;&lt;timed 2s&gt;&gt;
+/* TODO REPLACE AUDIO  */
+&lt;&lt;timed 1s&gt;&gt;
    &lt;&lt;replace &quot;#audio&quot;&gt;&gt;
   &lt;audio src=&quot;assets/audio/COMPUTER_3_corbett.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;
   &lt;&lt;/replace&gt;&gt;
@@ -699,7 +699,7 @@ Signal Fire System.&lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 6s&gt;&gt;
+&lt;&lt;timed 5s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;message-container&quot; &gt;
@@ -709,30 +709,33 @@ Signal Fire System.&lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 9s&gt;&gt;
+&lt;&lt;timed 8s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;message-container&quot; &gt;
-	&lt;p&gt;I’m going to give you the access code to open the SFS conduit nearby - 8910 &lt;/p&gt;
+	&lt;p&gt;You have the specific name.  &lt;/p&gt;
    
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 10s&gt;&gt;
-  &lt;&lt;replace &quot;#accessMount&quot;&gt;&gt;
-    &lt;h3&gt;Access code: 8910&lt;/h3&gt;
-    &lt;&lt;/replace&gt;&gt;
-  &lt;&lt;/timed&gt;&gt;
-
-&lt;&lt;timed 18s&gt;&gt;
-  
+  &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
+			&lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
+    &lt;&lt;button &quot;Next&quot;&gt;&gt;
 			&lt;&lt;replace &quot;#chatMount&quot;&gt;&gt;
 	&lt;&lt;include &quot;chatText3a&quot;&gt;&gt;
+
 	&lt;&lt;/replace&gt;&gt;
+			&lt;&lt;/button&gt;&gt;
+			&lt;/span&gt;
+  &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="chatText3a" tags="nobr" position="975,225" size="100,100">&lt;div class=&quot;chat&quot;&gt;&lt;div class=&quot;messages-container&quot; id=&quot;messagesContainer&quot;&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;&lt;timed 0.1s&gt;&gt;
+    &lt;&lt;replace &quot;#audio&quot;&gt;&gt;
+  &lt;audio src=&quot;assets/audio/BACKUP_1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;
+  &lt;&lt;/replace&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;avatar&quot;&gt;
@@ -740,7 +743,7 @@ Signal Fire System.&lt;/p&gt;
       &lt;/div&gt;
       &lt;div class=&quot;message-container&quot; &gt;
         &lt;span class=&quot;sender&quot;&gt;User&lt;/span&gt;
-    		&lt;p&gt;Answer the call&lt;/p&gt;
+    		&lt;p&gt;You need to put the call into Corbett. &lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
@@ -750,18 +753,37 @@ Signal Fire System.&lt;/p&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;message-container&quot; &gt;
- 	&lt;p&gt;You need to keep Corbett on the line. &lt;/p&gt;
+ 	&lt;p&gt;We’ll use your phone to boost the SFS and if it works then you should be able to get through to Corbett. &lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 5s&gt;&gt;
+&lt;&lt;timed 8s&gt;&gt;
+  &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
+			&lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
+    &lt;&lt;button &quot;Next&quot;&gt;&gt;
+			&lt;&lt;replace &quot;#chatMount&quot;&gt;&gt;
+	&lt;&lt;include &quot;chatText3b&quot;&gt;&gt;
+
+	&lt;&lt;/replace&gt;&gt;
+			&lt;&lt;/button&gt;&gt;
+			&lt;/span&gt;
+  &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="19" name="chatText3b" tags="nobr" position="1100,225" size="100,100">&lt;div class=&quot;chat&quot;&gt;&lt;div class=&quot;messages-container&quot; id=&quot;messagesContainer&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;&lt;timed 0.1s&gt;&gt;
+    &lt;&lt;replace &quot;#audio&quot;&gt;&gt;
+  &lt;audio src=&quot;assets/audio/BACKUP_2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;
+  &lt;&lt;/replace&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
+      &lt;div class=&quot;avatar&quot;&gt;
+        &lt;img src=&quot;assets/img/user.png&quot; alt=&quot;avatar&quot;/&gt;
+      &lt;/div&gt;
       &lt;div class=&quot;message-container&quot; &gt;
-	&lt;p&gt;30 seconds.&lt;/p&gt;
-   
+        &lt;span class=&quot;sender&quot;&gt;User&lt;/span&gt;
+    		&lt;p&gt;Enter the SFS conduit nearby using the number 8910&lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
@@ -771,102 +793,55 @@ Signal Fire System.&lt;/p&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;message-container&quot; &gt;
-	&lt;p&gt;Keep him on the phone for 30 seconds.&lt;/p&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
-	
-
-&lt;&lt;timed 9s&gt;&gt;
-  &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
-    &lt;div class=&quot;message&quot;&gt;
-      &lt;div class=&quot;message-container&quot; &gt;
-	&lt;p&gt;30 seconds to give Pickles time to find the World Cup.&lt;/p&gt;
+ 	&lt;p&gt;Then on your phone I need you to text the word CORBETT to 07480 786415.  &lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 12s&gt;&gt;
+&lt;&lt;timed 18s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;message-container&quot; &gt;
-	&lt;p&gt;30 seconds to save the MoTT.&lt;/p&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
-
-&lt;&lt;timed 12s&gt;&gt;
-  &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
-    &lt;div class=&quot;message&quot;&gt;
-      &lt;div class=&quot;message-container&quot; &gt;
-	&lt;p&gt;Time to save time.&lt;/p&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
-
-/* &lt;&lt;timed 14s&gt;&gt;
-  &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
-			&lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
-    &lt;&lt;button &quot;Next&quot;&gt;&gt;
-			&lt;&lt;replace &quot;#chatMount&quot;&gt;&gt;
-	&lt;&lt;include &quot;chatText3b&quot;&gt;&gt;
-	&lt;&lt;/replace&gt;&gt;
-			&lt;&lt;/button&gt;&gt;
-			&lt;/span&gt;
-  &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt; */</tw-passagedata><tw-passagedata pid="19" name="chatText3b" tags="nobr" position="1100,225" size="100,100">&lt;div class=&quot;chat&quot;&gt;&lt;div class=&quot;messages-container&quot; id=&quot;messagesContainer&quot;&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;&lt;timed 2s&gt;&gt;
-  &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
-    &lt;div class=&quot;message&quot;&gt;
-      &lt;div class=&quot;avatar&quot;&gt;
-        &lt;img src=&quot;assets/img/user.png&quot; alt=&quot;avatar&quot;/&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;message-container&quot; &gt;
-        &lt;span class=&quot;sender&quot;&gt;User&lt;/span&gt;
-    		&lt;p&gt;I’m going to give you the password to enter the SFS conduit nearby - 8910.&lt;/p&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
-
-&lt;&lt;timed 4s&gt;&gt;
-  &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
-    &lt;div class=&quot;message&quot;&gt;
-      &lt;div class=&quot;message-container&quot; &gt;
- 	&lt;p&gt;Open the SFS conduit and click call. &lt;/p&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
-
-&lt;&lt;timed 6s&gt;&gt;
-  &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
-    &lt;div class=&quot;message&quot;&gt;
-      &lt;div class=&quot;message-container&quot; &gt;
-	&lt;p&gt;You might need to activate the voice feature.&lt;/p&gt;
+	&lt;p&gt;If it has all worked.&lt;/p&gt;
    
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 8s&gt;&gt;
+&lt;&lt;timed 19s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;message-container&quot; &gt;
-	&lt;p&gt;Then speak on the phone receiver. &lt;/p&gt;
+	&lt;p&gt;Then you will make the connection.  &lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 	
 
-&lt;&lt;timed 10s&gt;&gt;
+&lt;&lt;timed 21s&gt;&gt;
+  &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
+    &lt;div class=&quot;message&quot;&gt;
+      &lt;div class=&quot;message-container&quot; &gt;
+	&lt;p&gt;Time to help Pickles&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 23s&gt;&gt;
+  &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
+    &lt;div class=&quot;message&quot;&gt;
+      &lt;div class=&quot;message-container&quot; &gt;
+	&lt;p&gt;Time to save the World Cup. &lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 26s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;message-container&quot; &gt;
@@ -878,7 +853,7 @@ Signal Fire System.&lt;/p&gt;
 &lt;&lt;set $passage to &quot;video8&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;desktop&quot;&gt;&gt;
 /* VIDEO  */
-VIDEO 8
+
 &lt;div class=&quot;wrapper&quot;&gt;
 	&lt;main id=&quot;main&quot; class=&quot;video&quot;&gt;&lt;&lt;set $title to &quot;V6&quot;&gt;&gt;
 	&lt;div id=&quot;video&quot; role=&quot;video&quot; class=&quot;video-wrapper&quot;  aria-label=&quot;MOTT Training 6 video&quot;&gt;&lt;iframe src=&quot;https://player.vimeo.com/video/570860329?h=048466f8a2&amp;amp;badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture&quot; allowfullscreen title=&quot;MOTT Training 6&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
@@ -891,8 +866,7 @@ VIDEO 8
 		&lt;&lt;set $finaldesktop to true&gt;&gt;
 &lt;&lt;goto $nextpass&gt;&gt;
 &lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;&lt;/append&gt;&gt; &lt;&lt;/timed&gt;&gt;
-&lt;&lt;/silently&gt;&gt;
-&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="pillars1" tags="nobr" position="100,350" size="100,100">&lt;&lt;set $prevpass to &quot;video1&quot;&gt;&gt;
+&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="pillars1" tags="nobr" position="100,350" size="100,100">&lt;&lt;set $prevpass to &quot;video1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;pillars1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;video2&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs&quot;&gt;
@@ -915,12 +889,15 @@ VIDEO 8
         &lt;img src=&quot;assets/img/user.png&quot; alt=&quot;avatar&quot;/&gt;
       &lt;/div&gt;
       &lt;div class=&quot;message-container&quot; &gt;
-        &lt;span class=&quot;sender&quot;&gt;User&lt;/span&gt;
+        &lt;span class=&quot;sender&quot;&gt;Chief Timer&lt;/span&gt;
     				&lt;p&gt;Give the Pickles Dog Collar back to my friend near the Cabinet Table and they may give you something in return...&lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="pwPillar" tags="nobr" position="350,350" size="100,100">/* TODO CHECK ACCESS  */
+&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 60s&gt;&gt;
+  &lt;&lt;script&gt;&gt;Engine.restart()&lt;&lt;/script&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="pwPillar" tags="nobr" position="350,350" size="100,100">/* TODO CHECK ACCESS  */
 &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
 &lt;div id=&quot;resultbutton&quot;&gt;
   /% CODEWORD INPUT %/

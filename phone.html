@@ -231,6 +231,7 @@ setup.requestCameraPermission = () => {
 &lt;&lt;cacheaudio &quot;uploading&quot; &quot;assets/sound/uploading.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;complete&quot; &quot;assets/sound/uploadcomplete.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;signal&quot; &quot;assets/sound/signal.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;newcomplete&quot; &quot;assets/sound/newcomplete.mp3&quot;&gt;&gt;
 &lt;&lt;waitforaudio&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="Start" tags="nobr" position="134,244.33333333333337" size="100,100">&lt;div class=&quot;wrapper audio&quot; id=&quot;mount&quot;&gt;
 	&lt;div class=&quot;phone-warning&quot;&gt;&lt;p&gt;Phone&lt;/p&gt;&lt;/div&gt;
 &lt;div class=&quot;multiple-btn-wrapper&quot;&gt;
@@ -395,7 +396,7 @@ setup.requestCameraPermission = () => {
 
 	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_1_owndevice_06_redchairs.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
   &lt;div class=&quot;intro-text&quot;&gt;
-	  &lt;p&gt;To begin, enter the word BEGIN into the tablet near the red chairs.&lt;/p&gt;
+	  &lt;p&gt;To begin, enter the word BEGIN into the tablet next to the red chairs.&lt;/p&gt;
    
      &lt;&lt;timed 60s&gt;&gt;
       &lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
@@ -510,7 +511,7 @@ setup.requestCameraPermission = () => {
 
 &lt;p&gt;When there, click below and I’ll try to load it up. &lt;/p&gt;
 
-&lt;p&gt;The live feed is a 360 camera so you may need to move your phone around to find the code. &lt;/p&gt;
+&lt;p&gt;The live feed is a 360° camera so you may need to move your phone around to find the code. &lt;/p&gt;
 
       &lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
       &lt;&lt;button [[We&#39;re here|$nextpass]]&gt;&gt;&lt;&lt;/button&gt;&gt;
@@ -572,19 +573,35 @@ setup.requestCameraPermission = () => {
   &lt;p&gt;From a man from 1966 – that’s strange. &lt;/p&gt;
 
   &lt;p&gt;Maybe they will lead us to what we need to find.  &lt;/p&gt;
-  &lt;p&gt;I’ll patch it into your phone. &lt;/p&gt;
+  &lt;p&gt;I’ll patch in your phone. &lt;/p&gt;
   &lt;p&gt;Don’t load it until you’ve gone past security as they may need to check your bags. &lt;/p&gt;
   &lt;p&gt;READY?&lt;/p&gt;
 &lt;/div&gt;
 
  &lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
-      &lt;&lt;button [[Yes|$nextpass]]&gt;&gt;&lt;&lt;/button&gt;&gt;
+      &lt;&lt;button [[Yes|TransPass]]&gt;&gt;&lt;&lt;/button&gt;&gt;
     &lt;/span&gt;
 	&lt;/div&gt;
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="robberintro" tags="nobr" position="1225,225" size="100,100">&lt;&lt;set $prevpass to &quot;mapintro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="TransPass" tags="nobr" position="1257.6666666666667,107.66666666666666" size="200,100">&lt;&lt;audio &quot;newcomplete&quot; play&gt;&gt;
+&lt;div class=&quot;wrapper dots&quot;&gt;
+
+	&lt;main id=&quot;main&quot; class=&quot; flex-container-col-cen spin&quot;&gt;
+	
+	
+	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;https://remote.co.com/MoTT/AgentTraining/Sounds/sfx/Loading op 3.wav&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
+	
+	&lt;div class=&quot;mottlogo-wrapper&quot;&gt;&lt;img src=&quot;assets/img/mott-logo.png&quot; id=&quot;LogoRot&quot; class=&quot;logomott logoRot&quot; alt=&quot;The Ministry of Time Travel Logo is spinning&quot;&gt;&lt;/div&gt;
+
+
+	&lt;&lt;timed 8s&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+	
+
+	&lt;/main&gt;
+	&lt;footer&gt;&lt;/footer&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="21" name="robberintro" tags="nobr" position="100,350" size="100,100">&lt;&lt;set $prevpass to &quot;mapintro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;robberintro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;map&quot;&gt;&gt;
   &lt;&lt;addclass &quot;body&quot; &quot;orange&quot;&gt;&gt;
@@ -606,7 +623,7 @@ setup.requestCameraPermission = () => {
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footernext&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="21" name="map" tags="nobr" position="100,350" size="100,100">&lt;&lt;set $prevpass to &quot;mapintro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="map" tags="nobr" position="225,350" size="100,100">&lt;&lt;set $prevpass to &quot;mapintro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;map&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;ARIntro1&quot;&gt;&gt;
  &lt;&lt;addclass &quot;body&quot; &quot;orange&quot;&gt;&gt;
@@ -641,7 +658,7 @@ Stay very still.&quot;, coords: &quot;three&quot; },
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footermap&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="footermap" tags="nobr" position="225,350" size="100,100">&lt;footer class=&quot;map&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="footermap" tags="nobr" position="350,350" size="100,100">&lt;footer class=&quot;map&quot;&gt;
 &lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
   &lt;&lt;button &quot;Back&quot;&gt;&gt; 
     &lt;&lt;goto $prevpass&gt;&gt;
@@ -688,7 +705,7 @@ Stay very still.&quot;, coords: &quot;three&quot; },
     &lt;&lt;/replace&gt;&gt;
       &lt;&lt;replace &quot;#btnMount&quot;&gt;&gt;
     &lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;
-        &lt;&lt;button [[I have the trophy|$nextpass]]&gt;&gt;&lt;&lt;/button&gt;&gt;
+        &lt;&lt;button [[I&#39;m next to the trophy|$nextpass]]&gt;&gt;&lt;&lt;/button&gt;&gt;
       &lt;/span&gt;
     &lt;&lt;/replace&gt;&gt;
     &lt;&lt;replace &quot;#instruction&quot;&gt;&gt;
@@ -730,7 +747,7 @@ Stay very still.&quot;, coords: &quot;three&quot; },
     &lt;&lt;addclass &quot;#location&quot; &quot;three&quot;&gt;&gt;
     &lt;&lt;/timed&gt;&gt;
     &lt;&lt;/if&gt;&gt;
-    &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="ARIntro1" tags="nobr" position="350,350" size="100,100">&lt;&lt;set $prevpass to &quot;map&quot;&gt;&gt;
+    &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="ARIntro1" tags="nobr" position="475,350" size="100,100">&lt;&lt;set $prevpass to &quot;map&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;ARIntro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;AR&quot;&gt;&gt;
  &lt;&lt;addclass &quot;body&quot; &quot;orange&quot;&gt;&gt;
@@ -772,13 +789,13 @@ Stay very still.&quot;, coords: &quot;three&quot; },
 
 	&lt;/main&gt;
 	&lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="footer" tags="nobr" position="475,350" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="25" name="footer" tags="nobr" position="600,350" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
 &lt;&lt;if passage() is not &quot;onboarding1&quot;&gt;&gt;
   &lt;&lt;button &quot;Back&quot;&gt;&gt; 
     &lt;&lt;goto $prevpass&gt;&gt;
     &lt;&lt;/button&gt;&gt;
   &lt;&lt;/if&gt;&gt;
-&lt;/div&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="25" name="footernext" tags="nobr" position="600,350" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
+&lt;/div&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="26" name="footernext" tags="nobr" position="725,350" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
 &lt;&lt;if passage() is not &quot;onboarding1&quot;&gt;&gt;
   &lt;&lt;button &quot;Back&quot;&gt;&gt; 
     &lt;&lt;goto $prevpass&gt;&gt;

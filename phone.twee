@@ -154,6 +154,7 @@ setup.requestCameraPermission = () => {
 <<cacheaudio "uploading" "assets/sound/uploading.mp3">>
 <<cacheaudio "complete" "assets/sound/uploadcomplete.mp3">>
 <<cacheaudio "signal" "assets/sound/signal.mp3">>
+<<cacheaudio "newcomplete" "assets/sound/newcomplete.mp3">>
 <<waitforaudio>>
 
 
@@ -355,7 +356,7 @@ setup.requestCameraPermission = () => {
 
 	<<if $audioOn is true>><audio src="assets/audio/PHONE_1_owndevice_06_redchairs.mp3" autoplay>Audio not supported in your browser</audio><</if>>
   <div class="intro-text">
-	  <p>To begin, enter the word BEGIN into the tablet near the red chairs.</p>
+	  <p>To begin, enter the word BEGIN into the tablet next to the red chairs.</p>
    
      <<timed 60s>>
       <span class="button-wrapper" aria-label="Click a button or link to move on">
@@ -487,7 +488,7 @@ setup.requestCameraPermission = () => {
 
 <p>When there, click below and I’ll try to load it up. </p>
 
-<p>The live feed is a 360 camera so you may need to move your phone around to find the code. </p>
+<p>The live feed is a 360° camera so you may need to move your phone around to find the code. </p>
 
       <span class="button-wrapper" aria-label="Click a button or link to move on">
       <<button [[We're here|$nextpass]]>><</button>>
@@ -565,18 +566,37 @@ setup.requestCameraPermission = () => {
   <p>From a man from 1966 – that’s strange. </p>
 
   <p>Maybe they will lead us to what we need to find.  </p>
-  <p>I’ll patch it into your phone. </p>
+  <p>I’ll patch in your phone. </p>
   <p>Don’t load it until you’ve gone past security as they may need to check your bags. </p>
   <p>READY?</p>
 </div>
 
  <span class="button-wrapper" aria-label="Click a button or link to move on">
-      <<button [[Yes|$nextpass]]>><</button>>
+      <<button [[Yes|TransPass]]>><</button>>
     </span>
 	</div>
 
 	</main>
 	<<include "footer">>
+</div>
+
+:: TransPass [nobr] {"position":"1257.6666666666667,107.66666666666666","size":"200,100"}
+ <<audio "newcomplete" play>>
+<div class="wrapper dots">
+
+	<main id="main" class=" flex-container-col-cen spin">
+	
+	
+	<<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/Sounds/sfx/Loading op 3.wav" autoplay>Audio not supported in your browser</audio><</if>>
+	
+	<div class="mottlogo-wrapper"><img src="assets/img/mott-logo.png" id="LogoRot" class="logomott logoRot" alt="The Ministry of Time Travel Logo is spinning"></div>
+
+
+	<<timed 8s>><<goto $nextpass>><</timed>>
+	
+
+	</main>
+	<footer></footer>
 </div>
 
 :: robberintro [nobr]
@@ -693,7 +713,7 @@ Stay very still.", coords: "three" },
     <</replace>>
       <<replace "#btnMount">>
     <span class="button-wrapper" aria-label="Click a button or link to move on">
-        <<button [[I have the trophy|$nextpass]]>><</button>>
+        <<button [[I'm next to the trophy|$nextpass]]>><</button>>
       </span>
     <</replace>>
     <<replace "#instruction">>

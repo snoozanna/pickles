@@ -183,7 +183,7 @@ UIBar.destroy();
       </div>
       <div class="message-container" >
         <span class="sender">User</span>
-        	<p>Hello, I’m sending this through to you</p>
+        	<p>Hello? I’m sending this through to you</p>
 					
       </div>
     </div>
@@ -432,7 +432,7 @@ UIBar.destroy();
   <<append "#messagesContainer">>
     <div class="message">
       <div class="message-container" >
-	<p>Quickly we need to find the pin to access the Signal Fire System from here. </p>
+	<p>Quickly, we need to find the pin to access the Signal Fire System from here. </p>
       </div>
     </div>
   <</append>>
@@ -479,7 +479,7 @@ UIBar.destroy();
 <br/>
 <img src="assets/img/signal-w.png"/>
 <div id="codewordWrapper" class="codeword-wrapper">
-  <label for="textbox--password" tabindex="0" ><span aria-label="Enter the word below" role="label">Enter the word below</span></label>
+  <label for="textbox--password" tabindex="0" ><span aria-label="Enter the pin below" role="label">Enter the pin below</span></label>
   /% CODEWORD INPUT %/
    <div class="code-input">
      <<textbox "_password" "" >>
@@ -489,7 +489,7 @@ UIBar.destroy();
    /% STANDARDISE INPUT %/
        <<set _password to _password.toUpperCase()>>
    /% CODEWORD CORRECT %/
-       <<if _password isnot "" and _password is "1966">>
+       <<if _password isnot "" and _password is "8910">>
        <<replace "#coderesultsfs">><h2 class="subtitle complete">CORRECT</h2><</replace>>
           <<audio "correct" play>>
 			 <<timed 1s>>
@@ -505,7 +505,7 @@ UIBar.destroy();
 			 <</timed>>
       <</if>>
         /% CODEWORD INCORRECT %/
-     <<if _password isnot "" and _password is not "1966">>
+     <<if _password isnot "" and _password is not "8910">>
         <<replace "#coderesultsfs">><h2 class="subtitle">Thats not right.</h2><</replace>>
       <<timed 1.5s>><<replace "#coderesultsfs">> <h2>Locked</h2> <</replace>><</timed>>
         <</if>><</button>> 
@@ -606,7 +606,7 @@ UIBar.destroy();
       </div>
       <div class="message-container" >
         <span class="sender">User</span>
-    <p>Yes – that is the pin.</p>
+    <p>Yes – that's the pin.</p>
       </div>
     </div>
   <</append>>
@@ -669,8 +669,8 @@ Signal Fire System.</p>
 
 :: chatText3 [nobr]
 <div class="chat"><div class="messages-container" id="messagesContainer"></div></div>
-
-<<timed 2s>>
+/* TODO REPLACE AUDIO  */
+<<timed 1s>>
    <<replace "#audio">>
   <audio src="assets/audio/COMPUTER_3_corbett.mp3" autoplay>Audio not supported in your browser</audio>
   <</replace>>
@@ -687,7 +687,7 @@ Signal Fire System.</p>
   <</append>>
 <</timed>>
 
-<<timed 6s>>
+<<timed 5s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="message-container" >
@@ -697,27 +697,27 @@ Signal Fire System.</p>
   <</append>>
 <</timed>>
 
-<<timed 9s>>
+<<timed 8s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="message-container" >
-	<p>I’m going to give you the access code to open the SFS conduit nearby - 8910 </p>
+	<p>You have the specific name.  </p>
    
       </div>
     </div>
   <</append>>
 <</timed>>
 <<timed 10s>>
-  <<replace "#accessMount">>
-    <h3>Access code: 8910</h3>
-    <</replace>>
-  <</timed>>
-
-<<timed 18s>>
-  
+  <<append "#messagesContainer">>
+			<span class="button-wrapper" aria-label="Click a button or link to move on">
+    <<button "Next">>
 			<<replace "#chatMount">>
 	<<include "chatText3a">>
+
 	<</replace>>
+			<</button>>
+			</span>
+  <</append>>
 <</timed>>
 
 
@@ -725,6 +725,9 @@ Signal Fire System.</p>
 <div class="chat"><div class="messages-container" id="messagesContainer"></div></div>
 
 <<timed 0.1s>>
+    <<replace "#audio">>
+  <audio src="assets/audio/BACKUP_1.mp3" autoplay>Audio not supported in your browser</audio>
+  <</replace>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
@@ -732,7 +735,7 @@ Signal Fire System.</p>
       </div>
       <div class="message-container" >
         <span class="sender">User</span>
-    		<p>Answer the call</p>
+    		<p>You need to put the call into Corbett. </p>
       </div>
     </div>
   <</append>>
@@ -742,18 +745,42 @@ Signal Fire System.</p>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="message-container" >
- 	<p>You need to keep Corbett on the line. </p>
+ 	<p>We’ll use your phone to boost the SFS and if it works then you should be able to get through to Corbett. </p>
       </div>
     </div>
   <</append>>
 <</timed>>
 
-<<timed 5s>>
+<<timed 8s>>
+  <<append "#messagesContainer">>
+			<span class="button-wrapper" aria-label="Click a button or link to move on">
+    <<button "Next">>
+			<<replace "#chatMount">>
+	<<include "chatText3b">>
+
+	<</replace>>
+			<</button>>
+			</span>
+  <</append>>
+<</timed>>
+
+
+
+:: chatText3b [nobr]
+<div class="chat"><div class="messages-container" id="messagesContainer"></div></div>
+
+<<timed 0.1s>>
+    <<replace "#audio">>
+  <audio src="assets/audio/BACKUP_2.mp3" autoplay>Audio not supported in your browser</audio>
+  <</replace>>
   <<append "#messagesContainer">>
     <div class="message">
+      <div class="avatar">
+        <img src="assets/img/user.png" alt="avatar"/>
+      </div>
       <div class="message-container" >
-	<p>30 seconds.</p>
-   
+        <span class="sender">User</span>
+    		<p>Enter the SFS conduit nearby using the number 8910</p>
       </div>
     </div>
   <</append>>
@@ -763,106 +790,55 @@ Signal Fire System.</p>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="message-container" >
-	<p>Keep him on the phone for 30 seconds.</p>
-      </div>
-    </div>
-  <</append>>
-<</timed>>
-	
-
-<<timed 9s>>
-  <<append "#messagesContainer">>
-    <div class="message">
-      <div class="message-container" >
-	<p>30 seconds to give Pickles time to find the World Cup.</p>
+ 	<p>Then on your phone I need you to text the word CORBETT to 07480 786415.  </p>
       </div>
     </div>
   <</append>>
 <</timed>>
 
-<<timed 12s>>
+<<timed 18s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="message-container" >
-	<p>30 seconds to save the MoTT.</p>
-      </div>
-    </div>
-  <</append>>
-<</timed>>
-
-<<timed 12s>>
-  <<append "#messagesContainer">>
-    <div class="message">
-      <div class="message-container" >
-	<p>Time to save time.</p>
-      </div>
-    </div>
-  <</append>>
-<</timed>>
-
-/* <<timed 14s>>
-  <<append "#messagesContainer">>
-			<span class="button-wrapper" aria-label="Click a button or link to move on">
-    <<button "Next">>
-			<<replace "#chatMount">>
-	<<include "chatText3b">>
-	<</replace>>
-			<</button>>
-			</span>
-  <</append>>
-<</timed>> */
-
-
-:: chatText3b [nobr]
-<div class="chat"><div class="messages-container" id="messagesContainer"></div></div>
-
-<<timed 2s>>
-  <<append "#messagesContainer">>
-    <div class="message">
-      <div class="avatar">
-        <img src="assets/img/user.png" alt="avatar"/>
-      </div>
-      <div class="message-container" >
-        <span class="sender">User</span>
-    		<p>I’m going to give you the password to enter the SFS conduit nearby - 8910.</p>
-      </div>
-    </div>
-  <</append>>
-<</timed>>
-
-<<timed 4s>>
-  <<append "#messagesContainer">>
-    <div class="message">
-      <div class="message-container" >
- 	<p>Open the SFS conduit and click call. </p>
-      </div>
-    </div>
-  <</append>>
-<</timed>>
-
-<<timed 6s>>
-  <<append "#messagesContainer">>
-    <div class="message">
-      <div class="message-container" >
-	<p>You might need to activate the voice feature.</p>
+	<p>If it has all worked.</p>
    
       </div>
     </div>
   <</append>>
 <</timed>>
 
-<<timed 8s>>
+<<timed 19s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="message-container" >
-	<p>Then speak on the phone receiver. </p>
+	<p>Then you will make the connection.  </p>
       </div>
     </div>
   <</append>>
 <</timed>>
 	
 
-<<timed 10s>>
+<<timed 21s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="message-container" >
+	<p>Time to help Pickles</p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 23s>>
+  <<append "#messagesContainer">>
+    <div class="message">
+      <div class="message-container" >
+	<p>Time to save the World Cup. </p>
+      </div>
+    </div>
+  <</append>>
+<</timed>>
+
+<<timed 26s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="message-container" >
@@ -875,13 +851,12 @@ Signal Fire System.</p>
 
 
 
-
 :: video8[nobr]
 <<set $prevpass to "desktop">>
 <<set $passage to "video8">>
 <<set $nextpass to "desktop">>
 /* VIDEO  */
-VIDEO 8
+
 <div class="wrapper">
 	<main id="main" class="video"><<set $title to "V6">>
 	<div id="video" role="video" class="video-wrapper"  aria-label="MOTT Training 6 video"><iframe src="https://player.vimeo.com/video/570860329?h=048466f8a2&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="MOTT Training 6"></iframe></div>
@@ -895,7 +870,7 @@ VIDEO 8
 <<goto $nextpass>>
 <</button>></span><</append>> <</timed>>
 <</silently>>
->>
+
 
 :: pillars1 [nobr]
 <<set $prevpass to "video1">>
@@ -924,12 +899,15 @@ VIDEO 8
         <img src="assets/img/user.png" alt="avatar"/>
       </div>
       <div class="message-container" >
-        <span class="sender">User</span>
+        <span class="sender">Chief Timer</span>
     				<p>Give the Pickles Dog Collar back to my friend near the Cabinet Table and they may give you something in return...</p>
       </div>
     </div>
   <</append>>
 <</timed>>
+<<timed 60s>>
+  <<script>>Engine.restart()<</script>>
+  <</timed>>
 
 
 

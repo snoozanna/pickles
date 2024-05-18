@@ -425,3 +425,14 @@ video.video {
 .dissolvephone {
   animation: 20s dissolve 0.5s ease-out forwards;
 }
+
+/* SPINNIIG LOGO */
+main.spin{
+  height: 100%;
+}
+.mottlogo-wrapper{
+  height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
