@@ -62,7 +62,7 @@ UIBar.destroy();
 <div class="wrapper cogs">
 	<<include "header">>
 	<main id="main" class="flex-container-col tabletmain">
-	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+
 <<include "pwEntrance">>
 
 	</main>

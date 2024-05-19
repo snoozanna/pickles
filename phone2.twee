@@ -158,7 +158,7 @@ function log(msg) {
 	/* <<include "header">> */
     <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	/* <<if $audioOn is true>><audio src="https://remote.co.com/MoTT/AgentTraining/assets/audio/Welcome1.mp3" autoplay>Audio not supported in your browser</audio><</if>> */
+	
 
 <h2 class="bluehighlighttext">Touch the Cup</h2>
   <div class="ar-imgs-container">
