@@ -194,20 +194,29 @@ setup.requestCameraPermission = () => {
 	<<include "headerb">>
    <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/PHONE_6_cabinettable_4.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>>
+    <div id="audio">
+      <audio src="assets/audio/PHONE_6_cabinettable_4.mp3" autoplay >Audio not supported in your browser</audio>
+     </div><</if>>
   /* TODO ADD IN TO GET IN  */
 
 <div class="intro-text">
   <p>Right, time to finish this mission.</p> 
   <p>Hand back the transcript to the librarian and then look for the wooden cabinet in between the R.E.D. desk and the cabinet table. It seems the SFS has sent the briefcase there. </p>
+
+  <<timed 15s>>
+    <<replace "#audio">>
+       <audio src="assets/audio/NEW_PHONE_6_cabinettable_5_redux.mp3" autoplay >Audio not supported in your browser</audio>
+      <</replace>>
+    <</timed>>
   
-  <p>To get in you’ll need to [TBC] </p>
+  <p>To get in you’ll need to need to enter the code 1966.</p>
   <p>Click next when the cabinet is open. </p>
 </div>
 
 
 	</main>
-	<<include "footeropen">>
+	<<include "footer">>
 </div>
 
 :: footeropen [nobr]

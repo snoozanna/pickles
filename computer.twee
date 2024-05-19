@@ -687,7 +687,7 @@ Signal Fire System.</p>
   <</append>>
 <</timed>>
 
-<<timed 5s>>
+<<timed 4s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="message-container" >
@@ -697,17 +697,7 @@ Signal Fire System.</p>
   <</append>>
 <</timed>>
 
-<<timed 8s>>
-  <<append "#messagesContainer">>
-    <div class="message">
-      <div class="message-container" >
-	<p>You have the specific name.  </p>
-   
-      </div>
-    </div>
-  <</append>>
-<</timed>>
-<<timed 10s>>
+<<timed 6s>>
   <<append "#messagesContainer">>
 			<span class="button-wrapper" aria-label="Click a button or link to move on">
     <<button "Next">>

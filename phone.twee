@@ -395,7 +395,6 @@ setup.requestCameraPermission = () => {
 
 
 :: pwSFS [nobr]
-/* TODO CHECK ACCESS  */
 <div id="coderesult"></div>
 <div id="resultbutton">
   /% CODEWORD INPUT %/

@@ -253,20 +253,29 @@ setup.requestCameraPermission = () => {
 	&lt;&lt;include &quot;headerb&quot;&gt;&gt;
    &lt;div class=&quot;rotate-warning&quot;&gt;&lt;h3&gt;Rotate your phone.&lt;/h3&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;&quot;&gt;
-	&lt;&lt;if $audioOn is true&gt;&gt;&lt;audio src=&quot;assets/audio/PHONE_6_cabinettable_4.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;&lt;&lt;/if&gt;&gt;
+	&lt;&lt;if $audioOn is true&gt;&gt;
+    &lt;div id=&quot;audio&quot;&gt;
+      &lt;audio src=&quot;assets/audio/PHONE_6_cabinettable_4.mp3&quot; autoplay &gt;Audio not supported in your browser&lt;/audio&gt;
+     &lt;/div&gt;&lt;&lt;/if&gt;&gt;
   /* TODO ADD IN TO GET IN  */
 
 &lt;div class=&quot;intro-text&quot;&gt;
   &lt;p&gt;Right, time to finish this mission.&lt;/p&gt; 
   &lt;p&gt;Hand back the transcript to the librarian and then look for the wooden cabinet in between the R.E.D. desk and the cabinet table. It seems the SFS has sent the briefcase there. &lt;/p&gt;
+
+  &lt;&lt;timed 15s&gt;&gt;
+    &lt;&lt;replace &quot;#audio&quot;&gt;&gt;
+       &lt;audio src=&quot;assets/audio/NEW_PHONE_6_cabinettable_5_redux.mp3&quot; autoplay &gt;Audio not supported in your browser&lt;/audio&gt;
+      &lt;&lt;/replace&gt;&gt;
+    &lt;&lt;/timed&gt;&gt;
   
-  &lt;p&gt;To get in you’ll need to [TBC] &lt;/p&gt;
+  &lt;p&gt;To get in you’ll need to need to enter the code 1966.&lt;/p&gt;
   &lt;p&gt;Click next when the cabinet is open. &lt;/p&gt;
 &lt;/div&gt;
 
 
 	&lt;/main&gt;
-	&lt;&lt;include &quot;footeropen&quot;&gt;&gt;
+	&lt;&lt;include &quot;footer&quot;&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="7" name="footeropen" tags="nobr" position="850,100" size="100,100">&lt;footer&gt;&lt;nav class=&quot;&quot;&gt;&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;
 &lt;&lt;if passage() is not &quot;onboarding1&quot;&gt;&gt;
   &lt;&lt;button &quot;Back&quot;&gt;&gt; 
