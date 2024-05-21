@@ -162,17 +162,17 @@ setup.requestCameraPermission = () => {
 
 
   <div class="wrapper audio" id="mount">
-	<div class="phone-warning"><p>Phone</p></div>
-<div class="multiple-btn-wrapper">
+	<div class="comp-warning"><p>Best experienced on a phone.</p>
+  </div>
+  <div class="multiple-btn-wrapper" id="startBtn">
 	<span aria-label="Click Button to begin" class="button-wrapper">
 		<<button "Begin">>
 			<<goto "onboarding1">>
 		<</button>>
 	</span>
-
-	
 </div>
-  </div >
+  </div>
+
 
 :: header [nobr]
 <header>
@@ -565,7 +565,7 @@ setup.requestCameraPermission = () => {
   <p>From a man from 1966 – that’s strange. </p>
 
   <p>Maybe they will lead us to what we need to find.  </p>
-  <p>I’ll patch in your phone. </p>
+  <p>I’ll patch into your phone. </p>
   <p>Don’t load it until you’ve gone past security as they may need to check your bags. </p>
   <p>READY?</p>
 </div>

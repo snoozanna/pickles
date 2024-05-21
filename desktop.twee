@@ -48,13 +48,19 @@ UIBar.destroy();
 <<set $audioOn to true>>
 <<set $finaldesktop to false>>
 <div class="wrapper cogs">
-	<<include "header">>
+		<div class="logo-wrapper office"><img src="assets/img/na-logo.png" alt="The National Archives Logo" class="logo na" aria-hidden="true"></div>
 	<main id="main" class="flex-container-col"><<set $title to 1>>
 
 	
-	<<timed 1s>>
-<div class="pwBox-wrapper"><<include "pwBox">></div>
-<</timed>>
+<div class="menuWrapper">
+
+<div class="trainingMission">
+<h2>MoTT Training Mission</h2>
+<img src="assets/img/mott-logo-thick.png"/>
+<span class="button-wrapper" aria-label="Click Button to go to the training mission"><a href=""  rel="noreferrer"><span>Start</span></a></span>
+</div>
+<<include "pwBox">>
+</div>
 	</main>
 	/* <<include "footer">> */
   <footer/>
@@ -62,16 +68,16 @@ UIBar.destroy();
 
 
 :: pwBox [nobr]
-<div id="codewordWrapper" class="codeword-wrapper pwBox">
-<H3>ENTER PASSWORD:</H3>
+<div id="codewordWrapper" class="codeword-wrapper trainingMission">
+<H2>Chief Timer's Computer</H2>
 
-  <label for="textbox--password" tabindex="0" ><span aria-label="Enter the name on the Dog Tag" role="label">Enter the name on the Dog Tag</span></label>
+  <label for="textbox--password" tabindex="0" ><span aria-label="Enter the name on the Dog Tag" role="label">Enter the name on the Dog Tag:</span></label>
   /% CODEWORD INPUT %/
-   <div class="code-input">
+   <div class="code-input pwBox">
      <<textbox "_password" "" >>
     </div>
    <span class="button-wrapper" aria-label="Click Button to go Check your answer">
-     <<button "Enter">>  
+     <<button "Start">>  
    /% STANDARDISE INPUT %/
        <<set _password to _password.toUpperCase()>>
    /% CODEWORD CORRECT %/
@@ -105,7 +111,7 @@ UIBar.destroy();
     <span>Edit</span>
     <span>Diary</span>
     <span>Email Inbox</span>
-    <span>Help</span>
+      <span><a href="">Back to login screen</a></span>
   </div>
    <div class="header-item symbols">
     <span><img src="assets/img/bat.png"></span>
@@ -118,6 +124,7 @@ UIBar.destroy();
 
 	/* <<include "header">> */
 	<main id="main" class="grid-container" >
+
   	<div id="fileMount" class="fileMount"><<include "pwFile">>
 </div>
  <div class="folder-container"> <img src="assets/img/Green_Desktop_Folder.png"/>
@@ -173,6 +180,7 @@ UIBar.destroy();
 <div class="chat"><div class="messages-container" id="messagesContainer"></div></div>
 
 <<timed 2s>>
+ 
   <<replace "#audio">>
   <audio src="assets/audio/COMPUTER_1_MoTT_1.mp3" autoplay>Audio not supported in your browser</audio>
   <</replace>>
@@ -672,7 +680,7 @@ Signal Fire System.</p>
 /* TODO REPLACE AUDIO  */
 <<timed 1s>>
    <<replace "#audio">>
-  <audio src="assets/audio/COMPUTER_3_corbett.mp3" autoplay>Audio not supported in your browser</audio>
+  <audio src="assets/audio/NEW_BACKUP_Corbett.mp3" autoplay>Audio not supported in your browser</audio>
   <</replace>>
   <<append "#messagesContainer">>
     <div class="message">
@@ -761,7 +769,7 @@ Signal Fire System.</p>
 
 <<timed 0.1s>>
     <<replace "#audio">>
-  <audio src="assets/audio/BACKUP_2.mp3" autoplay>Audio not supported in your browser</audio>
+  <audio src="assets/audio/NEW_BACKUP_2_version1.mp3" autoplay>Audio not supported in your browser</audio>
   <</replace>>
   <<append "#messagesContainer">>
     <div class="message">
@@ -770,23 +778,14 @@ Signal Fire System.</p>
       </div>
       <div class="message-container" >
         <span class="sender">User</span>
-    		<p>Enter the SFS conduit nearby using the number 8910</p>
+    		<p>On your phone I need you to text the word CORBETT to the Signal Fire System</p>
       </div>
     </div>
   <</append>>
 <</timed>>
 
-<<timed 7s>>
-  <<append "#messagesContainer">>
-    <div class="message">
-      <div class="message-container" >
- 	<p>Then on your phone I need you to text the word CORBETT to 07480 786415.  </p>
-      </div>
-    </div>
-  <</append>>
-<</timed>>
 
-<<timed 18s>>
+<<timed 6s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="message-container" >
@@ -797,7 +796,7 @@ Signal Fire System.</p>
   <</append>>
 <</timed>>
 
-<<timed 19s>>
+<<timed 8s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="message-container" >
@@ -808,7 +807,7 @@ Signal Fire System.</p>
 <</timed>>
 	
 
-<<timed 21s>>
+<<timed 10s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="message-container" >
@@ -818,17 +817,17 @@ Signal Fire System.</p>
   <</append>>
 <</timed>>
 
-<<timed 23s>>
+<<timed 12s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="message-container" >
-	<p>Time to save the World Cup. </p>
+	<p>Time to find the World Cup. </p>
       </div>
     </div>
   <</append>>
 <</timed>>
 
-<<timed 26s>>
+<<timed 14s>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="message-container" >
@@ -837,6 +836,20 @@ Signal Fire System.</p>
     </div>
   <</append>>
 <</timed>>
+
+<<timed 16s>>
+  <<replace "#sfsMount">>
+          <<removeclass "#sfsMount" "green">>
+          <<addclass "#sfsMount" "purple">>
+					<<include "pwSFSHint">>
+					<</replace>>
+  <</timed>>
+
+
+:: pwSFSHint [nobr]
+<h2>To amplify the Signal Fire System</h2> 
+<br/>
+<p>Text the word CORBETT to 07480786415</p>
 
 
 

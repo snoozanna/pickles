@@ -436,3 +436,22 @@ main.spin{
     justify-content: center;
     align-items: center;
 }
+
+/* SHOW NOTHING ON A COMP  */
+
+.comp-warning{
+  display: none;
+}
+
+@media screen and (min-width: 500px) {
+#startBtn{
+  display: none
+}
+  .comp-warning {
+    display: initial;
+    text-align: center;
+  }
+  .comp-warning > p {
+    text-align: center;
+  }
+}

@@ -114,26 +114,32 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 &lt;&lt;set $audioOn to true&gt;&gt;
 &lt;&lt;set $finaldesktop to false&gt;&gt;
 &lt;div class=&quot;wrapper cogs&quot;&gt;
-	&lt;&lt;include &quot;header&quot;&gt;&gt;
+		&lt;div class=&quot;logo-wrapper office&quot;&gt;&lt;img src=&quot;assets/img/na-logo.png&quot; alt=&quot;The National Archives Logo&quot; class=&quot;logo na&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
 	&lt;main id=&quot;main&quot; class=&quot;flex-container-col&quot;&gt;&lt;&lt;set $title to 1&gt;&gt;
 
 	
-	&lt;&lt;timed 1s&gt;&gt;
-&lt;div class=&quot;pwBox-wrapper&quot;&gt;&lt;&lt;include &quot;pwBox&quot;&gt;&gt;&lt;/div&gt;
-&lt;&lt;/timed&gt;&gt;
+&lt;div class=&quot;menuWrapper&quot;&gt;
+
+&lt;div class=&quot;trainingMission&quot;&gt;
+&lt;h2&gt;MoTT Training Mission&lt;/h2&gt;
+&lt;img src=&quot;assets/img/mott-logo-thick.png&quot;/&gt;
+&lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click Button to go to the training mission&quot;&gt;&lt;a href=&quot;&quot;  rel=&quot;noreferrer&quot;&gt;&lt;span&gt;Start&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;&lt;include &quot;pwBox&quot;&gt;&gt;
+&lt;/div&gt;
 	&lt;/main&gt;
 	/* &lt;&lt;include &quot;footer&quot;&gt;&gt; */
   &lt;footer/&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="4" name="pwBox" tags="nobr" position="475,100" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper pwBox&quot;&gt;
-&lt;H3&gt;ENTER PASSWORD:&lt;/H3&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="4" name="pwBox" tags="nobr" position="475,100" size="100,100">&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper trainingMission&quot;&gt;
+&lt;H2&gt;Chief Timer&#39;s Computer&lt;/H2&gt;
 
-  &lt;label for=&quot;textbox--password&quot; tabindex=&quot;0&quot; &gt;&lt;span aria-label=&quot;Enter the name on the Dog Tag&quot; role=&quot;label&quot;&gt;Enter the name on the Dog Tag&lt;/span&gt;&lt;/label&gt;
+  &lt;label for=&quot;textbox--password&quot; tabindex=&quot;0&quot; &gt;&lt;span aria-label=&quot;Enter the name on the Dog Tag&quot; role=&quot;label&quot;&gt;Enter the name on the Dog Tag:&lt;/span&gt;&lt;/label&gt;
   /% CODEWORD INPUT %/
-   &lt;div class=&quot;code-input&quot;&gt;
+   &lt;div class=&quot;code-input pwBox&quot;&gt;
      &lt;&lt;textbox &quot;_password&quot; &quot;&quot; &gt;&gt;
     &lt;/div&gt;
    &lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click Button to go Check your answer&quot;&gt;
-     &lt;&lt;button &quot;Enter&quot;&gt;&gt;  
+     &lt;&lt;button &quot;Start&quot;&gt;&gt;  
    /% STANDARDISE INPUT %/
        &lt;&lt;set _password to _password.toUpperCase()&gt;&gt;
    /% CODEWORD CORRECT %/
@@ -164,7 +170,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
     &lt;span&gt;Edit&lt;/span&gt;
     &lt;span&gt;Diary&lt;/span&gt;
     &lt;span&gt;Email Inbox&lt;/span&gt;
-    &lt;span&gt;Help&lt;/span&gt;
+      &lt;span&gt;&lt;a href=&quot;&quot;&gt;Back to login screen&lt;/a&gt;&lt;/span&gt;
   &lt;/div&gt;
    &lt;div class=&quot;header-item symbols&quot;&gt;
     &lt;span&gt;&lt;img src=&quot;assets/img/bat.png&quot;&gt;&lt;/span&gt;
@@ -177,6 +183,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 
 	/* &lt;&lt;include &quot;header&quot;&gt;&gt; */
 	&lt;main id=&quot;main&quot; class=&quot;grid-container&quot; &gt;
+
   	&lt;div id=&quot;fileMount&quot; class=&quot;fileMount&quot;&gt;&lt;&lt;include &quot;pwFile&quot;&gt;&gt;
 &lt;/div&gt;
  &lt;div class=&quot;folder-container&quot;&gt; &lt;img src=&quot;assets/img/Green_Desktop_Folder.png&quot;/&gt;
@@ -226,6 +233,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 &lt;/span&gt;</tw-passagedata><tw-passagedata pid="7" name="chatText1a" tags="nobr" position="850,100" size="100,100">&lt;div class=&quot;chat&quot;&gt;&lt;div class=&quot;messages-container&quot; id=&quot;messagesContainer&quot;&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;&lt;timed 2s&gt;&gt;
+ 
   &lt;&lt;replace &quot;#audio&quot;&gt;&gt;
   &lt;audio src=&quot;assets/audio/COMPUTER_1_MoTT_1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;
   &lt;&lt;/replace&gt;&gt;
@@ -684,7 +692,7 @@ Signal Fire System.&lt;/p&gt;
 /* TODO REPLACE AUDIO  */
 &lt;&lt;timed 1s&gt;&gt;
    &lt;&lt;replace &quot;#audio&quot;&gt;&gt;
-  &lt;audio src=&quot;assets/audio/NEW_BACKUP_Corbettt.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;
+  &lt;audio src=&quot;assets/audio/NEW_BACKUP_Corbett.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;
   &lt;&lt;/replace&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
@@ -764,7 +772,7 @@ Signal Fire System.&lt;/p&gt;
 
 &lt;&lt;timed 0.1s&gt;&gt;
     &lt;&lt;replace &quot;#audio&quot;&gt;&gt;
-  &lt;audio src=&quot;assets/audio/BACKUP_2.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;
+  &lt;audio src=&quot;assets/audio/NEW_BACKUP_2_version1.mp3&quot; autoplay&gt;Audio not supported in your browser&lt;/audio&gt;
   &lt;&lt;/replace&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
@@ -773,23 +781,14 @@ Signal Fire System.&lt;/p&gt;
       &lt;/div&gt;
       &lt;div class=&quot;message-container&quot; &gt;
         &lt;span class=&quot;sender&quot;&gt;User&lt;/span&gt;
-    		&lt;p&gt;Enter the SFS conduit nearby using the number 8910&lt;/p&gt;
+    		&lt;p&gt;On your phone I need you to text the word CORBETT to the Signal Fire System&lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 7s&gt;&gt;
-  &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
-    &lt;div class=&quot;message&quot;&gt;
-      &lt;div class=&quot;message-container&quot; &gt;
- 	&lt;p&gt;Then on your phone I need you to text the word CORBETT to 07480 786415.  &lt;/p&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 18s&gt;&gt;
+&lt;&lt;timed 6s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;message-container&quot; &gt;
@@ -800,7 +799,7 @@ Signal Fire System.&lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 19s&gt;&gt;
+&lt;&lt;timed 8s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;message-container&quot; &gt;
@@ -811,7 +810,7 @@ Signal Fire System.&lt;/p&gt;
 &lt;&lt;/timed&gt;&gt;
 	
 
-&lt;&lt;timed 21s&gt;&gt;
+&lt;&lt;timed 10s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;message-container&quot; &gt;
@@ -821,17 +820,17 @@ Signal Fire System.&lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 23s&gt;&gt;
+&lt;&lt;timed 12s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;message-container&quot; &gt;
-	&lt;p&gt;Time to save the World Cup. &lt;/p&gt;
+	&lt;p&gt;Time to find the World Cup. &lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 26s&gt;&gt;
+&lt;&lt;timed 14s&gt;&gt;
   &lt;&lt;append &quot;#messagesContainer&quot;&gt;&gt;
     &lt;div class=&quot;message&quot;&gt;
       &lt;div class=&quot;message-container&quot; &gt;
@@ -839,7 +838,17 @@ Signal Fire System.&lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="video8" tags="nobr" position="1225,225" size="100,100">&lt;&lt;set $prevpass to &quot;desktop&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 16s&gt;&gt;
+  &lt;&lt;replace &quot;#sfsMount&quot;&gt;&gt;
+          &lt;&lt;removeclass &quot;#sfsMount&quot; &quot;green&quot;&gt;&gt;
+          &lt;&lt;addclass &quot;#sfsMount&quot; &quot;purple&quot;&gt;&gt;
+					&lt;&lt;include &quot;pwSFSHint&quot;&gt;&gt;
+					&lt;&lt;/replace&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="pwSFSHint" tags="nobr" position="1225,225" size="100,100">&lt;h2&gt;To amplify the Signal Fire System&lt;/h2&gt; 
+&lt;br/&gt;
+&lt;p&gt;Text the word CORBETT to 07480786415&lt;/p&gt;</tw-passagedata><tw-passagedata pid="21" name="video8" tags="nobr" position="100,350" size="100,100">&lt;&lt;set $prevpass to &quot;desktop&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;video8&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;desktop&quot;&gt;&gt;
 /* VIDEO  */
@@ -856,7 +865,7 @@ Signal Fire System.&lt;/p&gt;
 		&lt;&lt;set $finaldesktop to true&gt;&gt;
 &lt;&lt;goto $nextpass&gt;&gt;
 &lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;&lt;/append&gt;&gt; &lt;&lt;/timed&gt;&gt;
-&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="pillars1" tags="nobr" position="100,350" size="100,100">&lt;&lt;set $prevpass to &quot;video1&quot;&gt;&gt;
+&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="pillars1" tags="nobr" position="225,350" size="100,100">&lt;&lt;set $prevpass to &quot;video1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;pillars1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;video2&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs&quot;&gt;
@@ -867,7 +876,7 @@ Signal Fire System.&lt;/p&gt;
 &lt;&lt;include &quot;pwPillar&quot;&gt;&gt;
 
 	&lt;/main&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="chatText4" tags="nobr" position="225,350" size="100,100">&lt;div class=&quot;chat&quot;&gt;&lt;div class=&quot;messages-container&quot; id=&quot;messagesContainer&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="chatText4" tags="nobr" position="350,350" size="100,100">&lt;div class=&quot;chat&quot;&gt;&lt;div class=&quot;messages-container&quot; id=&quot;messagesContainer&quot;&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;&lt;timed 0.1s&gt;&gt;
    &lt;&lt;replace &quot;#audio&quot;&gt;&gt;
@@ -887,7 +896,7 @@ Signal Fire System.&lt;/p&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 60s&gt;&gt;
   &lt;&lt;script&gt;&gt;Engine.restart()&lt;&lt;/script&gt;&gt;
-  &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="pwPillar" tags="nobr" position="350,350" size="100,100">/* TODO CHECK ACCESS  */
+  &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="pwPillar" tags="nobr" position="475,350" size="100,100">/* TODO CHECK ACCESS  */
 &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
 &lt;div id=&quot;resultbutton&quot;&gt;
   /% CODEWORD INPUT %/
@@ -923,7 +932,7 @@ Signal Fire System.&lt;/p&gt;
   &lt;&lt;/if&gt;&gt;
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="video2" tags="nobr" position="475,350" size="100,100">&lt;&lt;set $prevpass to &quot;pillars1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="25" name="video2" tags="nobr" position="600,350" size="100,100">&lt;&lt;set $prevpass to &quot;pillars1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;video2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;pillars2&quot;&gt;&gt;
 /* VIDEO  */
@@ -936,7 +945,7 @@ VIDEO 2
 &lt;/div&gt;
 &lt;&lt;silently&gt;&gt;
 &lt;&lt;timed 0.1s t8n&gt;&gt;&lt;&lt;append &quot;#text&quot;&gt;&gt;&lt;br&gt;&lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;&lt;&lt;button &quot;Next&quot; $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;&lt;&lt;/append&gt;&gt; &lt;&lt;/timed&gt;&gt;
-&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="pillars2" tags="nobr" position="600,350" size="100,100">&lt;&lt;set $prevpass to &quot;video2&quot;&gt;&gt;
+&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="pillars2" tags="nobr" position="725,350" size="100,100">&lt;&lt;set $prevpass to &quot;video2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;pillars2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;onboarding3&quot;&gt;&gt;
 &lt;div class=&quot;wrapper cogs&quot;&gt;
@@ -956,11 +965,11 @@ VIDEO 2
 
 &lt;&lt;timed 180s&gt;&gt;
 	&lt;&lt;goto &quot;Start&quot;&gt;&gt;
-	&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="footer" tags="nobr" position="725,350" size="100,100">&lt;footer&gt;&lt;nav class=&quot;left&quot;&gt;
+	&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="footer" tags="nobr" position="850,350" size="100,100">&lt;footer&gt;&lt;nav class=&quot;left&quot;&gt;
 
-&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;&lt;&lt;back&gt;&gt;&lt;/div&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="27" name="footerentrance" tags="nobr" position="850,350" size="100,100">&lt;footer&gt;&lt;nav class=&quot;right&quot;&gt;
+&lt;div id=&quot;back&quot; class=&quot;button-wrapper&quot;&gt;&lt;&lt;back&gt;&gt;&lt;/div&gt;&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="28" name="footerentrance" tags="nobr" position="975,350" size="100,100">&lt;footer&gt;&lt;nav class=&quot;right&quot;&gt;
 	&lt;span class=&quot;button-wrapper&quot; aria-label=&quot;Click a button or link to move on&quot;&gt;&lt;&lt;button [[&quot;Chief Timers Computer&quot;|$nextpass]]&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/span&gt;
-	&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="28" name="footerdesktop" tags="nobr" position="975,350" size="100,100">&lt;footer&gt;&lt;nav class=&quot;right&quot; &gt;
+	&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="29" name="footerdesktop" tags="nobr" position="1100,350" size="100,100">&lt;footer&gt;&lt;nav class=&quot;right&quot; &gt;
 
 	&lt;/nav&gt;&lt;/footer&gt;</tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">
