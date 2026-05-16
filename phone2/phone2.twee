@@ -218,7 +218,7 @@ function log(msg) {
          <<timed 3s>><<goto $nextpass>><</timed>>
         <</if>>
           /% CODEWORD INCORRECT %/
-       <<if _password isnot "" and _password is not "DPP 2/4167">>
+       <<if _password isnot "" and _password isnot "DPP 2/4167">>
           <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
         <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
           <</if>><</button>> 
@@ -385,7 +385,7 @@ function log(msg) {
        <<timed 3s>><<goto $nextpass>><</timed>>
       <</if>>
         /% CODEWORD INCORRECT %/
-     <<if _password isnot "" and _password is not "JOE">>
+     <<if _password isnot "" and _password isnot "JOE">>
         <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
       <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
         <</if>><</button>> 
