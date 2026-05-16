@@ -108,7 +108,6 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 
 @import url("../styles/generics.css");
 @import url("../styles/styles.css");
-@import url("../styles/twine.css");
 @import url("../styles/phone.css");</style><script role="script" id="twine-user-script" type="text/twine-javascript">UIBar.destroy();
 
 
@@ -263,7 +262,7 @@ setup.requestCameraPermission = () => {
     &lt;div id=&quot;audio&quot;&gt;
       &lt;audio src=&quot;../assets/audio/PHONE_6_cabinettable_4.mp3&quot; autoplay &gt;Audio not supported in your browser&lt;/audio&gt;
      &lt;/div&gt;&lt;&lt;/if&gt;&gt;
-  /* TODO ADD IN TO GET IN  */
+
 
 &lt;div class=&quot;intro-text&quot;&gt;
   &lt;p&gt;Right, time to finish this mission.&lt;/p&gt; 
@@ -330,7 +329,7 @@ setup.requestCameraPermission = () => {
        &lt;&lt;timed 3s&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
       &lt;&lt;/if&gt;&gt;
         /% CODEWORD INCORRECT %/
-     &lt;&lt;if _password isnot &quot;&quot; and _password is not &quot;TADAH&quot;&gt;&gt;
+     &lt;&lt;if _password isnot &quot;&quot; and _password isnot &quot;TADAH&quot;&gt;&gt;
         &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
       &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
         &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt; 

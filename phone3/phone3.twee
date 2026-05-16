@@ -17,7 +17,6 @@ Pickles - National Archives - Phone 3
 
 @import url("../styles/generics.css");
 @import url("../styles/styles.css");
-@import url("../styles/twine.css");
 @import url("../styles/phone.css");
 
 
@@ -198,7 +197,7 @@ setup.requestCameraPermission = () => {
     <div id="audio">
       <audio src="../assets/audio/PHONE_6_cabinettable_4.mp3" autoplay >Audio not supported in your browser</audio>
      </div><</if>>
-  /* TODO ADD IN TO GET IN  */
+
 
 <div class="intro-text">
   <p>Right, time to finish this mission.</p> 
@@ -276,7 +275,7 @@ setup.requestCameraPermission = () => {
        <<timed 3s>><<goto $nextpass>><</timed>>
       <</if>>
         /% CODEWORD INCORRECT %/
-     <<if _password isnot "" and _password is not "TADAH">>
+     <<if _password isnot "" and _password isnot "TADAH">>
         <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
       <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
         <</if>><</button>> 
