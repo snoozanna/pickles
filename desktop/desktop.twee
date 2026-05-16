@@ -15,9 +15,9 @@ Pickles - National Archives - Computer
 :: Story Stylesheet [stylesheet]
 @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Fondamento:ital@1&family=Italianno&family=Cairo:wght@500&family=Noto+Sans+Mono:wght@700&family=Tangerine:wght@400;700&family=IM+Fell+Double+Pica+SC&family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=Niconne&family=Montserrat:wght@400;800&display=swap');
 
-@import url("/styles/generics.css");
-@import url("/styles/styles.css");
-@import url("/styles/computer.css");
+@import url("../styles/generics.css");
+@import url("../styles/styles.css");
+@import url("../styles/computer.css");
 
 
 :: Story JavaScript [script]
@@ -25,17 +25,17 @@ UIBar.destroy();
 
 
 :: StoryInit
-<<cacheaudio "ping1" "assets/sound/ping1.mp3">>
-<<cacheaudio "correct" "assets/sound/keep2.mp3">>
-<<cacheaudio "uploading" "assets/sound/uploading.mp3">>
-<<cacheaudio "complete" "assets/sound/uploadcomplete.mp3">>
-<<cacheaudio "signal" "assets/sound/signal.mp3">>
+<<cacheaudio "ping1" "../assets/sound/ping1.mp3">>
+<<cacheaudio "correct" "../assets/sound/keep2.mp3">>
+<<cacheaudio "uploading" "../assets/sound/uploading.mp3">>
+<<cacheaudio "complete" "../assets/sound/uploadcomplete.mp3">>
+<<cacheaudio "signal" "../assets/sound/signal.mp3">>
 <<waitforaudio>>
 
 
 :: header [nobr]
 <header>
-	<div class="logo-wrapper"><img src="assets/img/na-logo.png" alt="The National Archives Logo" class="logo na" aria-hidden="true"></div> </header>
+	<div class="logo-wrapper"><img src="../assets/img/na-logo.png" alt="The National Archives Logo" class="logo na" aria-hidden="true"></div> </header>
 
 
 
@@ -48,7 +48,7 @@ UIBar.destroy();
 <<set $audioOn to true>>
 <<set $finaldesktop to false>>
 <div class="wrapper cogs">
-		<div class="logo-wrapper office"><img src="assets/img/na-logo.png" alt="The National Archives Logo" class="logo na" aria-hidden="true"></div>
+		<div class="logo-wrapper office"><img src="../assets/img/na-logo.png" alt="The National Archives Logo" class="logo na" aria-hidden="true"></div>
 	<main id="main" class="flex-container-col"><<set $title to 1>>
 
 	
@@ -56,8 +56,8 @@ UIBar.destroy();
 
 <div class="trainingMission">
 <h2>MoTT Training Mission</h2>
-<img src="assets/img/mott-logo-thick.png"/>
-<span class="button-wrapper" aria-label="Click Button to go to the training mission"><a href=""  rel="noreferrer"><span>Start</span></a></span>
+<img src="../assets/img/mott-logo-thick.png"/>
+<span class="button-wrapper" aria-label="Click Button to go to the training mission"><a href="https://remote.co.com/MoTT/AgentTraining/"  rel="noreferrer"><span>Start</span></a></span>
 </div>
 <<include "pwBox">>
 </div>
@@ -111,12 +111,12 @@ UIBar.destroy();
     <span>Edit</span>
     <span>Diary</span>
     <span>Email Inbox</span>
-      <span><a href="">Back to login screen</a></span>
+      <span><<link "Back to login screen">><<goto "office1">><</link>></span>
   </div>
    <div class="header-item symbols">
-    <span><img src="assets/img/bat.png"></span>
-   <span><img src="assets/img/wifiW.png"></span>
-    <span><img src="assets/img/search.png"></span>
+    <span><img src="../assets/img/bat.png"></span>
+   <span><img src="../assets/img/wifiW.png"></span>
+    <span><img src="../assets/img/search.png"></span>
 
   </div>
   
@@ -127,14 +127,14 @@ UIBar.destroy();
 
   	<div id="fileMount" class="fileMount"><<include "pwFile">>
 </div>
- <div class="folder-container"> <img src="assets/img/Green_Desktop_Folder.png"/>
+ <div class="folder-container"> <img src="../assets/img/Green_Desktop_Folder.png"/>
  <span>Receipts Folder</span></div>
-  <div class="folder-container"> <img src="assets/img/Green_Desktop_Folder.png"/>
+  <div class="folder-container"> <img src="../assets/img/Green_Desktop_Folder.png"/>
  <span>Project Management</span></div>
- <div class="folder-container"> <img src="assets/img/Green_Desktop_Folder.png"/>
+ <div class="folder-container"> <img src="../assets/img/Green_Desktop_Folder.png"/>
  <span>Team Meeting Minutes</span></div>
 
-  <div class="doc-container"> <img src="assets/img/4468641.png"/>
+  <div class="doc-container"> <img src="../assets/img/4468641.png"/>
  <span>Document 1</span></div>
 
 	
@@ -163,7 +163,7 @@ UIBar.destroy();
 		<</replace>>
 		<</timed>>
 	<<timed 180s>>
-		<<goto "entrance">>
+		<<goto "office1">>
 		<</timed>>
 	<</if>>
 
@@ -182,12 +182,12 @@ UIBar.destroy();
 <<timed 2s>>
  
   <<replace "#audio">>
-  <audio src="assets/audio/COMPUTER_1_MoTT_1.mp3" autoplay>Audio not supported in your browser</audio>
+  <audio src="../assets/audio/COMPUTER_1_MoTT_1.mp3" autoplay>Audio not supported in your browser</audio>
   <</replace>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
-        <img src="assets/img/user.png" alt="avatar"/>
+        <img src="../assets/img/user.png" alt="avatar"/>
       </div>
       <div class="message-container" >
         <span class="sender">User</span>
@@ -247,12 +247,12 @@ UIBar.destroy();
 
 <<timed 2s>>
    <<replace "#audio">>
-  <audio src="assets/audio/COMPUTER_1_MoTT_2.mp3" autoplay>Audio not supported in your browser</audio>
+  <audio src="../assets/audio/COMPUTER_1_MoTT_2.mp3" autoplay>Audio not supported in your browser</audio>
   <</replace>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
-        <img src="assets/img/user.png" alt="avatar"/>
+        <img src="../assets/img/user.png" alt="avatar"/>
       </div>
       <div class="message-container" >
         <span class="sender">User</span>
@@ -322,12 +322,12 @@ UIBar.destroy();
 
 <<timed 2s>>
    <<replace "#audio">>
-  <audio src="assets/audio/COMPUTER_1_MoTT_3.mp3" autoplay>Audio not supported in your browser</audio>
+  <audio src="../assets/audio/COMPUTER_1_MoTT_3.mp3" autoplay>Audio not supported in your browser</audio>
   <</replace>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
-        <img src="assets/img/user.png" alt="avatar"/>
+        <img src="../assets/img/user.png" alt="avatar"/>
       </div>
       <div class="message-container" >
         <span class="sender">User</span>
@@ -400,12 +400,12 @@ UIBar.destroy();
 
 <<timed 2s>>
    <<replace "#audio">>
-  <audio src="assets/audio/COMPUTER_1_MoTT_4.mp3" autoplay>Audio not supported in your browser</audio>
+  <audio src="../assets/audio/COMPUTER_1_MoTT_4.mp3" autoplay>Audio not supported in your browser</audio>
   <</replace>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
-        <img src="assets/img/user.png" alt="avatar"/>
+        <img src="../assets/img/user.png" alt="avatar"/>
       </div>
       <div class="message-container" >
         <span class="sender">User</span>
@@ -470,7 +470,7 @@ UIBar.destroy();
 :: SFSLocked [nobr]
 <h2>Signal Fire System</h2> 
 <br/>
-<<button [img["assets/img/signal-w.png"]]>>
+<<button [img["../assets/img/signal-w.png"]]>>
   <<replace "#sfsMount">>
   <<include "pwSFSIcon">>
   <</replace>>
@@ -485,7 +485,7 @@ UIBar.destroy();
 
 <h2>Signal Fire System</h2> 
 <br/>
-<img src="assets/img/signal-w.png"/>
+<img src="../assets/img/signal-w.png"/>
 <div id="codewordWrapper" class="codeword-wrapper">
   <label for="textbox--password" tabindex="0" ><span aria-label="Enter the pin below" role="label">Enter the pin below</span></label>
   /% CODEWORD INPUT %/
@@ -569,7 +569,7 @@ UIBar.destroy();
     </div>
 
 :: pwFile [nobr]
-  <div class="doc-container"> <img src="assets/img/4468641.png"/>
+  <div class="doc-container"> <img src="../assets/img/4468641.png"/>
  <span>Locked File</span>
 <div id="codewordWrapper" class="codeword-wrapper">
   <label for="textbox--password" tabindex="0" ><span aria-label="Enter password" role="label">Enter password:</span></label>
@@ -605,12 +605,12 @@ UIBar.destroy();
 <div class="chat"><div class="messages-container" id="messagesContainer"></div></div>
 <<timed 2s>>
    <<replace "#audio">>
-  <audio src="assets/audio/COMPUTER_2_thatsthepin_1.mp3" autoplay>Audio not supported in your browser</audio>
+  <audio src="../assets/audio/COMPUTER_2_thatsthepin_1.mp3" autoplay>Audio not supported in your browser</audio>
   <</replace>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
-        <img src="assets/img/user.png" alt="avatar"/>
+        <img src="../assets/img/user.png" alt="avatar"/>
       </div>
       <div class="message-container" >
         <span class="sender">User</span>
@@ -648,12 +648,12 @@ UIBar.destroy();
 <div class="chat"><div class="messages-container" id="messagesContainer"></div></div>
 <<timed 2s>>
    <<replace "#audio">>
-  <audio src="assets/audio/COMPUTER_2_thatsthepin_2.mp3" autoplay>Audio not supported in your browser</audio>
+  <audio src="../assets/audio/COMPUTER_2_thatsthepin_2.mp3" autoplay>Audio not supported in your browser</audio>
   <</replace>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
-        <img src="assets/img/user.png" alt="avatar"/>
+        <img src="../assets/img/user.png" alt="avatar"/>
       </div>
       <div class="message-container" >
         <span class="sender">User</span>
@@ -680,12 +680,12 @@ Signal Fire System.</p>
 /* TODO REPLACE AUDIO  */
 <<timed 1s>>
    <<replace "#audio">>
-  <audio src="assets/audio/NEW_BACKUP_Corbett.mp3" autoplay>Audio not supported in your browser</audio>
+  <audio src="../assets/audio/NEW_BACKUP_Corbett.mp3" autoplay>Audio not supported in your browser</audio>
   <</replace>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
-        <img src="assets/img/user.png" alt="avatar"/>
+        <img src="../assets/img/user.png" alt="avatar"/>
       </div>
       <div class="message-container" >
         <span class="sender">User</span>
@@ -724,12 +724,12 @@ Signal Fire System.</p>
 
 <<timed 0.1s>>
     <<replace "#audio">>
-  <audio src="assets/audio/BACKUP_1.mp3" autoplay>Audio not supported in your browser</audio>
+  <audio src="../assets/audio/BACKUP_1.mp3" autoplay>Audio not supported in your browser</audio>
   <</replace>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
-        <img src="assets/img/user.png" alt="avatar"/>
+        <img src="../assets/img/user.png" alt="avatar"/>
       </div>
       <div class="message-container" >
         <span class="sender">User</span>
@@ -769,12 +769,12 @@ Signal Fire System.</p>
 
 <<timed 0.1s>>
     <<replace "#audio">>
-  <audio src="assets/audio/NEW_BACKUP_2_version1.mp3" autoplay>Audio not supported in your browser</audio>
+  <audio src="../assets/audio/NEW_BACKUP_2_version1.mp3" autoplay>Audio not supported in your browser</audio>
   <</replace>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
-        <img src="assets/img/user.png" alt="avatar"/>
+        <img src="../assets/img/user.png" alt="avatar"/>
       </div>
       <div class="message-container" >
         <span class="sender">User</span>
@@ -894,12 +894,12 @@ Signal Fire System.</p>
 
 <<timed 0.1s>>
    <<replace "#audio">>
-  <audio src="assets/audio/COMPUTER_4_collar.mp3" autoplay>Audio not supported in your browser</audio>
+  <audio src="../assets/audio/COMPUTER_4_collar.mp3" autoplay>Audio not supported in your browser</audio>
   <</replace>>
   <<append "#messagesContainer">>
     <div class="message">
       <div class="avatar">
-        <img src="assets/img/user.png" alt="avatar"/>
+        <img src="../assets/img/user.png" alt="avatar"/>
       </div>
       <div class="message-container" >
         <span class="sender">Chief Timer</span>

@@ -15,10 +15,9 @@ Pickles - National Archives - Phone 1
 :: Story Stylesheet [stylesheet]
 @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Fondamento:ital@1&family=Italianno&family=Cairo:wght@500&family=Noto+Sans+Mono:wght@700&family=Tangerine:wght@400;700&family=IM+Fell+Double+Pica+SC&family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=Niconne&family=Montserrat:wght@400;800&display=swap');
 
-@import url("/styles/generics.css");
-@import url("/styles/styles.css");
-@import url("/styles/twine.css");
-@import url("/styles/phone.css");
+@import url("styles/generics.css");
+@import url("styles/styles.css");
+@import url("styles/phone.css");
 
 
 :: Story JavaScript [script]
@@ -478,12 +477,12 @@ setup.requestCameraPermission = () => {
 	<<include "headerb">>
 
 	<main id="main">
-	<<if $audioOn is true>><audio src="assets/audio/PHONE_2_lookingforgold.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="assets/audio/new_phone_1.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 	<div class="intro-text">
 <p>Excellent work. </p>
 <p>The feed is of a room that is five floors below so, to get the connection, I need you to go to the centre of the room you are in.  </p>
 
-<p>There’s a gold logo on the floor. </p>
+<p>There’s a logo on the floor. </p>
 
 <p>When there, click below and I’ll try to load it up. </p>
 
@@ -797,7 +796,7 @@ Stay very still.", coords: "three" },
 
 
 
-<span class="button-wrapper" aria-label="Click Button to confirm you have scanned image"><a href="phone2.html" target="_blank" rel="noreferrer">IMAGE SCANNED</a></span>
+<span class="button-wrapper" aria-label="Click Button to confirm you have scanned image"><a href="phone2/index.html" target="_blank" rel="noreferrer">IMAGE SCANNED</a></span>
 	</div>
 
 	</main>

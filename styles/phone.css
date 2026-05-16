@@ -42,7 +42,7 @@ footer {
   position: relative;
   width: 100%;
   height: 80vh;
-  background-image: url(../assets/img/stand.jpg);
+  background-image: url("./../assets/img/stand.jpg");
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -393,7 +393,7 @@ video.video {
   /* Your landscape-specific styles here */
 
   .wrapper.video{
-    background-image: url(/assets/img/bg-mob2.png);
+    background-image: url("./../assets/img/bg-mob2.png");
     background-size: 108vw;
     background-position: -3rem;
     background-repeat: repeat;

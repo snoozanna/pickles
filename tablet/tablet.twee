@@ -15,9 +15,9 @@ Pickles - National Archives - Tablet
 :: Story Stylesheet [stylesheet]
 @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Fondamento:ital@1&family=Italianno&family=Cairo:wght@500&family=Noto+Sans+Mono:wght@700&family=Tangerine:wght@400;700&family=IM+Fell+Double+Pica+SC&family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=Niconne&family=Montserrat:wght@400;800&display=swap');
 
-@import url("/styles/generics.css");
-@import url("/styles/styles.css");
-@import url("/styles/tablet.css");s
+@import url("../styles/generics.css");
+@import url("../styles/styles.css");
+@import url("../styles/tablet.css");s
 /* @import url("ogstyles.css"); */
 
 
@@ -26,11 +26,11 @@ UIBar.destroy();
 
 
 :: StoryInit
-<<cacheaudio "ping1" "assets/sound/ping1.mp3">>
-<<cacheaudio "correct" "assets/sound/keep2.mp3">>
-<<cacheaudio "uploading" "assets/sound/uploading.mp3">>
-<<cacheaudio "complete" "assets/sound/uploadcomplete.mp3">>
-<<cacheaudio "signal" "assets/sound/signal.mp3">>
+<<cacheaudio "ping1" "../assets/sound/ping1.mp3">>
+<<cacheaudio "correct" "../assets/sound/keep2.mp3">>
+<<cacheaudio "uploading" "../assets/sound/uploading.mp3">>
+<<cacheaudio "complete" "../assets/sound/uploadcomplete.mp3">>
+<<cacheaudio "signal" "../assets/sound/signal.mp3">>
 <<waitforaudio>>
 
 :: Start [nobr] {"position":"134,244.33333333333337","size":"100,100"}
@@ -51,7 +51,7 @@ UIBar.destroy();
 
 :: header [nobr]
 <header>
-	<div class="logo-wrapper"><img src="assets/img/na-logo.png" alt="The National Archives Logo" class="logo na" aria-hidden="true"></div> </header>
+	<div class="logo-wrapper"><img src="../assets/img/na-logo.png" alt="The National Archives Logo" class="logo na" aria-hidden="true"></div> </header>
 
 
 :: entrance [nobr]
@@ -140,7 +140,7 @@ UIBar.destroy();
 <div class="wrapper cogs">
 	<<include "header">>
 	<main id="main" class="flex-container-col">
-	<<if $audioOn is true>><audio src="assets/audio/TABLET_1_MOTT.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="../assets/audio/TABLET_1_MOTT.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 		<div class="intro-text">
 	<p>To gain entry you need to find a codeword.</p>
 <p>The codeword is made of 4 letters.</p>
@@ -220,7 +220,7 @@ UIBar.destroy();
 <div class="wrapper cogs">
 	<<include "header">>
 	<main id="main" class="flex-container-col"><<set $title to 1>>
-<<if $audioOn is true>><audio src="assets/audio/TABLET_2_SFS.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+<<if $audioOn is true>><audio src="../assets/audio/TABLET_2_SFS.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 	<div class="intro-text">
 	 <p>I need you to find the override code for the Signal Fire System. </p>

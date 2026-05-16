@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: "Supria Regular";
-  src: url("/assets/fonts/Supria-Sans-Web-Cond-Regular.woff2") format("woff2");
+  src: url("./../assets/fonts/Supria-Sans-Web-Cond-Regular.woff2") format("woff2");
 }
 
 :root {
@@ -114,25 +114,25 @@ body[data-tags~="t8n-dissolve"] .transition-out {
 }
 
 .wrapper.cogs {
-  background-image: url("/assets/img/bg-detail.png");
+  background-image: url("./../assets/img/bg-detail.png");
   background-size: cover;
 }
 
 .wrapper.dots {
-  background-image: url(/assets/img/trans-dots-or.png);
+  background-image: url("./../assets/img/trans-dots-or.png");
   background-size: cover;
   background-repeat: no-repeat;
 
 }
 
 .wrapper.bluedots {
-  background-image: url(/assets/img/bg-blue-dots.png);
+  background-image: url("./../assets/img/bg-blue-dots.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .wrapper.manb {
-  background-image: url(/assets/img/manlooking2.png), url(/assets/img/circle.png);
+  background-image: url("./../assets/img/manlooking2.png"), url("./../assets/img/circle.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom left, 20rem 80%;
@@ -142,7 +142,7 @@ body[data-tags~="t8n-dissolve"] .transition-out {
 
 
 .wrapper.mans {
-  background-image: url(/assets/img/manlooking-rot.png), url(/assets/img/circle.png);
+  background-image: url(./../assets/img/manlooking-rot.png), url(./../assets/img/circle.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: 100% 22%, 10rem 80%;
@@ -151,7 +151,7 @@ body[data-tags~="t8n-dissolve"] .transition-out {
 }
 
 main.cogs {
-  background-image: url("/assets/img/bg-detail.png");
+  background-image: url("./../assets/img/bg-detail.png");
   background-size: cover;
 }
 .disappear {

@@ -15,10 +15,9 @@ Pickles - National Archives - Phone 2
 :: Story Stylesheet [stylesheet]
 @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Fondamento:ital@1&family=Italianno&family=Cairo:wght@500&family=Noto+Sans+Mono:wght@700&family=Tangerine:wght@400;700&family=IM+Fell+Double+Pica+SC&family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=Niconne&family=Montserrat:wght@400;800&display=swap');
 
-@import url("/styles/generics.css");
-@import url("/styles/styles.css");
-@import url("/styles/twine.css");
-@import url("/styles/phone.css");
+@import url("../styles/generics.css");
+@import url("../styles/styles.css");
+@import url("../styles/phone.css");
 
 
 :: Story JavaScript [script]
@@ -115,11 +114,11 @@ function log(msg) {
 // document.addEventListener("DOMContentLoaded", startup);
 
 :: StoryInit
-<<cacheaudio "ping1" "assets/sound/ping1.mp3">>
-<<cacheaudio "correct" "assets/sound/keep2.mp3">>
-<<cacheaudio "uploading" "assets/sound/uploading.mp3">>
-<<cacheaudio "complete" "assets/sound/uploadcomplete.mp3">>
-<<cacheaudio "signal" "assets/sound/signal.mp3">>
+<<cacheaudio "ping1" "../assets/sound/ping1.mp3">>
+<<cacheaudio "correct" "../assets/sound/keep2.mp3">>
+<<cacheaudio "uploading" "../assets/sound/uploading.mp3">>
+<<cacheaudio "complete" "../assets/sound/uploadcomplete.mp3">>
+<<cacheaudio "signal" "../assets/sound/signal.mp3">>
 <<waitforaudio>>
 
 
@@ -141,11 +140,11 @@ function log(msg) {
 
 :: header [nobr]
 <header>
-	<div class="logo-wrapper"><img src="assets/img/na-logo.png" alt="The National Archives Logo" class="logo na" aria-hidden="true"></div> </header>
+	<div class="logo-wrapper"><img src="../assets/img/na-logo.png" alt="The National Archives Logo" class="logo na" aria-hidden="true"></div> </header>
 
 :: headerb [nobr]
 <header>
-	<div class="logo-wrapper"><img src="assets/img/mott-logo-thick.png" alt="The National Archives Logo" class="logo na" aria-hidden="true"></div> </header>
+	<div class="logo-wrapper"><img src="../assets/img/mott-logo-thick.png" alt="The National Archives Logo" class="logo na" aria-hidden="true"></div> </header>
 
 :: AR [nobr]
 <<set $prevpass to "AR">>
@@ -163,7 +162,7 @@ function log(msg) {
 <h2 class="bluehighlighttext">Touch the Cup</h2>
   <div class="ar-imgs-container">
     <div class="ar-img-wrapper touch bottom" id="initial" >
-      <img src="assets/img/wcborder.png" class="">
+      <img src="../assets/img/wcborder.png" class="">
       </div>
 
 
@@ -188,7 +187,7 @@ function log(msg) {
 <div class="wrapper manb">
 	<<include "headerb">>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/PHONE_3_linkintocafespace_8.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="../assets/audio/PHONE_3_linkintocafespace_8.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text">
   <p>Woh - what just happened? </p>
@@ -302,7 +301,7 @@ function log(msg) {
 	<<include "headerb">>
     <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/PHONE_4_headtotheshop_1.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="../assets/audio/PHONE_4_headtotheshop_1.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text">
   <p>The SFS seems to have sent the parcel. You can find it at the bookshop. </p>
@@ -328,7 +327,7 @@ function log(msg) {
 	<<include "headerb">>
    <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/PHONE_4_headtotheshop_2.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="../assets/audio/PHONE_4_headtotheshop_2.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text">
   <p>This is what we know... </p>
@@ -356,7 +355,7 @@ function log(msg) {
 	<<include "headerb">>
    <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/PHONE_5_outsideshop_1.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="../assets/audio/PHONE_5_outsideshop_1.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text"><p>Head back to where you were sitting and I’ll connect.</p></div>
 
@@ -431,7 +430,7 @@ function log(msg) {
 	<<include "headerb">>
      <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/PHONE_5_outsideshop_2.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="../assets/audio/PHONE_5_outsideshop_2.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text">
   <p>Joe Mears, the FA Chairman, placed the note in the paper as requested and then a phone call happened, between a police officer and the thief, Betchley.  </p>
@@ -455,7 +454,7 @@ function log(msg) {
 	<<include "headerb">>
     <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/PHONE_5_outsideshop_3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="../assets/audio/PHONE_5_outsideshop_3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text">
   <p>Head up the stairs to level one.</p>
@@ -496,7 +495,7 @@ function log(msg) {
 	<<include "headerb">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/PHONE_6_cabinettable_1.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="../assets/audio/PHONE_6_cabinettable_1.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text">
   <p>Right, now you have the transcript, I need you to go to the spot where we can work together. </p>
@@ -537,7 +536,7 @@ function log(msg) {
 	<<include "headerb">>
  <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
     	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/PHONE_6_cabinettable_2.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="../assets/audio/PHONE_6_cabinettable_2.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text">
   <p>What you need to know before the call is this. </p>
@@ -577,7 +576,7 @@ function log(msg) {
 	<<include "headerb">>
   <div class="rotate-warning"><h3>Rotate your phone.</h3></div>
 	<main id="main" class="">
-	<<if $audioOn is true>><audio src="assets/audio/PHONE_6_cabinettable_3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
+	<<if $audioOn is true>><audio src="../assets/audio/PHONE_6_cabinettable_3.mp3" autoplay>Audio not supported in your browser</audio><</if>>
 
 <div class="intro-text">
   <p>You can’t let Betchley know you aren’t Joe Mears. Answer the questions to give him all the information from the transcript. </p>
